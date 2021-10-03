@@ -10,6 +10,9 @@ TagManager:
   - PedraController 0
   - PedraController 1
   - Pickup
+  - Chave
+  - Chave 1
+  - Chave 2
   layers:
   - Default
   - TransparentFX
