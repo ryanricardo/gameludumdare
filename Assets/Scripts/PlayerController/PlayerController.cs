@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
             if(rocksGameObject[0] == null)
             {
-                forceJump = 8;
+                forceJump = 10;
             }
             else 
             {
