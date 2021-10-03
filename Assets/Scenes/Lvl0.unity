@@ -255,7 +255,7 @@ RectTransform:
   - {fileID: 352741860}
   - {fileID: 952497005}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4597b418bcda4447a0595c88754a8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelGameOver: {fileID: 952497004}
+  panelGameOver: {fileID: 0}
   gameOver: 0
   levelCompleted: 0
   currentScene: 0
@@ -2202,7 +2202,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.605, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &1504168992
 LightingSettings:
@@ -7156,7 +7156,7 @@ PrefabInstance:
     - target: {fileID: 7475273181970847626, guid: 3f72c65644b8eda47b47eaa801b2b4a1,
         type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7475273181970847628, guid: 3f72c65644b8eda47b47eaa801b2b4a1,
         type: 3}
@@ -7171,12 +7171,12 @@ PrefabInstance:
     - target: {fileID: 7475273181970847629, guid: 3f72c65644b8eda47b47eaa801b2b4a1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7475273181970847629, guid: 3f72c65644b8eda47b47eaa801b2b4a1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7475273181970847629, guid: 3f72c65644b8eda47b47eaa801b2b4a1,
         type: 3}
@@ -7186,7 +7186,7 @@ PrefabInstance:
     - target: {fileID: 7475273181970847629, guid: 3f72c65644b8eda47b47eaa801b2b4a1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.72
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 7475273181970847629, guid: 3f72c65644b8eda47b47eaa801b2b4a1,
         type: 3}
