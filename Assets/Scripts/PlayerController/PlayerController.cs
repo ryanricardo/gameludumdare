@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]public  Transform       transformSpawnPosition;
     [Header("Inputs")]
     [SerializeField]private bool            getKeyDownSpace;
+    [SerializeField]private bool            getKeyDownE;
     [Header("Atributtes Movimentation")]
     [SerializeField]private float           axisHorizontal;
     [SerializeField]private float           speedVelocity;
     [SerializeField]private float           forceJump;
+    [SerializeField]private bool            isRight;
     [Header("Atributtes Resistance")]
     [SerializeField]private float           distanceSpawnRockPickup;
     [SerializeField]public  float[]         rocksResistances;    
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private float[]         speedAddRocksResistances;
     [SerializeField]public  bool []         rocksResistancesEnd;
     [SerializeField]public  bool []         applyOneTime;
+    [Header("Atributtes Drop Rock")]
+    [SerializeField]private float           distanceDropRock;
     
 
 
@@ -38,6 +42,7 @@ public class PlayerController : MonoBehaviour
         Movimentation();
         UpdateCheckResistance();
         UpdateResistance();
+        DropRock();
         Inputs();
 
     }
@@ -53,6 +58,54 @@ public class PlayerController : MonoBehaviour
             rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
         }
 
+        if(axisHorizontal < 0 && isRight)
+        {
+            Flip();
+            isRight = false;
+            distanceDropRock = distanceDropRock * -1;
+        }else if(axisHorizontal > 0 && !isRight)
+        {
+            Flip();
+            isRight = true;
+            distanceDropRock = distanceDropRock * -1;
+        }
+    }
+
+    void Flip()
+    {
+        Vector2 Scale = transform.localScale;
+        Scale.x *= -1;
+        transform.localScale = Scale;
+    }
+
+    void DropRock()
+    {
+
+
+        if(getKeyDownE)
+        {      
+            rocksGameObject[0] = GameObject.FindWithTag("PedraController 0");
+            rocksGameObject[1] = GameObject.FindWithTag("PedraController 1");
+
+            if(rocksGameObject[0] != null )
+            {
+                Vector2 spawnDropWeapon = new Vector2(transform.position.x + distanceDropRock, 
+                transform.position.y);
+                Instantiate(rocksPickup[0], spawnDropWeapon, Quaternion.identity);  
+                Destroy(rocksGameObject[0], 0);
+                rocksResistancesEnd[0] = true;
+                Debug.Log("Drop");
+            }else if(rocksGameObject[1] != null)
+            {
+                Vector2 spawnDropWeapon = new Vector2(transform.position.x + distanceDropRock, 
+                transform.position.y);
+                Instantiate(rocksPickup[1], spawnDropWeapon, Quaternion.identity);  
+                Destroy(rocksGameObject[1], 0);
+                rocksResistancesEnd[1] = true;
+                Debug.Log("Drop");
+            }
+
+        }
     }
 
     void Inputs()
@@ -63,6 +116,14 @@ public class PlayerController : MonoBehaviour
         }else 
         {
             getKeyDownSpace = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            getKeyDownE = true;
+        }else 
+        {
+            getKeyDownE = false;
         }
     }
 
