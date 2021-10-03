@@ -161,7 +161,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &4508963265189748867
 MonoBehaviour:
@@ -184,9 +184,11 @@ MonoBehaviour:
   - {fileID: 4367023187070170796, guid: 2fdfa5e51aa767c44bbe5dcbeb0fe25c, type: 3}
   transformSpawnPosition: {fileID: 4508963264608107844}
   getKeyDownSpace: 0
+  getKeyDownE: 0
   axisHorizontal: 0
   speedVelocity: 1
   forceJump: 10
+  isRight: 0
   distanceSpawnRockPickup: 2
   rocksResistances:
   - 50
@@ -199,3 +201,4 @@ MonoBehaviour:
   - 5
   rocksResistancesEnd: 0000
   applyOneTime: 0101
+  distanceDropRock: 0

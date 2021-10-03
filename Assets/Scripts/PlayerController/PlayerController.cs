@@ -53,8 +53,26 @@ public class PlayerController : MonoBehaviour
         axisHorizontal = Input.GetAxis("Horizontal");
         rb2.velocity = new Vector2(axisHorizontal * speedVelocity, rb2.velocity.y);
 
-        if(getKeyDownSpace && rb2.velocity.y <= 0)
+        if(getKeyDownSpace && rb2.velocity.y <= 0.1f)
         {
+            rocksGameObject[0] = GameObject.FindWithTag("PedraController 0");
+            rocksGameObject[1] = GameObject.FindWithTag("PedraController 1");
+
+            if(rocksGameObject[0] == null)
+            {
+                forceJump = 8;
+            }
+            else 
+            {
+                if(rocksGameObject[0] == null && rocksGameObject[1] == null)
+                {
+                    forceJump = 15;
+                }else 
+                {
+                    forceJump = 10;
+                }
+            }
+
             rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
         }
 
@@ -94,6 +112,7 @@ public class PlayerController : MonoBehaviour
                 Instantiate(rocksPickup[0], spawnDropWeapon, Quaternion.identity);  
                 Destroy(rocksGameObject[0], 0);
                 rocksResistancesEnd[0] = true;
+                forceJump /= 1.2f;
                 Debug.Log("Drop");
             }else if(rocksGameObject[1] != null)
             {
@@ -102,6 +121,7 @@ public class PlayerController : MonoBehaviour
                 Instantiate(rocksPickup[1], spawnDropWeapon, Quaternion.identity);  
                 Destroy(rocksGameObject[1], 0);
                 rocksResistancesEnd[1] = true;
+                forceJump /= 1.5f;
                 Debug.Log("Drop");
             }
 
