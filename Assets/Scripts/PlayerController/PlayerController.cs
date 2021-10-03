@@ -98,8 +98,6 @@ public class PlayerController : MonoBehaviour
 
     void DropRock()
     {
-
-
         if(getKeyDownE)
         {      
             rocksGameObject[0] = GameObject.FindWithTag("PedraController 0");
@@ -182,11 +180,6 @@ public class PlayerController : MonoBehaviour
             }
             
         }
-
-
-
-        
-
     }
 
 
