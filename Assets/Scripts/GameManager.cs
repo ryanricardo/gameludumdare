@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject panelGameOver;    
-    [HideInInspector] public bool gameOver = false, levelCompleted = false;
-    int currentScene;
+    [SerializeField]public bool gameOver = false, levelCompleted = false;
+    [SerializeField]int currentScene;
 
 
     void Start()
