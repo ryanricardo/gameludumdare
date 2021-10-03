@@ -17,38 +17,14 @@ public class CanvasPlayerController : MonoBehaviour
 
     void Update()
     {
-        
-    }
-
-    void FixedUpdate()
-    {
         ResistenceController();
+        
     }
 
     void ResistenceController()
     {
-       
-       
-        
-       if(playerController.rocksResistancesEnd[0])
-       {
-           sliderResistance[0].interactable = false;
-       }else if (!playerController.rocksResistancesEnd[0])
-       {
-           sliderResistance[0].interactable = true;
-           sliderResistance[0].value = playerController.rocksResistances[0];
-       }
-
-        
-       if(playerController.rocksResistancesEnd[1])
-       {
-           sliderResistance[1].interactable = false;
-       }if (!playerController.rocksResistancesEnd[1])
-       {
-           sliderResistance[1].interactable = true;
-           sliderResistance[1].value = playerController.rocksResistances[1];
-       }
-
-        
+       sliderResistance[0].interactable = true;
+       if(sliderResistance[0].value > 50) { sliderResistance[0].value = playerController.rocksResistances[0] + 50; }
+       else sliderResistance[0].value = playerController.rocksResistances[1];
     }
 }
