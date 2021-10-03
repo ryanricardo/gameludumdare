@@ -157,6 +157,16 @@ PrefabInstance:
       propertyPath: distanceSpawnRockPickup
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4944037535574600095, guid: db0c534f48f6ba540b6666ed57e6402e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.931
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944037535661437201, guid: db0c534f48f6ba540b6666ed57e6402e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.456
+      objectReference: {fileID: 0}
     - target: {fileID: 4944037536998783909, guid: db0c534f48f6ba540b6666ed57e6402e,
         type: 3}
       propertyPath: m_Name
@@ -175,7 +185,7 @@ PrefabInstance:
     - target: {fileID: 4944037536998783910, guid: db0c534f48f6ba540b6666ed57e6402e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.3365803
+      value: -4.52
       objectReference: {fileID: 0}
     - target: {fileID: 4944037536998783910, guid: db0c534f48f6ba540b6666ed57e6402e,
         type: 3}
