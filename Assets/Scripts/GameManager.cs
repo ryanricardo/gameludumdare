@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
         if (gameOver){
             panelGameOver.SetActive(true);
+            Time.timeScale = 0;
             if (Input.anyKeyDown){
                 gameOver = false;
                 LoadScene(currentScene, 1);
