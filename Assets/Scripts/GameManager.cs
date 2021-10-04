@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject panelGameOver, panelLevelCompleted;    
     [SerializeField]public bool gameOver = false, levelCompleted = false;
-    [SerializeField]int currentScene;
+    [SerializeField]public int currentScene;
     [SerializeField]private PlayerController playerController;
 
 
