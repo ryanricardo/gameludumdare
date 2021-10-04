@@ -257,6 +257,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8011761645848096436, guid: 4b4feb11ea97e9d90b687e802b569bac,
         type: 3}
+      propertyPath: timer
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011761645848096436, guid: 4b4feb11ea97e9d90b687e802b569bac,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 906081562}
@@ -1975,7 +1980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700633085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -3, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1994,8 +1999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 140895647}
-  stopPos: 0
-  followDelay: 4
+  stopPos: 7.5
+  followDelay: 2
 --- !u!114 &809961800 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4508963265189748867, guid: 873f6a562f9a2d848a87bf3ea1caa94f,
