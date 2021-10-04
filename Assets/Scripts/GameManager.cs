@@ -24,14 +24,14 @@ public class GameManager : MonoBehaviour
               LoadScene(currentScene + 1, 2);
         }
 
-        if (gameOver){
-            panelGameOver.SetActive(true);
-            Time.timeScale = 0;
-            if (Input.anyKeyDown){
-                gameOver = false;
-                LoadScene(currentScene, 1);
-            }
-        }
+        // if (gameOver){
+        //     panelGameOver.SetActive(true);
+        //     Time.timeScale = 0;
+        //     if (Input.anyKeyDown){
+        //         gameOver = false;
+        //         LoadScene(currentScene, 1);
+        //     }
+        // }
 
         if(playerController.rocksResistancesEnd[0] && playerController.rocksResistancesEnd[1])
         {

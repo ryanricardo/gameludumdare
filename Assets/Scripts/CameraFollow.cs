@@ -19,6 +19,8 @@ public class CameraFollow : MonoBehaviour
     // Camera Updates should be done in LateUpdate
     void LateUpdate()
     {
+        if(target == null)
+        return;
         transform.position = Vector3.Lerp(transform.position, target.position + offset, Time.deltaTime * followDelay);         
         if(transform.position.x > stopPos){
             transform.position = new Vector3(stopPos, transform.position.y, transform.position.z);
