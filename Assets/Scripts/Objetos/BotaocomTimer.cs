@@ -28,7 +28,7 @@ public class BotaocomTimer : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-       if(col.gameObject.tag=="Player")
+       if(col.gameObject.tag=="Player" || col.gameObject.tag=="Pickup")
        {
            StartCoroutine("Abrir");
        } 
