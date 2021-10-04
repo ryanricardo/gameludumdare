@@ -918,6 +918,7 @@ GameObject:
   - component: {fileID: 6497243946144321301}
   - component: {fileID: 2811451479118732370}
   - component: {fileID: 8142488817964974749}
+  - component: {fileID: 240608028167232002}
   m_Layer: 0
   m_Name: PainelJogo2
   m_TagString: Untagged
@@ -988,6 +989,29 @@ MonoBehaviour:
   textTimer: {fileID: 0}
   timer: 0
   timeFinished: 0
+--- !u!114 &240608028167232002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112929286986629594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!1 &7168774835688504640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1039,7 @@ RectTransform:
   m_GameObject: {fileID: 7168774835688504640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.65528, y: 0.65528, z: 0.65528}
+  m_LocalScale: {x: 1.3991095, y: 1.3991095, z: 1.3991095}
   m_Children:
   - {fileID: 981612229283661507}
   m_Father: {fileID: 6497243946144321301}
@@ -1167,7 +1191,7 @@ RectTransform:
   m_GameObject: {fileID: 7720378025360389906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.478467, y: 0.38875923, z: 0.478467}
+  m_LocalScale: {x: 1.1349237, y: 0.9221369, z: 1.1349237}
   m_Children: []
   m_Father: {fileID: 6497243946144321301}
   m_RootOrder: 0
