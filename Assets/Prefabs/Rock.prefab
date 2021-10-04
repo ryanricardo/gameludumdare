@@ -225,7 +225,9 @@ MonoBehaviour:
   getKeyDownE: 0
   axisHorizontal: 0
   speedVelocity: 1
-  forceJump: 10
+  forceJumpCurrent: 0
+  forceJump3Rocks: 20
+  forceJump2Rocks: 18
   isRight: 1
   checkGround: 0
   distanceSpawnRockPickup: 2

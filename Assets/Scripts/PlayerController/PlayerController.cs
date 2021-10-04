@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour
     [Header("Atributtes Movimentation")]
     [SerializeField]private float           axisHorizontal;
     [SerializeField]private float           speedVelocity;
-    [SerializeField]private float           forceJump;
+    [SerializeField]private float           forceJumpCurrent;
+    [SerializeField]private float           forceJump3Rocks;
+    [SerializeField]private float           forceJump2Rocks;
     [SerializeField]private bool            isRight;
     [SerializeField]private bool            checkGround;
     [Header("Atributtes Resistance")]
@@ -68,20 +70,14 @@ public class PlayerController : MonoBehaviour
 
             if(rocksGameObject[0] == null)
             {
-                forceJump = 10;
+                forceJumpCurrent = forceJump2Rocks;
             }
             else 
             {
-                if(rocksGameObject[0] == null && rocksGameObject[1] == null)
-                {
-                    forceJump = 15;
-                }else 
-                {
-                    forceJump = 10;
-                }
+                forceJumpCurrent = forceJump3Rocks;
             }
 
-            rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
+            rb2.AddForce(transform.up * forceJumpCurrent, ForceMode2D.Impulse);
         }
 
         if(axisHorizontal < 0 && isRight)
@@ -121,7 +117,6 @@ public class PlayerController : MonoBehaviour
                 Destroy(rocksGameObject[0], 0);
                 rocksResistances[0] = 0;
                 rocksResistancesEnd[0] = true;
-                forceJump /= 1.2f;
                 Debug.Log("Drop");
             }else if(rocksGameObject[1] != null && !rocksResistancesEnd[0])
             {
@@ -131,7 +126,6 @@ public class PlayerController : MonoBehaviour
                 Destroy(rocksGameObject[1], 0);
                 rocksResistances[1] = 0;
                 rocksResistancesEnd[1] = true;
-                forceJump /= 1.5f;
                 Debug.Log("Drop");
             }
 
