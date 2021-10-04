@@ -224,7 +224,9 @@ MonoBehaviour:
   getKeyDownSpace: 0
   getKeyDownE: 0
   axisHorizontal: 0
-  speedVelocity: 1
+  speedVelocityCurrent: 0
+  speedVelocity2Rocks: 5
+  speedVelocity3Rocks: 3
   forceJumpCurrent: 0
   forceJump3Rocks: 20
   forceJump2Rocks: 18
