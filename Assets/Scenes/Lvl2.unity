@@ -1754,12 +1754,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &713479065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 638788675614735711, guid: 4b4feb11ea97e9d90b687e802b569bac,
-    type: 3}
-  m_PrefabInstance: {fileID: 936605325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &771394739
 GameObject:
   m_ObjectHideFlags: 0
@@ -6266,12 +6260,6 @@ PrefabInstance:
       objectReference: {fileID: 1834317462}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b4feb11ea97e9d90b687e802b569bac, type: 3}
---- !u!1 &936605326 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3734890722470990778, guid: 4b4feb11ea97e9d90b687e802b569bac,
-    type: 3}
-  m_PrefabInstance: {fileID: 936605325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &959372214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6794,6 +6782,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088399a65df43e744ad57cf3b7801f83, type: 3}
+--- !u!1 &1113480236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8472279849008036868, guid: 088399a65df43e744ad57cf3b7801f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 1113480235}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1113480237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7835917802322196880, guid: 088399a65df43e744ad57cf3b7801f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 1113480235}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1126275766
 GameObject:
   m_ObjectHideFlags: 0
@@ -6920,8 +6920,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4597b418bcda4447a0595c88754a8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelGameOver: {fileID: 713479065}
-  panelLevelCompleted: {fileID: 936605326}
+  panelGameOver: {fileID: 1113480237}
+  panelLevelCompleted: {fileID: 1113480236}
   gameOver: 0
   levelCompleted: 0
   currentScene: 0

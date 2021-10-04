@@ -378,6 +378,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088399a65df43e744ad57cf3b7801f83, type: 3}
+--- !u!1 &374065257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8472279849008036868, guid: 088399a65df43e744ad57cf3b7801f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 374065256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &374065258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7835917802322196880, guid: 088399a65df43e744ad57cf3b7801f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 374065256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &521739411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -467,12 +479,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5847561486759439349, guid: 102b260c07d943a42b78ca1d076922e4,
     type: 3}
   m_PrefabInstance: {fileID: 521739411}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &555033313 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3734890722470990778, guid: 4b4feb11ea97e9d90b687e802b569bac,
-    type: 3}
-  m_PrefabInstance: {fileID: 1418735471}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &591318023
 GameObject:
@@ -687,8 +693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4597b418bcda4447a0595c88754a8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelGameOver: {fileID: 1051680550}
-  panelLevelCompleted: {fileID: 555033313}
+  panelGameOver: {fileID: 374065258}
+  panelLevelCompleted: {fileID: 374065257}
   gameOver: 0
   levelCompleted: 0
   currentScene: 0
@@ -853,12 +859,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1051680550 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 638788675614735711, guid: 4b4feb11ea97e9d90b687e802b569bac,
-    type: 3}
-  m_PrefabInstance: {fileID: 1418735471}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1104157330
 GameObject:
   m_ObjectHideFlags: 0

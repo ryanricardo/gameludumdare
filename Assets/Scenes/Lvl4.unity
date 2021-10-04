@@ -882,8 +882,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4597b418bcda4447a0595c88754a8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelGameOver: {fileID: 2094996944}
-  panelLevelCompleted: {fileID: 0}
+  panelGameOver: {fileID: 1452739333}
+  panelLevelCompleted: {fileID: 1452739332}
   gameOver: 0
   levelCompleted: 0
   currentScene: 0
@@ -1378,6 +1378,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088399a65df43e744ad57cf3b7801f83, type: 3}
+--- !u!1 &1452739332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8472279849008036868, guid: 088399a65df43e744ad57cf3b7801f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 1452739331}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1452739333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7835917802322196880, guid: 088399a65df43e744ad57cf3b7801f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 1452739331}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1546116673
 GameObject:
   m_ObjectHideFlags: 0
@@ -7725,12 +7737,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3854988158354872542, guid: 3a4d6c92be80ea94cb771c0f6cbbf6e4,
     type: 3}
   m_PrefabInstance: {fileID: 1819961933}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2094996944 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 638788675614735711, guid: 4b4feb11ea97e9d90b687e802b569bac,
-    type: 3}
-  m_PrefabInstance: {fileID: 518979825}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2125552564
 GameObject:
