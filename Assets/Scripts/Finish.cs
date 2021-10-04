@@ -15,12 +15,14 @@ public class Finish : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player") )
         {
-            gm.levelCompleted = true;
             GameObject rocksPlayer0 = GameObject.FindGameObjectWithTag("PedraController 0");
-            GameObject rocksPlayer1 = GameObject.FindGameObjectWithTag("PedraController 1");            
-            Destroy(rocksPlayer0);
-            Destroy(rocksPlayer1);
-            Destroy(other.gameObject);
+            GameObject rocksPlayer1 = GameObject.FindGameObjectWithTag("PedraController 1");   
+            if(rocksPlayer0!=null & rocksPlayer1!=null){
+                gm.levelCompleted = true;                
+                Destroy(rocksPlayer0);
+                Destroy(rocksPlayer1);
+                Destroy(other.gameObject);
+            }         
         }
     }
 }
