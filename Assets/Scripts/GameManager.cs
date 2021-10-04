@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject panelGameOver;    
+    [SerializeField] GameObject panelGameOver, panelLevelCompleted;    
     [SerializeField]public bool gameOver = false, levelCompleted = false;
     [SerializeField]int currentScene;
     [SerializeField]private PlayerController playerController;
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {        
         if (levelCompleted){
-            // panelLevelCompleted.SetActive(true);
+            panelLevelCompleted.SetActive(true);
             Time.timeScale = 0;
             LoadScene(currentScene + 1, 1.5f);
         }

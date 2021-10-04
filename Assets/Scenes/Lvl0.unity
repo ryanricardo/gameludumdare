@@ -349,6 +349,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 521739411}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &555033313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3734890722470990778, guid: 4b4feb11ea97e9d90b687e802b569bac,
+    type: 3}
+  m_PrefabInstance: {fileID: 1418735471}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &591318023
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelGameOver: {fileID: 1051680550}
+  panelLevelCompleted: {fileID: 555033313}
   gameOver: 0
   levelCompleted: 0
   currentScene: 0
@@ -881,6 +888,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383896490399738712, guid: 4b4feb11ea97e9d90b687e802b569bac,
+        type: 3}
+      propertyPath: m_text
+      value: Tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 5383896490928819169, guid: 4b4feb11ea97e9d90b687e802b569bac,
         type: 3}

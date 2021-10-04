@@ -275,6 +275,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb3c67eefbd0c0458566bc2039d70cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &138573526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3734890722470990778, guid: 4b4feb11ea97e9d90b687e802b569bac,
+    type: 3}
+  m_PrefabInstance: {fileID: 317995804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &183019277
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +586,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasDeluxeEdition
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594470328939567012, guid: 4b4feb11ea97e9d90b687e802b569bac,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594470328939567012, guid: 4b4feb11ea97e9d90b687e802b569bac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011761645848096436, guid: 4b4feb11ea97e9d90b687e802b569bac,
         type: 3}
@@ -6484,6 +6500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelGameOver: {fileID: 317995805}
+  panelLevelCompleted: {fileID: 138573526}
   gameOver: 0
   levelCompleted: 0
   currentScene: 0
