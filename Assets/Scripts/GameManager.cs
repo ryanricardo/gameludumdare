@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -28,7 +29,6 @@ public class GameManager : MonoBehaviour
             if (Input.anyKeyDown){
                 gameOver = false;
                 LoadScene(currentScene, 1);
-                Time.timeScale = 1;
             }
         }
 

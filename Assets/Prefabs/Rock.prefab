@@ -162,7 +162,7 @@ MonoBehaviour:
   axisHorizontal: 0
   speedVelocity: 1
   forceJump: 10
-  isRight: 0
+  isRight: 1
   distanceSpawnRockPickup: 2
   rocksResistances:
   - 50

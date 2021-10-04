@@ -295,6 +295,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb3c67eefbd0c0458566bc2039d70cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &623157448 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4508963265189748867, guid: 873f6a562f9a2d848a87bf3ea1caa94f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2054720907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad14eead7081b4499e4c5ee5aad744d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &625755209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3324717976239923183, guid: d9bcfc3a8f1fb8119b3b21dbf1561b84,
+    type: 3}
+  m_PrefabInstance: {fileID: 724509886551484190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &733689025
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4597b418bcda4447a0595c88754a8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelGameOver: {fileID: 0}
+  panelGameOver: {fileID: 625755209}
   gameOver: 0
   levelCompleted: 0
   currentScene: 0
@@ -5490,6 +5508,11 @@ PrefabInstance:
       propertyPath: speedVelocity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4508963265189748867, guid: 873f6a562f9a2d848a87bf3ea1caa94f,
+        type: 3}
+      propertyPath: distanceDropRock
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4508963265189748868, guid: 873f6a562f9a2d848a87bf3ea1caa94f,
         type: 3}
       propertyPath: m_Name
@@ -5690,5 +5713,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PainelJogo2
       objectReference: {fileID: 0}
+    - target: {fileID: 8142488817964974749, guid: d9bcfc3a8f1fb8119b3b21dbf1561b84,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 733689027}
+    - target: {fileID: 8142488817964974749, guid: d9bcfc3a8f1fb8119b3b21dbf1561b84,
+        type: 3}
+      propertyPath: timeFinished
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142488817964974749, guid: d9bcfc3a8f1fb8119b3b21dbf1561b84,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 623157448}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9bcfc3a8f1fb8119b3b21dbf1561b84, type: 3}
