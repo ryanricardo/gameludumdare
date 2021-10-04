@@ -7,7 +7,7 @@ public class BotaocomTimer : MonoBehaviour
     public bool ativo=false;
     public Animator anim;
     public Chave chave;
-    public bool funciona;
+    public bool funciona=false;
 
     void Update()
     {
@@ -19,7 +19,7 @@ public class BotaocomTimer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-       if(col.gameObject.tag=="Player" || col.gameObject.tag=="Pickup" && funciona)
+       if(col.gameObject.tag=="Player" && funciona|| col.gameObject.tag=="Pickup" && funciona)
        {
            ativo=true;
            anim.SetTrigger("Pre");
@@ -28,7 +28,7 @@ public class BotaocomTimer : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-       if(col.gameObject.tag=="Player" || col.gameObject.tag=="Pickup")
+       if(col.gameObject.tag=="Player" && funciona|| col.gameObject.tag=="Pickup" && funciona)
        {
            StartCoroutine("Abrir");
        } 
@@ -36,7 +36,6 @@ public class BotaocomTimer : MonoBehaviour
 
      private IEnumerator Abrir()
      {
-         ativo=true;
          yield return new WaitForSeconds(5f);
          ativo=false;
          anim.SetTrigger("Normal");
