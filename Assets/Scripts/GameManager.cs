@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
             if (Input.anyKeyDown){
                 gameOver = false;
                 LoadScene(currentScene, 1);
+                Time.timeScale = 1;
             }
         }
 

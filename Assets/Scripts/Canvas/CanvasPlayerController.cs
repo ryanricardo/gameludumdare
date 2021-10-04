@@ -37,6 +37,6 @@ public class CanvasPlayerController : MonoBehaviour
     {
        sliderResistance[0].interactable = true;
        if(sliderResistance[0].value > 50) { sliderResistance[0].value = playerController.rocksResistances[0] + 50; }
-       else sliderResistance[0].value = playerController.rocksResistances[1];
+       else {sliderResistance[0].value = playerController.rocksResistances[1];};
     }
 }
