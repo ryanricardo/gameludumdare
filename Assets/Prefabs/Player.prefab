@@ -104,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a2665cbf5ad6d094eadf260db7a350ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -183,10 +183,19 @@ MonoBehaviour:
   - {fileID: 2587697429841448878, guid: 3b88ec176dfa42647879e4f6bb49d15d, type: 3}
   - {fileID: 4367023187070170796, guid: 2fdfa5e51aa767c44bbe5dcbeb0fe25c, type: 3}
   transformSpawnPosition: {fileID: 4944037534917312117}
+  transformSpawnRockPickup: {fileID: 0}
+  transformCheckGround: {fileID: 0}
   getKeyDownSpace: 0
+  getKeyDownE: 0
   axisHorizontal: 0
-  speedVelocity: 1
-  forceJump: 10
+  speedVelocityCurrent: 0
+  speedVelocity2Rocks: 0
+  speedVelocity3Rocks: 0
+  forceJumpCurrent: 0
+  forceJump3Rocks: 0
+  forceJump2Rocks: 0
+  isRight: 0
+  checkGround: 0
   distanceSpawnRockPickup: 2
   rocksResistances:
   - 50
@@ -199,6 +208,7 @@ MonoBehaviour:
   - 5
   rocksResistancesEnd: 0000
   applyOneTime: 0101
+  distanceDropRock: 0
 --- !u!1 &4944037536998783909
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +314,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5029397941141491022, guid: 8c969975a7f8a7247bf4ad7464790276,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5029397941141491025, guid: 8c969975a7f8a7247bf4ad7464790276,
         type: 3}
       propertyPath: nameObject
@@ -398,6 +413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622861588890485316, guid: 4c4feab96007edb4eb46a9b02270c81a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5622861588890485319, guid: 4c4feab96007edb4eb46a9b02270c81a,
         type: 3}
