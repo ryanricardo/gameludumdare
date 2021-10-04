@@ -1081,7 +1081,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2054720908}
-  followDelay: 4
+  stopPos: 5
+  followDelay: 2
 --- !u!1001 &1706586053
 PrefabInstance:
   m_ObjectHideFlags: 0
