@@ -2552,7 +2552,7 @@ PrefabInstance:
     - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -69.21
+      value: -65.2
       objectReference: {fileID: 0}
     - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
         type: 3}
@@ -2729,7 +2729,7 @@ GameObject:
   - component: {fileID: 1609339217}
   - component: {fileID: 1609339216}
   - component: {fileID: 1609339215}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

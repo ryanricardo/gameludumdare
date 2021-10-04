@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private bool            getKeyDownE;
     [Header("Atributtes Movimentation")]
     [SerializeField]private float           axisHorizontal;
-    [SerializeField]private float           speedVelocity;
+    [SerializeField]private float           speedVelocityCurrent;
+    [SerializeField]private float           speedVelocity2Rocks;
+    [SerializeField]private float           speedVelocity3Rocks;
     [SerializeField]private float           forceJumpCurrent;
     [SerializeField]private float           forceJump3Rocks;
     [SerializeField]private float           forceJump2Rocks;
@@ -56,17 +58,26 @@ public class PlayerController : MonoBehaviour
     void Movimentation()
     {
         // Movimentação na horizontal 
+        rocksGameObject[0] = GameObject.FindWithTag("PedraController 0");
+        rocksGameObject[1] = GameObject.FindWithTag("PedraController 1");
+
+        if(rocksGameObject[0] == null)
+        {
+            speedVelocityCurrent = speedVelocity2Rocks;
+        }else 
+        {
+            speedVelocityCurrent = speedVelocity3Rocks;
+        }
+
         axisHorizontal = Input.GetAxis("Horizontal");
-        rb2.velocity = new Vector2(axisHorizontal * speedVelocity, rb2.velocity.y);
+        rb2.velocity = new Vector2(axisHorizontal * speedVelocityCurrent, rb2.velocity.y);
 
         checkGround = Physics2D.Linecast(
         transform.position, transformCheckGround.transform.position, 1 << LayerMask.NameToLayer("Chao"));
-
+        
 
         if(getKeyDownSpace && checkGround)
         {
-            rocksGameObject[0] = GameObject.FindWithTag("PedraController 0");
-            rocksGameObject[1] = GameObject.FindWithTag("PedraController 1");
 
             if(rocksGameObject[0] == null)
             {
