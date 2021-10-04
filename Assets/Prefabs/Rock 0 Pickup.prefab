@@ -149,4 +149,4 @@ MonoBehaviour:
   gameObjectsRocks:
   - {fileID: 5029397941141491020, guid: 8c969975a7f8a7247bf4ad7464790276, type: 3}
   - {fileID: 5622861588890485314, guid: 4c4feab96007edb4eb46a9b02270c81a, type: 3}
-  nameObject: 0
+  nameObject: 1
