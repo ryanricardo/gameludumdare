@@ -19,9 +19,7 @@ public class PlayerController : MonoBehaviour
     [Header("Atributtes Movimentation")]
     [SerializeField]private float           axisHorizontal;
     [SerializeField]private float           speedVelocity;
-    [SerializeField]private float           forceJumpCurrent;
-    [SerializeField]private float           forceJump3Rocks;
-    [SerializeField]private float           forceJump2Rocks;
+    [SerializeField]private float           forceJump;
     [SerializeField]private bool            isRight;
     [SerializeField]private bool            checkGround;
     [Header("Atributtes Resistance")]
@@ -60,7 +58,7 @@ public class PlayerController : MonoBehaviour
         rb2.velocity = new Vector2(axisHorizontal * speedVelocity, rb2.velocity.y);
 
         physics2DCheckGround = Physics2D.Raycast(
-        transform.position, transformCheckGround.transform.position, 5f, 1 << LayerMask.NameToLayer("Chao"));
+        transform.position, transformCheckGround.transform.position, 1.5f, 1 << LayerMask.NameToLayer("Chao"));
 
         if(physics2DCheckGround)
         {
@@ -73,17 +71,24 @@ public class PlayerController : MonoBehaviour
         if(getKeyDownSpace && checkGround)
         {
             rocksGameObject[0] = GameObject.FindWithTag("PedraController 0");
+            rocksGameObject[1] = GameObject.FindWithTag("PedraController 1");
 
             if(rocksGameObject[0] == null)
             {
-                forceJumpCurrent = forceJump2Rocks;
+                forceJump = 10;
             }
             else 
             {
-                forceJumpCurrent = forceJump3Rocks;
+                if(rocksGameObject[0] == null && rocksGameObject[1] == null)
+                {
+                    forceJump = 15;
+                }else 
+                {
+                    forceJump = 10;
+                }
             }
 
-            rb2.AddForce(transform.up * forceJumpCurrent, ForceMode2D.Impulse);
+            rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
         }
 
         if(axisHorizontal < 0 && isRight)
@@ -123,6 +128,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(rocksGameObject[0], 0);
                 rocksResistances[0] = 0;
                 rocksResistancesEnd[0] = true;
+                forceJump /= 1.2f;
                 Debug.Log("Drop");
             }else if(rocksGameObject[1] != null && !rocksResistancesEnd[0])
             {
@@ -132,6 +138,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(rocksGameObject[1], 0);
                 rocksResistances[1] = 0;
                 rocksResistancesEnd[1] = true;
+                forceJump /= 1.5f;
                 Debug.Log("Drop");
             }
 
