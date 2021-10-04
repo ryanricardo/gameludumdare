@@ -351,10 +351,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4597b418bcda4447a0595c88754a8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelGameOver: {fileID: 0}
+  panelGameOver: {fileID: 1051680550}
   gameOver: 0
   levelCompleted: 0
   currentScene: 0
+  playerController: {fileID: 623157448}
 --- !u!82 &733689028
 AudioSource:
   m_ObjectHideFlags: 0
@@ -592,6 +593,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1051680550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 638788675614735711, guid: 4b4feb11ea97e9d90b687e802b569bac,
+    type: 3}
+  m_PrefabInstance: {fileID: 1418735471}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1182850280
 GameObject:
   m_ObjectHideFlags: 0

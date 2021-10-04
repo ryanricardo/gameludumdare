@@ -103,21 +103,23 @@ public class PlayerController : MonoBehaviour
             rocksGameObject[0] = GameObject.FindWithTag("PedraController 0");
             rocksGameObject[1] = GameObject.FindWithTag("PedraController 1");
 
-            if(rocksGameObject[0] != null )
+            if(rocksGameObject[0] != null && !rocksResistancesEnd[1])
             {
                 Vector2 spawnDropWeapon = new Vector2(transform.position.x + distanceDropRock, 
                 transform.position.y);
                 Instantiate(rocksPickup[0], spawnDropWeapon, Quaternion.identity);  
                 Destroy(rocksGameObject[0], 0);
+                rocksResistances[0] = 0;
                 rocksResistancesEnd[0] = true;
                 forceJump /= 1.2f;
                 Debug.Log("Drop");
-            }else if(rocksGameObject[1] != null)
+            }else if(rocksGameObject[1] != null && !rocksResistancesEnd[0])
             {
                 Vector2 spawnDropWeapon = new Vector2(transform.position.x + distanceDropRock, 
                 transform.position.y);
                 Instantiate(rocksPickup[1], spawnDropWeapon, Quaternion.identity);  
                 Destroy(rocksGameObject[1], 0);
+                rocksResistances[1] = 0;
                 rocksResistancesEnd[1] = true;
                 forceJump /= 1.5f;
                 Debug.Log("Drop");
@@ -202,13 +204,13 @@ public class PlayerController : MonoBehaviour
             }
         }else 
         {
-            if(rocksResistances[0] < 50 && rocksResistances[1] >= 50)
+            if(rocksResistances[0] < 50 && !rocksResistancesEnd[0])
             {
                 rocksResistances[0] += speedAddRocksResistances[0] * Time.deltaTime;
                 
             }
             
-            if(rocksResistances[1] < 50)
+            if(rocksResistances[1] < 50 && !rocksResistancesEnd[1])
             {
                 rocksResistances[1] += speedAddRocksResistances[1] * Time.deltaTime;
                 
