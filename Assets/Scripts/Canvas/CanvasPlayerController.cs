@@ -12,9 +12,12 @@ public class CanvasPlayerController : MonoBehaviour
     [SerializeField]private Slider[]         sliderResistance;
     [SerializeField]private GameManager      gameManager;
     [SerializeField]private TextMeshProUGUI  textTimer;
+    [SerializeField]private GameObject       imageMenu;
     [Header("Atributtes Timer")]
     [SerializeField]private float            timer;
     [SerializeField]private float            timeFinished;
+
+    private bool    menuOpen;
     float initialTime;
 
     void Start()
@@ -40,6 +43,7 @@ public class CanvasPlayerController : MonoBehaviour
         if(timer<.35f*initialTime){
             textTimer.color = Color.red;
         }
+
         
     }
 
@@ -57,4 +61,6 @@ public class CanvasPlayerController : MonoBehaviour
         
         textTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+
 }

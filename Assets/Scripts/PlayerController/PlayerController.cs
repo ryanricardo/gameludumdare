@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [Header("Inputs")]
     [SerializeField]private bool            getKeyDownSpace;
     [SerializeField]private bool            getKeyDownE;
+    [SerializeField]public  bool            getKeyDownEsc;
     [Header("Atributtes Movimentation")]
     [SerializeField]private float           axisHorizontal;
     [SerializeField]private float           speedVelocityCurrent;
@@ -159,6 +160,14 @@ public class PlayerController : MonoBehaviour
         }else 
         {
             getKeyDownE = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            getKeyDownEsc = true;
+        }else 
+        {
+            getKeyDownEsc = false;
         }
     }
 

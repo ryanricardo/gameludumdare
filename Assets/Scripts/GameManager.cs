@@ -39,9 +39,6 @@ public class GameManager : MonoBehaviour
             gameOver = true;
         }
 
-        if (Input.GetButtonDown("Cancel")){
-            LoadScene(0,0);
-        }
     }
 
     IEnumerator SceneDelay(int SceneNumber, float delay){
