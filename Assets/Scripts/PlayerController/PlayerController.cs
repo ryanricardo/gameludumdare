@@ -57,16 +57,9 @@ public class PlayerController : MonoBehaviour
         axisHorizontal = Input.GetAxis("Horizontal");
         rb2.velocity = new Vector2(axisHorizontal * speedVelocity, rb2.velocity.y);
 
-        physics2DCheckGround = Physics2D.Raycast(
-        transform.position, transformCheckGround.transform.position, 1.5f, 1 << LayerMask.NameToLayer("Chao"));
+        checkGround = Physics2D.Linecast(
+        transform.position, transformCheckGround.transform.position, 1 << LayerMask.NameToLayer("Chao"));
 
-        if(physics2DCheckGround)
-        {
-            checkGround = true;
-        }else 
-        {
-            checkGround = false;
-        }
 
         if(getKeyDownSpace && checkGround)
         {
