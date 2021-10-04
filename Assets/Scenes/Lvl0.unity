@@ -802,6 +802,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasDeluxeEdition
       objectReference: {fileID: 0}
+    - target: {fileID: 5383896490950573616, guid: 4b4feb11ea97e9d90b687e802b569bac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.001159668
+      objectReference: {fileID: 0}
     - target: {fileID: 8011761645848096436, guid: 4b4feb11ea97e9d90b687e802b569bac,
         type: 3}
       propertyPath: gameManager
@@ -887,6 +892,7 @@ GameObject:
   - component: {fileID: 1506545375}
   - component: {fileID: 1506545374}
   - component: {fileID: 1506545377}
+  - component: {fileID: 1506545378}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1055,6 +1061,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1506545378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506545373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035e237ff280ef54cbbf21bed7497ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2054720908}
+  followDelay: 4
 --- !u!1001 &1706586053
 PrefabInstance:
   m_ObjectHideFlags: 0
