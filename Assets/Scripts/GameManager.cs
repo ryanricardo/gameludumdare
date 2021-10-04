@@ -21,17 +21,18 @@ public class GameManager : MonoBehaviour
     {        
         if (levelCompleted){
             // panelLevelCompleted.SetActive(true);
-              LoadScene(currentScene + 1, 2);
+            Time.timeScale = 0;
+            LoadScene(currentScene + 1, 1.5f);
         }
 
-        // if (gameOver){
-        //     panelGameOver.SetActive(true);
-        //     Time.timeScale = 0;
-        //     if (Input.anyKeyDown){
-        //         gameOver = false;
-        //         LoadScene(currentScene, 1);
-        //     }
-        // }
+        if (gameOver){
+            panelGameOver.SetActive(true);
+            Time.timeScale = 0;
+            if (Input.anyKeyDown){
+                gameOver = false;
+                LoadScene(currentScene, 1);
+            }
+        }
 
         if(playerController.rocksResistancesEnd[0] && playerController.rocksResistancesEnd[1])
         {
