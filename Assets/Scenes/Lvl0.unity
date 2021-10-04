@@ -684,6 +684,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 826644623081007573, guid: 4b4feb11ea97e9d90b687e802b569bac,
+        type: 3}
+      propertyPath: m_text
+      value: 00:00
+      objectReference: {fileID: 0}
     - target: {fileID: 1697768436741074393, guid: 4b4feb11ea97e9d90b687e802b569bac,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -693,6 +698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383896490399738712, guid: 4b4feb11ea97e9d90b687e802b569bac,
+        type: 3}
+      propertyPath: m_text
+      value: Lvl 0
       objectReference: {fileID: 0}
     - target: {fileID: 5383896490928819169, guid: 4b4feb11ea97e9d90b687e802b569bac,
         type: 3}
@@ -982,11 +992,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 53c11f05fe2057684b83abadd099f5b6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3303536b49f41ca94bca117acffb117d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.79
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

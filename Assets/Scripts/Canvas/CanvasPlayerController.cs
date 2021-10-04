@@ -25,7 +25,8 @@ public class CanvasPlayerController : MonoBehaviour
     {
         ResistenceController();
         timer += Time.deltaTime;
-        textTimer.text = Mathf.FloorToInt(timer).ToString();
+        // textTimer.text = Mathf.FloorToInt(timer).ToString();
+        DisplayTime(timer);
         if(timer >= timeFinished)
         {
             gameManager.gameOver = true;
@@ -39,5 +40,12 @@ public class CanvasPlayerController : MonoBehaviour
         sliderResistance[0].value = playerController.rocksResistances[0] +
         playerController.rocksResistances[1]; 
 
+    }
+
+    void DisplayTime(float timer){
+        float minutes = Mathf.FloorToInt(timer / 60);  
+        float seconds = Mathf.FloorToInt(timer % 60);
+
+        textTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
