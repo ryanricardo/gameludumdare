@@ -30,12 +30,12 @@ public class PlayersPosition : MonoBehaviour
             
 
 
-            if(playerController.rocksResistancesEnd[1])
+            if(playerController.rocksResistancesEnd[1] && nameObject == NameObject.rock1)
             {   
                 playerController.applyOneTime[1] = true;
                 playerController.rocksResistancesEnd[1] = false;
                 playerController.rocksResistances[1]    = 5;
-            }else if(playerController.rocksResistancesEnd[0])
+            }else if(playerController.rocksResistancesEnd[0] && nameObject == NameObject.rock0)
             {   
                 playerController.applyOneTime[0] = true;
                 playerController.rocksResistancesEnd[0] = false;
