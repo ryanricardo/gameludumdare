@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]public  GameObject[]    rocksGameObject;
     [SerializeField]private GameObject[]    rocksPickup;
     [SerializeField]public  Transform       transformSpawnPosition;
+    [SerializeField]public  Transform       transformSpawnRockPickup;
     [Header("Inputs")]
     [SerializeField]private bool            getKeyDownSpace;
     [SerializeField]private bool            getKeyDownE;
@@ -159,9 +160,8 @@ public class PlayerController : MonoBehaviour
             {
                 rocksGameObject[0] = GameObject.FindWithTag("PedraController 0");
                 rocksResistancesEnd[0] = true;
-                Vector2 spawnRockPickup = new Vector2(transformSpawnPosition.transform.position.x + distanceSpawnRockPickup,
-                transform.position.y);
-                Instantiate(rocksPickup[0], spawnRockPickup, Quaternion.identity);
+                Instantiate(rocksPickup[0], 
+                transformSpawnRockPickup.transform.position, Quaternion.identity);
                 Destroy(rocksGameObject[0], 0);
                 applyOneTime[0] = false;
             }
@@ -174,9 +174,8 @@ public class PlayerController : MonoBehaviour
             {
                 rocksGameObject[1] = GameObject.FindWithTag("PedraController 1");
                 rocksResistancesEnd[1] = true;
-                Vector2 spawnRockPickup = new Vector2(transformSpawnPosition.transform.position.x + distanceSpawnRockPickup,
-                transform.position.y);
-                Instantiate(rocksPickup[1], spawnRockPickup, Quaternion.identity);
+                Instantiate(rocksPickup[1], 
+                transformSpawnRockPickup.transform.position, Quaternion.identity);
                 Destroy(rocksGameObject[1], 0);
                 applyOneTime[1] = false;
             }
