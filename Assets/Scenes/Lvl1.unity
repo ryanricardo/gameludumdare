@@ -6793,7 +6793,7 @@ PrefabInstance:
     - target: {fileID: 4508963265189748870, guid: 873f6a562f9a2d848a87bf3ea1caa94f,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4508963265189748871, guid: 873f6a562f9a2d848a87bf3ea1caa94f,
         type: 3}
@@ -6936,6 +6936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029397941141491022, guid: 8c969975a7f8a7247bf4ad7464790276,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c969975a7f8a7247bf4ad7464790276, type: 3}
@@ -7275,6 +7280,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5622861588890485316, guid: 4c4feab96007edb4eb46a9b02270c81a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c4feab96007edb4eb46a9b02270c81a, type: 3}
 --- !u!4 &2072834751 stripped
@@ -7500,6 +7510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pedra-cristal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341852635745374586, guid: 0c774c37452fabf01be5cb9d22fa4cee,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c774c37452fabf01be5cb9d22fa4cee, type: 3}
