@@ -9,8 +9,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private Rigidbody2D     rb2;
     [SerializeField]public  GameObject[]    rocksGameObject;
     [SerializeField]private GameObject[]    rocksPickup;
+    [SerializeField]private RaycastHit2D    physics2DCheckGround;
     [SerializeField]public  Transform       transformSpawnPosition;
     [SerializeField]public  Transform       transformSpawnRockPickup;
+    [SerializeField]private Transform       transformCheckGround;
     [Header("Inputs")]
     [SerializeField]private bool            getKeyDownSpace;
     [SerializeField]private bool            getKeyDownE;
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private float           speedVelocity;
     [SerializeField]private float           forceJump;
     [SerializeField]private bool            isRight;
+    [SerializeField]private bool            checkGround;
     [Header("Atributtes Resistance")]
     [SerializeField]private float           distanceSpawnRockPickup;
     [SerializeField]public  float[]         rocksResistances;    
@@ -54,7 +57,18 @@ public class PlayerController : MonoBehaviour
         axisHorizontal = Input.GetAxis("Horizontal");
         rb2.velocity = new Vector2(axisHorizontal * speedVelocity, rb2.velocity.y);
 
-        if(getKeyDownSpace && rb2.velocity.y <= 0.1f)
+        physics2DCheckGround = Physics2D.Raycast(
+        transform.position, transformCheckGround.transform.position, 1.5f, 1 << LayerMask.NameToLayer("Chao"));
+
+        if(physics2DCheckGround)
+        {
+            checkGround = true;
+        }else 
+        {
+            checkGround = false;
+        }
+
+        if(getKeyDownSpace && checkGround)
         {
             rocksGameObject[0] = GameObject.FindWithTag("PedraController 0");
             rocksGameObject[1] = GameObject.FindWithTag("PedraController 1");
@@ -89,6 +103,8 @@ public class PlayerController : MonoBehaviour
             distanceDropRock = distanceDropRock * -1;
         }
     }
+
+
 
     void Flip()
     {
