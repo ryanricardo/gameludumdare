@@ -23,7 +23,11 @@ public class NewRockController : MonoBehaviour
     private                 Rigidbody2D             rb2;
     [Header("Atributtes Pickup")]
     [SerializeField]private bool                    pushOneTime;
+    [SerializeField]private bool                    moveNewPosition;
     [SerializeField]private float                   forcePushPickup;
+    [SerializeField]private float                   speedMoveNewPosition;
+    [Header("Atributtes Controller")]
+    [SerializeField]private bool                    someCountOneTime;
 
 
     void Start()
@@ -43,7 +47,7 @@ public class NewRockController : MonoBehaviour
             break;
         }
 
-        
+
         transform.position = new Vector2(playerController.transform.position.x, playerController.transform.position.x + 5);
     }
 
@@ -53,6 +57,7 @@ public class NewRockController : MonoBehaviour
         switch(caterogyRockController)
         {
             case CaterogyRockController.controller:
+            someCountRocks();
             Movimentation();
             break;
 
@@ -65,7 +70,33 @@ public class NewRockController : MonoBehaviour
 
     void Movimentation()
     {
-        transform.position = new Vector2(playerController.transform.position.x, transform.position.y);
+        if(moveNewPosition)
+        {
+            Vector3 newPos = new Vector3(playerController.transform.position.x,
+            playerController.transform.position.y + 2, transform.position.z);
+            transform.position = Vector2.MoveTowards(transform.position, newPos, 
+            speedMoveNewPosition * Time.fixedDeltaTime);
+
+            if(transform.position == newPos)
+            {moveNewPosition = false;}
+        }else 
+        {
+            transform.position = new Vector2(playerController.transform.position.x, transform.position.y);
+        }
+
+        
+    }
+
+    void someCountRocks()
+    {
+        if(!someCountOneTime)
+        {
+            playerController.countRocksController += 1;
+            pushOneTime = false;
+
+            someCountOneTime = true;
+        }
+        
     }
 
     void PushThisPickup()
@@ -74,9 +105,33 @@ public class NewRockController : MonoBehaviour
         if(!pushOneTime)
         {
             rb2.AddForce(transform.right * forcePushPickup, ForceMode2D.Impulse);
+            playerController.countRocksController -= 1;
+            someCountOneTime = false;
+
             pushOneTime = true;
         }
+    }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        switch(caterogyRockController)
+        {
+            case CaterogyRockController.controller:
+
+            break;
+
+            case CaterogyRockController.pickup:
+
+                if(other.gameObject.CompareTag("Player"))
+                {
+                    //transform.position = new Vector2(transform.position.x, 
+                    //playerController.transform.position.y + 10);
+                    moveNewPosition = true;
+                    caterogyRockController = CaterogyRockController.controller;
+                }
+
+            break;
+        }
     }
 
 

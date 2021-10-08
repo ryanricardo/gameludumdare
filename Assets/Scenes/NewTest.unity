@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 243728001}
   m_Layer: 0
   m_Name: PlayerController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,6 +166,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  getKeyDownE: 0
+  countRocksController: 0
+  dropRock: 0
 --- !u!212 &243727999
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -299,7 +302,10 @@ MonoBehaviour:
   indexRockController: 1
   caterogyRockController: 0
   pushOneTime: 0
+  moveNewPosition: 0
   forcePushPickup: 4
+  speedMoveNewPosition: 2
+  someCountOneTime: 0
 --- !u!1001 &269434868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -511,7 +517,10 @@ MonoBehaviour:
   indexRockController: 0
   caterogyRockController: 0
   pushOneTime: 0
+  moveNewPosition: 0
   forcePushPickup: 4
+  speedMoveNewPosition: 2
+  someCountOneTime: 0
 --- !u!1001 &1709484869
 PrefabInstance:
   m_ObjectHideFlags: 0
