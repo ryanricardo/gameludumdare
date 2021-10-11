@@ -22,42 +22,32 @@ public class NewRockController : MonoBehaviour
     private                 NewPlayerController     playerController;
     private                 Rigidbody2D             rb2;
     [Header("Atributtes Pickup")]
-    [SerializeField]private bool                    pushOneTime;
-    [SerializeField]private bool                    moveNewPosition;
     [SerializeField]private float                   forcePushPickup;
     [SerializeField]private float                   speedMoveNewPosition;
+    [SerializeField]private bool                    pushOneTime;
+    private                 bool                    moveNewPosition;
     [Header("Atributtes Controller")]
     [SerializeField]private bool                    someCountOneTime;
+    [SerializeField]public  float                   resistance;
 
 
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
         playerController = FindObjectOfType<NewPlayerController>();
+        moveNewPosition = false;
 
+        playerController.rocksController.Add(gameObject);
+        playerController.resistances.Add(resistance);
         
-        switch(indexRockController)
-        {
-            case IndexRockController.rock0:
-            playerController.gameObjectsRocksController[0] = GameObject.FindGameObjectWithTag("PedraController 0");
-            break;
-
-            case IndexRockController.rock1:
-            playerController.gameObjectsRocksController[1] = GameObject.FindGameObjectWithTag("PedraController 1");
-            break;
-        }
-
-
         transform.position = new Vector2(playerController.transform.position.x, playerController.transform.position.x + 5);
     }
 
     void Update()
     {
-
         switch(caterogyRockController)
         {
             case CaterogyRockController.controller:
-            someCountRocks();
             Movimentation();
             break;
 
@@ -75,7 +65,7 @@ public class NewRockController : MonoBehaviour
             Vector3 newPos = new Vector3(playerController.transform.position.x,
             playerController.transform.position.y + 2, transform.position.z);
             transform.position = Vector2.MoveTowards(transform.position, newPos, 
-            speedMoveNewPosition * Time.fixedDeltaTime);
+            speedMoveNewPosition);
 
             if(transform.position == newPos)
             {moveNewPosition = false;}
@@ -87,17 +77,8 @@ public class NewRockController : MonoBehaviour
         
     }
 
-    void someCountRocks()
-    {
-        if(!someCountOneTime)
-        {
-            playerController.countRocksController += 1;
-            pushOneTime = false;
 
-            someCountOneTime = true;
-        }
-        
-    }
+
 
     void PushThisPickup()
     {
@@ -105,7 +86,6 @@ public class NewRockController : MonoBehaviour
         if(!pushOneTime)
         {
             rb2.AddForce(transform.right * forcePushPickup, ForceMode2D.Impulse);
-            playerController.countRocksController -= 1;
             someCountOneTime = false;
 
             pushOneTime = true;
@@ -126,6 +106,7 @@ public class NewRockController : MonoBehaviour
                 {
                     //transform.position = new Vector2(transform.position.x, 
                     //playerController.transform.position.y + 10);
+                    pushOneTime = false;
                     moveNewPosition = true;
                     caterogyRockController = CaterogyRockController.controller;
                 }
