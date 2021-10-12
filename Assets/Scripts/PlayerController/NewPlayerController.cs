@@ -47,6 +47,8 @@ public class NewPlayerController : MonoBehaviour
         /* Aqui, após clicar clicar "E", é identificado pelo for a primeira pedra que esta em modo controller. 
         Após isso, o deixa em modo pickupe return. */
 
+        // Vale ressaltar que nos arrays criado o numero 0 NÃO tem valor algum, deve desconsiderar.
+        
         if(Input.GetKeyDown(KeyCode.E))
         {
             for(int i = 1; i < rocks.Length; i++)

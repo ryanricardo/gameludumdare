@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a2665cbf5ad6d094eadf260db7a350ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,8 +101,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  categoriesRock: 
   axisHorizontal: 0
   balance: 0
+  speedSubmitBalance: 0
+  speedAddBalance: 0
   maxBalance: 0
   countRocks: 0
 --- !u!50 &646820509772010540
