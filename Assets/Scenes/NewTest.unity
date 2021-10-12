@@ -286,7 +286,8 @@ MonoBehaviour:
   categoryRock: 0
   typeRock: 1
   forcePushPickup: 4
-  speedMoveNewPosition: 4
+  speedMoveNewPosition: 0.2
+  moveNewPosition: 0
 --- !u!1001 &269434868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -498,7 +499,8 @@ MonoBehaviour:
   categoryRock: 0
   typeRock: 0
   forcePushPickup: 4
-  speedMoveNewPosition: 4
+  speedMoveNewPosition: 0.2
+  moveNewPosition: 0
 --- !u!1001 &1709484869
 PrefabInstance:
   m_ObjectHideFlags: 0

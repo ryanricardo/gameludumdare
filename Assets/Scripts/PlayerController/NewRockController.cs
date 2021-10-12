@@ -24,7 +24,7 @@ public class NewRockController : MonoBehaviour
     [Header("Atributtes Rocks")]
     [SerializeField]    private float               forcePushPickup;
     [SerializeField]    private float               speedMoveNewPosition;
-    [HideInInspector]   private bool                moveNewPosition; 
+    [SerializeField]   private bool                moveNewPosition; 
     [HideInInspector]   private bool                pushOneTime;
 
     void Start()
@@ -119,7 +119,11 @@ public class NewRockController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player") && categoryRock == CategoryRock.pickup)
         {
+            Debug.Log("Touch");
             moveNewPosition = true;
+            pushOneTime = false;
+            
+            categoryRock = CategoryRock.controller;
         }
     }
 }
