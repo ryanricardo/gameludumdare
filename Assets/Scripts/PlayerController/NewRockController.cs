@@ -24,7 +24,7 @@ public class NewRockController : MonoBehaviour
     [Header("Atributtes Rocks")]
     [SerializeField]    private float               forcePushPickup;
     [SerializeField]    private float               speedMoveNewPosition;
-    [SerializeField]   private bool                moveNewPosition; 
+    [HideInInspector]   private bool                moveNewPosition; 
     [HideInInspector]   private bool                pushOneTime;
 
     void Start()
