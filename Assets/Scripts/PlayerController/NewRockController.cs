@@ -122,9 +122,16 @@ public class NewRockController : MonoBehaviour
             Debug.Log("Touch");
             moveNewPosition = true;
             pushOneTime = false;
-            Debug.Log("More Balance");
-            playerController.balance += 50;
-            
+            Debug.Log("O equilibrio esta em " + playerController.balance);
+            if(playerController.balance < 30)
+            {
+                playerController.balance += (100 - playerController.balance) / 1.3f;
+            }else 
+            {
+                playerController.balance += (100 - playerController.balance) / 2;
+            }
+
+            Debug.Log("Agora esta em " + playerController.balance);
             categoryRock = CategoryRock.controller;
         }
     }

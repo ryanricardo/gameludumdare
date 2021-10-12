@@ -13,6 +13,7 @@ TagManager:
   - Chave
   - Chave 1
   - Chave 2
+  - RockController
   layers:
   - Default
   - TransparentFX

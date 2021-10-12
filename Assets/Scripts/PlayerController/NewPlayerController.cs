@@ -5,19 +5,24 @@ using UnityEngine;
 public class NewPlayerController : MonoBehaviour
 {
     [Header("Components")]
-    [HideInInspector]   private Rigidbody2D     rb2;
-    [SerializeField]    private GameObject[]    rocks;
+    [HideInInspector]   private Rigidbody2D                         rb2;
+    [SerializeField]    private GameObject[]                        rocks;
+    [SerializeField]    private NewRockController.CategoryRock[]    categoriesRock;
     [Header("Atributtes Movimentation")]
-    [SerializeField]    private float           axisHorizontal;
+    [SerializeField]    private float                               axisHorizontal;
     [Header("Atributtes Balance")]
-    [SerializeField]    public  float           balance;
-    [SerializeField]    private int             maxBalance;
-    [SerializeField]    private int             countRocks;
+    [SerializeField]    public  float                               balance;
+    [SerializeField]    public  float                               speedSubmitBalance;
+    [SerializeField]    public  float                               speedAddBalance;
+    [SerializeField]    private int                                 maxBalance;
+    [SerializeField]    private int                                 countRocks;
+
 
 
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
+
         balance = 100;
     }
 
@@ -46,10 +51,10 @@ public class NewPlayerController : MonoBehaviour
         {
             for(int i = 1; i < rocks.Length; i++)
             {
-                if(rocks[i].GetComponent<NewRockController>().categoryRock 
-                == NewRockController.CategoryRock.controller)
+                if(categoriesRock[i] == NewRockController.CategoryRock.controller)
                 {
-                    rocks[i].GetComponent<NewRockController>().categoryRock = NewRockController.CategoryRock.pickup;
+                    rocks[i].GetComponent<NewRockController>().categoryRock 
+                    = NewRockController.CategoryRock.pickup;
                     return;
                 }
             }
@@ -58,17 +63,26 @@ public class NewPlayerController : MonoBehaviour
 
     void ControllerBalance()
     {
+
+        /* Nesta linha é adicionado dentro de um array[3] as variaveis de enum das duas pedras controller*/
+
+        for(int i = 1; i < rocks.Length; i++)
+        {
+            categoriesRock[i] = rocks[i].gameObject.GetComponent<NewRockController>().categoryRock;
+        }
+
+
         /* Estas linhas controlam o numero de pedras pertences ao grupo procurando quanto gameObject 
         Estão com seu enum em controller. */
 
-        if(rocks[1].GetComponent<NewRockController>().categoryRock == NewRockController.CategoryRock.controller
-        && rocks[2].GetComponent<NewRockController>().categoryRock == NewRockController.CategoryRock.controller)
+        if(categoriesRock[1] == NewRockController.CategoryRock.controller
+        && categoriesRock[2] == NewRockController.CategoryRock.controller)
         {
             countRocks = 2;
         }else 
         {
-            if(rocks[1].GetComponent<NewRockController>().categoryRock != NewRockController.CategoryRock.controller
-            && rocks[2].GetComponent<NewRockController>().categoryRock == NewRockController.CategoryRock.controller)
+            if(categoriesRock[1] != NewRockController.CategoryRock.controller
+            && categoriesRock[2] == NewRockController.CategoryRock.controller)
             {
                 countRocks = 1;
             }else 
@@ -102,24 +116,14 @@ public class NewPlayerController : MonoBehaviour
          
         if(axisHorizontal != 0 && balance > 0)
         {
-            balance -= 5 * Time.fixedDeltaTime;
+            balance -= speedSubmitBalance * Time.fixedDeltaTime;
         }else if(balance < maxBalance)
         {
-            balance += 5 * Time.fixedDeltaTime;
+            balance += speedAddBalance * Time.fixedDeltaTime;
         }
         
 
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if(other.gameObject.CompareTag("RockController") 
-        && other.gameObject.GetComponent<NewRockController>().categoryRock 
-        == NewRockController.CategoryRock.pickup)
-        {
-            
-            balance += 50;
-        }
-    }
 
 }
