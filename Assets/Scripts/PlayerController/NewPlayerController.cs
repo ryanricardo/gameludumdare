@@ -111,4 +111,15 @@ public class NewPlayerController : MonoBehaviour
 
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("RockController") 
+        && other.gameObject.GetComponent<NewRockController>().categoryRock 
+        == NewRockController.CategoryRock.pickup)
+        {
+            
+            balance += 50;
+        }
+    }
+
 }

@@ -21,7 +21,7 @@ public class Canvas : MonoBehaviour
     void Update()
     {
         
-        if(playerController.getKeyDownEsc)
+        /*if(playerController.getKeyDownEsc)
         {
             menuOpen ^= true;
             if(menuOpen)
@@ -34,7 +34,7 @@ public class Canvas : MonoBehaviour
                 Time.timeScale = 0;
             }
             
-        }
+        }*/
     }
 
     public void ReniciarFase()

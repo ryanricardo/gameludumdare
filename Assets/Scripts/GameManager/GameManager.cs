@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject panelGameOver, panelLevelCompleted;    
     [SerializeField]public bool gameOver = false, levelCompleted = false;
     [SerializeField]public int currentScene;
-    [SerializeField]private PlayerController playerController;
+    [SerializeField]private NewPlayerController playerController;
 
 
     void Start()
@@ -34,10 +34,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if(playerController.rocksResistancesEnd[0] && playerController.rocksResistancesEnd[1])
-        {
-            gameOver = true;
-        }
 
     }
 

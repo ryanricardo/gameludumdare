@@ -8,11 +8,10 @@ public class CanvasPlayerController : MonoBehaviour
 {
 
     [Header("Components")]
-    [SerializeField]private PlayerController playerController;
+    [SerializeField]private NewPlayerController playerController;
     [SerializeField]private Slider[]         sliderResistance;
     [SerializeField]private GameManager      gameManager;
     [SerializeField]private TextMeshProUGUI  textTimer;
-    [SerializeField]private GameObject       imageMenu;
     [Header("Atributtes Timer")]
     [SerializeField]private float            timer;
     [SerializeField]private float            timeFinished;
@@ -50,8 +49,7 @@ public class CanvasPlayerController : MonoBehaviour
     void ResistenceController()
     {
         sliderResistance[0].interactable = true;
-        sliderResistance[0].value = playerController.rocksResistances[0] +
-        playerController.rocksResistances[1]; 
+        sliderResistance[0].value = playerController.balance;
 
     }
 
