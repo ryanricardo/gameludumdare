@@ -4,62 +4,84 @@ using UnityEngine;
 
 public class NewRockController : MonoBehaviour
 {
-    public enum CaterogyRockController
+    public enum CategoryRock
     {
         controller,
         pickup,
     }
 
-    enum IndexRockController
+    public enum TypeRock
     {
-        rock0,
         rock1,
+        rock2,
     }
 
     [Header("Components")]
-    [SerializeField]private IndexRockController     indexRockController;
-    [SerializeField]public  CaterogyRockController  caterogyRockController;
-    private                 NewPlayerController     playerController;
-    private                 Rigidbody2D             rb2;
-    [Header("Atributtes Pickup")]
-    [SerializeField]private float                   forcePushPickup;
-    [SerializeField]private float                   speedMoveNewPosition;
-    [SerializeField]private bool                    pushOneTime;
-    private                 bool                    moveNewPosition;
-    [Header("Atributtes Controller")]
-    [SerializeField]private bool                    someCountOneTime;
-    [SerializeField]public  float                   resistance;
-
+    [SerializeField]    public  CategoryRock        categoryRock;
+    [SerializeField]    public  TypeRock            typeRock;
+    [HideInInspector]   private NewPlayerController playerController;
+    [HideInInspector]   private Rigidbody2D         rb2;
+    [Header("Atributtes Rocks")]
+    [SerializeField]    private float               forcePushPickup;
+    [SerializeField]    private float               speedMoveNewPosition;
+    [HideInInspector]   private bool                moveNewPosition; 
+    [HideInInspector]   private bool                pushOneTime;
 
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
         playerController = FindObjectOfType<NewPlayerController>();
-        moveNewPosition = false;
-
-        playerController.rocksController.Add(gameObject);
-        playerController.resistances.Add(resistance);
-        
-        transform.position = new Vector2(playerController.transform.position.x, playerController.transform.position.x + 5);
     }
 
     void Update()
     {
-        switch(caterogyRockController)
+        /* Aqui, é o modo em que cada rock controller esta no momento
+        em controller ele mantem o movimento junto do player
+        em pickup, ele esta fora do player. */
+
+        switch(categoryRock)
         {
-            case CaterogyRockController.controller:
-            Movimentation();
+            case CategoryRock.controller:
+                ControllerPush();
+                Movimentation();
             break;
 
-            case CaterogyRockController.pickup:
-            PushThisPickup();
+            case CategoryRock.pickup:
+                PushThisPickup();
             break;
         }
         
     }
 
+    void ControllerPush()
+    {
+        /* Como as duas pedras controller usam o mesmo script foi necessario usar um enum
+        para identificar em cena qual objeto é qual */
+
+        switch(typeRock)
+        {
+            case TypeRock.rock1:
+                if(playerController.balance <= 50)
+                {
+                    categoryRock = CategoryRock.pickup;
+                }
+            break;
+            case TypeRock.rock2:
+                if(playerController.balance <= 0)
+                {
+                    categoryRock = CategoryRock.pickup;
+                }
+            break;
+        }
+    }
+
     void Movimentation()
     {
+
+        /* Aqui de fato é feita a movimentação da pedra.
+        em um primeira estado ele deve ir a posição do player
+        e após chegar na posição do player, deve segui-lo. */
+
         if(moveNewPosition)
         {
             Vector3 newPos = new Vector3(playerController.transform.position.x,
@@ -68,25 +90,26 @@ public class NewRockController : MonoBehaviour
             speedMoveNewPosition);
 
             if(transform.position == newPos)
-            {moveNewPosition = false;}
+            {
+                categoryRock = CategoryRock.controller;
+                moveNewPosition = false;
+            }
         }else 
         {
             transform.position = new Vector2(playerController.transform.position.x, transform.position.y);
-        }
-
-        
+        }   
     }
-
-
-
 
     void PushThisPickup()
     {
 
+        /* Metodo simples para empurra-lo para frente quando o outro metodo
+        verificar que acabou um equilibrio. */
+
         if(!pushOneTime)
         {
             rb2.AddForce(transform.right * forcePushPickup, ForceMode2D.Impulse);
-            someCountOneTime = false;
+
 
             pushOneTime = true;
         }
@@ -94,26 +117,9 @@ public class NewRockController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        switch(caterogyRockController)
+        if(other.gameObject.CompareTag("Player") && categoryRock == CategoryRock.pickup)
         {
-            case CaterogyRockController.controller:
-
-            break;
-
-            case CaterogyRockController.pickup:
-
-                if(other.gameObject.CompareTag("Player"))
-                {
-                    //transform.position = new Vector2(transform.position.x, 
-                    //playerController.transform.position.y + 10);
-                    pushOneTime = false;
-                    moveNewPosition = true;
-                    caterogyRockController = CaterogyRockController.controller;
-                }
-
-            break;
+            moveNewPosition = true;
         }
     }
-
-
 }
