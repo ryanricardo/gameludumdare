@@ -7,21 +7,21 @@ using UnityEngine.SceneManagement;
 public class Canvas : MonoBehaviour
 {
 
-    private PlayerController playerController;
+    private NewPlayerController playerController;
     private bool             menuOpen;
     [SerializeField]private GameObject imageMenu;
     private GameManager gameManager;
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindObjectOfType<NewPlayerController>();
         menuOpen = true;
     }
 
     void Update()
     {
         
-        /*if(playerController.getKeyDownEsc)
+        if(playerController.getKeyDownEsc)
         {
             menuOpen ^= true;
             if(menuOpen)
@@ -34,7 +34,7 @@ public class Canvas : MonoBehaviour
                 Time.timeScale = 0;
             }
             
-        }*/
+        }
     }
 
     public void ReniciarFase()

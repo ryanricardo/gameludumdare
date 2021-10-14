@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if(playerController.balance <= 0)
+        {
+            gameOver = true;
+        }
 
     }
 

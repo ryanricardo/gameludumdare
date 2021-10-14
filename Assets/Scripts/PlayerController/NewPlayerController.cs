@@ -8,14 +8,22 @@ public class NewPlayerController : MonoBehaviour
     [HideInInspector]   private Rigidbody2D                         rb2;
     [SerializeField]    private GameObject[]                        rocks;
     [SerializeField]    private NewRockController.CategoryRock[]    categoriesRock;
+    [SerializeField]    private Transform                           transformCheckGround;
     [Header("Atributtes Movimentation")]
     [SerializeField]    private float                               axisHorizontal;
+    [SerializeField]    private float                               speedMoviment;
+    [SerializeField]    private float                               forceJump;
+    [HideInInspector]   private bool                                checkGround;
     [Header("Atributtes Balance")]
     [SerializeField]    public  float                               balance;
     [SerializeField]    public  float                               speedSubmitBalance;
     [SerializeField]    public  float                               speedAddBalance;
     [SerializeField]    private int                                 maxBalance;
     [SerializeField]    private int                                 countRocks;
+    [Header("Inputs")]
+    [HideInInspector]   public  bool                                getKeyDownE;
+    [HideInInspector]   public  bool                                getKeyDownEsc;
+    [HideInInspector]   public  bool                                getKeyDownSpace;
 
 
 
@@ -31,6 +39,7 @@ public class NewPlayerController : MonoBehaviour
         Movimentation();
         ControllerBalance();
         ControllerDropRock();
+        Inputs();
     }
 
     void Movimentation()
@@ -38,7 +47,17 @@ public class NewPlayerController : MonoBehaviour
         // Movimentação basica envolvendo apenas o axis horizontal e rigidbody2d
 
         axisHorizontal = Input.GetAxis("Horizontal");
-        rb2.velocity = new Vector2(axisHorizontal, rb2.velocity.y);
+        rb2.velocity = new Vector2(axisHorizontal * speedMoviment, rb2.velocity.y);
+
+        checkGround = Physics2D.Linecast(transform.position, transformCheckGround.transform.position, 
+        1 << LayerMask.NameToLayer("Chao"));
+
+        if(getKeyDownSpace && checkGround)
+        {
+            rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
+        }
+
+
     }
 
     void ControllerDropRock()
@@ -49,7 +68,7 @@ public class NewPlayerController : MonoBehaviour
 
         // Vale ressaltar que nos arrays criado o numero 0 NÃO tem valor algum, deve desconsiderar.
         
-        if(Input.GetKeyDown(KeyCode.E))
+        if(getKeyDownE)
         {
             for(int i = 1; i < rocks.Length; i++)
             {
@@ -127,5 +146,31 @@ public class NewPlayerController : MonoBehaviour
 
     }
 
+    void Inputs()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            getKeyDownE = true;
+        }else 
+        {
+            getKeyDownE = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            getKeyDownEsc = true;
+        }else 
+        {
+            getKeyDownEsc = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            getKeyDownSpace = true;
+        }else 
+        {
+            getKeyDownSpace = false;
+        }
+    }
 
 }
