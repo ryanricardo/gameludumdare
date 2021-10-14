@@ -21,9 +21,11 @@ public class NewRockController : MonoBehaviour
     [SerializeField]    public  TypeRock            typeRock;
     [HideInInspector]   private NewPlayerController playerController;
     [HideInInspector]   private Rigidbody2D         rb2;
+    [HideInInspector]   private Vector2             offSet;
     [Header("Atributtes Rocks")]
     [SerializeField]    private float               forcePushPickup;
     [SerializeField]    private float               speedMoveNewPosition;
+    [SerializeField]    private float               followDelay;
     [HideInInspector]   private bool                moveNewPosition; 
     [HideInInspector]   private bool                pushOneTime;
 
@@ -31,6 +33,9 @@ public class NewRockController : MonoBehaviour
     {
         rb2 = GetComponent<Rigidbody2D>();
         playerController = FindObjectOfType<NewPlayerController>();
+        //offSet = transform.position - playerController.transform.position;
+        offSet = new Vector3(transform.position.x - playerController.transform.position.x, 
+        transform.position.y);
     }
 
     void Update()
@@ -96,7 +101,12 @@ public class NewRockController : MonoBehaviour
             }
         }else 
         {
-            transform.position = new Vector2(playerController.transform.position.x, transform.position.y);
+
+            Vector2 posPlayer = new Vector2(playerController.transform.position.x + offSet.x,
+            transform.position.y);
+
+            transform.position = Vector3.Lerp(transform.position, 
+            posPlayer, Time.deltaTime * followDelay);
         }   
     }
 
