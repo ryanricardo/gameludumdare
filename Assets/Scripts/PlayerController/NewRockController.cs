@@ -26,8 +26,8 @@ public class NewRockController : MonoBehaviour
     [SerializeField]    private float               forcePushPickup;
     [SerializeField]    private float               speedMoveNewPosition;
     [SerializeField]    private float               followDelay;
-    [HideInInspector]   private bool                moveNewPosition; 
-    [HideInInspector]   private bool                pushOneTime;
+    [SerializeField]    private bool                pushOneTime;
+    [SerializeField]    private bool                moveNewPosition; 
 
     void Start()
     {
@@ -91,6 +91,7 @@ public class NewRockController : MonoBehaviour
         {
             Vector3 newPos = new Vector3(playerController.transform.position.x,
             playerController.transform.position.y + 2, transform.position.z);
+
             transform.position = Vector2.MoveTowards(transform.position, newPos, 
             speedMoveNewPosition);
 
