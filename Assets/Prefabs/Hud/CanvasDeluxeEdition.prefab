@@ -563,14 +563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a3e61de05ca0b4bbc0a95faf1c4773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  sliderResistance:
-  - {fileID: 4041624993618574038}
-  gameManager: {fileID: 0}
+  sliderBalance: {fileID: 4041624993618574038}
   textTimer: {fileID: 826644623081007573}
-  imageMenu: {fileID: 0}
   timer: 31
-  timeFinished: 0
 --- !u!1 &5383896490950573617
 GameObject:
   m_ObjectHideFlags: 0

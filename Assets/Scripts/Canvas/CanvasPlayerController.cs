@@ -8,19 +8,22 @@ public class CanvasPlayerController : MonoBehaviour
 {
 
     [Header("Components")]
-    [SerializeField]private NewPlayerController playerController;
-    [SerializeField]private Slider[]         sliderResistance;
-    [SerializeField]private GameManager      gameManager;
-    [SerializeField]private TextMeshProUGUI  textTimer;
-    [Header("Atributtes Timer")]
-    [SerializeField]private float            timer;
-    [SerializeField]private float            timeFinished;
+    [SerializeField]    private Slider              sliderBalance;
+    [SerializeField]    private TextMeshProUGUI     textTimer;
+    [HideInInspector]   private GameManager         gameManager;
+    [HideInInspector]   private NewPlayerController playerController;
 
-    private bool    menuOpen;
-    float initialTime;
+    [Header("Atributtes Timer")]
+    [SerializeField]    private float               timer;
+    [HideInInspector]   private float               initialTime;
+
+    [Header("Atributtes Menus")]
+    [HideInInspector]   private bool                menuOpen;
+    
 
     void Start()
     {
+        playerController = FindObjectOfType<NewPlayerController>();
         gameManager = FindObjectOfType<GameManager>();
         gameManager.gameOver = false;
         initialTime = timer;
@@ -32,7 +35,7 @@ public class CanvasPlayerController : MonoBehaviour
         ResistenceController();
         timer -= Time.deltaTime;
         DisplayTime(timer);
-        if(timer <= timeFinished)
+        if(timer <= 0)
         {
             gameManager.gameOver = true;
         }
@@ -48,8 +51,8 @@ public class CanvasPlayerController : MonoBehaviour
 
     void ResistenceController()
     {
-        sliderResistance[0].interactable = true;
-        sliderResistance[0].value = playerController.balance;
+        sliderBalance.interactable = true;
+        sliderBalance.value = playerController.balance;
 
     }
 

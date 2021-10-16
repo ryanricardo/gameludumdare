@@ -7,10 +7,15 @@ using UnityEngine.SceneManagement;
 public class Canvas : MonoBehaviour
 {
 
-    private NewPlayerController playerController;
-    private bool             menuOpen;
-    [SerializeField]private GameObject imageMenu;
-    private GameManager gameManager;
+    [Header("Components")]
+    [HideInInspector]   private NewPlayerController     playerController;
+    [HideInInspector]   private GameManager             gameManager;
+    [SerializeField]    private GameObject              imageMenu;
+
+    [Header("Atributtes Canvas")]
+    [HideInInspector]   private bool                    menuOpen;
+    
+    
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();

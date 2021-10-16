@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target = null;
-    [SerializeField] float stopPos;
-    [SerializeField] private float followDelay = 4;
 
-    private Vector3 offset;
+    [Header("Components")]
+    [SerializeField]    public      Transform       target = null;
+    [HideInInspector]   private     Vector3         offset;
+
+    [Header("Atributtes Camera")]
+    [SerializeField]    private     float           stopPos;
+    [SerializeField]    private     float           followDelay = 4;
+
+   
 
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         offset = transform.position - target.position;
     }
 

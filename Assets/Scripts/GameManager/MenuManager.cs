@@ -13,9 +13,15 @@ public class MenuManager : MonoBehaviour
 
     [Header("Atributtes Scenes")]
     [SerializeField]    private bool            open;
+    [SerializeField]    private bool            unityEditor;
 
     private void Start()
     {
+        if(unityEditor)
+        {
+            PlayerPrefs.SetInt("ScenesPassed", 0);
+        }
+        
         Debug.Log(PlayerPrefs.GetInt("ScenesPassed"));
         for(int i = 0; i < scenesInMenu.Length; i++)
         {

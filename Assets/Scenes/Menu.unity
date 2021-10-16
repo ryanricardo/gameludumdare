@@ -450,6 +450,7 @@ MonoBehaviour:
   - {fileID: 2117613877}
   - {fileID: 716468186}
   open: 0
+  unityEditor: 0
 --- !u!4 &131127620
 Transform:
   m_ObjectHideFlags: 0

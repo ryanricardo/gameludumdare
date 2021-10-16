@@ -5,14 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject panelGameOver, panelLevelCompleted;    
-    [SerializeField]public bool gameOver = false, levelCompleted = false;
-    [SerializeField]public int currentScene;
-    [SerializeField]private NewPlayerController playerController;
+    [Header("Components")]
+    [SerializeField] private GameObject             panelGameOver,      panelLevelCompleted;  
+    [HideInInspector]private NewPlayerController    playerController;
+
+    [Header("Atributtes Manager")]
+    [HideInInspector]public bool    gameOver = false, levelCompleted = false;
+    [HideInInspector]public int     currentScene;
+    
 
 
     void Start()
     {
+        playerController = FindObjectOfType<NewPlayerController>();
         currentScene = SceneManager.GetActiveScene().buildIndex;
         Time.timeScale = 1;
     }
