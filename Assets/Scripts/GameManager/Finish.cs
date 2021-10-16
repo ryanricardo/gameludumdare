@@ -16,8 +16,8 @@ public class Finish : MonoBehaviour
         if(other.gameObject.CompareTag("Player") )
         {            
             PlayerPrefs.SetInt("ScenesPassed", gm.currentScene);
-            GameObject rocksPlayer0 = GameObject.FindGameObjectWithTag("PedraController 0");
-            GameObject rocksPlayer1 = GameObject.FindGameObjectWithTag("PedraController 1");  
+            GameObject rocksPlayer0 = GameObject.FindGameObjectWithTag("RockController 1");
+            GameObject rocksPlayer1 = GameObject.FindGameObjectWithTag("RockController 2");  
             gm.levelCompleted = true;   
             Destroy(rocksPlayer0);
             Destroy(rocksPlayer1);

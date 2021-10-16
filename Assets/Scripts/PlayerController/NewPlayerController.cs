@@ -16,6 +16,7 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    private float                               forceJump;
     [HideInInspector]   private float                               axisHorizontal;
     [HideInInspector]   private bool                                checkGround;
+    [HideInInspector]   public  bool                                isRight;
 
     [Header("Atributtes Balance")]
 
@@ -43,6 +44,7 @@ public class NewPlayerController : MonoBehaviour
             rocks[i] = GameObject.FindGameObjectWithTag("RockController " + i);
         }
         balance = 100;
+        isRight = true;
     }
 
     void Update()
@@ -68,7 +70,24 @@ public class NewPlayerController : MonoBehaviour
             rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
         }
 
+        if(axisHorizontal < 0 && isRight)
+        {
+            Flip();
+            isRight = false;
+        }else if(axisHorizontal > 0 && !isRight)
+        {
+            Flip();
+            isRight = true;
+        }
 
+
+    }
+
+    void Flip()
+    {
+        float scale = transform.localScale.x;
+        scale *= -1;
+        transform.localScale = new Vector2(scale, transform.localScale.y);
     }
 
     void ControllerDropRock()
