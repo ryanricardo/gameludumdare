@@ -95,7 +95,7 @@ public class NewRockController : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, newPos, 
             speedMoveNewPosition);
 
-            if(transform.position == newPos)
+            if(transform.position.y == newPos.y)
             {
                 categoryRock = CategoryRock.controller;
                 moveNewPosition = false;

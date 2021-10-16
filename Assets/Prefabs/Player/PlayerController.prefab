@@ -100,7 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transformCheckGround: {fileID: 2169278968006378522}
   speedMoviment: 5
-  forceJump: 10
+  forceJump: 20
+  isRight: 0
   speedSubmitBalance: 3
   speedAddBalance: 5
   balance: 100
