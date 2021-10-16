@@ -5,21 +5,27 @@ using UnityEngine;
 public class NewPlayerController : MonoBehaviour
 {
     [Header("Components")]
-    [HideInInspector]   private Rigidbody2D                         rb2;
-    [SerializeField]    private GameObject[]                        rocks;
-    [SerializeField]    private NewRockController.CategoryRock[]    categoriesRock;
     [SerializeField]    private Transform                           transformCheckGround;
+    [HideInInspector]   private NewRockController.CategoryRock[]    categoriesRock;
+    [HideInInspector]   private Rigidbody2D                         rb2;
+    [HideInInspector]   private GameObject[]                        rocks;
+
     [Header("Atributtes Movimentation")]
-    [SerializeField]    private float                               axisHorizontal;
+    
     [SerializeField]    private float                               speedMoviment;
     [SerializeField]    private float                               forceJump;
+    [HideInInspector]   private float                               axisHorizontal;
     [HideInInspector]   private bool                                checkGround;
+
     [Header("Atributtes Balance")]
-    [SerializeField]    public  float                               balance;
+
     [SerializeField]    public  float                               speedSubmitBalance;
     [SerializeField]    public  float                               speedAddBalance;
-    [SerializeField]    private int                                 maxBalance;
-    [SerializeField]    private int                                 countRocks;
+    [HideInInspector]   private int                                 maxBalance;
+    [HideInInspector]   private int                                 countRocks;
+    [HideInInspector]   public  float                               balance;
+
+
     [Header("Inputs")]
     [HideInInspector]   public  bool                                getKeyDownE;
     [HideInInspector]   public  bool                                getKeyDownEsc;
@@ -30,7 +36,12 @@ public class NewPlayerController : MonoBehaviour
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
-
+        categoriesRock = new NewRockController.CategoryRock[3];
+        rocks = new GameObject[3];
+        for(int i = 1; i < rocks.Length; i++)
+        {
+            rocks[i] = GameObject.FindGameObjectWithTag("RockController " + i);
+        }
         balance = 100;
     }
 

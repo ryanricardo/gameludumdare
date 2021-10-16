@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5033955938827162787}
   m_Layer: 0
   m_Name: RockController 2
-  m_TagString: PedraController 1
+  m_TagString: RockController 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

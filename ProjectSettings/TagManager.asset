@@ -7,13 +7,12 @@ TagManager:
   - porta
   - fim
   - pedra
-  - PedraController 0
-  - PedraController 1
   - Pickup
   - Chave
   - Chave 1
   - Chave 2
-  - RockController
+  - RockController 1
+  - RockController 2
   layers:
   - Default
   - TransparentFX

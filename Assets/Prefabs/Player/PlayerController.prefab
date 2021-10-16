@@ -98,20 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fac0f1cf08debd428afc87ba9f4a505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  categoriesRock: 000000000000000000000000
   transformCheckGround: {fileID: 2169278968006378522}
-  axisHorizontal: 0
   speedMoviment: 5
-  forceJump: 5
-  balance: 100
+  forceJump: 10
   speedSubmitBalance: 3
   speedAddBalance: 5
-  maxBalance: 0
-  countRocks: 0
+  balance: 100
   getKeyDownE: 0
   getKeyDownEsc: 0
   getKeyDownSpace: 0
