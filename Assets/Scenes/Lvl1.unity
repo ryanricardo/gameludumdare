@@ -612,7 +612,7 @@ PrefabInstance:
     - target: {fileID: 8011761645848096436, guid: 4b4feb11ea97e9d90b687e802b569bac,
         type: 3}
       propertyPath: timer
-      value: 31
+      value: 61
       objectReference: {fileID: 0}
     - target: {fileID: 8011761645848096436, guid: 4b4feb11ea97e9d90b687e802b569bac,
         type: 3}
@@ -1414,7 +1414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 856177373}
-  stopPos: 5
+  stopPos: 6
   followDelay: 2
 --- !u!1001 &881753297
 PrefabInstance:
