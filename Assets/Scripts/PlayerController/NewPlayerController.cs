@@ -6,6 +6,8 @@ public class NewPlayerController : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField]    private Transform                           transformCheckGround;
+    [SerializeField]    private AudioSource                         source;
+    [SerializeField]    private AudioClip                           clipJump;
     [HideInInspector]   private NewRockController.CategoryRock[]    categoriesRock;
     [HideInInspector]   private Rigidbody2D                         rb2;
     [HideInInspector]   private GameObject[]                        rocks;
@@ -68,6 +70,7 @@ public class NewPlayerController : MonoBehaviour
         if(getKeyDownSpace && checkGround)
         {
             rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
+            source.PlayOneShot(clipJump);
         }
 
         if(axisHorizontal < 0 && isRight)
