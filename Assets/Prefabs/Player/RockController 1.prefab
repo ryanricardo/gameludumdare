@@ -138,6 +138,6 @@ MonoBehaviour:
   typeRock: 0
   forcePushPickup: 4
   speedMoveNewPosition: 0.2
-  followDelay: 15
+  followDelay: 35
   pushOneTime: 0
   moveNewPosition: 0
