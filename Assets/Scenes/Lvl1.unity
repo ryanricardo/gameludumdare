@@ -8324,6 +8324,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
+      propertyPath: imageRestart
+      value: 
+      objectReference: {fileID: 6544186093585732556}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
       propertyPath: panelGameOver
       value: 
       objectReference: {fileID: 775694741}
@@ -8597,6 +8602,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088399a65df43e744ad57cf3b7801f83, type: 3}
+--- !u!1 &6544186093585732556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7932106871937751282, guid: 088399a65df43e744ad57cf3b7801f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 6544186093585732555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7341852635340183051
 PrefabInstance:
   m_ObjectHideFlags: 0

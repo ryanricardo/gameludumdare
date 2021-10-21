@@ -838,6 +838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelGameOver: {fileID: 1452739333}
   panelLevelCompleted: {fileID: 1452739332}
+  imageRestart: {fileID: 1452739335}
   gameOver: 0
   levelCompleted: 0
   currentScene: 0
@@ -1275,6 +1276,12 @@ GameObject:
 --- !u!1 &1452739334 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6544186094124780807, guid: 088399a65df43e744ad57cf3b7801f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 1452739331}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1452739335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7932106871937751282, guid: 088399a65df43e744ad57cf3b7801f83,
     type: 3}
   m_PrefabInstance: {fileID: 1452739331}
   m_PrefabAsset: {fileID: 0}

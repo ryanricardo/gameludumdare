@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private GameObject             panelGameOver,      panelLevelCompleted;  
+    [SerializeField] private GameObject             imageRestart;   
     [HideInInspector]private NewPlayerController    playerController;
 
     [Header("Atributtes Manager")]
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     {
         playerController = FindObjectOfType<NewPlayerController>();
         currentScene = SceneManager.GetActiveScene().buildIndex;
+        imageRestart.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
 
@@ -28,6 +30,12 @@ public class GameManager : MonoBehaviour
             panelLevelCompleted.SetActive(true);
             Time.timeScale = 0;
             LoadScene(currentScene + 1, 1.5f);
+        }
+
+        if(playerController.getKeyDownR)
+        {
+            LoadScene(currentScene, 1.5f);
+            imageRestart.gameObject.SetActive(true);
         }
 
         if (gameOver){

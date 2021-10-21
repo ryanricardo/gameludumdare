@@ -33,6 +33,7 @@ public class NewPlayerController : MonoBehaviour
     [HideInInspector]   public  bool                                getKeyDownE;
     [HideInInspector]   public  bool                                getKeyDownEsc;
     [HideInInspector]   public  bool                                getKeyDownSpace;
+    [HideInInspector]   public  bool                                getKeyDownR;
 
 
 
@@ -65,7 +66,7 @@ public class NewPlayerController : MonoBehaviour
         rb2.velocity = new Vector2(axisHorizontal * speedMoviment, rb2.velocity.y);
         checkGround = Physics2D.Linecast(transform.position, transformCheckGround.transform.position, 
         1 << LayerMask.NameToLayer("Chao"));
-        
+
 
         if(getKeyDownSpace && checkGround)
         {
@@ -203,6 +204,14 @@ public class NewPlayerController : MonoBehaviour
         }else 
         {
             getKeyDownSpace = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            getKeyDownR = true;
+        }else 
+        {
+            getKeyDownR = false;
         }
     }
 
