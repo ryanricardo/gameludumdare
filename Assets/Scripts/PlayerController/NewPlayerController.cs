@@ -8,6 +8,7 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    private Transform                           transformCheckGround;
     [SerializeField]    private AudioSource                         source;
     [SerializeField]    private AudioClip                           clipJump;
+    [SerializeField]    private AudioClip                           clipRun;
     [HideInInspector]   private NewRockController.CategoryRock[]    categoriesRock;
     [HideInInspector]   private Rigidbody2D                         rb2;
     [HideInInspector]   private GameObject[]                        rocks;
@@ -63,7 +64,10 @@ public class NewPlayerController : MonoBehaviour
 
         axisHorizontal = Input.GetAxis("Horizontal");
         rb2.velocity = new Vector2(axisHorizontal * speedMoviment, rb2.velocity.y);
-
+        if(axisHorizontal != 0)
+        {
+            source.PlayOneShot(clipRun);
+        }
         checkGround = Physics2D.Linecast(transform.position, transformCheckGround.transform.position, 
         1 << LayerMask.NameToLayer("Chao"));
 
