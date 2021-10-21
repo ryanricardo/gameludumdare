@@ -107,7 +107,7 @@ MonoBehaviour:
   forceJump: 20
   isRight: 0
   speedSubmitBalance: 3
-  speedAddBalance: 5
+  speedAddBalance: 6
   balance: 100
   getKeyDownE: 0
   getKeyDownEsc: 0
