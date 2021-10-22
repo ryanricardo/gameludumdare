@@ -89,9 +89,18 @@ public class NewPlayerController : MonoBehaviour
 
     void Flip()
     {
-        float scale = transform.localScale.x;
-        scale *= -1;
-        transform.localScale = new Vector2(scale, transform.localScale.y);
+        float scl = transform.localScale.x;
+        scl *= -1;
+        transform.localScale = new Vector2(scl, transform.localScale.y);
+
+        for(int i = 1; i < rocks.Length; i++)
+        {
+            float scale = rocks[i].transform.localScale.x;
+            scale *= -1;
+
+            rocks[i].transform.localScale = 
+              new Vector2(scale, rocks[i].transform.localScale.y);
+        }
     }
 
     void ControllerDropRock()
