@@ -8,6 +8,7 @@ public class BotaocomTimer : MonoBehaviour
     public Animator anim;
     public Chave chave;
     public bool funciona=false;
+    public float tempo;
 
     void Update()
     {
@@ -36,7 +37,7 @@ public class BotaocomTimer : MonoBehaviour
 
      private IEnumerator Abrir()
      {
-         yield return new WaitForSeconds(5f);
+         yield return new WaitForSeconds(tempo);
          ativo=false;
          anim.SetTrigger("Normal");
      }
