@@ -80,7 +80,6 @@ public class NewPlayerController : MonoBehaviour
         checkGround[1] && getKeyDownSpace ||
         checkGround[2] && getKeyDownSpace)
         {
-            Debug.Log("Jump");
             rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
             source.PlayOneShot(clipJump);
         }
