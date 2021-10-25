@@ -5,7 +5,7 @@ using UnityEngine;
 public class NewPlayerController : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField]    private Transform                           transformCheckGround;
+    [SerializeField]    private Transform[]                         transformChecksGround;
     [SerializeField]    private AudioSource                         source;
     [SerializeField]    private AudioClip                           clipJump;
     [HideInInspector]   private NewRockController.CategoryRock[]    categoriesRock;
@@ -17,7 +17,7 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    private float                               speedMoviment;
     [SerializeField]    private float                               forceJump;
     [HideInInspector]   public  float                               axisHorizontal;
-    [HideInInspector]   private bool                                checkGround;
+    [HideInInspector]   private bool[]                              checkGround;
     [HideInInspector]   public  bool                                isRight;
     [HideInInspector]   public  bool                                dropRock;
 
@@ -44,6 +44,7 @@ public class NewPlayerController : MonoBehaviour
         rb2 = GetComponent<Rigidbody2D>();
         categoriesRock = new NewRockController.CategoryRock[3];
         rocks = new GameObject[3];
+        checkGround = new bool[3];
         for(int i = 1; i < rocks.Length; i++)
         {
             rocks[i] = GameObject.FindGameObjectWithTag("RockController " + i);
@@ -66,12 +67,20 @@ public class NewPlayerController : MonoBehaviour
 
         axisHorizontal = Input.GetAxis("Horizontal");
         rb2.velocity = new Vector2(axisHorizontal * speedMoviment, rb2.velocity.y);
-        checkGround = Physics2D.Linecast(transform.position, transformCheckGround.transform.position, 
+
+        checkGround[0] = Physics2D.Linecast(transform.position, transformChecksGround[0].transform.position, 
+        1 << LayerMask.NameToLayer("Chao"));
+        checkGround[1] = Physics2D.Linecast(transform.position, transformChecksGround[1].transform.position, 
+        1 << LayerMask.NameToLayer("Chao"));
+        checkGround[2] = Physics2D.Linecast(transform.position, transformChecksGround[2].transform.position, 
         1 << LayerMask.NameToLayer("Chao"));
 
 
-        if(getKeyDownSpace && checkGround)
+        if(checkGround[0] && getKeyDownSpace || 
+        checkGround[1] && getKeyDownSpace ||
+        checkGround[2] && getKeyDownSpace)
         {
+            Debug.Log("Jump");
             rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
             source.PlayOneShot(clipJump);
         }
