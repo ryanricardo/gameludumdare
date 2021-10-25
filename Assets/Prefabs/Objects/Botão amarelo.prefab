@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7313559685587971354}
   - component: {fileID: 7073618372421011888}
   - component: {fileID: 4678354573665335306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Bot\xE3o amarelo"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,3 +256,4 @@ MonoBehaviour:
   anim: {fileID: 7073618372421011888}
   chave: {fileID: 0}
   funciona: 0
+  tempo: 0

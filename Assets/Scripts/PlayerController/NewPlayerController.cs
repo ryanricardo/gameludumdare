@@ -13,7 +13,6 @@ public class NewPlayerController : MonoBehaviour
     [HideInInspector]   private GameObject[]                        rocks;
 
     [Header("Atributtes Movimentation")]
-    
     [SerializeField]    private float                               speedMoviment;
     [SerializeField]    private float                               forceJump;
     [HideInInspector]   public  float                               axisHorizontal;
@@ -22,7 +21,6 @@ public class NewPlayerController : MonoBehaviour
     [HideInInspector]   public  bool                                dropRock;
 
     [Header("Atributtes Balance")]
-
     [SerializeField]    public  float                               speedSubmitBalance;
     [SerializeField]    public  float                               speedAddBalance;
     [HideInInspector]   private int                                 maxBalance;
@@ -202,37 +200,11 @@ public class NewPlayerController : MonoBehaviour
 
     void Inputs()
     {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            getKeyDownE = true;
-        }else 
-        {
-            getKeyDownE = false;
-        }
+        getKeyDownE = Input.GetKeyDown(KeyCode.E) ? getKeyDownE = true: getKeyDownE = false; 
+        getKeyDownEsc = Input.GetKeyDown(KeyCode.Escape) ? getKeyDownEsc = true: getKeyDownEsc = false; 
+        getKeyDownSpace = Input.GetKeyDown(KeyCode.Space) ? getKeyDownSpace = true: getKeyDownSpace = false; 
+        getKeyDownR = Input.GetKeyDown(KeyCode.R) ? getKeyDownR = true: getKeyDownR = false; 
 
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            getKeyDownEsc = true;
-        }else 
-        {
-            getKeyDownEsc = false;
-        }
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            getKeyDownSpace = true;
-        }else 
-        {
-            getKeyDownSpace = false;
-        }
-
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            getKeyDownR = true;
-        }else 
-        {
-            getKeyDownR = false;
-        }
     }
 
 }

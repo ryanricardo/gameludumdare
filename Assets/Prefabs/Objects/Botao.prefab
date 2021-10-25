@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -635613905474240773}
   - component: {fileID: 7582695650555432749}
   - component: {fileID: -1265700462837634169}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Botao
   m_TagString: Untagged
   m_Icon: {fileID: 0}

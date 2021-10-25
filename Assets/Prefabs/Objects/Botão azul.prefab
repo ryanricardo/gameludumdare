@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3597718989336832748}
   - component: {fileID: 3943424831010836038}
   - component: {fileID: 1416764145267136293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Bot\xE3o azul"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,3 +173,4 @@ MonoBehaviour:
   anim: {fileID: 3943424831010836038}
   chave: {fileID: 0}
   funciona: 0
+  tempo: 0
