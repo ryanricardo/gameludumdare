@@ -16,7 +16,7 @@ public class NewPlayerController : MonoBehaviour
     
     [SerializeField]    private float                               speedMoviment;
     [SerializeField]    private float                               forceJump;
-    [HideInInspector]   private float                               axisHorizontal;
+    [HideInInspector]   public  float                               axisHorizontal;
     [HideInInspector]   private bool                                checkGround;
     [HideInInspector]   public  bool                                isRight;
 

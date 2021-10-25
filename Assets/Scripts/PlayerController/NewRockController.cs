@@ -116,10 +116,12 @@ public class NewRockController : MonoBehaviour
 
         /* Metodo simples para empurra-lo para frente quando o outro metodo
         verificar que acabou um equilibrio. */
-        forcePushPickup  = playerController.isRight ? forcePushPickup : -forcePushPickup;
+        
 
         if(!pushOneTime)
         {
+            forcePushPickup = playerController.axisHorizontal < 0 ? Mathf.Abs(forcePushPickup) : -forcePushPickup;
+            
             rb2.AddForce(playerController.transform.right * forcePushPickup, ForceMode2D.Impulse);
 
             pushOneTime = true;
