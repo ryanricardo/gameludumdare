@@ -156,5 +156,10 @@ public class NewRockController : MonoBehaviour
             Debug.Log("Agora esta em " + playerController.balance);
             categoryRock = CategoryRock.controller;
         }
+
+        if(other.gameObject.CompareTag("Plataform") && categoryRock == CategoryRock.controller)
+        {
+            categoryRock = CategoryRock.pickup;
+        }
     }
 }
