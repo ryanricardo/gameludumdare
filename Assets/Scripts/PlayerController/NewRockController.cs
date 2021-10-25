@@ -22,6 +22,7 @@ public class NewRockController : MonoBehaviour
     [HideInInspector]   private NewPlayerController playerController;
     [HideInInspector]   private Rigidbody2D         rb2;
     [HideInInspector]   private Vector2             offSet;
+
     [Header("Atributtes Rocks")]
     [SerializeField]    private float               forcePushPickup;
     [SerializeField]    private float               speedMoveNewPosition;
@@ -120,8 +121,16 @@ public class NewRockController : MonoBehaviour
 
         if(!pushOneTime)
         {
-            forcePushPickup = playerController.axisHorizontal < 0 ? Mathf.Abs(forcePushPickup) : -forcePushPickup;
-            
+            if(playerController.dropRock)
+            {
+                forcePushPickup = playerController.isRight ? Mathf.Abs(forcePushPickup) : -forcePushPickup;
+                playerController.dropRock = false;
+            }else 
+            {   
+                forcePushPickup = playerController.isRight ? -forcePushPickup : Mathf.Abs(forcePushPickup);
+                 
+            }
+
             rb2.AddForce(playerController.transform.right * forcePushPickup, ForceMode2D.Impulse);
 
             pushOneTime = true;

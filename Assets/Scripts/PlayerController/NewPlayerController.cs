@@ -9,7 +9,7 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    private AudioSource                         source;
     [SerializeField]    private AudioClip                           clipJump;
     [HideInInspector]   private NewRockController.CategoryRock[]    categoriesRock;
-    [HideInInspector]   private Rigidbody2D                         rb2;
+    [HideInInspector]   public  Rigidbody2D                         rb2;
     [HideInInspector]   private GameObject[]                        rocks;
 
     [Header("Atributtes Movimentation")]
@@ -19,6 +19,7 @@ public class NewPlayerController : MonoBehaviour
     [HideInInspector]   public  float                               axisHorizontal;
     [HideInInspector]   private bool                                checkGround;
     [HideInInspector]   public  bool                                isRight;
+    [HideInInspector]   public  bool                                dropRock;
 
     [Header("Atributtes Balance")]
 
@@ -39,6 +40,7 @@ public class NewPlayerController : MonoBehaviour
 
     void Start()
     {
+        dropRock = false;
         rb2 = GetComponent<Rigidbody2D>();
         categoriesRock = new NewRockController.CategoryRock[3];
         rocks = new GameObject[3];
@@ -119,6 +121,7 @@ public class NewPlayerController : MonoBehaviour
                 {
                     rocks[i].GetComponent<NewRockController>().categoryRock 
                     = NewRockController.CategoryRock.pickup;
+                    dropRock = true;
                     return;
                 }
             }

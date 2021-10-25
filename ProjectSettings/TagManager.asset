@@ -13,6 +13,8 @@ TagManager:
   - Chave 2
   - RockController 1
   - RockController 2
+  - Undefined
+  - Plataform
   layers:
   - Default
   - TransparentFX
