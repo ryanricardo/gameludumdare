@@ -190,7 +190,7 @@ public class NewPlayerController : MonoBehaviour
         if(axisHorizontal != 0 && balance > 0)
         {
             balance -= speedSubmitBalance * Time.fixedDeltaTime;
-        }else if(balance < maxBalance)
+        }else if(balance < maxBalance && axisHorizontal == 0)
         {
             balance += speedAddBalance * Time.fixedDeltaTime;
         }

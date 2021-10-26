@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
         if (gameOver){
             panelGameOver.SetActive(true);
             StartCoroutine(StopTimeDelay());
-            Debug.Log(Time.timeScale);
             if (Input.anyKeyDown){
                 gameOver = false;
                 LoadScene(currentScene, 1);

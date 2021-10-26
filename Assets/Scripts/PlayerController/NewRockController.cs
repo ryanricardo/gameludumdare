@@ -29,9 +29,17 @@ public class NewRockController : MonoBehaviour
     [SerializeField]    private float               followDelay;
     [SerializeField]    private bool                pushOneTime;
     [SerializeField]    private bool                moveNewPosition; 
+    [HideInInspector]   private bool[]              changeLeft;
+    [HideInInspector]   private bool[]              changeRight;
 
     void Start()
     {
+        changeLeft = new bool[2];
+        changeRight = new bool[2];
+        changeRight[0] = false;
+        changeLeft[0] = true;
+        changeRight[1] = false;
+        changeLeft[1] = true;
         rb2 = GetComponent<Rigidbody2D>();
         playerController = FindObjectOfType<NewPlayerController>();
         //offSet = transform.position - playerController.transform.position;
@@ -117,20 +125,39 @@ public class NewRockController : MonoBehaviour
 
         /* Metodo simples para empurra-lo para frente quando o outro metodo
         verificar que acabou um equilibrio. */
-        
+            if(playerController.dropRock)
+            {
+                if(playerController.isRight && changeRight[0])
+                {
+                    forcePushPickup = Mathf.Abs(forcePushPickup);
+                    changeLeft[0] = true;
+                    changeRight[0] = false;
+                }else if(!playerController.isRight && changeLeft[0])
+                {
+                    forcePushPickup = -forcePushPickup;
+                    changeRight[0] = true;
+                    changeLeft[0] = false;
+                }
+                playerController.dropRock = false;
+            }else 
+            {
+                if(playerController.isRight && changeRight[1])
+                {
+                    forcePushPickup = -forcePushPickup;
+                    changeLeft[1] = true;
+                    changeRight[1] = false;
+                }else if(!playerController.isRight && changeLeft[1])
+                {
+                    forcePushPickup = Mathf.Abs(forcePushPickup);
+                    changeRight[1] = true;
+                    changeLeft[1] = false;
+                }
+            }
+
 
         if(!pushOneTime)
         {
-            if(playerController.dropRock)
-            {
-                forcePushPickup = playerController.isRight ? Mathf.Abs(forcePushPickup) : -forcePushPickup;
-                playerController.dropRock = false;
-            }else 
-            {   
-                forcePushPickup = playerController.isRight ? -forcePushPickup : Mathf.Abs(forcePushPickup);
-                 
-            }
-
+            
             rb2.AddForce(playerController.transform.right * forcePushPickup, ForceMode2D.Impulse);
 
             pushOneTime = true;
@@ -141,10 +168,8 @@ public class NewRockController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player") && categoryRock == CategoryRock.pickup)
         {
-            Debug.Log("Touch");
             moveNewPosition = true;
             pushOneTime = false;
-            Debug.Log("O equilibrio esta em " + playerController.balance);
             if(playerController.balance < 30)
             {
                 playerController.balance += (100 - playerController.balance) / 1.3f;
@@ -153,7 +178,6 @@ public class NewRockController : MonoBehaviour
                 playerController.balance += (100 - playerController.balance) / 2;
             }
 
-            Debug.Log("Agora esta em " + playerController.balance);
             categoryRock = CategoryRock.controller;
         }
 
