@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
 
         if (gameOver){
             panelGameOver.SetActive(true);
-            Time.timeScale = 0;
+            StartCoroutine(StopTimeDelay());
+            Debug.Log(Time.timeScale);
             if (Input.anyKeyDown){
                 gameOver = false;
                 LoadScene(currentScene, 1);
@@ -57,6 +58,12 @@ public class GameManager : MonoBehaviour
     IEnumerator SceneDelay(int SceneNumber, float delay){
         yield return new WaitForSecondsRealtime(delay);
         SceneManager.LoadScene(SceneNumber);
+    }
+
+    IEnumerator StopTimeDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale -= 0.010f;
     }
 
     public void LoadScene(int SceneNumber, float delay = 0){

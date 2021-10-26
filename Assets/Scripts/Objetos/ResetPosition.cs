@@ -5,8 +5,8 @@ using UnityEngine;
 public class ResetPosition : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField]private PlayerController playerController;
-    [SerializeField]private GameManager      gameManager;
+    [HideInInspector]private PlayerController playerController;
+    [HideInInspector]private GameManager      gameManager;
 
     void Start()
     {
