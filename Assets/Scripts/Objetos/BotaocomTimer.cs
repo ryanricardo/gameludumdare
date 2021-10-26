@@ -20,7 +20,8 @@ public class BotaocomTimer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-       if(col.gameObject.tag=="Player" && funciona|| col.gameObject.tag=="Pickup" && funciona)
+       if(col.gameObject.tag=="Player" && funciona|| col.gameObject.tag=="RockController 1" 
+        || col.gameObject.tag == "RockController 2"  && funciona)
        {
            ativo=true;
            anim.SetTrigger("Pre");
@@ -29,7 +30,8 @@ public class BotaocomTimer : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-       if(col.gameObject.tag=="Player" || col.gameObject.tag=="Pickup")
+       if(col.gameObject.tag=="Player" || col.gameObject.tag=="RockController 1" 
+        || col.gameObject.tag == "RockController 2")
        {
            StartCoroutine("Abrir");
        } 

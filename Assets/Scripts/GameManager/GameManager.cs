@@ -62,8 +62,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator StopTimeDelay()
     {
-        yield return new WaitForSeconds(0.5f);
-        Time.timeScale -= 0.010f;
+        yield return new WaitForSeconds(0.0001f);
+        Time.timeScale = Time.timeScale > 0.1f ? Time.timeScale -= 0.017f : Time.timeScale = 0;
     }
 
     public void LoadScene(int SceneNumber, float delay = 0){
