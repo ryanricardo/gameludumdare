@@ -35,7 +35,7 @@ public class NewRockController : MonoBehaviour
     void Start()
     {
         changeLeft = new bool[2];
-        changeRight = new bool[2];
+        changeRight  = new bool[2];
         changeRight[0] = false;
         changeLeft[0] = true;
         changeRight[1] = false;
