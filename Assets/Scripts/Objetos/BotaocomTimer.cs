@@ -20,7 +20,7 @@ public class BotaocomTimer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-       if(col.gameObject.tag=="Player" && funciona|| col.gameObject.tag=="RockController 1" 
+       if(col.gameObject.tag=="Player" && funciona|| col.gameObject.tag=="RockController 1" && funciona 
         || col.gameObject.tag == "RockController 2"  && funciona)
        {
            ativo=true;
