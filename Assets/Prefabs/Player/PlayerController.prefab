@@ -113,7 +113,7 @@ MonoBehaviour:
   axisHorizontal: 0
   isRight: 0
   dropRock: 0
-  speedSubmitBalance: 3
+  speedSubmitBalance: 2
   speedAddBalance: 10
   balance: 100
   getKeyDownE: 0
