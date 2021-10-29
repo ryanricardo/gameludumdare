@@ -29,17 +29,9 @@ public class NewRockController : MonoBehaviour
     [SerializeField]    private float               followDelay;
     [SerializeField]    private bool                pushOneTime;
     [SerializeField]    private bool                moveNewPosition; 
-    [HideInInspector]   private bool[]              changeLeft;
-    [HideInInspector]   private bool[]              changeRight;
 
     void Start()
     {
-        changeLeft = new bool[2];
-        changeRight  = new bool[2];
-        changeRight[0] = false;
-        changeLeft[0] = true;
-        changeRight[1] = false;
-        changeLeft[1] = true;
         rb2 = GetComponent<Rigidbody2D>();
         playerController = FindObjectOfType<NewPlayerController>();
         //offSet = transform.position - playerController.transform.position;
@@ -125,40 +117,29 @@ public class NewRockController : MonoBehaviour
 
         /* Metodo simples para empurra-lo para frente quando o outro metodo
         verificar que acabou um equilibrio. */
+        if(!pushOneTime)
+        {
             if(playerController.dropRock)
             {
-                if(playerController.isRight && changeRight[0])
+                if(playerController.isRight)
                 {
-                    forcePushPickup = Mathf.Abs(forcePushPickup);
-                    changeLeft[0] = true;
-                    changeRight[0] = false;
-                }else if(!playerController.isRight && changeLeft[0])
+                    rb2.AddForce(Vector2.right * forcePushPickup, ForceMode2D.Impulse);
+                }else if(!playerController.isRight)
                 {
-                    forcePushPickup = -forcePushPickup;
-                    changeRight[0] = true;
-                    changeLeft[0] = false;
+                    rb2.AddForce(Vector2.left * forcePushPickup, ForceMode2D.Impulse);
                 }
                 playerController.dropRock = false;
             }else 
             {
-                if(playerController.isRight && changeRight[1])
+                if(playerController.isRight)
                 {
-                    forcePushPickup = -forcePushPickup;
-                    changeLeft[1] = true;
-                    changeRight[1] = false;
-                }else if(!playerController.isRight && changeLeft[1])
+                    rb2.AddForce(Vector2.left * forcePushPickup, ForceMode2D.Impulse);
+                }else if(!playerController.isRight)
                 {
-                    forcePushPickup = Mathf.Abs(forcePushPickup);
-                    changeRight[1] = true;
-                    changeLeft[1] = false;
+                     
+                    rb2.AddForce(Vector2.right * forcePushPickup, ForceMode2D.Impulse);
                 }
             }
-
-
-        if(!pushOneTime)
-        {
-            
-            rb2.AddForce(playerController.transform.right * forcePushPickup, ForceMode2D.Impulse);
 
             pushOneTime = true;
         }
