@@ -147,6 +147,7 @@ public class NewRockController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        
         if(other.gameObject.CompareTag("Player") && categoryRock == CategoryRock.pickup)
         {
             moveNewPosition = true;
@@ -167,6 +168,25 @@ public class NewRockController : MonoBehaviour
         {
             Debug.Log("a");
             playerController.PushCollisionRocks();
+        }
+
+        if(other.gameObject.CompareTag("Plataform Push") &&
+        categoryRock == CategoryRock.controller )
+        {
+            switch(typeRock)
+            {
+                case TypeRock.rock1:
+                categoryRock = CategoryRock.pickup;
+                break;
+
+                case TypeRock.rock2:
+                if(playerController.rocks[1].GetComponent<NewRockController>().categoryRock
+                == CategoryRock.pickup)
+                {
+                    categoryRock = CategoryRock.pickup;
+                }
+                break;
+            }
         }
     }
 }

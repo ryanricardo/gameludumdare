@@ -15,6 +15,7 @@ TagManager:
   - RockController 2
   - Undefined
   - Plataform
+  - Plataform Push
   layers:
   - Default
   - TransparentFX

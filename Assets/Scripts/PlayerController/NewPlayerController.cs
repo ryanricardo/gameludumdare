@@ -10,7 +10,7 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    private AudioClip                           clipJump;
     [HideInInspector]   private NewRockController.CategoryRock[]    categoriesRock;
     [HideInInspector]   public  Rigidbody2D                         rb2;
-    [HideInInspector]   private GameObject[]                        rocks;
+    [HideInInspector]   public  GameObject[]                        rocks;
 
     [Header("Atributtes Movimentation")]
     [SerializeField]    private float                               speedMoviment;
