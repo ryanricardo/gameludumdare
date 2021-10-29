@@ -162,9 +162,11 @@ public class NewRockController : MonoBehaviour
             categoryRock = CategoryRock.controller;
         }
 
-        if(other.gameObject.CompareTag("Plataform") && categoryRock == CategoryRock.controller)
+        if(other.gameObject.CompareTag("Plataform") && 
+        categoryRock == CategoryRock.controller)
         {
-            categoryRock = CategoryRock.pickup;
+            Debug.Log("a");
+            playerController.PushCollisionRocks();
         }
     }
 }

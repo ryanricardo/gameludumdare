@@ -198,6 +198,39 @@ public class NewPlayerController : MonoBehaviour
 
     }
 
+    public void PushCollisionRocks()
+    {
+
+        // Este metodo é ativado pelo script "NewRockController"
+
+
+
+        if(!checkGround[0] &&
+        !checkGround[1] &&
+        !checkGround[2] &&
+        axisHorizontal == 0)
+        {
+            rb2.AddForce(Vector2.down * 1000);
+            for(int i = 1; i < rocks.Length; i++)
+            {
+                rocks[i].GetComponent<Rigidbody2D>().AddForce(Vector2.down * 800);
+            }
+        }else 
+        {
+            if(isRight && checkGround[0] ||
+            isRight && checkGround[1] ||
+            isRight && checkGround[2])
+            {
+                rb2.AddForce(Vector2.left * 1000);
+            }else if(!isRight && checkGround[0] ||
+            !isRight && checkGround[1] ||
+            !isRight && checkGround[2])
+            {
+                rb2.AddForce(Vector2.right * 1000);
+            }
+        }
+    }
+
     void Inputs()
     {
         getKeyDownE = Input.GetKeyDown(KeyCode.E) ? getKeyDownE = true: getKeyDownE = false; 
