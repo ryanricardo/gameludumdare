@@ -15,6 +15,36 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Lvl 0.unity
     guid: 3d0f5903ed376c04282ce28e8578df68
   - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 1.unity
+    guid: bf71994c6925a2f4faec3169609f7a13
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 2.unity
+    guid: 3b521c93cfbd89e4f9c31675f3b37585
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 3.unity
+    guid: f071903ae20208048abcd72c1aab9c43
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 4.unity
+    guid: ba9f197a48d556840b827700e9be2e0d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 5.unity
+    guid: ac4394d154f350b499b13c7a57610ff5
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 6.unity
+    guid: 5e1ba4eb50be32e4c84df7efc47e1751
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 7.unity
+    guid: 8eb4366052ee9d446a7939ae5d129787
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 8.unity
+    guid: 828818ca76488304e9f2518d0d6962d4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 9.unity
+    guid: 8af354bac0fd0d04cb252b7a40f4b523
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 10.unity
+    guid: 701f58961ae71604f842378e66d38e1f
+  - enabled: 1
     path: Assets/Scenes/Levels/Tutorial 1.unity
     guid: 816cec7df73af8a4eb25324ee27434c5
   - enabled: 1
