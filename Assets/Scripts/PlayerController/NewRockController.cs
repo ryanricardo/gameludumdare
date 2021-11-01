@@ -141,6 +141,12 @@ public class NewRockController : MonoBehaviour
                 }
             }
 
+            /* Igual as linhas 171 e 172, estas linhas abaixos servem para fazer 
+            o controles das velocidade de equilibrio */
+
+            playerController.speedSubmitBalance *= 2;
+            playerController.speedAddBalance *= 2;
+
             pushOneTime = true;
         }
     }
@@ -159,6 +165,12 @@ public class NewRockController : MonoBehaviour
             {
                 playerController.balance += (100 - playerController.balance) / 2;
             }
+
+            /* Estas linhas abaixo com a variavel playerController fazem o controle 
+            das velocidades do equilibrio para quando a pedra voltar ao grupo de pedras*/
+
+            playerController.speedSubmitBalance /= 2;
+            playerController.speedAddBalance /= 2;
 
             categoryRock = CategoryRock.controller;
         }

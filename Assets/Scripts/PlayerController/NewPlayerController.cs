@@ -172,14 +172,10 @@ public class NewPlayerController : MonoBehaviour
         {
             case 2:
             maxBalance = 100;
-            speedSubmitBalance = 6;
-            speedAddBalance = 10;
             break;
 
             case 1:
             maxBalance = 50;
-            speedSubmitBalance = 8;
-            speedAddBalance = 12;
             break;
 
             case 0:
