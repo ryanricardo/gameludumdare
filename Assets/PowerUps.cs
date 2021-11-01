@@ -7,6 +7,7 @@ public class PowerUps : MonoBehaviour
     public enum TypePowerUps
     {
         SubmitBalancePlayer,
+        MoreJump,
 
     }
 
@@ -15,7 +16,10 @@ public class PowerUps : MonoBehaviour
     [HideInInspector]   private     NewPlayerController     playerController;
 
     [Header("Atributtes Pickup SubmitBalancePlayer")]
-    [SerializeField]    private     float                   valueSubmitBalancePickup;         
+    [SerializeField]    private     float                   valueSubmitBalancePickup;      
+
+    [Header("Atributtes Pickup MoreJump")]
+    [SerializeField]    private     float                   valueMoreJumpPickup;   
 
     void Start()
     {
@@ -35,9 +39,13 @@ public class PowerUps : MonoBehaviour
             {
                 case TypePowerUps.SubmitBalancePlayer:
                     playerController.speedSubmitBalance /= valueSubmitBalancePickup;
-                    Destroy(gameObject, 0);
+                break;
+
+                case TypePowerUps.MoreJump:
+                    playerController.forceJump += valueMoreJumpPickup;
                 break;
             }
+            Destroy(gameObject, 0);
         }
     }
 }
