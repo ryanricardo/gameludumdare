@@ -37,6 +37,7 @@ public class NewRockController : MonoBehaviour
         //offSet = transform.position - playerController.transform.position;
         offSet = new Vector3(transform.position.x - playerController.transform.position.x, 
         transform.position.y);
+        playerController.countRocks += 1;
     }
 
     void Update()
@@ -99,6 +100,7 @@ public class NewRockController : MonoBehaviour
             if(transform.position.y == newPos.y)
             {
                 categoryRock = CategoryRock.controller;
+                playerController.countRocks += 1;
                 moveNewPosition = false;
             }
         }else 
@@ -139,6 +141,7 @@ public class NewRockController : MonoBehaviour
                      
                     rb2.AddForce(Vector2.right * forcePushPickup, ForceMode2D.Impulse);
                 }
+                
             }
 
             /* Igual as linhas 171 e 172, estas linhas abaixos servem para fazer 
@@ -146,6 +149,7 @@ public class NewRockController : MonoBehaviour
 
             playerController.speedSubmitBalance *= 2;
             playerController.speedAddBalance *= 2;
+            playerController.countRocks -= 1;
 
             pushOneTime = true;
         }

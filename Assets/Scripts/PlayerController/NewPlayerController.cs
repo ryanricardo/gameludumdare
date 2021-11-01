@@ -24,7 +24,7 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    public  float                               speedSubmitBalance;
     [SerializeField]    public  float                               speedAddBalance;
     [HideInInspector]   private int                                 maxBalance;
-    [HideInInspector]   private int                                 countRocks;
+    [SerializeField]    public  int                                 countRocks;
     [HideInInspector]   public  float                               balance;
 
 
@@ -148,22 +148,7 @@ public class NewPlayerController : MonoBehaviour
         /* Estas linhas controlam o numero de pedras pertences ao grupo procurando quanto gameObject 
         Estão com seu enum em controller. */
 
-        if(categoriesRock[1] == NewRockController.CategoryRock.controller
-        && categoriesRock[2] == NewRockController.CategoryRock.controller)
-        {
-            countRocks = 2;
-        }else 
-        {
-            if(categoriesRock[1] != NewRockController.CategoryRock.controller
-            && categoriesRock[2] == NewRockController.CategoryRock.controller)
-            {
-                countRocks = 1;
-            }else 
-            {
-                countRocks = 0;
-            }
-            
-        } 
+       
 
         
         // Aqui, é utilizado o numero de pedras pertencentes ao grupo para controlar o maximo de equilibrio.
