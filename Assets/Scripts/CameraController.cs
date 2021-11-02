@@ -28,6 +28,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] Vector3 target;
     void Update()
     {
+        if(target==null)
+          return;
         target = TargetObj.position;
 
         if(pos.x > target.x - offset.x)

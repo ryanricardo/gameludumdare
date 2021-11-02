@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().buildIndex;
         imageRestart.gameObject.SetActive(false);
         Time.timeScale = 1;
+        PlayerPrefs.SetInt("PPLvlsWon", currentScene);      // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou 
     }
 
     void Update()

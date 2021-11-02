@@ -16,6 +16,7 @@ TagManager:
   - Undefined
   - Plataform
   - Plataform Push
+  - buttonLvl
   layers:
   - Default
   - TransparentFX
