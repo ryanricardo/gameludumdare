@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public int levelPanelNumber = 0, LvlsWon;
-    [SerializeField] GameObject panelMenu, panelOptions, panelMarket;
+    [SerializeField] GameObject panelMenu, panelOptions, panelMarket, panelInventory;
     [SerializeField] GameObject[] levelsPanels, buttonsLvls;
+    [HideInInspector] private bool openInventory;
 
     private void Awake(){
         // Ativa os gameObjects dos paineis 
@@ -24,6 +25,9 @@ public class LevelManager : MonoBehaviour
     }
 
     private void Start(){
+
+        openInventory = false;
+
         // Desativa os gameObjects dos paineis 
         foreach (var item in levelsPanels){
             item.SetActive(false);
@@ -54,6 +58,12 @@ public class LevelManager : MonoBehaviour
 
     public void ButtonExit(){
         Application.Quit();
+    }
+
+    public void ButtonInventory()
+    {
+        openInventory ^= true;
+        panelInventory.gameObject.SetActive(openInventory);
     }
     
     public void ButtonBackMenu(){        
