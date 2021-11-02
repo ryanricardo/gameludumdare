@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MecanismoDePeso : MonoBehaviour
 {
-    [SerializeField] private float PesoNecessario;
-    [SerializeField] private float PesoAtual;
-    [SerializeField] private bool ativo=false;
+    [SerializeField] public float PesoNecessario;
+    [SerializeField] public float PesoAtual;
+    [SerializeField] public bool ativo=false;
 
     void Update()
     {
