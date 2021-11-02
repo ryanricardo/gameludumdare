@@ -39,10 +39,14 @@ public class PowerUps : MonoBehaviour
             {
                 case TypePowerUps.SubmitBalancePlayer:
                     playerController.speedSubmitBalance /= valueSubmitBalancePickup;
+                    PlayerPrefs.SetInt("SkinsRock1Unlocked", 2);
+                    Debug.Log(PlayerPrefs.GetInt("SkinsRock1Unlocked"));
                 break;
 
                 case TypePowerUps.MoreJump:
-                    playerController.forceJump += valueMoreJumpPickup;
+                    playerController.forceJump += valueMoreJumpPickup;                    
+                    PlayerPrefs.SetInt("SkinsRock1Unlocked", 2);
+                    Debug.Log(PlayerPrefs.GetInt("SkinsRock1Unlocked"));
                 break;
             }
             Destroy(gameObject, 0);

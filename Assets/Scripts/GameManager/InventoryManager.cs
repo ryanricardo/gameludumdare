@@ -13,14 +13,16 @@ public class InventoryManager : MonoBehaviour
     [HideInInspector]   private Data            data;
 
     [Header("Tools")]
-    [SerializeField]    private int             indexSkin;
+    [HideInInspector]   private int[]            indexSkin;
 
     void Start()
     {
 
         data = FindObjectOfType<Data>();
-
-        indexSkin = 1;
+        indexSkin = new int[3];
+        indexSkin[0] = 1;
+        indexSkin[1] = 1;
+        indexSkin[2] = 1;
 
         /* Os botões seguem a sequencia das pedras que estão no inventario de 0 a 5 */
         
@@ -32,6 +34,7 @@ public class InventoryManager : MonoBehaviour
 
         arrowsRocks[4].onClick.AddListener(delegate{Arrows(4);});
         arrowsRocks[5].onClick.AddListener(delegate{Arrows(5);});
+
         
         
     }
@@ -46,38 +49,60 @@ public class InventoryManager : MonoBehaviour
         switch(index)
         {
             case 0:
-                Debug.Log("Left");
+                if(indexSkin[0] > 1)
+                { 
+                    indexSkin[0] -= 1;
+                    gameObjectsRocks[0].GetComponent<Image>().sprite = data.skinRock1[indexSkin[0]];
+                    PlayerPrefs.SetInt("SkinRock1", indexSkin[0]);
+                }
             break;
 
             case 1:
-                Debug.Log("Right");
+                if(indexSkin[0] <= PlayerPrefs.GetInt("SkinsRock1Unlocked"))
+                { 
+                    indexSkin[0] += 1;
+                    gameObjectsRocks[0].GetComponent<Image>().sprite = data.skinRock1[indexSkin[0]];
+                    PlayerPrefs.SetInt("SkinRock1", indexSkin[0]);
+                }
             break;
 
             case 2:
-                if(indexSkin > 1)
+                if(indexSkin[1] > 1)
                 { 
-                    indexSkin -= 1;
-                    gameObjectsRocks[1].GetComponent<Image>().sprite = data.skinRock1[indexSkin];
-                    PlayerPrefs.SetInt("SkinRock1", indexSkin);
+                    indexSkin[1] -= 1;
+                    gameObjectsRocks[1].GetComponent<Image>().sprite = data.skinRock2[indexSkin[1]];
+                    PlayerPrefs.SetInt("SkinRock1", indexSkin[1]);
                 }
             break;
 
             case 3:
-                if(indexSkin < data.skinRock1.Count - 1)
+                if(indexSkin[1] <= PlayerPrefs.GetInt("SkinsRock1Unlocked"))
                 { 
-                    indexSkin += 1;
-                    gameObjectsRocks[1].GetComponent<Image>().sprite = data.skinRock1[indexSkin];
-                    PlayerPrefs.SetInt("SkinRock1", indexSkin);
+                    indexSkin[1] += 1;
+                    gameObjectsRocks[1].GetComponent<Image>().sprite = data.skinRock2[indexSkin[1]];
+                    PlayerPrefs.SetInt("SkinRock2", indexSkin[1]);
                 }
             break;
 
+
             case 4:
-                Debug.Log("Left");
+                if(indexSkin[2] > 1)
+                { 
+                    indexSkin[2] -= 1;
+                    gameObjectsRocks[2].GetComponent<Image>().sprite = data.skinRock3[indexSkin[2]];
+                    PlayerPrefs.SetInt("SkinRock1", indexSkin[2]);
+                }
             break;
 
             case 5:
-                Debug.Log("Right");
+                if(indexSkin[2] <= PlayerPrefs.GetInt("SkinsRock1Unlocked"))
+                { 
+                    indexSkin[2] += 1;
+                    gameObjectsRocks[2].GetComponent<Image>().sprite = data.skinRock3[indexSkin[2]];
+                    PlayerPrefs.SetInt("SkinRock2", indexSkin[2]);
+                }
             break;
+
         }
     }
 
