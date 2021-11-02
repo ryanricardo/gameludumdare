@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 7940701476748839275}
   - component: {fileID: 7021284612136961770}
   - component: {fileID: 1914745731747061109}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plataforms Push
   m_TagString: Plataform Push
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 3301559920638849068}
   - component: {fileID: 2318332518674582238}
   m_Layer: 0
-  m_Name: Colliders Invible
+  m_Name: Colliders Invisible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
