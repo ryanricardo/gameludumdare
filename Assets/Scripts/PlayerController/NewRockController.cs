@@ -22,6 +22,7 @@ public class NewRockController : MonoBehaviour
     [HideInInspector]   private NewPlayerController playerController;
     [HideInInspector]   private Rigidbody2D         rb2;
     [HideInInspector]   private Vector2             offSet;
+    [HideInInspector]   private Data                data;
 
     [Header("Atributtes Rocks")]
     [SerializeField]    private float               forcePushPickup;
@@ -32,6 +33,7 @@ public class NewRockController : MonoBehaviour
 
     void Start()
     {
+        data = FindObjectOfType<Data>();
         rb2 = GetComponent<Rigidbody2D>();
         playerController = FindObjectOfType<NewPlayerController>();
         //offSet = transform.position - playerController.transform.position;
@@ -196,7 +198,7 @@ public class NewRockController : MonoBehaviour
                 break;
 
                 case TypeRock.rock2:
-                if(playerController.rocks[1].GetComponent<NewRockController>().categoryRock
+                if(data.rocks[1].GetComponent<NewRockController>().categoryRock
                 == CategoryRock.pickup)
                 {
                     categoryRock = CategoryRock.pickup;

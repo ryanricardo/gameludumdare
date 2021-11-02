@@ -10,7 +10,7 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    private AudioClip                           clipJump;
     [HideInInspector]   private NewRockController.CategoryRock[]    categoriesRock;
     [HideInInspector]   public  Rigidbody2D                         rb2;
-    [HideInInspector]   public  GameObject[]                        rocks;
+    [HideInInspector]   private Data                                data;
 
     [Header("Atributtes Movimentation")]
     [SerializeField]    private float                               speedMoviment;
@@ -38,15 +38,13 @@ public class NewPlayerController : MonoBehaviour
 
     void Start()
     {
+        data = FindObjectOfType<Data>();
         dropRock = false;
         rb2 = GetComponent<Rigidbody2D>();
         categoriesRock = new NewRockController.CategoryRock[3];
-        rocks = new GameObject[3];
+        
         checkGround = new bool[3];
-        for(int i = 1; i < rocks.Length; i++)
-        {
-            rocks[i] = GameObject.FindGameObjectWithTag("RockController " + i);
-        }
+
         balance = 100;
         isRight = true;
     }
@@ -101,13 +99,13 @@ public class NewPlayerController : MonoBehaviour
         scl *= -1;
         transform.localScale = new Vector2(scl, transform.localScale.y);
 
-        for(int i = 1; i < rocks.Length; i++)
+        for(int i = 1; i < data.rocks.Length; i++)
         {
-            float scale = rocks[i].transform.localScale.x;
+            float scale = data.rocks[i].transform.localScale.x;
             scale *= -1;
 
-            rocks[i].transform.localScale = 
-              new Vector2(scale, rocks[i].transform.localScale.y);
+            data.rocks[i].transform.localScale = 
+              new Vector2(scale, data.rocks[i].transform.localScale.y);
         }
     }
 
@@ -121,11 +119,11 @@ public class NewPlayerController : MonoBehaviour
         
         if(getKeyDownE)
         {
-            for(int i = 1; i < rocks.Length; i++)
+            for(int i = 1; i < data.rocks.Length; i++)
             {
                 if(categoriesRock[i] == NewRockController.CategoryRock.controller)
                 {
-                    rocks[i].GetComponent<NewRockController>().categoryRock 
+                    data.rocks[i].GetComponent<NewRockController>().categoryRock 
                     = NewRockController.CategoryRock.pickup;
                     dropRock = true;
                     return;
@@ -139,9 +137,9 @@ public class NewPlayerController : MonoBehaviour
 
         /* Nesta linha é adicionado dentro de um array[3] as variaveis de enum das duas pedras controller*/
 
-        for(int i = 1; i < rocks.Length; i++)
+        for(int i = 1; i < data.rocks.Length; i++)
         {
-            categoriesRock[i] = rocks[i].gameObject.GetComponent<NewRockController>().categoryRock;
+            categoriesRock[i] = data.rocks[i].gameObject.GetComponent<NewRockController>().categoryRock;
         }
 
 
@@ -196,9 +194,9 @@ public class NewPlayerController : MonoBehaviour
         axisHorizontal == 0)
         {
             rb2.AddForce(Vector2.down * 1000);
-            for(int i = 1; i < rocks.Length; i++)
+            for(int i = 1; i < data.rocks.Length; i++)
             {
-                rocks[i].GetComponent<Rigidbody2D>().AddForce(Vector2.down * 800);
+                data.rocks[i].GetComponent<Rigidbody2D>().AddForce(Vector2.down * 800);
             }
         }else 
         {

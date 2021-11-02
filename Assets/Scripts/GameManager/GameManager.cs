@@ -9,20 +9,28 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject             panelGameOver,      panelLevelCompleted;  
     [SerializeField] private GameObject             imageRestart;   
     [HideInInspector]private NewPlayerController    playerController;
+    [HideInInspector]private InventoryManager       inventoryManager;
+    [HideInInspector]private Data                   data;
 
     [Header("Atributtes Manager")]
     [HideInInspector]public bool    gameOver = false, levelCompleted = false;
     [HideInInspector]public int     currentScene;
+
+
     
 
 
     void Start()
     {
+        data = FindObjectOfType<Data>();
+        inventoryManager = FindObjectOfType<InventoryManager>();
         playerController = FindObjectOfType<NewPlayerController>();
         currentScene = SceneManager.GetActiveScene().buildIndex;
         imageRestart.gameObject.SetActive(false);
         Time.timeScale = 1;
         PlayerPrefs.SetInt("PPLvlsWon", currentScene);      // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou 
+        data.rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
+        Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
     }
 
     void Update()
