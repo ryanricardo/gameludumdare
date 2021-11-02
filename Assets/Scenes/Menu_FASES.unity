@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &45577497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9004977944012082017, guid: 33cee056009f5d0429d625b6766c93f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1466411541}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &52002064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,6 +1565,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030191837783787638, guid: 33cee056009f5d0429d625b6766c93f4,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 45577497}
+    - target: {fileID: 8030191837783787638, guid: 33cee056009f5d0429d625b6766c93f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1853890442}
+    - target: {fileID: 8030191837783787638, guid: 33cee056009f5d0429d625b6766c93f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonBackMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33cee056009f5d0429d625b6766c93f4, type: 3}
@@ -4045,6 +4072,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8030191837783787638, guid: 33cee056009f5d0429d625b6766c93f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1853890442}
+    - target: {fileID: 8030191837783787638, guid: 33cee056009f5d0429d625b6766c93f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonBackMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33cee056009f5d0429d625b6766c93f4, type: 3}
 --- !u!224 &1466411542 stripped
@@ -4765,6 +4802,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8030191837783787638, guid: 33cee056009f5d0429d625b6766c93f4,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 45577497}
+    - target: {fileID: 8030191837783787638, guid: 33cee056009f5d0429d625b6766c93f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1853890442}
+    - target: {fileID: 8030191837783787638, guid: 33cee056009f5d0429d625b6766c93f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonBackMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 8679725273909451523, guid: 33cee056009f5d0429d625b6766c93f4,
         type: 3}
       propertyPath: lvl
@@ -5470,6 +5522,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030191837783787638, guid: 33cee056009f5d0429d625b6766c93f4,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 45577497}
+    - target: {fileID: 8030191837783787638, guid: 33cee056009f5d0429d625b6766c93f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1853890442}
+    - target: {fileID: 8030191837783787638, guid: 33cee056009f5d0429d625b6766c93f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonBackMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33cee056009f5d0429d625b6766c93f4, type: 3}

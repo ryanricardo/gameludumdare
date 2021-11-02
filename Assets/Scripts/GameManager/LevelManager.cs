@@ -67,8 +67,8 @@ public class LevelManager : MonoBehaviour
     }
     
     public void ButtonBackMenu(){        
-        panelMarket.SetActive(false);
-        panelOptions.SetActive(false);
+        // panelMarket.SetActive(false);
+        // panelOptions.SetActive(false);
         levelsPanels[levelPanelNumber].SetActive(false);
         panelMenu.SetActive(true);
     }
