@@ -10,7 +10,7 @@ public class InventoryManager : MonoBehaviour
     
     [SerializeField]    private GameObject[]    gameObjectsRocks;
     [SerializeField]    private Button[]        arrowsRocks;  
-    [HideInInspector]   private Data            data;
+    [SerializeField]    private Data            data;
 
     [Header("Tools")]
     [HideInInspector]   private int[]            indexSkin;
@@ -18,7 +18,6 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
 
-        data = FindObjectOfType<Data>();
         indexSkin = new int[3];
         indexSkin[0] = PlayerPrefs.GetInt("SkinRock1");
         indexSkin[1] = PlayerPrefs.GetInt("SkinRock2");
