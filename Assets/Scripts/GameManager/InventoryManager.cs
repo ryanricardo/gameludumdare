@@ -66,7 +66,7 @@ public class InventoryManager : MonoBehaviour
             break;
 
             case 1:
-                if(indexSkin[0] < 2)
+                if(indexSkin[0] < data.skinRock1.Count - 1)
                 { 
                     indexSkin[0] += 1;
                     gameObjectsRocks[0].GetComponent<Image>().sprite = data.skinRock1[indexSkin[0]];
@@ -84,7 +84,7 @@ public class InventoryManager : MonoBehaviour
             break;
 
             case 3:
-                if(indexSkin[1] < 2)
+                if(indexSkin[1] < data.skinRock2.Count - 1)
                 { 
                     indexSkin[1] += 1;
                     gameObjectsRocks[1].GetComponent<Image>().sprite = data.skinRock2[indexSkin[1]];
@@ -103,7 +103,7 @@ public class InventoryManager : MonoBehaviour
             break;
 
             case 5:
-                if(indexSkin[2] < 2)
+                if(indexSkin[2] < data.skinRock3.Count - 1)
                 { 
                     indexSkin[2] += 1;
                     gameObjectsRocks[2].GetComponent<Image>().sprite = data.skinRock3[indexSkin[2]];

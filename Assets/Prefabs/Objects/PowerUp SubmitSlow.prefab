@@ -119,7 +119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typePowerUps: 0
+  data: {fileID: 310603971244215556, guid: 1410c936b4338744893fbbee32bec9ca, type: 3}
   valueSubmitBalancePickup: 2
+  indexSkinReward: 0
+  valueMoreJumpPickup: 0
 --- !u!61 &9011703652711188448
 BoxCollider2D:
   m_ObjectHideFlags: 0
