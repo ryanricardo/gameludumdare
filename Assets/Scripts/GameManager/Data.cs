@@ -12,7 +12,7 @@ public class Data : MonoBehaviour
 
     void Start()
     {
-        rocks = new GameObject[4];
+        rocks = new GameObject[3];
         for(int i = 1; i < rocks.Length; i++)
         {
             rocks[i] = GameObject.FindGameObjectWithTag("RockController " + i);
