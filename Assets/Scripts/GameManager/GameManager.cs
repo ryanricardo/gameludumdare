@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         PlayerPrefs.SetInt("PPLvlsWon", currentScene);      // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou 
         data.rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
+        data.rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
+        data.rocks[3].GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
+
+
         Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
     }
 

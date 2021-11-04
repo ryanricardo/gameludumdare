@@ -20,10 +20,18 @@ public class InventoryManager : MonoBehaviour
 
         data = FindObjectOfType<Data>();
         indexSkin = new int[3];
-        indexSkin[0] = 1;
-        indexSkin[1] = 1;
-        indexSkin[2] = 1;
+        indexSkin[0] = PlayerPrefs.GetInt("SkinRock1");
+        indexSkin[1] = PlayerPrefs.GetInt("SkinRock2");
+        indexSkin[2] = PlayerPrefs.GetInt("SkinRock3");
 
+        gameObjectsRocks[0].GetComponent<Image>().sprite = 
+        data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
+
+        gameObjectsRocks[1].GetComponent<Image>().sprite = 
+        data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
+
+        gameObjectsRocks[2].GetComponent<Image>().sprite = 
+        data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
         /* Os botões seguem a sequencia das pedras que estão no inventario de 0 a 5 */
         
         arrowsRocks[0].onClick.AddListener(delegate{Arrows(0);});
@@ -58,7 +66,7 @@ public class InventoryManager : MonoBehaviour
             break;
 
             case 1:
-                if(indexSkin[0] <= PlayerPrefs.GetInt("SkinsRock1Unlocked"))
+                if(indexSkin[0] < 2)
                 { 
                     indexSkin[0] += 1;
                     gameObjectsRocks[0].GetComponent<Image>().sprite = data.skinRock1[indexSkin[0]];
@@ -71,12 +79,12 @@ public class InventoryManager : MonoBehaviour
                 { 
                     indexSkin[1] -= 1;
                     gameObjectsRocks[1].GetComponent<Image>().sprite = data.skinRock2[indexSkin[1]];
-                    PlayerPrefs.SetInt("SkinRock1", indexSkin[1]);
+                    PlayerPrefs.SetInt("SkinRock2", indexSkin[1]);
                 }
             break;
 
             case 3:
-                if(indexSkin[1] <= PlayerPrefs.GetInt("SkinsRock1Unlocked"))
+                if(indexSkin[1] < 2)
                 { 
                     indexSkin[1] += 1;
                     gameObjectsRocks[1].GetComponent<Image>().sprite = data.skinRock2[indexSkin[1]];
@@ -90,16 +98,16 @@ public class InventoryManager : MonoBehaviour
                 { 
                     indexSkin[2] -= 1;
                     gameObjectsRocks[2].GetComponent<Image>().sprite = data.skinRock3[indexSkin[2]];
-                    PlayerPrefs.SetInt("SkinRock1", indexSkin[2]);
+                    PlayerPrefs.SetInt("SkinRock3", indexSkin[2]);
                 }
             break;
 
             case 5:
-                if(indexSkin[2] <= PlayerPrefs.GetInt("SkinsRock1Unlocked"))
+                if(indexSkin[2] < 2)
                 { 
                     indexSkin[2] += 1;
                     gameObjectsRocks[2].GetComponent<Image>().sprite = data.skinRock3[indexSkin[2]];
-                    PlayerPrefs.SetInt("SkinRock2", indexSkin[2]);
+                    PlayerPrefs.SetInt("SkinRock3", indexSkin[2]);
                 }
             break;
 
