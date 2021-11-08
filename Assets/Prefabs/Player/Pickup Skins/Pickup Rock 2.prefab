@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_text
       value: Birthday Hat
       objectReference: {fileID: 0}
+    - target: {fileID: 9114953956039915786, guid: f2491856a4047804886aac354c91fccc,
+        type: 3}
+      propertyPath: indexRock
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9114953956039915787, guid: f2491856a4047804886aac354c91fccc,
         type: 3}
       propertyPath: m_Name

@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup Rock 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7532028969304784905, guid: aaabb18407459024f929b16da85ac0a8,
+        type: 3}
+      propertyPath: indexRock
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7532028969304784908, guid: aaabb18407459024f929b16da85ac0a8,
         type: 3}
       propertyPath: m_RootOrder
