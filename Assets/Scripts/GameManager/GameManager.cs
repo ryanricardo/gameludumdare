@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneNumber);
     }
 
-    IEnumerator StopTimeDelay()
+    public IEnumerator StopTimeDelay()
     {
         yield return new WaitForSeconds(0.0001f);
         Time.timeScale = Time.timeScale > 0.1f ? Time.timeScale -= 0.017f : Time.timeScale = 0;

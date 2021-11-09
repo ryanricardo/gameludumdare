@@ -10,8 +10,12 @@ public class CanvasPlayerController : MonoBehaviour
     [Header("Components")]
     [SerializeField]    private Slider              sliderBalance;
     [SerializeField]    private TextMeshProUGUI     textTimer;
+    [SerializeField]    private TextMeshProUGUI     textNotification;
+    [SerializeField]    private GameObject          gameObjectImageReward;
     [HideInInspector]   private GameManager         gameManager;
     [HideInInspector]   private NewPlayerController playerController;
+    
+    private bool notification;
 
     [Header("Atributtes Timer")]
     [SerializeField]    private float               timer;
@@ -56,11 +60,31 @@ public class CanvasPlayerController : MonoBehaviour
 
     }
 
+    public void NotificationNewReward(Sprite sprite, string message)
+    {
+        Time.timeScale = 0.2f;
+        textNotification.gameObject.SetActive(true);
+        gameObjectImageReward.gameObject.SetActive(true);
+        gameObjectImageReward.gameObject.GetComponent<Image>().sprite 
+        = sprite;
+        textNotification.text = message;
+        StartCoroutine(StopNotification());
+    }
+
     void DisplayTime(float timer){
         float minutes = Mathf.FloorToInt(timer / 60);  
         float seconds = Mathf.FloorToInt(timer % 60);
         
         textTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    IEnumerator StopNotification()
+    {
+        yield return new WaitForSecondsRealtime(3);
+        Time.timeScale = 1;
+        gameObjectImageReward.gameObject.SetActive(false);
+        textNotification.gameObject.SetActive(false);
+        notification = false;
     }
 
 

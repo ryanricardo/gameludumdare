@@ -7,15 +7,16 @@ public class PickupSkin : MonoBehaviour
 
     [Header("Components")]
     [SerializeField]    private     Data                    data;
+    [HideInInspector]   private     CanvasPlayerController  canvasPlayerController;
 
     [Header("Atributtes Reward Skin")]
     [SerializeField]    private     int                     indexRock;
     [SerializeField]    private     int                     indexSkinReward;  
-    [SerializeField]    public      bool                    notification; 
+
 
     void Start()
     {
-    
+        canvasPlayerController = FindObjectOfType<CanvasPlayerController>();
     }
 
     void Update()
@@ -28,6 +29,7 @@ public class PickupSkin : MonoBehaviour
         if(other.gameObject.CompareTag("RockController 1")
         || (other.gameObject.CompareTag("RockController 2")))
         {
+            Debug.Log("Touch");
             switch(indexRock)
             {
                 case 1:
@@ -38,7 +40,9 @@ public class PickupSkin : MonoBehaviour
                             return; 
                         }
                     }
-                    notification = true;
+                    canvasPlayerController.NotificationNewReward(
+                    gameObject.GetComponent<SpriteRenderer>().sprite, "You Received a New Gift");
+                    
                     data.skinRock1.Add(data.skinsRewardRock1[indexSkinReward]);
                 break;
 
@@ -50,7 +54,8 @@ public class PickupSkin : MonoBehaviour
                             return; 
                         }
                     }
-                    notification = true;
+                    canvasPlayerController.NotificationNewReward(
+                    gameObject.GetComponent<SpriteRenderer>().sprite, "You Received a New Gift");
                     data.skinRock2.Add(data.skinsRewardRock2[indexSkinReward]);
                 break;
 
@@ -62,10 +67,12 @@ public class PickupSkin : MonoBehaviour
                             return; 
                         }
                     }
-                    notification = true;
+                    canvasPlayerController.NotificationNewReward(
+                    gameObject.GetComponent<SpriteRenderer>().sprite, "You Received a New Gift");
                     data.skinRock3.Add(data.skinsRewardRock3[indexSkinReward]);
                 break;
             }
+            
             
             Destroy(gameObject, 0);
         }
