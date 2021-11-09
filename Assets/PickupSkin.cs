@@ -10,7 +10,8 @@ public class PickupSkin : MonoBehaviour
 
     [Header("Atributtes Reward Skin")]
     [SerializeField]    private     int                     indexRock;
-    [SerializeField]    private     int                     indexSkinReward;   
+    [SerializeField]    private     int                     indexSkinReward;  
+    [SerializeField]    public      bool                    notification; 
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class PickupSkin : MonoBehaviour
                             return; 
                         }
                     }
+                    notification = true;
                     data.skinRock1.Add(data.skinsRewardRock1[indexSkinReward]);
                 break;
 
@@ -48,6 +50,7 @@ public class PickupSkin : MonoBehaviour
                             return; 
                         }
                     }
+                    notification = true;
                     data.skinRock2.Add(data.skinsRewardRock2[indexSkinReward]);
                 break;
 
@@ -59,10 +62,11 @@ public class PickupSkin : MonoBehaviour
                             return; 
                         }
                     }
+                    notification = true;
                     data.skinRock3.Add(data.skinsRewardRock3[indexSkinReward]);
                 break;
             }
-                
+            
             Destroy(gameObject, 0);
         }
 
