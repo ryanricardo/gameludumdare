@@ -46,10 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelGameOver: {fileID: 0}
   panelLevelCompleted: {fileID: 0}
+  imageRestart: {fileID: 0}
   gameOver: 0
   levelCompleted: 0
   currentScene: 0
-  playerController: {fileID: 0}
 --- !u!82 &602094489981943333
 AudioSource:
   m_ObjectHideFlags: 0

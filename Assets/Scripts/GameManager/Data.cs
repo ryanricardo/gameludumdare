@@ -12,6 +12,7 @@ public class Data : MonoBehaviour
     [SerializeField]    public  Sprite[]        skinsRewardRock2;
     [SerializeField]    public  Sprite[]        skinsRewardRock3;
     [HideInInspector]   public  GameObject[]    rocks;
+    // public Sprite[]                         
 
     [Header("Functions")]
     [SerializeField]    private bool            restartPrefs;

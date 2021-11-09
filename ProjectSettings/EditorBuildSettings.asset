@@ -9,82 +9,82 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 9c2e7212ee8d12f46aca1f80c64f6329
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 1 - Tutorial.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 1 - Tutorial.unity
     guid: cbc34652e2aef9647aca8930cb7511d8
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 2.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 2.unity
     guid: 3d0f5903ed376c04282ce28e8578df68
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 3.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 3.unity
     guid: bf71994c6925a2f4faec3169609f7a13
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 4.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 4.unity
     guid: 3b521c93cfbd89e4f9c31675f3b37585
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 5.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 5.unity
     guid: f071903ae20208048abcd72c1aab9c43
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 6.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 6.unity
     guid: ba9f197a48d556840b827700e9be2e0d
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 7.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 7.unity
     guid: ac4394d154f350b499b13c7a57610ff5
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 8.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 8.unity
     guid: 5e1ba4eb50be32e4c84df7efc47e1751
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 9.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 9.unity
     guid: 8eb4366052ee9d446a7939ae5d129787
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 10.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 10.unity
     guid: 828818ca76488304e9f2518d0d6962d4
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 11.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 11.unity
     guid: 8af354bac0fd0d04cb252b7a40f4b523
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 0/Lvl 12.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 12.unity
     guid: 701f58961ae71604f842378e66d38e1f
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 1 - Tutorial.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 1 - Tutorial.unity
     guid: 816cec7df73af8a4eb25324ee27434c5
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 2.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.unity
     guid: 9edc4828cad14bb4e9091079d722ade7
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 3.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 3.unity
     guid: b6420c8010989ef49b61095c0beea1cc
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 4.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 4.unity
     guid: 097175c98215dc24c8926f1df52080b3
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 5.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 5.unity
     guid: 5e91450be01ec274bb9bb2ee45f1e98d
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 6.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 6.unity
     guid: 640da725cc9ced74c9bdcea12f6b3bdb
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 7.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 7.unity
     guid: 3f94e67c435ca774fa50c2abfe3a1765
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 8.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 8.unity
     guid: 332ec01f7942e1a4dbcb43faf6244917
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 9.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 9.unity
     guid: 3b086aa864b6e134f83a6003a6dfb16a
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 10.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 10.unity
     guid: 7f77bcf1d1ff9d445a7bf2b9bf7dc84a
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 11.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 11.unity
     guid: 87b3b0da723ed484eac4037d572c2337
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 12.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 12.unity
     guid: 3f3e0d7a5d88f9d49965ad3bf380ad83
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 1 - Tutorial.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 1 - Tutorial.unity
     guid: 120f6e5fae2a8a04b88e8ab3c0398829
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 2.unity
     guid: affc4776ebccfb142a04849f7286721e
   - enabled: 1
     path: Assets/Scenes/Agradecimentos.unity

@@ -20,7 +20,7 @@ public class Finish : MonoBehaviour
             GameObject rocksPlayer0 = GameObject.FindGameObjectWithTag("RockController 1");
             GameObject rocksPlayer1 = GameObject.FindGameObjectWithTag("RockController 2");  
             GameObject player       = GameObject.FindGameObjectWithTag("Player");
-            gm.levelCompleted = true;   
+            gm.levelState = GameManager.State.LEVELCOMPLETED;   
             Destroy(rocksPlayer0);
             Destroy(rocksPlayer1);
             Destroy(player);

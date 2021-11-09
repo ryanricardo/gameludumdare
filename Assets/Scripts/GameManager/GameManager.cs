@@ -6,18 +6,16 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private GameObject             panelGameOver,      panelLevelCompleted;  
     [SerializeField] private GameObject             imageRestart;   
     [HideInInspector]private NewPlayerController    playerController;
     [HideInInspector]private InventoryManager       inventoryManager;
     [HideInInspector]private Data                   data;
 
     [Header("Atributtes Manager")]
-    [HideInInspector]public bool    gameOver = false, levelCompleted = false;
     [HideInInspector]public int     currentScene;
 
-
-    
+    public enum State {PLAY, PAUSE, LEVELCOMPLETED, GAMEOVER};
+    public State levelState;
 
 
     void Start()
@@ -39,30 +37,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {        
-        if (levelCompleted){
-            panelLevelCompleted.SetActive(true);
-            Time.timeScale = 0;
-            LoadScene(currentScene + 1, 1.5f);
-        }
-
-        if(playerController.getKeyDownR)
-        {
-            LoadScene(currentScene, 1.5f);
-            imageRestart.gameObject.SetActive(true);
-        }
-
-        if (gameOver){
-            panelGameOver.SetActive(true);
-            StartCoroutine(StopTimeDelay());
-            if (Input.anyKeyDown){
-                gameOver = false;
-                LoadScene(currentScene, 1);
-            }
-        }
+        // if(playerController.getKeyDownR)
+        // {
+        //     LoadScene(currentScene, 1.5f);
+        //     imageRestart.gameObject.SetActive(true);
+        // }
 
         if(playerController.balance <= 0)
         {
-            gameOver = true;
+            levelState = State.GAMEOVER;
         }
 
     }
