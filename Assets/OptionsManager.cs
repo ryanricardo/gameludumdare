@@ -13,17 +13,19 @@ public class OptionsManager : MonoBehaviour
     [SerializeField]    private Slider              sliderAjustGeneralVolume;
     [SerializeField]    private GameObject          ButtonMuteMusic;
     [SerializeField]    private GameObject          ButtonMuteEffects;
+    [SerializeField]    private GameObject          ButtonMuteGeneral;
     [SerializeField]    private Sprite              spriteMutated;
     [SerializeField]    private Sprite              spriteUnmuted;
 
     [Header("Atributtes Volumes")]
     [HideInInspector]   private bool                muteMusic;
     [HideInInspector]   private bool                muteEffects;
-    
+    [HideInInspector]   private bool                muteGeneral;
 
 
     void Start()
     {
+        muteGeneral = false;
         muteMusic = false;
         muteEffects = false;
         sliderAjustMusicGame.value = PlayerPrefs.GetFloat("VolumeMusicGame");
@@ -36,6 +38,25 @@ public class OptionsManager : MonoBehaviour
         PlayerPrefs.SetFloat("VolumeGeneral", sliderAjustGeneralVolume.value);
         PlayerPrefs.SetFloat("VolumeMusicGame", sliderAjustMusicGame.value * sliderAjustGeneralVolume.value);
         PlayerPrefs.SetFloat("VolumeEffectsGame", sliderAjustEffectsGame.value * sliderAjustGeneralVolume.value);        
+    }
+
+    public void MuteGeneral()
+    {
+        muteGeneral ^= true;
+
+        if(muteGeneral)
+        {
+            PlayerPrefs.SetFloat("PastVolumeGeneral", PlayerPrefs.GetFloat("Volume"));
+            ButtonMuteGeneral.GetComponent<Image>().sprite = spriteMutated;
+            sliderAjustGeneralVolume.value = 0;
+            sliderAjustGeneralVolume.interactable = false;
+        }else 
+        {
+            ButtonMuteGeneral.GetComponent<Image>().sprite = spriteUnmuted;
+            sliderAjustGeneralVolume.interactable = true;
+            sliderAjustGeneralVolume.value = PlayerPrefs.GetFloat("PastVolumeGeneral");
+
+        }
     }
 
     public void MuteMusic()
