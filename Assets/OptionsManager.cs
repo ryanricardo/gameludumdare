@@ -10,8 +10,9 @@ public class OptionsManager : MonoBehaviour
     [Header("Components")]
     [SerializeField]    private Slider              sliderAjustMusicGame;
     [SerializeField]    private Slider              sliderAjustEffectsGame;
-    [SerializeField]    GameObject                  ButtonMuteMusic;
-    [SerializeField]    GameObject                  ButtonMuteEffects;
+    [SerializeField]    private Slider              sliderAjustGeneralVolume;
+    [SerializeField]    private GameObject          ButtonMuteMusic;
+    [SerializeField]    private GameObject          ButtonMuteEffects;
     [SerializeField]    private Sprite              spriteMutated;
     [SerializeField]    private Sprite              spriteUnmuted;
 
@@ -27,13 +28,14 @@ public class OptionsManager : MonoBehaviour
         muteEffects = false;
         sliderAjustMusicGame.value = PlayerPrefs.GetFloat("VolumeMusicGame");
         sliderAjustEffectsGame.value = PlayerPrefs.GetFloat("VolumeEffectsGame");
-
+        sliderAjustGeneralVolume.value = PlayerPrefs.GetFloat("VolumeGeneral");
     }
 
     void Update()
     {
-        PlayerPrefs.SetFloat("VolumeMusicGame", sliderAjustMusicGame.value);
-        PlayerPrefs.SetFloat("VolumeEffectsGame", sliderAjustEffectsGame.value);        
+        PlayerPrefs.SetFloat("VolumeGeneral", sliderAjustGeneralVolume.value);
+        PlayerPrefs.SetFloat("VolumeMusicGame", sliderAjustMusicGame.value * sliderAjustGeneralVolume.value);
+        PlayerPrefs.SetFloat("VolumeEffectsGame", sliderAjustEffectsGame.value * sliderAjustGeneralVolume.value);        
     }
 
     public void MuteMusic()
@@ -42,6 +44,7 @@ public class OptionsManager : MonoBehaviour
 
         if(muteMusic)
         {
+            PlayerPrefs.SetFloat("PastVolumeMusic", PlayerPrefs.GetFloat("VolumeMusicGame"));
             ButtonMuteMusic.GetComponent<Image>().sprite = spriteMutated;
             sliderAjustMusicGame.value = 0;
             sliderAjustMusicGame.interactable = false;
@@ -49,7 +52,7 @@ public class OptionsManager : MonoBehaviour
         {
             ButtonMuteMusic.GetComponent<Image>().sprite = spriteUnmuted;
             sliderAjustMusicGame.interactable = true;
-            sliderAjustMusicGame.value = PlayerPrefs.GetFloat("VolumeMusicGame");
+            sliderAjustMusicGame.value = PlayerPrefs.GetFloat("PastVolumeMusic");
         }
         
     }
@@ -60,6 +63,7 @@ public class OptionsManager : MonoBehaviour
 
         if(muteEffects)
         {
+            PlayerPrefs.SetFloat("PastVolumeEffects", PlayerPrefs.GetFloat("VolumeEffectsGame"));
             ButtonMuteEffects.gameObject.GetComponent<Image>().sprite = spriteMutated;
             sliderAjustEffectsGame.value = 0;
             sliderAjustEffectsGame.interactable = false;
@@ -67,7 +71,7 @@ public class OptionsManager : MonoBehaviour
         {
             ButtonMuteEffects.gameObject.GetComponent<Image>().sprite = spriteUnmuted;
             sliderAjustEffectsGame.interactable = true;
-            sliderAjustEffectsGame.value = PlayerPrefs.GetFloat("VolumeEffectsGame");
+            sliderAjustEffectsGame.value = PlayerPrefs.GetFloat("PastVolumeEffects");
 
         }
     }
