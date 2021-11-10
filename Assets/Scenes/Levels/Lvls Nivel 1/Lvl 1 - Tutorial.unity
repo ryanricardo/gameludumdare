@@ -198,6 +198,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 104219347}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &104219349 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7261289159064025394, guid: d6a98c79eea1b534ca1f2c8f62fca00d,
+    type: 3}
+  m_PrefabInstance: {fileID: 104219347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &162249644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -559,9 +565,19 @@ PrefabInstance:
       objectReference: {fileID: 459948691}
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
+      propertyPath: souceMusic
+      value: 
+      objectReference: {fileID: 1090321089}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
       propertyPath: imageRestart
       value: 
       objectReference: {fileID: 1592455272}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: souceEffects
+      value: 
+      objectReference: {fileID: 104219349}
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
       propertyPath: panelGameOver
@@ -631,6 +647,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 602094489981943333, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 602094489981943333, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a705afb3265598244aa818b5ace18e03, type: 3}
@@ -878,6 +904,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 370e1cca86d13424e8aaaabe5faffcc3, type: 3}
+--- !u!82 &1090321089 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 602094489981943333, guid: a705afb3265598244aa818b5ace18e03,
+    type: 3}
+  m_PrefabInstance: {fileID: 694587181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1168794297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4412492795413457409, guid: 964d77e144412e54992ab79afbcfa1a1,

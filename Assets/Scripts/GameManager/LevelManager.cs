@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] GameObject panelMenu, panelOptions, panelMarket, panelInventory;
     [SerializeField] GameObject[] levelsPanels, buttonsLvls;
     [SerializeField] TextMeshProUGUI[] textDiamonds;
-    [HideInInspector] private bool openInventory;
+    [HideInInspector] private bool openInventory, openOptions;
     GameManager gm; Data data;
 
     private void Awake(){
@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour
     private void Start(){
 
         openInventory = false;
+        openOptions = false;
 
         // Desativa os gameObjects dos paineis 
         foreach (var item in levelsPanels){
@@ -81,6 +82,12 @@ public class LevelManager : MonoBehaviour
     {
         openInventory ^= true;
         panelInventory.gameObject.SetActive(openInventory);
+    }
+
+    public void ButtonOptions()
+    {
+        openOptions ^= true;
+        panelOptions.gameObject.SetActive(openOptions);
     }
     
     public void ButtonBackMenu(){        

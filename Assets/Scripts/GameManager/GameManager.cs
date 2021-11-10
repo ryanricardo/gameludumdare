@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     [Header("Components")]
     // [SerializeField] private GameObject             imageRestart;   
+    [SerializeField] private AudioSource            souceMusic;
+    [SerializeField] private AudioSource            souceEffects;
     [HideInInspector]private NewPlayerController    playerController;
     [HideInInspector]private InventoryManager       inventoryManager;
     [HideInInspector]private Data                   data;
@@ -16,6 +18,12 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public State levelState;
     public enum State {PLAY, PAUSE, LEVELCOMPLETED, GAMEOVER};
+
+    void Awake()
+    {
+        souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
+        souceEffects.volume = PlayerPrefs.GetFloat("VolumeEffectsGame");
+    }
 
     void Start()
     {
@@ -28,6 +36,7 @@ public class GameManager : MonoBehaviour
         data.rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
         playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
 
+        souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
         Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
     }
 
@@ -38,7 +47,6 @@ public class GameManager : MonoBehaviour
         //     LoadScene(currentScene, 1.5f);
         //     imageRestart.gameObject.SetActive(true);
         // }
-
         if(playerController.balance <= 0)
         {
             levelState = State.GAMEOVER;
