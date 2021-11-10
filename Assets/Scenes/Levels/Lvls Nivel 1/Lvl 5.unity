@@ -6432,8 +6432,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[2].m_Data
       value: 
-      objectReference: {fileID: 21300000, guid: 38ae6375638fca24e8c91c2433b4a4c0,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2569983837346320971, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[3].m_Data
@@ -6461,7 +6460,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[7].m_Data
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 38ae6375638fca24e8c91c2433b4a4c0,
+        type: 3}
     - target: {fileID: 2569983837346320971, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
       propertyPath: m_TileColorArray.Array.data[0].m_Data.a
@@ -7020,7 +7020,7 @@ PrefabInstance:
     - target: {fileID: 2569983837346320971, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[2].m_RefCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2569983837346320971, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
@@ -7045,7 +7045,7 @@ PrefabInstance:
     - target: {fileID: 2569983837346320971, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[7].m_RefCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2569983837346320971, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
@@ -8725,7 +8725,7 @@ PrefabInstance:
     - target: {fileID: 2569983837346320971, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
       propertyPath: m_Tiles.Array.data[98].second.m_TileSpriteIndex
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2569983837346320971, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
@@ -15191,8 +15191,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
+      propertyPath: nivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
       propertyPath: timer
       value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: currentScene
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6544186094124780807, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}

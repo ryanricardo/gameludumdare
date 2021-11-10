@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5207385399788057659
 RectTransform:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6613201872108834607
 RectTransform:
   m_ObjectHideFlags: 0
@@ -478,6 +478,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvl: 0
+  diamodsSprites:
+  - {fileID: 5589153581131758599}
+  - {fileID: 2001120541699153775}
+  - {fileID: 6097510041204247513}
 --- !u!1 &9002036754943234537
 GameObject:
   m_ObjectHideFlags: 0

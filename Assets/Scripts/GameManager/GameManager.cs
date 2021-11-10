@@ -6,31 +6,27 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private GameObject             imageRestart;   
+    // [SerializeField] private GameObject             imageRestart;   
     [HideInInspector]private NewPlayerController    playerController;
     [HideInInspector]private InventoryManager       inventoryManager;
     [HideInInspector]private Data                   data;
 
     [Header("Atributtes Manager")]
-    [HideInInspector]public int     currentScene;
+    public int currentScene;
 
+    [HideInInspector] public State levelState;
     public enum State {PLAY, PAUSE, LEVELCOMPLETED, GAMEOVER};
-    public State levelState;
-
 
     void Start()
     {
         data = FindObjectOfType<Data>();
         inventoryManager = FindObjectOfType<InventoryManager>();
         playerController = FindObjectOfType<NewPlayerController>();
-        currentScene = SceneManager.GetActiveScene().buildIndex;
-        imageRestart.gameObject.SetActive(false);
+        // imageRestart.gameObject.SetActive(false);
         Time.timeScale = 1;
-        PlayerPrefs.SetInt("PPLvlsWon", currentScene);      // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou 
         data.rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
         data.rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
         playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
-
 
         Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
     }
@@ -64,4 +60,6 @@ public class GameManager : MonoBehaviour
     public void LoadScene(int SceneNumber, float delay = 0){
         StartCoroutine(SceneDelay(SceneNumber, delay));
     }
+
+    
 }

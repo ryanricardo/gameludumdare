@@ -10,16 +10,20 @@ public class CanvasPlayerController : MonoBehaviour
 
     [Header("Components")]
     [SerializeField]    private Slider              sliderBalance;
-    [SerializeField]    private TextMeshProUGUI     textTimer, textNotification, textLevelState;
+    [SerializeField]    private TextMeshProUGUI     textNotification, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish;
     [SerializeField]    private GameObject          gameObjectImageReward, panelPlay, panelLevel, buttonNext, buttonBack;
+    [SerializeField]    private GameObject[]        diamondsSprites;  
     [HideInInspector]   private GameManager         gm;
     [HideInInspector]   private NewPlayerController playerController;
+    [HideInInspector]   private Data data;
     
     private bool notification;
+    public int nivel, currentScene, diamondsNivel;
+    public string PPNivel;
 
     [Header("Atributtes Timer")]
-    [SerializeField]    private float               timer;
-    [SerializeField]    private float[]             timeDiamond;
+    [SerializeField]    private float timer, timeDiamond;
+    int diamondsLevel;
 
     [Header("Atributtes Menus")]
     [HideInInspector]   private bool                menuOpen;
@@ -29,52 +33,26 @@ public class CanvasPlayerController : MonoBehaviour
     {
         playerController = FindObjectOfType<NewPlayerController>();
         gm = FindObjectOfType<GameManager>();
-        timer = 0;
-        gm.levelState = GameManager.State.PLAY;
+        data = FindObjectOfType<Data>();
         buttonNext.GetComponent<Button>().interactable = true;
+        gm.levelState = GameManager.State.PLAY;
+        timer = 0;
+        timeDiamond = SceneManager.GetActiveScene().buildIndex * 5 + 25;
+        for (int i = 0; i < diamondsSprites.Length; i++){
+            diamondsSprites[i].SetActive(false);
+        }
+
+        PPNivel = "PPDiamondsNivel_" + nivel;
+        diamondsNivel = PlayerPrefs.GetInt(PPNivel);
     }
 
     void Update()
     {                              
         ResistenceController();
         timer += Time.deltaTime;
-        DisplayTime(timer);
-        ControllerTimer();     
-
-        switch (gm.levelState){
-            case GameManager.State.PLAY:
-                panelPlay.SetActive(true);
-                panelLevel.SetActive(false);
-                Time.timeScale = 1;
-                break;
-            case GameManager.State.PAUSE:
-                panelLevel.SetActive(true);
-                panelPlay.SetActive(false);
-                buttonNext.SetActive(false);
-                buttonBack.SetActive(true);
-                textLevelState.text = "PAUSE";
-                Time.timeScale = 0;
-                break;
-            case GameManager.State.LEVELCOMPLETED:
-                panelLevel.SetActive(true);
-                panelPlay.SetActive(false);
-                buttonNext.SetActive(true);
-                buttonBack.SetActive(false);
-                textLevelState.text = "LEVEL COMPLETED";
-                buttonNext.GetComponent<Button>().interactable = true;
-                Time.timeScale = 0;
-                break;
-            case GameManager.State.GAMEOVER:            
-                panelLevel.SetActive(true);
-                panelPlay.SetActive(false);
-                buttonNext.SetActive(true);
-                buttonBack.SetActive(false);
-                textLevelState.text = "GAME   OVER";
-                buttonNext.GetComponent<Button>().interactable = false;
-                Time.timeScale = 0;
-                break;
-        }
-            
+        DisplayTime(timer);    
+        DiamondsSystem();   
+        LevelState();   
     }
 
     public void ButtonPause(){
@@ -91,9 +69,9 @@ public class CanvasPlayerController : MonoBehaviour
     }
 
     public void ButtonMenuLevels(){
-        gm.LoadScene(0, 1.5f);
+        gm.LoadScene(0, 1);
     }
-    
+
     public void ButtonRestart(){
         gm.LoadScene(gm.currentScene, 1);
     }
@@ -109,16 +87,17 @@ public class CanvasPlayerController : MonoBehaviour
         Time.timeScale = 0.2f;
         textNotification.gameObject.SetActive(true);
         gameObjectImageReward.gameObject.SetActive(true);
-        gameObjectImageReward.gameObject.GetComponent<Image>().sprite 
-        = sprite;
+        gameObjectImageReward.gameObject.GetComponent<Image>().sprite = sprite;
         textNotification.text = message;
         StartCoroutine(StopNotification());
     }
-
-    void ControllerTimer(){        
-        if(timer<0){
-            timer = 0;
-        }  
+    IEnumerator StopNotification()
+    {
+        yield return new WaitForSecondsRealtime(3);
+        Time.timeScale = 1;
+        gameObjectImageReward.gameObject.SetActive(false);
+        textNotification.gameObject.SetActive(false);
+        notification = false;
     }
 
     void DisplayTime(float timer){
@@ -127,14 +106,95 @@ public class CanvasPlayerController : MonoBehaviour
         
         textTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+    void DisplayTimers(){     
+        float timer = 2*timeDiamond;
+        float timer1 = timeDiamond;
+        float minutes = Mathf.FloorToInt(timer / 60);  
+        float seconds = Mathf.FloorToInt(timer % 60);
+        float minutes1 = Mathf.FloorToInt(timer1 / 60);  
+        float seconds1 = Mathf.FloorToInt(timer1 % 60);
+        textTimerFinish.text = textTimer.text;
+        textTimer0.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        textTimer1.text = string.Format("{0:00}:{1:00}", minutes1, seconds1);
 
-    IEnumerator StopNotification()
-    {
-        yield return new WaitForSecondsRealtime(3);
-        Time.timeScale = 1;
-        gameObjectImageReward.gameObject.SetActive(false);
-        textNotification.gameObject.SetActive(false);
-        notification = false;
+    }
+
+    void DiamondsSystem(){
+        if(gm.levelState == GameManager.State.LEVELCOMPLETED){
+           if(timer>=2*timeDiamond){
+                diamondsLevel = 1;
+                diamondsSprites[0].SetActive(true);
+                diamondsSprites[1].SetActive(false);            
+                diamondsSprites[2].SetActive(false); 
+            }
+            if(timer<2*timeDiamond & timer>timeDiamond){
+                diamondsLevel = 2;
+                diamondsSprites[0].SetActive(true);
+                diamondsSprites[1].SetActive(true);            
+                diamondsSprites[2].SetActive(false);            
+            }
+            if(timer<=timeDiamond){
+                diamondsLevel = 3;
+                diamondsSprites[0].SetActive(true);
+                diamondsSprites[1].SetActive(true);            
+                diamondsSprites[2].SetActive(true);            
+            } 
+        }else{
+            diamondsLevel = 0;
+        }        
+    }
+
+    void LevelState(){
+        switch (gm.levelState){
+            case GameManager.State.PLAY:
+                panelPlay.SetActive(true);
+                panelLevel.SetActive(false);
+                Time.timeScale = 1;
+                break;
+            case GameManager.State.PAUSE:
+                panelLevel.SetActive(true);
+                panelPlay.SetActive(false);
+                buttonNext.SetActive(false);
+                buttonBack.SetActive(true);
+                textLevelState.text = "PAUSE";
+                DisplayTimers();
+                Time.timeScale = 0;
+                break;
+            case GameManager.State.LEVELCOMPLETED:
+                panelLevel.SetActive(true);
+                panelPlay.SetActive(false);
+                buttonNext.SetActive(true);
+                buttonBack.SetActive(false);
+                DisplayTimers();
+                textLevelState.text = "LEVEL COMPLETED";
+                PlayerPrefs.SetInt("PPLvlsWon", currentScene + 1);  // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou 
+                SaveDiamondsValue();
+                buttonNext.GetComponent<Button>().interactable = true;
+                Time.timeScale = 0;
+                break;
+            case GameManager.State.GAMEOVER:            
+                panelLevel.SetActive(true);
+                panelPlay.SetActive(false);
+                buttonNext.SetActive(true);
+                buttonBack.SetActive(false);
+                DisplayTimers();
+                textLevelState.text = "GAME   OVER";
+                buttonNext.GetComponent<Button>().interactable = false;
+                Time.timeScale = 0;
+                break;
+        }
+    }
+
+    void SaveDiamondsValue(){
+        string PPlvl = "PPDiamondsLvl-" + currentScene;
+        PlayerPrefs.SetInt(PPlvl, diamondsLevel);       // Salva o valor de diamantes na fase        
+        if(currentScene == 1){
+            PlayerPrefs.SetInt(PPNivel, 0);
+            diamondsNivel = PlayerPrefs.GetInt(PPNivel);
+        }
+        diamondsNivel = diamondsNivel + diamondsLevel;
+        PlayerPrefs.SetInt(PPNivel, diamondsNivel);
+
     }
 
 

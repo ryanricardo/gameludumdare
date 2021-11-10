@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] Vector3 target;
     void Update()
     {
-        if(target==null)
+        if(TargetObj==null)
           return;
         target = TargetObj.position;
 

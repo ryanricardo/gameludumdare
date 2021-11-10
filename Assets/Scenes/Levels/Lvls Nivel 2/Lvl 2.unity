@@ -369,8 +369,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
+      propertyPath: nivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
       propertyPath: timer
       value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: currentScene
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6544186094124780807, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}

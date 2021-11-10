@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Data : MonoBehaviour
 {
@@ -11,15 +12,15 @@ public class Data : MonoBehaviour
     [SerializeField]    public  Sprite[]        skinsRewardRock1;
     [SerializeField]    public  Sprite[]        skinsRewardRock2;
     [SerializeField]    public  Sprite[]        skinsRewardRock3;
-    [HideInInspector]   public  GameObject[]    rocks;
-    // public Sprite[]                         
-
+    [HideInInspector]   public  GameObject[]    rocks;                     
+   
     [Header("Functions")]
     [SerializeField]    private bool            restartPrefs;
 
+
+
     void Start()
     {
-        
         if(restartPrefs)
         {
             PlayerPrefs.SetInt("SkinRock1", 0);
@@ -27,7 +28,10 @@ public class Data : MonoBehaviour
             PlayerPrefs.SetInt("SkinRock3", 0);
         }
 
+        // Salva somatorio dos diamantes
 
+        // PlayerPrefs.SetInt("PPDiamonds");
+        // PlayerPrefs.SetInt("PPDiamondsLevels");
 
         // Função para colocar dentro dos arrays as pedras apartir da tag
         rocks = new GameObject[3];

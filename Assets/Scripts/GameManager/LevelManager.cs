@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
     public int levelPanelNumber = 0, LvlsWon;
     [SerializeField] GameObject panelMenu, panelOptions, panelMarket, panelInventory;
     [SerializeField] GameObject[] levelsPanels, buttonsLvls;
+    [SerializeField] TextMeshProUGUI[] textDiamonds;
     [HideInInspector] private bool openInventory;
+    GameManager gm; Data data;
 
     private void Awake(){
+        // PlayerPrefs.DeleteAll();
+
+        gm = FindObjectOfType<GameManager>();
+        data = FindObjectOfType<Data>();
+
         // Ativa os gameObjects dos paineis 
         foreach (var item in levelsPanels){
             item.SetActive(true);
@@ -20,8 +28,8 @@ public class LevelManager : MonoBehaviour
         buttonsLvls = GameObject.FindGameObjectsWithTag("buttonLvl");   
         // A partir da quantidade total de botoes no menu iguala o valor de lvl do botao de acordo com sua posição no menu
         for (int i = 1; i <= buttonsLvls.Length ; i++){
-            buttonsLvls[i-1].GetComponent<ButtonLvl>().lvl = i;
-        }
+            buttonsLvls[i-1].GetComponent<ButtonLvl>().lvl = i;            
+        }      
     }
 
     private void Start(){
@@ -48,6 +56,15 @@ public class LevelManager : MonoBehaviour
         }
         buttonsLvls[0].GetComponent<Button>().interactable = true;
         
+        // Pega cada valor total de diamantes por nivel e salva no devido texto    
+        textDiamonds[0].text = "x" + PlayerPrefs.GetInt("PPDiamondsNivel_1").ToString();
+        textDiamonds[1].text = "x" + PlayerPrefs.GetInt("PPDiamondsNivel_2").ToString();
+        textDiamonds[2].text = "x" + PlayerPrefs.GetInt("PPDiamondsNivel_3").ToString();
+        textDiamonds[3].text = "x" + PlayerPrefs.GetInt("PPDiamondsNivel_4").ToString();
+        textDiamonds[4].text = "x" + PlayerPrefs.GetInt("PPDiamondsNivel_5").ToString();
+        textDiamonds[5].text = "x" + PlayerPrefs.GetInt("PPDiamondsNivel_6").ToString();
+
+
         levelPanelNumber = 0;
     }
 
@@ -103,4 +120,5 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    
 }
