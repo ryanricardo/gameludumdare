@@ -28,11 +28,6 @@ public class Data : MonoBehaviour
             PlayerPrefs.SetInt("SkinRock3", 0);
         }
 
-        // Salva somatorio dos diamantes
-
-        // PlayerPrefs.SetInt("PPDiamonds");
-        // PlayerPrefs.SetInt("PPDiamondsLevels");
-
         // Função para colocar dentro dos arrays as pedras apartir da tag
         rocks = new GameObject[3];
         for(int i = 1; i < rocks.Length; i++)

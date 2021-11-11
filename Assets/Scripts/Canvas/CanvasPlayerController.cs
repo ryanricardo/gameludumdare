@@ -18,15 +18,13 @@ public class CanvasPlayerController : MonoBehaviour
     [HideInInspector]   private Data data;
     
     private bool notification;
-    public int nivel, currentScene, diamondsNivel;
-    public string PPNivel;
 
     [Header("Atributtes Timer")]
-    [SerializeField]    private float timer, timeDiamond;
-    int diamondsLevel;
+    [SerializeField]    private float timer;
+    [SerializeField]    private float timeDiamond;
 
     [Header("Atributtes Menus")]
-    [HideInInspector]   private bool                menuOpen;
+    [HideInInspector]   private bool menuOpen;
     
 
     void Start()
@@ -41,9 +39,6 @@ public class CanvasPlayerController : MonoBehaviour
         for (int i = 0; i < diamondsSprites.Length; i++){
             diamondsSprites[i].SetActive(false);
         }
-
-        PPNivel = "PPDiamondsNivel_" + nivel;
-        diamondsNivel = PlayerPrefs.GetInt(PPNivel);
     }
 
     void Update()
@@ -122,25 +117,25 @@ public class CanvasPlayerController : MonoBehaviour
     void DiamondsSystem(){
         if(gm.levelState == GameManager.State.LEVELCOMPLETED){
            if(timer>=2*timeDiamond){
-                diamondsLevel = 1;
+                gm.diamondsLevel = 1;
                 diamondsSprites[0].SetActive(true);
                 diamondsSprites[1].SetActive(false);            
                 diamondsSprites[2].SetActive(false); 
             }
             if(timer<2*timeDiamond & timer>timeDiamond){
-                diamondsLevel = 2;
+                gm.diamondsLevel = 2;
                 diamondsSprites[0].SetActive(true);
                 diamondsSprites[1].SetActive(true);            
                 diamondsSprites[2].SetActive(false);            
             }
             if(timer<=timeDiamond){
-                diamondsLevel = 3;
+                gm.diamondsLevel = 3;
                 diamondsSprites[0].SetActive(true);
                 diamondsSprites[1].SetActive(true);            
                 diamondsSprites[2].SetActive(true);            
             } 
         }else{
-            diamondsLevel = 0;
+            gm.diamondsLevel = 0;
         }        
     }
 
@@ -167,8 +162,8 @@ public class CanvasPlayerController : MonoBehaviour
                 buttonBack.SetActive(false);
                 DisplayTimers();
                 textLevelState.text = "LEVEL COMPLETED";
-                PlayerPrefs.SetInt("PPLvlsWon", currentScene + 1);  // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou 
-                SaveDiamondsValue();
+                PlayerPrefs.SetInt("LvlsWon", gm.currentScene + 1);  // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou
+                gm.DiamondsValue();
                 buttonNext.GetComponent<Button>().interactable = true;
                 Time.timeScale = 0;
                 break;
@@ -185,17 +180,6 @@ public class CanvasPlayerController : MonoBehaviour
         }
     }
 
-    void SaveDiamondsValue(){
-        string PPlvl = "PPDiamondsLvl-" + currentScene;
-        PlayerPrefs.SetInt(PPlvl, diamondsLevel);       // Salva o valor de diamantes na fase        
-        if(currentScene == 1){
-            PlayerPrefs.SetInt(PPNivel, 0);
-            diamondsNivel = PlayerPrefs.GetInt(PPNivel);
-        }
-        diamondsNivel = diamondsNivel + diamondsLevel;
-        PlayerPrefs.SetInt(PPNivel, diamondsNivel);
-
-    }
 
 
 }

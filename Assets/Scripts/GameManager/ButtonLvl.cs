@@ -16,7 +16,7 @@ public class ButtonLvl : MonoBehaviour
 
     private void Start()
     {
-        string PPlvl = "PPDiamondsLvl-" + lvl;        
+        string PPlvl = "DiamondsLvl" + lvl;        
         diamondsButton = PlayerPrefs.GetInt(PPlvl);  
         
         switch (diamondsButton){
