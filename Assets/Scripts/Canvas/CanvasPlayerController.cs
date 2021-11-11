@@ -54,13 +54,17 @@ public class CanvasPlayerController : MonoBehaviour
         if(playerController.getKeyDownEsc)
         {
             openPanelPause ^= true;
-            if(openPanelPause)
+            if(!openPanelPause)
             {
-                panelPause.SetActive(true);
-            }else 
-            {
+                Time.timeScale = 1;
                 panelPause.SetActive(false);
             }
+        }
+
+        if(openPanelPause)
+        {
+            Time.timeScale = 0;
+            panelPause.SetActive(true);
         }
     }
 
