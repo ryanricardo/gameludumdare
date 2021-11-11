@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]private Data                   data;
 
     [Header("Atributtes Manager")]
-    public int currentScene;
+    public int nivel;
+    public int diamondsNivel, diamondsLevel;
+    [HideInInspector] public int currentScene;
 
     [HideInInspector] public State levelState;
     public enum State {PLAY, PAUSE, LEVELCOMPLETED, GAMEOVER};
@@ -23,20 +25,20 @@ public class GameManager : MonoBehaviour
     {
         souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
         souceEffects.volume = PlayerPrefs.GetFloat("VolumeEffectsGame");
+        data = FindObjectOfType<Data>();
+        inventoryManager = FindObjectOfType<InventoryManager>();
+        playerController = FindObjectOfType<NewPlayerController>();
+        data.rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
+        data.rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
+        playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
     }
 
     void Start()
     {
-        data = FindObjectOfType<Data>();
-        inventoryManager = FindObjectOfType<InventoryManager>();
-        playerController = FindObjectOfType<NewPlayerController>();
         // imageRestart.gameObject.SetActive(false);
         Time.timeScale = 1;
-        data.rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
-        data.rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
-        playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
-
         souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
+        currentScene = SceneManager.GetActiveScene().buildIndex;
         Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
     }
 
@@ -51,7 +53,6 @@ public class GameManager : MonoBehaviour
         {
             levelState = State.GAMEOVER;
         }
-
     }
 
     IEnumerator SceneDelay(int SceneNumber, float delay){
@@ -68,6 +69,10 @@ public class GameManager : MonoBehaviour
     public void LoadScene(int SceneNumber, float delay = 0){
         StartCoroutine(SceneDelay(SceneNumber, delay));
     }
-
+    
+    public void DiamondsValue(){
+        string PPlvl = "DiamondsLvl" + currentScene;
+        PlayerPrefs.SetInt(PPlvl, diamondsLevel);   // Salva o valor de diamantes na fase      
+    }
     
 }

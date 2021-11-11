@@ -560,6 +560,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
+      propertyPath: nivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
       propertyPath: rock1
       value: 
       objectReference: {fileID: 459948691}
@@ -568,6 +573,11 @@ PrefabInstance:
       propertyPath: souceMusic
       value: 
       objectReference: {fileID: 1090321089}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: currentScene
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
       propertyPath: imageRestart
