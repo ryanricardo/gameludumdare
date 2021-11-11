@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MecanismoDePeso : MonoBehaviour
+public class PedraDePeso : MonoBehaviour
 {
+    [SerializeField]private float speed = 10.0f;
+    [SerializeField]private Vector2 target;
+    [SerializeField]private Vector2 position;
+    [SerializeField]private Vector2 posicaoatual;
+    private float step;
     [SerializeField] public float PesoNecessario;
     [SerializeField] public float PesoAtual;
     [SerializeField] public bool ativo=false;
-    [SerializeField] public float tempo;
-    [SerializeField] private bool podemover=true;
 
+    void Start()
+    {
+        position=transform.position;
+    }
 
     void Update()
     {
+        posicaoatual=transform.position;
+
+        step = speed * Time.deltaTime;
+
         if(PesoAtual>=PesoNecessario)
         {
             ativo=true;
@@ -22,8 +33,15 @@ public class MecanismoDePeso : MonoBehaviour
             ativo=false;
         }
 
-    }
+        if(ativo)
+        {
+           transform.position = Vector2.MoveTowards(transform.position, target, step);        }
+        else
+        {
+             transform.position = Vector2.MoveTowards(transform.position, position, step);
+        }
 
+    }
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.tag=="RockController 1" || col.gameObject.tag=="RockController 2" || col.gameObject.tag== "Player"|| col.gameObject.tag=="pedra")
