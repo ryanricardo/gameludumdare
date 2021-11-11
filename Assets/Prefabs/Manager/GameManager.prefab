@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 602094489981943331}
   - component: {fileID: 602094489981943330}
   - component: {fileID: 602094489981943333}
+  - component: {fileID: 8076631200828343100}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,12 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4597b418bcda4447a0595c88754a8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelGameOver: {fileID: 0}
-  panelLevelCompleted: {fileID: 0}
-  imageRestart: {fileID: 0}
-  gameOver: 0
-  levelCompleted: 0
+  souceMusic: {fileID: 602094489981943333}
+  souceEffects: {fileID: 0}
+  nivel: 0
+  diamondsNivel: 0
+  diamondsLevel: 0
   currentScene: 0
+  levelState: 0
 --- !u!82 &602094489981943333
 AudioSource:
   m_ObjectHideFlags: 0
@@ -146,3 +148,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8076631200828343100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602094489981943332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d9eab96523f1242a96bdc81991336f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinRock1:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: fabef1505446cac41b579a1fb08d1317, type: 3}
+  skinRock2:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: eb7af7d41e6537d43add5902c40782ae, type: 3}
+  skinRock3:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: d67a8c1a6500b444a812b5b899472d09, type: 3}
+  skinsRewardRock1:
+  - {fileID: 21300000, guid: 256f367931239914ebaadaeb432288b1, type: 3}
+  skinsRewardRock2:
+  - {fileID: 21300000, guid: edeb17336253c5844b545f3f551ca3fd, type: 3}
+  skinsRewardRock3:
+  - {fileID: 21300000, guid: 6e3dc11ac81cc994085e7e9b34c52882, type: 3}
+  rocks: []
+  restartPrefs: 0
