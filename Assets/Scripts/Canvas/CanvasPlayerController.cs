@@ -11,7 +11,7 @@ public class CanvasPlayerController : MonoBehaviour
     [Header("Components")]
     [SerializeField]    private Slider              sliderBalance;
     [SerializeField]    private TextMeshProUGUI     textNotification, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish;
-    [SerializeField]    private GameObject          gameObjectImageReward, panelPlay, panelLevel, panelPause, buttonNext, buttonBack;
+    [SerializeField]    private GameObject          gameObjectImageReward, panelPlay, panelLevel, buttonNext, buttonBack;
     [SerializeField]    private GameObject[]        diamondsSprites;  
     [HideInInspector]   private GameManager         gm;
     [HideInInspector]   private NewPlayerController playerController;
@@ -51,21 +51,6 @@ public class CanvasPlayerController : MonoBehaviour
         DiamondsSystem();   
         LevelState();   
 
-        if(playerController.getKeyDownEsc)
-        {
-            openPanelPause ^= true;
-            if(!openPanelPause)
-            {
-                Time.timeScale = 1;
-                panelPause.SetActive(false);
-            }
-        }
-
-        if(openPanelPause)
-        {
-            Time.timeScale = 0;
-            panelPause.SetActive(true);
-        }
     }
 
     public void ButtonPause(){
