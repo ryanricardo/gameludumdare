@@ -493,7 +493,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -350, y: 350}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1606988843312793421
 CanvasRenderer:
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lvl 0
+  m_text: LEVEL 00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3383,7 +3383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderBalance: {fileID: 8555643547883112662}
   textNotification: {fileID: 1756104137885373028}
-  textLevelState: {fileID: 3594465339726876798}
+  textLevel: {fileID: 6263531087583373948}
   textTimer: {fileID: 8561415219646349399}
   textTimer0: {fileID: 6928793993854376472}
   textTimer1: {fileID: 8006418664272162480}
@@ -3391,7 +3391,6 @@ MonoBehaviour:
   gameObjectImageReward: {fileID: 3259113287260886079}
   panelPlay: {fileID: 2366587209923796584}
   panelLevel: {fileID: 8472279849008036868}
-  panelPause: {fileID: 0}
   buttonNext: {fileID: 5562840411432410946}
   buttonBack: {fileID: 5172158510627335876}
   diamondsSprites:

@@ -10,7 +10,7 @@ public class CanvasPlayerController : MonoBehaviour
 
     [Header("Components")]
     [SerializeField]    private Slider              sliderBalance;
-    [SerializeField]    private TextMeshProUGUI     textNotification, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish;
+    [SerializeField]    private TextMeshProUGUI     textNotification, textLevel, textTimer, textTimer0, textTimer1, textTimerFinish;
     [SerializeField]    private GameObject          gameObjectImageReward, panelPlay, panelLevel, buttonNext, buttonBack;
     [SerializeField]    private GameObject[]        diamondsSprites;  
     [HideInInspector]   private GameManager         gm;
@@ -18,6 +18,7 @@ public class CanvasPlayerController : MonoBehaviour
     [HideInInspector]   private Data data;
     
     private bool notification;
+    TextMeshProUGUI textLevelState;
 
     [Header("Atributtes Timer")]
     [SerializeField]    private float timer;
@@ -27,16 +28,20 @@ public class CanvasPlayerController : MonoBehaviour
     [HideInInspector]   private bool menuOpen;
     [HideInInspector]   private bool openPanelPause;
     
-
-    void Start()
-    {
-        openPanelPause = false;
+    private void Awake()
+    {        
         playerController = FindObjectOfType<NewPlayerController>();
         gm = FindObjectOfType<GameManager>();
         data = FindObjectOfType<Data>();
         buttonNext.GetComponent<Button>().interactable = true;
+        openPanelPause = false;
+    }
+
+    void Start()
+    {
         gm.levelState = GameManager.State.PLAY;
         timer = 0;
+        TextLevel();
         timeDiamond = SceneManager.GetActiveScene().buildIndex * 5 + 25;
         for (int i = 0; i < diamondsSprites.Length; i++){
             diamondsSprites[i].SetActive(false);
@@ -50,7 +55,6 @@ public class CanvasPlayerController : MonoBehaviour
         DisplayTime(timer);    
         DiamondsSystem();   
         LevelState();   
-
     }
 
     public void ButtonPause(){
@@ -96,6 +100,29 @@ public class CanvasPlayerController : MonoBehaviour
         gameObjectImageReward.gameObject.SetActive(false);
         textNotification.gameObject.SetActive(false);
         notification = false;
+    }
+
+    void TextLevel(){
+        switch (gm.nivel){
+            case 1:
+                textLevel.text = "LEVEL " + gm.currentScene;
+                break;
+            case 2:
+                textLevel.text = "LEVEL " + (gm.currentScene - gm.lvlsNivel);
+                break;
+            case 3:
+                textLevel.text = "LEVEL " + (gm.currentScene - gm.lvlsNivel * 2);
+                break;
+            case 4:
+                textLevel.text = "LEVEL " + (gm.currentScene - gm.lvlsNivel * 3);
+                break;
+            case 5:
+                textLevel.text = "LEVEL " + (gm.currentScene - gm.lvlsNivel * 4);
+                break;
+            case 6:
+                textLevel.text = "LEVEL " + (gm.currentScene - gm.lvlsNivel * 5);
+                break;
+        }
     }
 
     void DisplayTime(float timer){

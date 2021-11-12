@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [Header("Atributtes Manager")]
     public int nivel;
     public int diamondsNivel, diamondsLevel;
-    [HideInInspector] public int currentScene;
+    [HideInInspector] public int currentScene, lvlsNivel;
 
     [HideInInspector] public State levelState;
     public enum State {PLAY, PAUSE, LEVELCOMPLETED, GAMEOVER};
@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         // imageRestart.gameObject.SetActive(false);
         Time.timeScale = 1;
+        lvlsNivel = 12;
         souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
         currentScene = SceneManager.GetActiveScene().buildIndex;
         Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
