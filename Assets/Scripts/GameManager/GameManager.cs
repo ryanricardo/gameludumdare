@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
-        souceEffects.volume = PlayerPrefs.GetFloat("VolumeEffectsGame");
+        souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame") * PlayerPrefs.GetFloat("VolumeGeneral");
+        souceEffects.volume = PlayerPrefs.GetFloat("VolumeEffectsGame") * PlayerPrefs.GetFloat("VolumeGeneral");
         data = FindObjectOfType<Data>();
         inventoryManager = FindObjectOfType<InventoryManager>();
         playerController = FindObjectOfType<NewPlayerController>();

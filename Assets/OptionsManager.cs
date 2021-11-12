@@ -18,33 +18,81 @@ public class OptionsManager : MonoBehaviour
     [SerializeField]    private Sprite              spriteUnmuted;
 
     [Header("Atributtes Volumes")]
-    [HideInInspector]   private bool                muteMusic;
-    [HideInInspector]   private bool                muteEffects;
-    [HideInInspector]   private bool                muteGeneral;
+    [SerializeField]    private bool                runOneTime;
 
+    void Awake()
+    {
 
+    }
     void Start()
     {
-        muteGeneral = false;
-        muteMusic = false;
-        muteEffects = false;
+ 
+        if(runOneTime)
+        {
+            PlayerPrefs.SetInt("MuteGeneral", -1);
+            PlayerPrefs.SetInt("MuteMusic", -1);
+            PlayerPrefs.SetInt("MuteEffects", -1);
+        }   
+
+        
+        if(PlayerPrefs.GetInt("MuteMusic") == 1)
+        {
+            PlayerPrefs.SetFloat("PastVolumeMusic", PlayerPrefs.GetFloat("VolumeMusicGame"));
+            ButtonMuteMusic.GetComponent<Image>().sprite = spriteMutated;
+            sliderAjustMusicGame.value = 0;
+            sliderAjustMusicGame.interactable = false;
+        }else 
+        {
+            ButtonMuteMusic.GetComponent<Image>().sprite = spriteUnmuted;
+            sliderAjustMusicGame.interactable = true;
+        }
+
+        if(PlayerPrefs.GetInt("MuteEffects") == 1)
+        {
+            PlayerPrefs.SetFloat("PastVolumeEffects", PlayerPrefs.GetFloat("VolumeEffectsGame"));
+            ButtonMuteEffects.gameObject.GetComponent<Image>().sprite = spriteMutated;
+            sliderAjustEffectsGame.value = 0;
+            sliderAjustEffectsGame.interactable = false;
+        }else 
+        {
+            ButtonMuteEffects.gameObject.GetComponent<Image>().sprite = spriteUnmuted;
+            sliderAjustEffectsGame.interactable = true;
+
+        }
+
+        if(PlayerPrefs.GetInt("MuteGeneral") == 1)
+        {
+            PlayerPrefs.SetFloat("PastVolumeGeneral", PlayerPrefs.GetFloat("Volume"));
+            ButtonMuteGeneral.GetComponent<Image>().sprite = spriteMutated;
+            sliderAjustGeneralVolume.value = 0;
+            sliderAjustGeneralVolume.interactable = false;
+        }else 
+        {
+            ButtonMuteGeneral.GetComponent<Image>().sprite = spriteUnmuted;
+            sliderAjustGeneralVolume.interactable = true;
+
+        }
+
         sliderAjustMusicGame.value = PlayerPrefs.GetFloat("VolumeMusicGame");
         sliderAjustEffectsGame.value = PlayerPrefs.GetFloat("VolumeEffectsGame");
         sliderAjustGeneralVolume.value = PlayerPrefs.GetFloat("VolumeGeneral");
+
     }
 
     void Update()
     {
         PlayerPrefs.SetFloat("VolumeGeneral", sliderAjustGeneralVolume.value);
-        PlayerPrefs.SetFloat("VolumeMusicGame", sliderAjustMusicGame.value * sliderAjustGeneralVolume.value);
-        PlayerPrefs.SetFloat("VolumeEffectsGame", sliderAjustEffectsGame.value * sliderAjustGeneralVolume.value);        
+        PlayerPrefs.SetFloat("VolumeMusicGame", sliderAjustMusicGame.value);
+        PlayerPrefs.SetFloat("VolumeEffectsGame", sliderAjustEffectsGame.value);   
+
+   
     }
 
     public void MuteGeneral()
     {
-        muteGeneral ^= true;
+        PlayerPrefs.SetInt("MuteGeneral", PlayerPrefs.GetInt("MuteGeneral") * -1);
 
-        if(muteGeneral)
+        if(PlayerPrefs.GetInt("MuteGeneral") == 1)
         {
             PlayerPrefs.SetFloat("PastVolumeGeneral", PlayerPrefs.GetFloat("Volume"));
             ButtonMuteGeneral.GetComponent<Image>().sprite = spriteMutated;
@@ -61,9 +109,10 @@ public class OptionsManager : MonoBehaviour
 
     public void MuteMusic()
     {
-        muteMusic ^= true;
 
-        if(muteMusic)
+        PlayerPrefs.SetInt("MuteMusic", PlayerPrefs.GetInt("MuteMusic") * -1);
+
+        if(PlayerPrefs.GetInt("MuteMusic") == 1)
         {
             PlayerPrefs.SetFloat("PastVolumeMusic", PlayerPrefs.GetFloat("VolumeMusicGame"));
             ButtonMuteMusic.GetComponent<Image>().sprite = spriteMutated;
@@ -80,9 +129,10 @@ public class OptionsManager : MonoBehaviour
 
     public void MuteEffects()
     {
-        muteEffects ^= true;
+        
+        PlayerPrefs.SetInt("MuteEffects", PlayerPrefs.GetInt("MuteEffects") * -1);
 
-        if(muteEffects)
+        if(PlayerPrefs.GetInt("MuteEffects") == 1)
         {
             PlayerPrefs.SetFloat("PastVolumeEffects", PlayerPrefs.GetFloat("VolumeEffectsGame"));
             ButtonMuteEffects.gameObject.GetComponent<Image>().sprite = spriteMutated;
