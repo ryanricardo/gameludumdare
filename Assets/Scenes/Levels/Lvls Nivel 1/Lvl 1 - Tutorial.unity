@@ -668,6 +668,16 @@ PrefabInstance:
       propertyPath: rolloffMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8076631200828343100, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: rocks.Array.data[1]
+      value: 
+      objectReference: {fileID: 459948691}
+    - target: {fileID: 8076631200828343100, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: rocks.Array.data[2]
+      value: 
+      objectReference: {fileID: 988535992}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a705afb3265598244aa818b5ace18e03, type: 3}
 --- !u!114 &700855623 stripped
@@ -914,6 +924,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 370e1cca86d13424e8aaaabe5faffcc3, type: 3}
+--- !u!1 &988535992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5033955938827162784, guid: 8ff3c7bc1d729d744b7f0ec618ace19d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2124091632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1090321089 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 602094489981943333, guid: a705afb3265598244aa818b5ace18e03,
