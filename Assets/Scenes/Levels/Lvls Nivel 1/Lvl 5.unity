@@ -15324,8 +15324,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[0].m_Data
       value: 
-      objectReference: {fileID: 21300000, guid: cb412de0cd64f07479565869a06483f5,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7940701476748839275, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[1].m_Data
@@ -15354,7 +15353,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[5].m_Data
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: cb412de0cd64f07479565869a06483f5,
+        type: 3}
     - target: {fileID: 7940701476748839275, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[6].m_Data
@@ -15534,7 +15534,7 @@ PrefabInstance:
     - target: {fileID: 7940701476748839275, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[0].m_RefCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7940701476748839275, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
@@ -15559,7 +15559,7 @@ PrefabInstance:
     - target: {fileID: 7940701476748839275, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[5].m_RefCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7940701476748839275, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
@@ -15654,7 +15654,7 @@ PrefabInstance:
     - target: {fileID: 7940701476748839275, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
       propertyPath: m_Tiles.Array.data[0].second.m_TileSpriteIndex
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7940701476748839275, guid: 76339106e56017b4b9c2fa86913f6bd0,
         type: 3}
@@ -15973,12 +15973,12 @@ PrefabInstance:
     - target: {fileID: 1753421136124294136, guid: ddc543a8d0245684ebb27d7383375703,
         type: 3}
       propertyPath: maxPos.x
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1753421136124294136, guid: ddc543a8d0245684ebb27d7383375703,
         type: 3}
       propertyPath: minPos.x
-      value: -0.8
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1753421136124294136, guid: ddc543a8d0245684ebb27d7383375703,
         type: 3}
@@ -15993,7 +15993,7 @@ PrefabInstance:
     - target: {fileID: 1753421136124294137, guid: ddc543a8d0245684ebb27d7383375703,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1753421136124294137, guid: ddc543a8d0245684ebb27d7383375703,
         type: 3}
@@ -16277,7 +16277,7 @@ PrefabInstance:
     - target: {fileID: 670701363527597517, guid: 370e1cca86d13424e8aaaabe5faffcc3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 670701363527597517, guid: 370e1cca86d13424e8aaaabe5faffcc3,
         type: 3}
@@ -16353,7 +16353,7 @@ PrefabInstance:
     - target: {fileID: 646820509772010541, guid: d6a98c79eea1b534ca1f2c8f62fca00d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 646820509772010541, guid: d6a98c79eea1b534ca1f2c8f62fca00d,
         type: 3}
@@ -16850,7 +16850,7 @@ PrefabInstance:
     - target: {fileID: 5033955938827162791, guid: 8ff3c7bc1d729d744b7f0ec618ace19d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 5033955938827162791, guid: 8ff3c7bc1d729d744b7f0ec618ace19d,
         type: 3}
@@ -17115,40 +17115,32 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1958139647}
     m_ColliderPaths:
-    - - X: 150000100
-        Y: -80000041
-      - X: 150000100
-        Y: 80000041
-      - X: 150000041
-        Y: 80000100
-      - X: -150000041
-        Y: 80000100
-      - X: -150000100
-        Y: 80000041
-      - X: -150000100
-        Y: -80000041
-      - X: -150000041
-        Y: -80000100
-      - X: 150000041
-        Y: -80000100
-    - - X: -139999900
-        Y: -69999900
-      - X: -139999900
-        Y: 69999900
-      - X: 139999900
-        Y: 69999900
-      - X: 139999900
-        Y: -69999900
+    - - X: 150000000
+        Y: 80000000
+      - X: -150000000
+        Y: 80000000
+      - X: -150000000
+        Y: -80000000
+      - X: 150000000
+        Y: -80000000
+    - - X: -140000000
+        Y: -70000000
+      - X: -140000000
+        Y: 70000000
+      - X: 140000000
+        Y: 70000000
+      - X: 140000000
+        Y: -70000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 14.999974, y: -8.00001}
-      - {x: 14.999974, y: 8.00001}
-      - {x: -15.00001, y: 7.9999747}
-      - {x: -14.999974, y: -8.00001}
-    - - {x: 13.99999, y: -6.999961}
-      - {x: -13.99999, y: -6.999961}
-      - {x: -13.99996, y: 6.9999905}
-      - {x: 13.99999, y: 6.999961}
+    - - {x: 14.999971, y: -8}
+      - {x: 14.999971, y: 8}
+      - {x: -15, y: 7.9999704}
+      - {x: -14.999971, y: -8}
+    - - {x: 14, y: -6.9999704}
+      - {x: -14, y: -6.9999704}
+      - {x: -13.999971, y: 7}
+      - {x: 14, y: 6.9999704}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1958139649
