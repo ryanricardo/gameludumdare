@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
 
     private void Awake(){
         // PlayerPrefs.DeleteAll();
+        
 
         gm = FindObjectOfType<GameManager>();
         data = FindObjectOfType<Data>();
@@ -121,62 +122,14 @@ public class LevelManager : MonoBehaviour
     }
 
     void Diamonds(){
-        // Valores dos totais de diamantes por nivel         
-        // for (int i = 1; i < 13; i++){
-        //     int n1 = PlayerPrefs.GetInt("DiamondsLvl" + i);
-        //     if(n1!=0)
-        //        return;
-        //     int n2 = PlayerPrefs.GetInt("Diamonds1");
-        //     n2 += n1;
-        //     PlayerPrefs.SetInt("Diamonds1", n2);
-        //     textDiamondsLvls[0].text = "x" + PlayerPrefs.GetInt("Diamonds1");
-        // }
-        // for (int i = 13; i < 25; i++){
-        //     int n1 = PlayerPrefs.GetInt("DiamondsLvl" + i);
-        //     int n2 = PlayerPrefs.GetInt("Diamonds2");
-        //     n2 += n1;
-        //     PlayerPrefs.SetInt("Diamonds2", n2);
-        //     textDiamondsLvls[1].text = "x" + PlayerPrefs.GetInt("Diamonds2");
-        // }
-        // for (int i = 25; i < 37; i++){
-        //     int n1 = PlayerPrefs.GetInt("DiamondsLvl" + i);
-        //     int n2 = PlayerPrefs.GetInt("Diamonds3");
-        //     n2 += n1;
-        //     PlayerPrefs.SetInt("Diamonds3", n2);
-        //     textDiamondsLvls[2].text = "x" + PlayerPrefs.GetInt("Diamonds3");
-        // }
-        // for (int i = 37; i < 49; i++){
-        //     int n1 = PlayerPrefs.GetInt("DiamondsLvl" + i);
-        //     int n2 = PlayerPrefs.GetInt("Diamonds4");
-        //     n2 += n1;
-        //     PlayerPrefs.SetInt("Diamonds4", n2);
-        //     textDiamondsLvls[3].text = "x" + PlayerPrefs.GetInt("Diamonds4");
-        // }
-        // for (int i = 49; i < 61; i++){
-        //     int n1 = PlayerPrefs.GetInt("DiamondsLvl" + i);
-        //     int n2 = PlayerPrefs.GetInt("Diamonds5");
-        //     n2 += n1;
-        //     PlayerPrefs.SetInt("Diamonds5", n2);
-        //     textDiamondsLvls[4].text = "x" + PlayerPrefs.GetInt("Diamonds5");
-        // }
-        // for (int i = 61; i < 73; i++){
-        //     int n1 = PlayerPrefs.GetInt("DiamondsLvl" + i);
-        //     int n2 = PlayerPrefs.GetInt("Diamonds6");
-        //     n2 += n1;
-        //     PlayerPrefs.SetInt("Diamonds6", n2);
-        //     textDiamondsLvls[5].text = "x" + PlayerPrefs.GetInt("Diamonds6");
-        // }
-
+        // Repassa os valores dos diamantes por nivel para seus devidos textos
         for (int i = 0; i < 6; i++){
             int f = i + 1;
             textDiamondsLvls[i].text = "x" + PlayerPrefs.GetInt("Diamonds" + f);            
         }
 
-
         // Somatorio dos valores de diamantes por nivel
         int n3 = PlayerPrefs.GetInt("Diamonds1") + PlayerPrefs.GetInt("Diamonds2") + PlayerPrefs.GetInt("Diamonds3") + PlayerPrefs.GetInt("Diamonds4") + PlayerPrefs.GetInt("Diamonds5") + PlayerPrefs.GetInt("Diamonds6");
         textDiamondsTotal.text = "x" + n3;
-
-
     }
 }

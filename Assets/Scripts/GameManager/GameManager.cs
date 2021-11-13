@@ -15,8 +15,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Atributtes Manager")]
     public int nivel;
-    public int diamondsNivel, diamondsLevel;
-    [HideInInspector] public int currentScene, lvlsNivel;
+    public int currentScene, lvlsNivel, diamondsNivel, diamondsLevel;
 
     [HideInInspector] public State levelState;
     public enum State {PLAY, PAUSE, LEVELCOMPLETED, GAMEOVER};
