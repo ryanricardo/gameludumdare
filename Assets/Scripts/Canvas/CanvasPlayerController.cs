@@ -10,7 +10,7 @@ public class CanvasPlayerController : MonoBehaviour
 
     [Header("Components")]
     [SerializeField]    private Slider              sliderBalance;
-    [SerializeField]    private TextMeshProUGUI     textNotification, textLevel, textTimer, textTimer0, textTimer1, textTimerFinish;
+    [SerializeField]    private TextMeshProUGUI     textNotification, textLevel, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish;
     [SerializeField]    private GameObject          gameObjectImageReward, panelPlay, panelLevel, buttonNext, buttonBack;
     [SerializeField]    private GameObject[]        diamondsSprites;  
     [HideInInspector]   private GameManager         gm;
@@ -18,7 +18,6 @@ public class CanvasPlayerController : MonoBehaviour
     [HideInInspector]   private Data data;
     
     private bool notification;
-    TextMeshProUGUI textLevelState;
 
     [Header("Atributtes Timer")]
     [SerializeField]    private float timer;

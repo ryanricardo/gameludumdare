@@ -3384,6 +3384,7 @@ MonoBehaviour:
   sliderBalance: {fileID: 8555643547883112662}
   textNotification: {fileID: 1756104137885373028}
   textLevel: {fileID: 6263531087583373948}
+  textLevelState: {fileID: 3594465339726876798}
   textTimer: {fileID: 8561415219646349399}
   textTimer0: {fileID: 6928793993854376472}
   textTimer1: {fileID: 8006418664272162480}
