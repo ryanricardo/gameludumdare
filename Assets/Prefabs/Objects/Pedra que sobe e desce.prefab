@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5906316448484550733}
   - component: {fileID: 7938766355878182052}
   - component: {fileID: 7414699102174234090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pedra que sobe e desce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,10 @@ MonoBehaviour:
   speed: 2.5
   target: {x: 0, y: 0}
   position: {x: 0, y: 0}
+  posicaoatual: {x: 0, y: 0}
   mdp: {fileID: 0}
+  tempo: 2
+  tempoBase: 0
 --- !u!61 &7938766355878182052
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,5 +149,5 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7

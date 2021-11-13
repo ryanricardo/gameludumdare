@@ -12,10 +12,13 @@ public class PedraDePeso : MonoBehaviour
     [SerializeField] public float PesoNecessario;
     [SerializeField] public float PesoAtual;
     [SerializeField] public bool ativo=false;
+    [SerializeField]private float tempoBase;
+    [SerializeField]private float tempo;
 
     void Start()
     {
         position=transform.position;
+        tempo=tempoBase;
     }
 
     void Update()
@@ -23,6 +26,15 @@ public class PedraDePeso : MonoBehaviour
         posicaoatual=transform.position;
 
         step = speed * Time.deltaTime;
+
+        if(ativo)
+        {
+            tempo-=Time.deltaTime;
+        }
+        else
+        {
+            tempo=tempoBase;
+        }
 
         if(PesoAtual>=PesoNecessario)
         {
@@ -33,7 +45,7 @@ public class PedraDePeso : MonoBehaviour
             ativo=false;
         }
 
-        if(ativo)
+        if(ativo && tempo<=0)
         {
            transform.position = Vector2.MoveTowards(transform.position, target, step);        }
         else

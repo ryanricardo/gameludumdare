@@ -5,16 +5,19 @@ using UnityEngine;
 public class PlataformaDeSubir_Descer : MonoBehaviour
 {
     [SerializeField]private float speed = 10.0f;
-    [SerializeField]private float tempo = 2f;
     [SerializeField]private Vector2 target;
     [SerializeField]private Vector2 position;
     [SerializeField]private Vector2 posicaoatual;
     public MecanismoDePeso mdp;
     private float step;
+    [SerializeField]private float tempoBase;
+    [SerializeField]private float tempo;
+    
 
     void Start()
     {
         position=transform.position;
+        tempo=tempoBase;
     }
 
     void Update()
@@ -25,7 +28,17 @@ public class PlataformaDeSubir_Descer : MonoBehaviour
 
         if(mdp.ativo)
         {
-           transform.position = Vector2.MoveTowards(transform.position, target, step);        }
+            tempo-=Time.deltaTime;
+        }
+        else
+        {
+            tempo=tempoBase;
+        }
+
+        if(mdp.ativo && tempo<=0)
+        {
+           transform.position = Vector2.MoveTowards(transform.position, target, step);        
+        }
         else
         {
              transform.position = Vector2.MoveTowards(transform.position, position, step);
