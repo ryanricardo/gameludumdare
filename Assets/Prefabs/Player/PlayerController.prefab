@@ -115,6 +115,7 @@ MonoBehaviour:
   dropRock: 0
   speedSubmitBalance: 2
   speedAddBalance: 10
+  countRocks: 0
   balance: 100
   getKeyDownE: 0
   getKeyDownEsc: 0
@@ -139,7 +140,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &646820509772010543
 CapsuleCollider2D:

@@ -670,6 +670,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8076631200828343100, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
+      propertyPath: restartPrefs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076631200828343100, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
       propertyPath: rocks.Array.data[1]
       value: 
       objectReference: {fileID: 459948691}
