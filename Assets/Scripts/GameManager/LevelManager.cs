@@ -8,30 +8,32 @@ using TMPro;
 public class LevelManager : MonoBehaviour
 {
     public int levelPanelNumber = 0, LvlsWon;
-    [SerializeField] GameObject panelMenu, panelOptions, panelMarket, panelInventory;
-    [SerializeField] GameObject[] levelsPanels, buttonsLvls;
+    public GameObject[] levelsPanels;
+    [SerializeField] GameObject panelMenu, panelLevls, panelOptions, panelMarket, panelInventory;
+    [SerializeField] GameObject[] buttonsLvls;
     [SerializeField] TextMeshProUGUI textDiamondsTotal;
     [SerializeField] TextMeshProUGUI[] textDiamondsLvls;
     [HideInInspector] private bool openInventory, openOptions;
-    GameManager gm; Data data;
+    Data data;
+    int lvlsNivel = 16;
 
     private void Awake(){
         // PlayerPrefs.DeleteAll();
         
-
-        gm = FindObjectOfType<GameManager>();
         data = FindObjectOfType<Data>();
+        panelLevls.SetActive(true);
 
         // Ativa os gameObjects dos paineis 
-        foreach (var item in levelsPanels){
-            item.SetActive(true);
-        }
+        // foreach (var item in levelsPanels){
+        //     item.SetActive(true);
+        // }
+
         // Salva no vetor buttonLvls todos os prefabs dos botoes   
         buttonsLvls = GameObject.FindGameObjectsWithTag("buttonLvl");   
         // A partir da quantidade total de botoes no menu iguala o valor de lvl do botao de acordo com sua posição no menu
         for (int i = 1; i <= buttonsLvls.Length ; i++){
-            buttonsLvls[i-1].GetComponent<ButtonLvl>().lvl = i;            
-        }      
+            buttonsLvls[i-1].GetComponent<ButtonLvl>().lvl = i; 
+        }            
     }
 
     private void Start(){
@@ -40,9 +42,10 @@ public class LevelManager : MonoBehaviour
         openOptions = false;
 
         // Desativa os gameObjects dos paineis 
-        foreach (var item in levelsPanels){
-            item.SetActive(false);
-        }
+        // foreach (var item in levelsPanels){
+        //     item.SetActive(false);
+        // }
+        panelLevls.SetActive(false);
 
         // Verifica se existe algum valor para PPLvlsWon e salva em LvlsWon se não LvlsWon deve ser igual a 1
         if(!PlayerPrefs.HasKey("LvlsWon")){
@@ -59,13 +62,15 @@ public class LevelManager : MonoBehaviour
         }
         buttonsLvls[0].GetComponent<Button>().interactable = true;
         Diamonds();
+        TextButtons();
 
         levelPanelNumber = 0;
     }
 
     public void Play(){
         panelMenu.SetActive(false);
-        levelsPanels[0].SetActive(true);
+        panelLevls.SetActive(true);
+        // levelsPanels[0].SetActive(true);
     }
 
     public void ButtonExit(){
@@ -87,8 +92,15 @@ public class LevelManager : MonoBehaviour
     public void ButtonBackMenu(){        
         // panelMarket.SetActive(false);
         // panelOptions.SetActive(false);
-        levelsPanels[levelPanelNumber].SetActive(false);
+        // levelsPanels[levelPanelNumber].SetActive(false);
+        panelLevls.SetActive(false);
         panelMenu.SetActive(true);
+    }
+
+    public void ButtonReset(){
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(0);
     }
     
     public void MusicOn(){
@@ -131,5 +143,25 @@ public class LevelManager : MonoBehaviour
         // Somatorio dos valores de diamantes por nivel
         int n3 = PlayerPrefs.GetInt("Diamonds1") + PlayerPrefs.GetInt("Diamonds2") + PlayerPrefs.GetInt("Diamonds3") + PlayerPrefs.GetInt("Diamonds4") + PlayerPrefs.GetInt("Diamonds5") + PlayerPrefs.GetInt("Diamonds6");
         textDiamondsTotal.text = "x" + n3;
+    }
+
+    void TextButtons(){
+        for (int i = 1; i <= buttonsLvls.Length ; i++){  
+            if(i<=lvlsNivel){
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().textButton.text = i.ToString(); 
+            }
+            if(i>lvlsNivel && i<=lvlsNivel*2){
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().textButton.text = (i-lvlsNivel).ToString(); 
+            }
+            if(i>lvlsNivel*2 && i<=lvlsNivel*3){
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().textButton.text = (i-lvlsNivel*2).ToString(); 
+            }
+            if(i>lvlsNivel*3 && i<=lvlsNivel*4){
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().textButton.text = (i-lvlsNivel*3).ToString(); 
+            }
+            if(i>lvlsNivel*4 && i<=lvlsNivel*5){
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().textButton.text = (i-lvlsNivel*4).ToString(); 
+            }
+        }
     }
 }

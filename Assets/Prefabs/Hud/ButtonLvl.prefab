@@ -452,6 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lvl: 0
   diamondsButton: 0
+  textButton: {fileID: 9002036754943234539}
   diamodsSprites:
   - {fileID: 5589153581131758599}
   - {fileID: 2001120541699153775}

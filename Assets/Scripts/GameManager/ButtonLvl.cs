@@ -7,17 +7,31 @@ using TMPro;
 public class ButtonLvl : MonoBehaviour
 {
     public int lvl, diamondsButton;
-    [SerializeField] GameObject[] diamodsSprites;
+    public TextMeshProUGUI textButton;
+    [SerializeField]GameObject[] diamodsSprites;
 
+    LevelManager levelManager;
+    GameManager gameManager;
     
     public void LoadLevel(){
         SceneManager.LoadScene(lvl);            
     }
 
+    private void Awake()
+    {        
+        levelManager = FindObjectOfType<LevelManager>();
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
     private void Start()
     {
+        DiamondsCount();    
+    }     
+
+
+    void DiamondsCount(){
         string PPlvl = "DiamondsLvl" + lvl;        
-        diamondsButton = PlayerPrefs.GetInt(PPlvl);  
+        diamondsButton = PlayerPrefs.GetInt(PPlvl);
         
         switch (diamondsButton){
             case 0:
@@ -41,6 +55,5 @@ public class ButtonLvl : MonoBehaviour
                 diamodsSprites[2].SetActive(true);
                 break;
         }
-        
     }
 }
