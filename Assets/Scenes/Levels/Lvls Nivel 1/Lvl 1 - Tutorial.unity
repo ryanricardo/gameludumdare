@@ -808,6 +808,21 @@ PrefabInstance:
       propertyPath: panelLevelCompleted
       value: 
       objectReference: {fileID: 1592455273}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: musicsLofi.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: musicsLofi.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c6c85cf4663c4944ba2043a61b0e002, type: 3}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: musicsLofi.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ec32c22620fd7dc4c8fad4674b068cbc, type: 3}
     - target: {fileID: 602094489981943331, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
       propertyPath: m_RootOrder
@@ -872,6 +887,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Volume
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 602094489981943333, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 602094489981943333, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}

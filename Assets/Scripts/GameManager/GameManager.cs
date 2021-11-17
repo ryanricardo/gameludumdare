@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     // [SerializeField] private GameObject             imageRestart;   
     [SerializeField] private AudioSource            souceMusic;
     [SerializeField] private AudioSource            souceEffects;
+    [SerializeField] private AudioClip[]            musicsLofi;              
     [HideInInspector]private NewPlayerController    playerController;
     [HideInInspector]private InventoryManager       inventoryManager;
     [HideInInspector]private Data                   data;
@@ -30,6 +31,10 @@ public class GameManager : MonoBehaviour
         playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
         currentScene = SceneManager.GetActiveScene().buildIndex;
         lvlsNivel = 16;
+
+        souceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
+        souceMusic.Play();
+
     }
 
     void Start()
@@ -53,6 +58,12 @@ public class GameManager : MonoBehaviour
         if(playerController.balance <= 0)
         {
             levelState = State.GAMEOVER;
+        }
+
+        if(!souceMusic.isPlaying)
+        {
+            souceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
+            souceMusic.Play();
         }
     }
 
