@@ -99,6 +99,12 @@ public class LevelManager : MonoBehaviour
 
     public void ButtonReset(){
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("MuteGeneral", -1);
+        PlayerPrefs.SetInt("MuteMusic", -1);
+        PlayerPrefs.SetInt("MuteEffects", -1);
+        PlayerPrefs.SetInt("SkinRock1", 1);
+        PlayerPrefs.SetInt("SkinRock1", 2);
+        PlayerPrefs.SetInt("SkinRock1", 3);
         PlayerPrefs.Save();
         SceneManager.LoadScene(0);
     }

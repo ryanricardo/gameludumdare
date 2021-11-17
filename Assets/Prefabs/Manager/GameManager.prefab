@@ -47,10 +47,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   souceMusic: {fileID: 602094489981943333}
   souceEffects: {fileID: 0}
+  musicsLofi:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 9c6c85cf4663c4944ba2043a61b0e002, type: 3}
+  - {fileID: 8300000, guid: ec32c22620fd7dc4c8fad4674b068cbc, type: 3}
   nivel: 0
+  currentScene: 0
+  lvlsNivel: 0
   diamondsNivel: 0
   diamondsLevel: 0
-  currentScene: 0
   levelState: 0
 --- !u!82 &602094489981943333
 AudioSource:
@@ -62,11 +67,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3303536b49f41ca94bca117acffb117d, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

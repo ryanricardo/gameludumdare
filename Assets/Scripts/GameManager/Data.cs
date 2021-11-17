@@ -14,19 +14,13 @@ public class Data : MonoBehaviour
     [SerializeField]    public  Sprite[]        skinsRewardRock3;
     [HideInInspector]   public  GameObject[]    rocks;                     
    
-    [Header("Functions")]
-    [SerializeField]    private bool            restartPrefs;
+
 
 
 
     void Start()
     {
-        if(restartPrefs)
-        {
-            PlayerPrefs.SetInt("SkinRock1", 1);
-            PlayerPrefs.SetInt("SkinRock2", 1);
-            PlayerPrefs.SetInt("SkinRock3", 1);
-        }
+
 
         // Função para colocar dentro dos arrays as pedras apartir da tag
         rocks = new GameObject[3];

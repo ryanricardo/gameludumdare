@@ -29,9 +29,7 @@ public class OptionsManager : MonoBehaviour
  
         if(runOneTime)
         {
-            PlayerPrefs.SetInt("MuteGeneral", -1);
-            PlayerPrefs.SetInt("MuteMusic", -1);
-            PlayerPrefs.SetInt("MuteEffects", -1);
+            
         }   
 
         
