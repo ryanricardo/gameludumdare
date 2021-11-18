@@ -13,19 +13,21 @@ public class GameManager : MonoBehaviour
     [HideInInspector]private NewPlayerController    playerController;
     [HideInInspector]private InventoryManager       inventoryManager;
     [HideInInspector]private Data                   data;
+    [HideInInspector]private CanvasPlayerController canvasPlayer;
 
     [Header("Atributtes Manager")]
     public int nivel;
     public int currentScene, lvlsNivel, diamondsNivel, diamondsLevel;
 
-    [HideInInspector] public State levelState;
-    public enum State {PLAY, PAUSE, LEVELCOMPLETED, GAMEOVER};
+    State levelState;
+    public enum State {PLAY, PAUSE, FINISH, LEVELCOMPLETED, GAMEOVER};
 
     void Awake()
     {
         souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame") * PlayerPrefs.GetFloat("VolumeGeneral");
         souceEffects.volume = PlayerPrefs.GetFloat("VolumeEffectsGame") * PlayerPrefs.GetFloat("VolumeGeneral");
         data = FindObjectOfType<Data>();
+        canvasPlayer = FindObjectOfType<CanvasPlayerController>();
         inventoryManager = FindObjectOfType<InventoryManager>();
         playerController = FindObjectOfType<NewPlayerController>();
         playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
         // }
         if(playerController.balance <= 0)
         {
-            levelState = State.GAMEOVER;
+            canvasPlayer.LevelState(State.GAMEOVER);
         }
 
         if(!souceMusic.isPlaying)

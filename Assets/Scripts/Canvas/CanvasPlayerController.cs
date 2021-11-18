@@ -12,20 +12,23 @@ public class CanvasPlayerController : MonoBehaviour
     [SerializeField]    private Slider              sliderBalance;
     [SerializeField]    private TextMeshProUGUI     textNotification, textLevel, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish;
     [SerializeField]    private GameObject          gameObjectImageReward, panelPlay, panelLevel, buttonNext, buttonBack;
-    [SerializeField]    private GameObject[]        diamondsSprites;  
+    [SerializeField]    private GameObject[]        diamondsSprites, bonus, buttonsBonus;  
+    [SerializeField]    private TextMeshProUGUI[]   textBonus;
     [HideInInspector]   private GameManager         gm;
     [HideInInspector]   private NewPlayerController playerController;
     [HideInInspector]   private Data data;
     
-    private bool notification;
-
     [Header("Atributtes Timer")]
     [SerializeField]    private float timer;
     [SerializeField]    private float timeDiamond;
 
-    [Header("Atributtes Menus")]
-    [HideInInspector]   private bool menuOpen;
-    [HideInInspector]   private bool openPanelPause;
+    [Header("Atributtes Rewards")]
+    [SerializeField]    private int rewardNumber;
+    [SerializeField]    private int rewardAmount;
+
+    [HideInInspector] public bool rewardReceived;
+    private bool notification, menuOpen, openPanelPause, useBonus;
+    private GameObject panelNotification;
     
     private void Awake()
     {        
@@ -34,13 +37,27 @@ public class CanvasPlayerController : MonoBehaviour
         data = FindObjectOfType<Data>();
         buttonNext.GetComponent<Button>().interactable = true;
         openPanelPause = false;
+        useBonus = true;
+        if(GameObject.Find("PanelNotification")==null)
+            return;
+        panelNotification = GameObject.Find("PanelNotification");
+        panelNotification.SetActive(false);
     }
 
     void Start()
     {
-        gm.levelState = GameManager.State.PLAY;
+        LevelState(GameManager.State.PLAY);
         timer = 0;
+        gm.diamondsLevel = 0;
+        textBonus[0].text = PlayerPrefs.GetInt("Bonus1").ToString() + "x";
+        textBonus[1].text = PlayerPrefs.GetInt("Bonus2").ToString() + "x";
         TextLevel();
+        string PPlvl = "DiamondsLvl" + gm.currentScene;
+        if(PlayerPrefs.GetInt(PPlvl)==3){
+            rewardReceived = true;
+        }else{
+            rewardReceived = false;
+        }
         timeDiamond = SceneManager.GetActiveScene().buildIndex * 5 + 25;
         for (int i = 0; i < diamondsSprites.Length; i++){
             diamondsSprites[i].SetActive(false);
@@ -51,22 +68,19 @@ public class CanvasPlayerController : MonoBehaviour
     {                              
         ResistenceController();
         timer += Time.deltaTime;
-        DisplayTime(timer);    
-        DiamondsSystem();   
-        LevelState();   
+        DisplayTime(timer); 
     }
 
     public void ButtonPause(){
-        gm.levelState = GameManager.State.PAUSE;
+        LevelState(GameManager.State.PAUSE);
     }
 
-    public void ButtonNext(){
+    public void ButtonNext(){  
         gm.LoadScene(gm.currentScene + 1, 1);
-
     }
 
     public void ButtonBack(){
-        gm.levelState = GameManager.State.PLAY;
+        LevelState(GameManager.State.PLAY);
     }
 
     public void ButtonMenuLevels(){
@@ -75,6 +89,33 @@ public class CanvasPlayerController : MonoBehaviour
 
     public void ButtonRestart(){
         gm.LoadScene(gm.currentScene, 1);
+    }
+
+    public void ButtonBonus1(){
+        int x = PlayerPrefs.GetInt("Bonus1");
+        if(useBonus & x>0){
+            useBonus = false;
+            PlayerPrefs.SetInt("Bonus1", x-1);
+            textBonus[0].text = x.ToString() + "x";
+            Vector2 pos = playerController.transform.position;
+            pos.x += 1;
+            pos.y += 1;
+            Instantiate(bonus[0], pos, Quaternion.identity);
+        }
+    }
+
+    public void ButtonBonus2(){        
+        int x = PlayerPrefs.GetInt("Bonus2");
+        if(useBonus & x>0){
+
+            useBonus = false;
+            PlayerPrefs.SetInt("Bonus2", x-1);
+            textBonus[1].text = x.ToString() + "x";
+            Vector2 pos = playerController.transform.position;
+            pos.y += 1;
+            pos.x += 1;
+            Instantiate(bonus[1], pos, Quaternion.identity);   
+        }
     }
 
     void ResistenceController()
@@ -104,22 +145,22 @@ public class CanvasPlayerController : MonoBehaviour
     void TextLevel(){
         switch (gm.nivel){
             case 1:
-                textLevel.text = "LEVEL " + gm.currentScene;
+                textLevel.text = "" + gm.currentScene;
                 break;
             case 2:
-                textLevel.text = "LEVEL " + (gm.currentScene - gm.lvlsNivel);
+                textLevel.text = "" + (gm.currentScene - gm.lvlsNivel);
                 break;
             case 3:
-                textLevel.text = "LEVEL " + (gm.currentScene - gm.lvlsNivel * 2);
+                textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 2);
                 break;
             case 4:
-                textLevel.text = "LEVEL " + (gm.currentScene - gm.lvlsNivel * 3);
+                textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 3);
                 break;
             case 5:
-                textLevel.text = "LEVEL " + (gm.currentScene - gm.lvlsNivel * 4);
+                textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 4);
                 break;
             case 6:
-                textLevel.text = "LEVEL " + (gm.currentScene - gm.lvlsNivel * 5);
+                textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 5);
                 break;
         }
     }
@@ -144,7 +185,6 @@ public class CanvasPlayerController : MonoBehaviour
     }
 
     void DiamondsSystem(){
-        if(gm.levelState == GameManager.State.LEVELCOMPLETED){
            if(timer>=2*timeDiamond){
                 gm.diamondsLevel = 1;
                 diamondsSprites[0].SetActive(true);
@@ -162,14 +202,11 @@ public class CanvasPlayerController : MonoBehaviour
                 diamondsSprites[0].SetActive(true);
                 diamondsSprites[1].SetActive(true);            
                 diamondsSprites[2].SetActive(true);            
-            } 
-        }else{
-            gm.diamondsLevel = 0;
-        }        
+            }       
     }
 
-    void LevelState(){
-        switch (gm.levelState){
+    public void LevelState(GameManager.State newState){
+        switch (newState){
             case GameManager.State.PLAY:
                 panelPlay.SetActive(true);
                 panelLevel.SetActive(false);
@@ -177,38 +214,60 @@ public class CanvasPlayerController : MonoBehaviour
                 break;
             case GameManager.State.PAUSE:
                 panelLevel.SetActive(true);
-                panelPlay.SetActive(false);
+                // panelPlay.SetActive(false);
                 buttonNext.SetActive(false);
                 buttonBack.SetActive(true);
                 textLevelState.text = "PAUSE";
                 DisplayTimers();
+                buttonsBonus[0].GetComponent<Button>().interactable = false;
+                buttonsBonus[1].GetComponent<Button>().interactable = false;
                 Time.timeScale = 0;
                 break;
+            case GameManager.State.FINISH:
+                if(gm.diamondsLevel == 3 & !rewardReceived){
+                    StartCoroutine("CourReward");
+                }else{
+                    LevelState(GameManager.State.LEVELCOMPLETED);
+                }
+                break;
             case GameManager.State.LEVELCOMPLETED:
+                DiamondsSystem();
                 panelLevel.SetActive(true);
-                panelPlay.SetActive(false);
+                // panelPlay.SetActive(false);
                 buttonNext.SetActive(true);
                 buttonBack.SetActive(false);
                 DisplayTimers();
                 textLevelState.text = "LEVEL COMPLETED";
-                PlayerPrefs.SetInt("LvlsWon", gm.currentScene + 1);  // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou
-                gm.DiamondsValue();
                 buttonNext.GetComponent<Button>().interactable = true;
+                buttonsBonus[0].GetComponent<Button>().interactable = false;
+                buttonsBonus[1].GetComponent<Button>().interactable = false;
                 Time.timeScale = 0;
                 break;
             case GameManager.State.GAMEOVER:            
                 panelLevel.SetActive(true);
-                panelPlay.SetActive(false);
+                // panelPlay.SetActive(false);
                 buttonNext.SetActive(true);
                 buttonBack.SetActive(false);
                 DisplayTimers();
                 textLevelState.text = "GAME   OVER";
                 buttonNext.GetComponent<Button>().interactable = false;
+                buttonsBonus[0].GetComponent<Button>().interactable = false;
+                buttonsBonus[1].GetComponent<Button>().interactable = false;
                 Time.timeScale = 0;
                 break;
         }
     }
 
-
+    IEnumerator CourReward(){
+        yield return new WaitForSecondsRealtime(1);
+        rewardReceived = true;
+        panelNotification.SetActive(true);
+        PlayerPrefs.SetInt("Bonus" + rewardNumber, rewardAmount);
+        textBonus[0].text = PlayerPrefs.GetInt("Bonus1").ToString() + "x";  
+        textBonus[1].text = PlayerPrefs.GetInt("Bonus2").ToString() + "x";
+        yield return new WaitForSecondsRealtime(2);
+        panelNotification.SetActive(false);
+        LevelState(GameManager.State.LEVELCOMPLETED);
+    }
 
 }

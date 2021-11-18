@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SwipeMenu : MonoBehaviour
+public class SwipePanelsLvls : MonoBehaviour
 {
     public GameObject scrollbar;
-    private float scroll_pos;
+    private float scroll_pos = 0;
     float[] pos;
 
-   private void Awake()
-   {
-        scrollbar.GetComponent<Scrollbar>().value = .5f;
-       scroll_pos = .5f;
-   }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -46,7 +46,7 @@ public class SwipeMenu : MonoBehaviour
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
                 // Debug.LogWarning("Current Selected Level" + i);
-                transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1, 1), 0.1f);
+                transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1.2f, 1.2f), 0.1f);
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j!=i)

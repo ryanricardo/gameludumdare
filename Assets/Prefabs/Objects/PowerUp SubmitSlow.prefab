@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d5d2e32311ac129cd8660c16e36a14c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a0f69fa99d445b102a1321fe45ed4a26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,9 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typePowerUps: 0
-  data: {fileID: 310603971244215556, guid: 1410c936b4338744893fbbee32bec9ca, type: 3}
   valueSubmitBalancePickup: 2
-  indexSkinReward: 0
   valueMoreJumpPickup: 0
 --- !u!61 &9011703652711188448
 BoxCollider2D:
