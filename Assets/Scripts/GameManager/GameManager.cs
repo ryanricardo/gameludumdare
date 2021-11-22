@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
         canvasPlayer = FindObjectOfType<CanvasPlayerController>();
         inventoryManager = FindObjectOfType<InventoryManager>();
         playerController = FindObjectOfType<NewPlayerController>();
-        playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
         currentScene = SceneManager.GetActiveScene().buildIndex;
         lvlsNivel = 16;
 
@@ -46,8 +45,10 @@ public class GameManager : MonoBehaviour
         souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
         Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
         Debug.Log(PlayerPrefs.GetInt("SkinRock2"));
+
         data.rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
         data.rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
+        playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
     }
 
     void Update()
