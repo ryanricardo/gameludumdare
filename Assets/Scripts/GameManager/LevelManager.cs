@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] GameObject panelMenu, panelLevls, panelOptions, panelMarket, panelInventory;
     [SerializeField] GameObject[] buttonsLvls;
     [SerializeField] TextMeshProUGUI textDiamondsTotal;
+    [SerializeField] TextMeshProUGUI textPowerBonus1;
+    [SerializeField] TextMeshProUGUI textPowerBonus2;
     [SerializeField] TextMeshProUGUI[] textDiamondsLvls;
     [HideInInspector] private bool openInventory, openOptions;
     Data data;
@@ -23,6 +25,8 @@ public class LevelManager : MonoBehaviour
         data = FindObjectOfType<Data>();
         panelLevls.SetActive(true);
 
+        textPowerBonus1.text = PlayerPrefs.GetInt("Bonus1").ToString();
+        textPowerBonus2.text = PlayerPrefs.GetInt("Bonus2").ToString();
         // Ativa os gameObjects dos paineis 
         // foreach (var item in levelsPanels){
         //     item.SetActive(true);

@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu_FASES.unity
     guid: 860c7df1d05a78d4788343cabba115b0
-  - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 1 - Tutorial.unity
-    guid: cbc34652e2aef9647aca8930cb7511d8
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 2.unity
     guid: 3d0f5903ed376c04282ce28e8578df68
@@ -57,7 +57,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 16.unity
     guid: 9bc5eb655dab3d04fb576d9ca40fb1e7
   - enabled: 1
-    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 1 - Tutorial.unity
+    path: Assets/Scenes/Levels/Lvls Nivel 1/Lvl 1 - Tutorial.unity
     guid: 816cec7df73af8a4eb25324ee27434c5
   - enabled: 1
     path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.unity

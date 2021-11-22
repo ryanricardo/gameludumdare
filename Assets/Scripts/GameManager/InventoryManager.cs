@@ -11,6 +11,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField]    private GameObject[]    gameObjectsRocks;
     [SerializeField]    private Button[]        arrowsRocks;  
     [SerializeField]    private Data            data;
+    
 
     [Header("Tools")]
     [HideInInspector]   private int[]            indexSkin;
