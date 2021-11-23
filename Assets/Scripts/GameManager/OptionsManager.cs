@@ -17,8 +17,6 @@ public class OptionsManager : MonoBehaviour
     [SerializeField]    private Sprite              spriteMutated;
     [SerializeField]    private Sprite              spriteUnmuted;
 
-    [Header("Atributtes Volumes")]
-    [SerializeField]    private bool                runOneTime;
 
     void Awake()
     {
@@ -26,11 +24,6 @@ public class OptionsManager : MonoBehaviour
     }
     void Start()
     {
- 
-        if(runOneTime)
-        {
-            
-        }   
 
         
         if(PlayerPrefs.GetInt("MuteMusic") == 1)

@@ -29,7 +29,6 @@ public class PickupSkin : MonoBehaviour
         if(other.gameObject.CompareTag("RockController 1")
         || (other.gameObject.CompareTag("RockController 2")))
         {
-            Debug.Log("Touch");
             switch(indexRock)
             {
                 case 1:

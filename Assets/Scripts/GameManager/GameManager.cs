@@ -43,8 +43,6 @@ public class GameManager : MonoBehaviour
         // imageRestart.gameObject.SetActive(false);
         Time.timeScale = 1;
         souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
-        Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
-        Debug.Log(PlayerPrefs.GetInt("SkinRock2"));
 
         data.rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
         data.rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
