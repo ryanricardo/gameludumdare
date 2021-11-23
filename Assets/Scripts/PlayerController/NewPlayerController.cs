@@ -15,6 +15,8 @@ public class NewPlayerController : MonoBehaviour
     [Header("Atributtes Movimentation")]
     [SerializeField]    private float                               speedMoviment;
     [SerializeField]    public  float                               forceJump;
+    [SerializeField]    private float                               gravityAfterTouchVine;
+    [SerializeField]    private float                               gravityBeforeTouchVine;
     [HideInInspector]   public  float                               axisHorizontal;
     [HideInInspector]   private bool[]                              checkGround;
     [HideInInspector]   public  bool                                isRight;
@@ -26,6 +28,8 @@ public class NewPlayerController : MonoBehaviour
     [HideInInspector]   private int                                 maxBalance;
     [SerializeField]    public  int                                 countRocks;
     [HideInInspector]   public  float                               balance;
+
+    
 
 
     [Header("Inputs")]
@@ -141,13 +145,6 @@ public class NewPlayerController : MonoBehaviour
         {
             categoriesRock[i] = data.rocks[i].gameObject.GetComponent<NewRockController>().categoryRock;
         }
-
-
-        /* Estas linhas controlam o numero de pedras pertences ao grupo procurando quanto gameObject 
-        Estão com seu enum em controller. */
-
-       
-
         
         // Aqui, é utilizado o numero de pedras pertencentes ao grupo para controlar o maximo de equilibrio.
 
@@ -221,6 +218,23 @@ public class NewPlayerController : MonoBehaviour
         getKeyDownSpace = Input.GetKeyDown(KeyCode.Space) ? getKeyDownSpace = true: getKeyDownSpace = false; 
         getKeyDownR = Input.GetKeyDown(KeyCode.R) ? getKeyDownR = true: getKeyDownR = false; 
 
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Vine"))
+        {
+            rb2.gravityScale = gravityAfterTouchVine;
+        }
+
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Vine"))
+        {
+            rb2.gravityScale = gravityBeforeTouchVine;
+        }
     }
 
 }

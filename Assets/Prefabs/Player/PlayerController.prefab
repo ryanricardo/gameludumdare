@@ -110,6 +110,8 @@ MonoBehaviour:
   rb2: {fileID: 0}
   speedMoviment: 5
   forceJump: 20
+  gravityAfterTouchVine: 0.4
+  gravityBeforeTouchVine: 1
   axisHorizontal: 0
   isRight: 0
   dropRock: 0
