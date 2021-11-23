@@ -27,7 +27,8 @@ public class PickupSkin : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("RockController 1")
-        || (other.gameObject.CompareTag("RockController 2")))
+        || (other.gameObject.CompareTag("RockController 2"))
+        || other.gameObject.CompareTag("Player"))
         {
             switch(indexRock)
             {

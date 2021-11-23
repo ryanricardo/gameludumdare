@@ -2668,6 +2668,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4244579430728641931, guid: e6923420002e5624ca8edd69a8108e55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4244579431147429345, guid: e6923420002e5624ca8edd69a8108e55,
         type: 3}
       propertyPath: m_Pivot.x

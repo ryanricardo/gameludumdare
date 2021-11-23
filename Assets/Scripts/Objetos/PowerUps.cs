@@ -39,7 +39,9 @@ public class PowerUps : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player")
+        || other.gameObject.CompareTag("RockController 1")
+        || other.gameObject.CompareTag("RockController 2"))
         {
             switch(typePowerUps)
             {

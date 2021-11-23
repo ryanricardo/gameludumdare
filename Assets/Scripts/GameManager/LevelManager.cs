@@ -108,8 +108,8 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt("MuteMusic", -1);
         PlayerPrefs.SetInt("MuteEffects", -1);
         PlayerPrefs.SetInt("SkinRock1", 1);
-        PlayerPrefs.SetInt("SkinRock1", 2);
-        PlayerPrefs.SetInt("SkinRock1", 3);
+        PlayerPrefs.SetInt("SkinRock2", 1);
+        PlayerPrefs.SetInt("SkinRock3", 1);
         PlayerPrefs.Save();
         SceneManager.LoadScene(0);
     }
