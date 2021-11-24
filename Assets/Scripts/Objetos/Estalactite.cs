@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Estalactite : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private bool cair;
+    [SerializeField] Rigidbody2D RB2;
     void Start()
     {
-        
+        RB2.gravityScale=0;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if(cair)
+        {
+            RB2.gravityScale=1;
+        }
+    }
+
+    void OnTriggerEnter2D (Collider2D col)
+    {
+        if(col.gameObject.tag=="Player")
+        {
+            cair=true;
+        }
     }
 }
