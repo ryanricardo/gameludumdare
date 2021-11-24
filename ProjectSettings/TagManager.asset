@@ -17,6 +17,7 @@ TagManager:
   - Plataform
   - Plataform Push
   - buttonLvl
+  - Vine
   layers:
   - Default
   - TransparentFX
