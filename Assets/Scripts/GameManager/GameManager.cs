@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        Screen.orientation = ScreenOrientation.Landscape;
         souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame") * PlayerPrefs.GetFloat("VolumeGeneral");
         souceEffects.volume = PlayerPrefs.GetFloat("VolumeEffectsGame") * PlayerPrefs.GetFloat("VolumeGeneral");
         data = FindObjectOfType<Data>();
@@ -32,7 +33,6 @@ public class GameManager : MonoBehaviour
         playerController = FindObjectOfType<NewPlayerController>();
         currentScene = SceneManager.GetActiveScene().buildIndex;
         lvlsNivel = 16;
-        Screen.orientation = ScreenOrientation.Landscape;
 
         souceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
         souceMusic.Play();

@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class SwipeMenu : MonoBehaviour
 {
     public GameObject scrollbar;
-    private float scroll_pos;
+    public float scale1 = .8f, scale2 = .6f, interpolation = .5f, disProp = 1.8f, scroll_pos = .5f;
     float[] pos;
+    
 
    private void Awake()
    {
-        scrollbar.GetComponent<Scrollbar>().value = .5f;
-       scroll_pos = .5f;
+        scrollbar.GetComponent<Scrollbar>().value = scroll_pos;
    }
 
     // Update is called once per frame
@@ -24,18 +24,16 @@ public class SwipeMenu : MonoBehaviour
         {
             pos[i] = distance * i;
         }
-
-        if (Input.GetMouseButton(0))
-        {
+        if (Input.GetMouseButton(0)){
             scroll_pos = scrollbar.GetComponent<Scrollbar>().value;
-        }
+        }       
         else
         {
             for (int i = 0; i < pos.Length; i++)
             {
-                if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
+                if (scroll_pos < pos[i] + (distance / disProp) && scroll_pos > pos[i] - (distance / disProp))
                 {
-                    scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[i], 0.1f);
+                    scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[i], interpolation);
                 }
             }
         }
@@ -43,15 +41,14 @@ public class SwipeMenu : MonoBehaviour
 
         for (int i = 0; i < pos.Length; i++)
         {
-            if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
+            if (scroll_pos < pos[i] + (distance / disProp) && scroll_pos > pos[i] - (distance / disProp))
             {
-                // Debug.LogWarning("Current Selected Level" + i);
-                transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1, 1), 0.1f);
+                transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(scale1, scale1), 0.1f);
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j!=i)
                     {
-                        transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
+                        transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(scale2, scale2), 0.1f);
                     }
                 }
             }

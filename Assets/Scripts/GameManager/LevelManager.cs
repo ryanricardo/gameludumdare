@@ -24,8 +24,8 @@ public class LevelManager : MonoBehaviour
         data = FindObjectOfType<Data>();
         panelLevls.SetActive(true);
 
-        textPowerBonus1.text = PlayerPrefs.GetInt("Bonus1").ToString();
-        textPowerBonus2.text = PlayerPrefs.GetInt("Bonus2").ToString();
+        textPowerBonus1.text = "x" + PlayerPrefs.GetInt("Bonus1").ToString();
+        textPowerBonus2.text = "x" + PlayerPrefs.GetInt("Bonus2").ToString();
 
         // Salva no vetor buttonLvls todos os prefabs dos botoes   
         buttonsLvls = GameObject.FindGameObjectsWithTag("buttonLvl");   

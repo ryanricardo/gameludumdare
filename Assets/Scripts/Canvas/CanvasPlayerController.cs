@@ -10,10 +10,10 @@ public class CanvasPlayerController : MonoBehaviour
 
     [Header("Components")]
     [SerializeField]    private Slider              sliderBalance;
-    [SerializeField]    private TextMeshProUGUI     textNotification, textLevel, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish;
-    [SerializeField]    private GameObject          gameObjectImageReward, panelPlay, panelLevel, buttonNext, buttonBack;
+    [SerializeField]    private TextMeshProUGUI     textLevel, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish, textNotification;
+    [SerializeField]    private GameObject          imageReward, panelPlay, panelLevel, buttonNext, buttonBack, touchControllers;
     [SerializeField]    private GameObject[]        diamondsSprites, bonus, buttonsBonus;  
-    [SerializeField]    private TextMeshProUGUI[]   textBonus;
+    [SerializeField]    private TextMeshProUGUI[]   textBonusPause, textBonusPlay;
     [HideInInspector]   private GameManager         gm;
     [HideInInspector]   private NewPlayerController playerController;
     [HideInInspector]   private Data data;
@@ -48,9 +48,7 @@ public class CanvasPlayerController : MonoBehaviour
     {
         LevelState(GameManager.State.PLAY);
         timer = 0;
-        gm.diamondsLevel = 0;
-        textBonus[0].text = PlayerPrefs.GetInt("Bonus1").ToString() + "x";
-        textBonus[1].text = PlayerPrefs.GetInt("Bonus2").ToString() + "x";
+        gm.diamondsLevel = 0; 
         TextLevel();
         string PPlvl = "DiamondsLvl" + gm.currentScene;
         if(PlayerPrefs.GetInt(PPlvl)==3){
@@ -69,6 +67,7 @@ public class CanvasPlayerController : MonoBehaviour
         ResistenceController();
         timer += Time.deltaTime;
         DisplayTime(timer); 
+        BonusText();
     }
 
     public void ButtonPause(){
@@ -96,7 +95,6 @@ public class CanvasPlayerController : MonoBehaviour
         if(useBonus & x>0){
             useBonus = false;
             PlayerPrefs.SetInt("Bonus1", x-1);
-            textBonus[0].text = x.ToString() + "x";
             Vector2 pos = playerController.transform.position;
             pos.x += 1;
             pos.y += 1;
@@ -107,15 +105,21 @@ public class CanvasPlayerController : MonoBehaviour
     public void ButtonBonus2(){        
         int x = PlayerPrefs.GetInt("Bonus2");
         if(useBonus & x>0){
-
             useBonus = false;
             PlayerPrefs.SetInt("Bonus2", x-1);
-            textBonus[1].text = x.ToString() + "x";
             Vector2 pos = playerController.transform.position;
             pos.y += 1;
             pos.x += 1;
             Instantiate(bonus[1], pos, Quaternion.identity);   
         }
+    }
+
+    public void ButtonJump(){
+        Debug.Log("Jump!");
+    }
+
+    public void ButtomDrop(){
+        Debug.Log("Drop!");
     }
 
     void ResistenceController()
@@ -128,8 +132,8 @@ public class CanvasPlayerController : MonoBehaviour
     {
         Time.timeScale = 0.2f;
         textNotification.gameObject.SetActive(true);
-        gameObjectImageReward.gameObject.SetActive(true);
-        gameObjectImageReward.gameObject.GetComponent<Image>().sprite = sprite;
+        imageReward.SetActive(true);
+        imageReward.GetComponent<Image>().sprite = sprite;
         textNotification.text = message;
         StartCoroutine(StopNotification());
     }
@@ -137,7 +141,7 @@ public class CanvasPlayerController : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(3);
         Time.timeScale = 1;
-        gameObjectImageReward.gameObject.SetActive(false);
+        imageReward.SetActive(false);
         textNotification.gameObject.SetActive(false);
         notification = false;
     }
@@ -214,14 +218,15 @@ public class CanvasPlayerController : MonoBehaviour
                 break;
             case GameManager.State.PAUSE:
                 panelLevel.SetActive(true);
+                touchControllers.SetActive(false);
                 // panelPlay.SetActive(false);
+                Time.timeScale = 0;
                 buttonNext.SetActive(false);
                 buttonBack.SetActive(true);
                 textLevelState.text = "PAUSE";
                 DisplayTimers();
                 buttonsBonus[0].GetComponent<Button>().interactable = false;
                 buttonsBonus[1].GetComponent<Button>().interactable = false;
-                Time.timeScale = 0;
                 break;
             case GameManager.State.FINISH:
                 if(gm.diamondsLevel == 3 & !rewardReceived){
@@ -233,6 +238,7 @@ public class CanvasPlayerController : MonoBehaviour
             case GameManager.State.LEVELCOMPLETED:
                 DiamondsSystem();
                 panelLevel.SetActive(true);
+                touchControllers.SetActive(false);
                 // panelPlay.SetActive(false);
                 buttonNext.SetActive(true);
                 buttonBack.SetActive(false);
@@ -245,6 +251,7 @@ public class CanvasPlayerController : MonoBehaviour
                 break;
             case GameManager.State.GAMEOVER:            
                 panelLevel.SetActive(true);
+                touchControllers.SetActive(false);
                 // panelPlay.SetActive(false);
                 buttonNext.SetActive(true);
                 buttonBack.SetActive(false);
@@ -263,11 +270,18 @@ public class CanvasPlayerController : MonoBehaviour
         rewardReceived = true;
         panelNotification.SetActive(true);
         PlayerPrefs.SetInt("Bonus" + rewardNumber, rewardAmount);
-        textBonus[0].text = PlayerPrefs.GetInt("Bonus1").ToString() + "x";  
-        textBonus[1].text = PlayerPrefs.GetInt("Bonus2").ToString() + "x";
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(4);
         panelNotification.SetActive(false);
         LevelState(GameManager.State.LEVELCOMPLETED);
+    }
+
+    void BonusText(){
+        for (int i = 0; i < textBonusPause.Length; i++){
+            textBonusPause[i].text = "x" + PlayerPrefs.GetInt("Bonus" + (i+1)).ToString();            
+        }
+        for (int i = 0; i < textBonusPlay.Length; i++){
+            textBonusPlay[i].text = "x" + PlayerPrefs.GetInt("Bonus" + (i+1)).ToString();            
+        }
     }
 
 }
