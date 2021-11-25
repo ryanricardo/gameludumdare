@@ -122,6 +122,7 @@ public class CanvasPlayerController : MonoBehaviour
     {
         sliderBalance.interactable = true;
         sliderBalance.value = playerController.balance;
+        sliderBalance.maxValue = playerController.maxBalance;
     }
 
     public void NotificationNewReward(Sprite sprite, string message)

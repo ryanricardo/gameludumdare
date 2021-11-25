@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class NewPlayerController : MonoBehaviour
 {
-    [Header("Components")]
+       [Header("Components")]
     [SerializeField]    private Transform[]                         transformChecksGround;
+    [SerializeField]    public  List<GameObject>                    rocks = new List<GameObject>();
     [SerializeField]    private AudioSource                         source;
     [SerializeField]    private AudioClip                           clipJump;
-    [HideInInspector]   private NewRockController.CategoryRock[]    categoriesRock;
+    [HideInInspector]   private NewRockController                   rockController;
     [HideInInspector]   public  Rigidbody2D                         rb2;
     [HideInInspector]   private Data                                data;
 
@@ -22,15 +23,12 @@ public class NewPlayerController : MonoBehaviour
     [HideInInspector]   public  bool                                isRight;
     [HideInInspector]   public  bool                                dropRock;
 
+    
     [Header("Atributtes Balance")]
     [SerializeField]    public  float                               speedSubmitBalance;
     [SerializeField]    public  float                               speedAddBalance;
-    [HideInInspector]   private int                                 maxBalance;
-    [SerializeField]    public  int                                 countRocks;
+    [SerializeField]    public  int                                 maxBalance;
     [HideInInspector]   public  float                               balance;
-
-    
-
 
     [Header("Inputs")]
     [HideInInspector]   public  bool                                getKeyDownE;
@@ -38,33 +36,29 @@ public class NewPlayerController : MonoBehaviour
     [HideInInspector]   public  bool                                getKeyDownSpace;
     [HideInInspector]   public  bool                                getKeyDownR;
 
-
-
     void Start()
     {
-        data = FindObjectOfType<Data>();
-        dropRock = false;
-        rb2 = GetComponent<Rigidbody2D>();
-        categoriesRock = new NewRockController.CategoryRock[3];
-        
-        checkGround = new bool[3];
-
+        rockController = FindObjectOfType<NewRockController>();
+        rb2 = GetComponent<Rigidbody2D>();    
         balance = 100;
+        checkGround = new bool[3];
         isRight = true;
     }
 
     void Update()
     {
+
+
         Movimentation();
+        ControllerRocks();
         ControllerBalance();
-        ControllerDropRock();
         Inputs();
+
+
     }
 
     void Movimentation()
     {
-        // Movimentação basica envolvendo apenas o axis horizontal e rigidbody2d
-
         axisHorizontal = Input.GetAxis("Horizontal");
         rb2.velocity = new Vector2(axisHorizontal * speedMoviment, rb2.velocity.y);
 
@@ -93,8 +87,6 @@ public class NewPlayerController : MonoBehaviour
             Flip();
             isRight = true;
         }
-
-
     }
 
     void Flip()
@@ -103,70 +95,27 @@ public class NewPlayerController : MonoBehaviour
         scl *= -1;
         transform.localScale = new Vector2(scl, transform.localScale.y);
 
-        for(int i = 1; i < data.rocks.Length; i++)
+        for(int i = 1; i < rocks.Count; i++)
         {
-            float scale = data.rocks[i].transform.localScale.x;
+            float scale = rocks[i].transform.localScale.x;
             scale *= -1;
 
-            data.rocks[i].transform.localScale = 
-              new Vector2(scale, data.rocks[i].transform.localScale.y);
+            rocks[i].transform.localScale = 
+              new Vector2(scale, rocks[i].transform.localScale.y);
         }
     }
 
-    void ControllerDropRock()
+    void ControllerRocks()
     {
-
-        /* Aqui, após clicar clicar "E", é identificado pelo for a primeira pedra que esta em modo controller. 
-        Após isso, o deixa em modo pickupe return. */
-
-        // Vale ressaltar que nos arrays criado o numero 0 NÃO tem valor algum, deve desconsiderar.
-        
-        if(getKeyDownE)
+        if(Input.GetKeyDown(KeyCode.E))
         {
-            for(int i = 1; i < data.rocks.Length; i++)
-            {
-                if(categoriesRock[i] == NewRockController.CategoryRock.controller)
-                {
-                    data.rocks[i].GetComponent<NewRockController>().categoryRock 
-                    = NewRockController.CategoryRock.pickup;
-                    dropRock = true;
-                    return;
-                }
-            }
+            rocks[rocks.Count - 1].GetComponent<NewRockController>().LeftGroup();
         }
     }
 
     void ControllerBalance()
     {
 
-        /* Nesta linha é adicionado dentro de um array[3] as variaveis de enum das duas pedras controller*/
-
-        for(int i = 1; i < data.rocks.Length; i++)
-        {
-            categoriesRock[i] = data.rocks[i].gameObject.GetComponent<NewRockController>().categoryRock;
-        }
-        
-        // Aqui, é utilizado o numero de pedras pertencentes ao grupo para controlar o maximo de equilibrio.
-
-        switch(countRocks)
-        {
-            case 2:
-            maxBalance = 100;
-            break;
-
-            case 1:
-            maxBalance = 50;
-            break;
-
-            case 0:
-            maxBalance = 0;
-            balance = 0;
-            break;
-        }
-
-        // Aqui, é somado ou subtraido o equilibrio ao jogador andar mantendo restrito ao maximo de equilibrio;
-        
-         
         if(axisHorizontal != 0 && balance > 0)
         {
             balance -= speedSubmitBalance * Time.deltaTime;
@@ -174,41 +123,9 @@ public class NewPlayerController : MonoBehaviour
         {
             balance += speedAddBalance * Time.deltaTime;
         }
+
         
-
-    }
-
-    public void PushCollisionRocks()
-    {
-
-        // Este metodo é ativado pelo script "NewRockController"
-
-
-
-        if(!checkGround[0] &&
-        !checkGround[1] &&
-        !checkGround[2] &&
-        axisHorizontal == 0)
-        {
-            rb2.AddForce(Vector2.down * 1000);
-            for(int i = 1; i < data.rocks.Length; i++)
-            {
-                data.rocks[i].GetComponent<Rigidbody2D>().AddForce(Vector2.down * 800);
-            }
-        }else 
-        {
-            if(isRight && checkGround[0] ||
-            isRight && checkGround[1] ||
-            isRight && checkGround[2])
-            {
-                rb2.AddForce(Vector2.left * 1000);
-            }else if(!isRight && checkGround[0] ||
-            !isRight && checkGround[1] ||
-            !isRight && checkGround[2])
-            {
-                rb2.AddForce(Vector2.right * 1000);
-            }
-        }
+        
     }
 
     void Inputs()
@@ -236,5 +153,6 @@ public class NewPlayerController : MonoBehaviour
             rb2.gravityScale = gravityBeforeTouchVine;
         }
     }
-
 }
+
+

@@ -134,10 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38ee7d5f9b06f9478c497b55e889835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  categoryRock: 0
   typeRock: 0
-  forcePushPickup: 4
-  speedMoveNewPosition: 1
-  followDelay: 35
-  pushOneTime: 0
-  moveNewPosition: 0
+  sourceEffects: {fileID: 0}
+  soundTeletransport: {fileID: 0}
+  startIntoTheGroup: 0

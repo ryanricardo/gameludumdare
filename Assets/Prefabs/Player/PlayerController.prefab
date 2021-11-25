@@ -105,6 +105,8 @@ MonoBehaviour:
   - {fileID: 4925566066977444856}
   - {fileID: 2169278968006378522}
   - {fileID: 6890430913912322281}
+  rocks:
+  - {fileID: 646820509772010704}
   source: {fileID: 7261289159064025394}
   clipJump: {fileID: 8300000, guid: e2f593102b2b92942bcdc83adde554f9, type: 3}
   rb2: {fileID: 0}
@@ -117,7 +119,7 @@ MonoBehaviour:
   dropRock: 0
   speedSubmitBalance: 2
   speedAddBalance: 10
-  countRocks: 0
+  maxBalance: 0
   balance: 100
   getKeyDownE: 0
   getKeyDownEsc: 0
