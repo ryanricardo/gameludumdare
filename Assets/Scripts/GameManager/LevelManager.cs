@@ -7,30 +7,25 @@ using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
-    public int levelPanelNumber = 0, LvlsWon;
+    public int LvlsWon;
     public GameObject[] levelsPanels;
-    [SerializeField] GameObject panelMenu, panelLevls, panelOptions, panelMarket, panelInventory;
+    [SerializeField] GameObject panelMenu, panelLevls;
     [SerializeField] GameObject[] buttonsLvls;
-    [SerializeField] TextMeshProUGUI textDiamondsTotal;
-    [SerializeField] TextMeshProUGUI textPowerBonus1;
-    [SerializeField] TextMeshProUGUI textPowerBonus2;
+    [SerializeField] TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
     [SerializeField] TextMeshProUGUI[] textDiamondsLvls;
-    [HideInInspector] private bool openInventory, openOptions;
     Data data;
     int lvlsNivel = 16;
 
     private void Awake(){
         // PlayerPrefs.DeleteAll();
+
+        Screen.orientation = ScreenOrientation.Portrait;
         
         data = FindObjectOfType<Data>();
         panelLevls.SetActive(true);
 
         textPowerBonus1.text = PlayerPrefs.GetInt("Bonus1").ToString();
         textPowerBonus2.text = PlayerPrefs.GetInt("Bonus2").ToString();
-        // Ativa os gameObjects dos paineis 
-        // foreach (var item in levelsPanels){
-        //     item.SetActive(true);
-        // }
 
         // Salva no vetor buttonLvls todos os prefabs dos botoes   
         buttonsLvls = GameObject.FindGameObjectsWithTag("buttonLvl");   
@@ -42,15 +37,8 @@ public class LevelManager : MonoBehaviour
 
     private void Start(){
 
-        openInventory = false;
-        openOptions = false;
-
-        // Desativa os gameObjects dos paineis 
-        // foreach (var item in levelsPanels){
-        //     item.SetActive(false);
-        // }
         panelLevls.SetActive(false);
-
+        
         // Verifica se existe algum valor para PPLvlsWon e salva em LvlsWon se não LvlsWon deve ser igual a 1
         if(!PlayerPrefs.HasKey("LvlsWon")){
             LvlsWon = 1;
@@ -67,38 +55,22 @@ public class LevelManager : MonoBehaviour
         buttonsLvls[0].GetComponent<Button>().interactable = true;
         Diamonds();
         TextButtons();
+    }
 
-        levelPanelNumber = 0;
+    private void Update(){        
     }
 
     public void Play(){
         panelMenu.SetActive(false);
         panelLevls.SetActive(true);
-        // levelsPanels[0].SetActive(true);
     }
 
     public void ButtonExit(){
         Application.Quit();
     }
-
-    public void ButtonInventory()
-    {
-        openInventory ^= true;
-        panelInventory.gameObject.SetActive(openInventory);
-    }
-
-    public void ButtonOptions()
-    {
-        openOptions ^= true;
-        panelOptions.gameObject.SetActive(openOptions);
-    }
     
     public void ButtonBackMenu(){        
         panelLevls.SetActive(false);
-        panelInventory.SetActive(false);
-        // panelMarket.SetActive(false);
-        panelOptions.SetActive(false);
-        // levelsPanels[levelPanelNumber].SetActive(false);
         panelMenu.SetActive(true);
     }
 
@@ -119,29 +91,6 @@ public class LevelManager : MonoBehaviour
     }
     public void MusicOff(){
         PlayerPrefs.SetString("PPMusic", "OFF");
-    }
-
-    public void ArrowForward(){
-        if(levelPanelNumber == levelsPanels.Length-1){            
-            levelsPanels[levelPanelNumber].SetActive(false);
-            levelsPanels[0].SetActive(true);
-            levelPanelNumber = 0;
-        }else{
-            levelsPanels[levelPanelNumber].SetActive(false);
-            levelsPanels[levelPanelNumber+1].SetActive(true);
-            levelPanelNumber += 1;
-        }
-    }
-    public void ArrowBackward(){    
-        if(levelPanelNumber == 0){              
-            levelsPanels[0].SetActive(false);
-            levelsPanels[levelsPanels.Length-1].SetActive(true);
-            levelPanelNumber = levelsPanels.Length-1;
-        }else{   
-            levelsPanels[levelPanelNumber].SetActive(false);
-            levelsPanels[levelPanelNumber-1].SetActive(true);
-            levelPanelNumber -= 1;
-        }
     }
 
     void Diamonds(){

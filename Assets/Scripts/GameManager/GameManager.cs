@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         playerController = FindObjectOfType<NewPlayerController>();
         currentScene = SceneManager.GetActiveScene().buildIndex;
         lvlsNivel = 16;
+        Screen.orientation = ScreenOrientation.Landscape;
 
         souceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
         souceMusic.Play();
