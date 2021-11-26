@@ -95,15 +95,6 @@ public class NewPlayerController : MonoBehaviour
         float scl = transform.localScale.x;
         scl *= -1;
         transform.localScale = new Vector2(scl, transform.localScale.y);
-
-        for(int i = 1; i < rocks.Count; i++)
-        {
-            float scale = rocks[i].transform.localScale.x;
-            scale *= -1;
-
-            rocks[i].transform.localScale = 
-              new Vector2(scale, rocks[i].transform.localScale.y);
-        }
     }
 
     void ControllerRocks()
