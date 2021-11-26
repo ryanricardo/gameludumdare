@@ -101,7 +101,13 @@ public class NewPlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            rocks[rocks.Count - 1].GetComponent<NewRockController>().LeftGroup();
+            if(isRight)
+            {
+                rocks[rocks.Count - 1].GetComponent<NewRockController>().LeftGroup(Vector2.right);
+            }else 
+            {
+                rocks[rocks.Count - 1].GetComponent<NewRockController>().LeftGroup(Vector2.left);                    
+            }
         }
     }
 
@@ -123,7 +129,13 @@ public class NewPlayerController : MonoBehaviour
             {
                 if(rocks.Count != 1)
                 {   
-                    rocks[i].GetComponent<NewRockController>().LeftGroup();
+                    if(isRight)
+                    {
+                        rocks[i].GetComponent<NewRockController>().LeftGroup(Vector2.left);
+                    }else 
+                    {
+                        rocks[i].GetComponent<NewRockController>().LeftGroup(Vector2.right);                    
+                    }
                 }
             }
         }
@@ -146,6 +158,39 @@ public class NewPlayerController : MonoBehaviour
         }
 
         
+    }
+    
+    public void PushCollisionRocks()
+    {
+
+        // Este metodo é ativado pelo script "NewRockController"
+
+
+
+        if(!checkGround[0] &&
+        !checkGround[1] &&
+        !checkGround[2] &&
+        axisHorizontal == 0)
+        {
+            rb2.AddForce(Vector2.down * 1000);
+            for(int i = 1; i < data.rocks.Length; i++)
+            {
+                rocks[i].GetComponent<Rigidbody2D>().AddForce(Vector2.down * 800);
+            }
+        }else 
+        {
+            if(isRight && checkGround[0] ||
+            isRight && checkGround[1] ||
+            isRight && checkGround[2])
+            {
+                rb2.AddForce(Vector2.left * 1000);
+            }else if(!isRight && checkGround[0] ||
+            !isRight && checkGround[1] ||
+            !isRight && checkGround[2])
+            {
+                rb2.AddForce(Vector2.right * 1000);
+            }
+        }
     }
 
     void Inputs()

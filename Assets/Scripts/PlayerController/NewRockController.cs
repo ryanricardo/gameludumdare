@@ -16,6 +16,7 @@ public class NewRockController : MonoBehaviour
     [SerializeField]AudioSource      sourceEffects;
     [SerializeField]AudioClip        soundTeletransport;
     [SerializeField]private bool     startIntoTheGroup;
+    [HideInInspector]private Vector2 offSet;
 
 
 
@@ -28,11 +29,21 @@ public class NewRockController : MonoBehaviour
         {
             EnterGroup();
         }
+
+        offSet = new Vector3(transform.position.x - playerController.transform.position.x, 
+        transform.position.y);
     }
 
     void Update()
     {
-        
+        if(typeRock == TypeRock.Follow)
+        {
+            Vector2 posPlayer = new Vector2(playerController.transform.position.x,
+            transform.position.y);
+
+            transform.position = Vector3.Lerp(transform.position, 
+            posPlayer, Time.deltaTime * 50);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -40,6 +51,24 @@ public class NewRockController : MonoBehaviour
         if(other.gameObject.CompareTag("Player") && typeRock == TypeRock.Idle)
         {
             EnterGroup();
+        }
+
+        if(other.gameObject.CompareTag("Plataform") && 
+        typeRock == TypeRock.Follow)
+        {
+            playerController.PushCollisionRocks();
+        }
+
+        if(other.gameObject.CompareTag("Plataform Push") &&
+        typeRock == TypeRock.Follow)
+        {
+           if(playerController.isRight)
+           {
+               LeftGroup(Vector2.left);
+           }else 
+           {
+               LeftGroup(Vector2.right);
+           }
         }
     }
 
@@ -52,27 +81,29 @@ public class NewRockController : MonoBehaviour
         
         transform.position = new Vector2(
         playerController.rocks[playerController.rocks.Count - 1].transform.position.x,
-        playerController.rocks[playerController.rocks.Count - 1].transform.position.y + 0.4f);
+        playerController.rocks[playerController.rocks.Count - 1].transform.position.y + 0.46f);
         
         sourceEffects.PlayOneShot(soundTeletransport);
         rb2.simulated = false;
         playerController.rocks.Add(gameObject);
-        typeRock = TypeRock.Follow;
+        StartCoroutine(ChronometerForFollowingPlayer());
     }
 
-    public void LeftGroup()
+    public void LeftGroup(Vector2 vector)
     {
         gameObject.transform.SetParent(null);
         rb2.simulated = true;
         playerController.rocks.Remove(gameObject);
-        rb2.AddForce(Vector2.right * 4, ForceMode2D.Impulse);
-        StartCoroutine(ChronometerChangeTypeRock());
+        rb2.AddForce(vector * 4, ForceMode2D.Impulse);
+        typeRock = TypeRock.Idle;
     }
 
-    IEnumerator ChronometerChangeTypeRock()
+
+    IEnumerator ChronometerForFollowingPlayer()
     {
         yield return new WaitForSeconds(1);
-        typeRock = TypeRock.Idle;
+        rb2.simulated = true;
+        typeRock = TypeRock.Follow;
     }
 }
 
