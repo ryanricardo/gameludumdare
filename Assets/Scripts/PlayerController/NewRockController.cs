@@ -47,12 +47,13 @@ public class NewRockController : MonoBehaviour
     {
         
         gameObject.transform.SetParent(playerController.transform);
+        playerController.balance = playerController.balance < 50 ? 
+        playerController.balance += 50 : playerController.balance += 0;
         
         transform.position = new Vector2(
         playerController.rocks[playerController.rocks.Count - 1].transform.position.x,
         playerController.rocks[playerController.rocks.Count - 1].transform.position.y + 0.4f);
         
-        playerController.maxBalance += 50;
         sourceEffects.PlayOneShot(soundTeletransport);
         rb2.simulated = false;
         playerController.rocks.Add(gameObject);
@@ -61,8 +62,6 @@ public class NewRockController : MonoBehaviour
 
     public void LeftGroup()
     {
-        playerController.maxBalance -= 50;
-        playerController.balance -= 50;
         gameObject.transform.SetParent(null);
         rb2.simulated = true;
         playerController.rocks.Remove(gameObject);

@@ -43,6 +43,7 @@ public class NewPlayerController : MonoBehaviour
         balance = 100;
         checkGround = new bool[3];
         isRight = true;
+        dropRock = true;
     }
 
     void Update()
@@ -123,8 +124,36 @@ public class NewPlayerController : MonoBehaviour
         {
             balance += speedAddBalance * Time.deltaTime;
         }
-
         
+
+        if(balance <= 50)
+        {
+            for (int i = rocks.Count - 1; i > 1; i--)
+            {
+                if(rocks.Count != 1)
+                {   
+                    rocks[i].GetComponent<NewRockController>().LeftGroup();
+                }
+            }
+        }
+
+        switch(rocks.Count - 1)
+        {
+            
+            case 0:
+                maxBalance = 0;
+                balance = 0;
+            break;
+
+            case 1:
+                maxBalance = 50;
+            break;
+
+            case 2:
+                maxBalance = 100;
+            break;
+        }
+
         
     }
 
@@ -153,6 +182,7 @@ public class NewPlayerController : MonoBehaviour
             rb2.gravityScale = gravityBeforeTouchVine;
         }
     }
+
 }
 
 
