@@ -1657,6 +1657,16 @@ PrefabInstance:
       propertyPath: currentScene
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: rewardAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: rewardNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6544186094124780807, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: m_Name

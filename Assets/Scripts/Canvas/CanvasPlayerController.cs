@@ -10,7 +10,7 @@ public class CanvasPlayerController : MonoBehaviour
 
     [Header("Components")]
     [SerializeField]    private Slider              sliderBalance;
-    [SerializeField]    private TextMeshProUGUI     textLevel, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish, textNotification;
+    [SerializeField]    private TextMeshProUGUI     textLevel, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish, textNotification, textReward;
     [SerializeField]    private GameObject          imageReward, panelPlay, panelLevel, buttonNext, buttonBack, touchControllers;
     [SerializeField]    private GameObject[]        diamondsSprites, bonus, buttonsBonus;  
     [SerializeField]    private TextMeshProUGUI[]   textBonusPause, textBonusPlay;
@@ -214,6 +214,8 @@ public class CanvasPlayerController : MonoBehaviour
             case GameManager.State.PLAY:
                 panelPlay.SetActive(true);
                 panelLevel.SetActive(false);
+                buttonsBonus[0].GetComponent<Button>().interactable = true;
+                buttonsBonus[1].GetComponent<Button>().interactable = true;
                 Time.timeScale = 1;
                 break;
             case GameManager.State.PAUSE:
@@ -269,6 +271,7 @@ public class CanvasPlayerController : MonoBehaviour
         yield return new WaitForSecondsRealtime(1);
         rewardReceived = true;
         panelNotification.SetActive(true);
+        textReward.text = "x" + rewardAmount.ToString();
         PlayerPrefs.SetInt("Bonus" + rewardNumber, rewardAmount);
         yield return new WaitForSecondsRealtime(4);
         panelNotification.SetActive(false);
@@ -279,7 +282,7 @@ public class CanvasPlayerController : MonoBehaviour
         for (int i = 0; i < textBonusPause.Length; i++){
             textBonusPause[i].text = "x" + PlayerPrefs.GetInt("Bonus" + (i+1)).ToString();            
         }
-        for (int i = 0; i < textBonusPlay.Length; i++){
+        for (int i = 0; i < textBonusPlay.Length; i++){  
             textBonusPlay[i].text = "x" + PlayerPrefs.GetInt("Bonus" + (i+1)).ToString();            
         }
     }
