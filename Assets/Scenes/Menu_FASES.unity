@@ -425,6 +425,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 201199467081219389, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a04c77eb658ba94987e2ac1f9961407,
+        type: 3}
     - target: {fileID: 414341165096308276, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1375,6 +1381,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3501501292705389554, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3524459655543351535, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1698,7 +1709,7 @@ PrefabInstance:
     - target: {fileID: 5590652024017448590, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -611.4153
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5727167496353754321, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
