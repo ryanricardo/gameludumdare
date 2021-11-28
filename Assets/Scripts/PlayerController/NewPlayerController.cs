@@ -17,13 +17,11 @@ public class NewPlayerController : MonoBehaviour
     [Header("Atributtes Movimentation")]
     [SerializeField]    private float                               speedMoviment;
     [SerializeField]    public  float                               forceJump;
-    [SerializeField]    private float                               gravityAfterTouchVine;
-    [SerializeField]    private float                               gravityBeforeTouchVine;
     [HideInInspector]   public  float                               axisHorizontal;
     [HideInInspector]   private bool[]                              checkGround;
     [HideInInspector]   public  bool                                isRight;
     [HideInInspector]   public  bool                                dropRock;
-
+    [HideInInspector]   private bool                                slowMov;
     
     [Header("Atributtes Balance")]
     [SerializeField]    public  float                               speedSubmitBalance;
@@ -191,11 +189,15 @@ public class NewPlayerController : MonoBehaviour
     }
 
 
+
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Vine"))
+        if(other.gameObject.CompareTag("Vine") && rb2.velocity.y < -0.1f)
         {
-            rb2.gravityScale = gravityAfterTouchVine;
+            rb2.velocity = Vector2.zero;
+            rb2.gravityScale = 0.01f;
+
         }
 
     }
@@ -204,7 +206,7 @@ public class NewPlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Vine"))
         {
-            rb2.gravityScale = gravityBeforeTouchVine;
+            rb2.gravityScale = 1f;
         }
     }
 }
