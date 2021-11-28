@@ -139,7 +139,7 @@ MonoBehaviour:
   sourceEffects: {fileID: 6509254985525933508, guid: 370e1cca86d13424e8aaaabe5faffcc3,
     type: 3}
   soundTeletransport: {fileID: 8300000, guid: 3887c07593c804345b6d5136cc682a16, type: 3}
-  startIntoTheGroup: 0
+  startIntoTheGroup: 1
 --- !u!82 &-2955351726027835716
 AudioSource:
   m_ObjectHideFlags: 0

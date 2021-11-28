@@ -9,6 +9,7 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    public  List<GameObject>                    rocks = new List<GameObject>();
     [SerializeField]    private AudioSource                         source;
     [SerializeField]    private AudioClip                           clipJump;
+    [HideInInspector]   private Joystick                            joystick;
     [HideInInspector]   private NewRockController                   rockController;
     [HideInInspector]   public  Rigidbody2D                         rb2;
     [HideInInspector]   private Data                                data;
@@ -30,15 +31,10 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    public  int                                 maxBalance;
     [HideInInspector]   public  float                               balance;
 
-    [Header("Inputs")]
-    [HideInInspector]   public  bool                                getKeyDownE;
-    [HideInInspector]   public  bool                                getKeyDownEsc;
-    [HideInInspector]   public  bool                                getKeyDownSpace;
-    [HideInInspector]   public  bool                                getKeyDownR;
-
     void Start()
     {
         rockController = FindObjectOfType<NewRockController>();
+        joystick = FindObjectOfType<Joystick>();
         rb2 = GetComponent<Rigidbody2D>();    
         balance = 100;
         checkGround = new bool[3];
@@ -51,39 +47,21 @@ public class NewPlayerController : MonoBehaviour
 
 
         Movimentation();
-        ControllerRocks();
         ControllerBalance();
-        Inputs();
 
 
     }
 
-    void Movimentation()
+    public void Movimentation()
     {
-        axisHorizontal = Input.GetAxis("Horizontal");
-        rb2.velocity = new Vector2(axisHorizontal * speedMoviment, rb2.velocity.y);
 
-        checkGround[0] = Physics2D.Linecast(transform.position, transformChecksGround[0].transform.position, 
-        1 << LayerMask.NameToLayer("Chao"));
-        checkGround[1] = Physics2D.Linecast(transform.position, transformChecksGround[1].transform.position, 
-        1 << LayerMask.NameToLayer("Chao"));
-        checkGround[2] = Physics2D.Linecast(transform.position, transformChecksGround[2].transform.position, 
-        1 << LayerMask.NameToLayer("Chao"));
+        rb2.velocity = new Vector2 (joystick.Horizontal * speedMoviment, rb2.velocity.y);
 
-
-        if(checkGround[0] && getKeyDownSpace || 
-        checkGround[1] && getKeyDownSpace ||
-        checkGround[2] && getKeyDownSpace)
-        {
-            rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
-            source.PlayOneShot(clipJump);
-        }
-
-        if(axisHorizontal < 0 && isRight)
+        if(rb2.velocity.x < 0 && isRight)
         {
             Flip();
             isRight = false;
-        }else if(axisHorizontal > 0 && !isRight)
+        }else if(rb2.velocity.x > 0 && !isRight)
         {
             Flip();
             isRight = true;
@@ -97,18 +75,37 @@ public class NewPlayerController : MonoBehaviour
         transform.localScale = new Vector2(scl, transform.localScale.y);
     }
 
-    void ControllerRocks()
+    public void Jump()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+
+
+        checkGround[0] = Physics2D.Linecast(transform.position, transformChecksGround[0].transform.position, 
+        1 << LayerMask.NameToLayer("Chao"));
+        checkGround[1] = Physics2D.Linecast(transform.position, transformChecksGround[1].transform.position, 
+        1 << LayerMask.NameToLayer("Chao"));
+        checkGround[2] = Physics2D.Linecast(transform.position, transformChecksGround[2].transform.position, 
+        1 << LayerMask.NameToLayer("Chao"));
+
+        if(checkGround[0] || 
+        checkGround[1] ||
+        checkGround[2])
         {
-            if(isRight)
-            {
-                rocks[rocks.Count - 1].GetComponent<NewRockController>().LeftGroup(Vector2.right);
-            }else 
-            {
-                rocks[rocks.Count - 1].GetComponent<NewRockController>().LeftGroup(Vector2.left);                    
-            }
+            rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
+            source.PlayOneShot(clipJump);
         }
+    }
+
+    public void DropRock()
+    {
+        
+        if(isRight)
+        {
+            rocks[rocks.Count - 1].GetComponent<NewRockController>().LeftGroup(Vector2.right);
+        }else 
+        {
+            rocks[rocks.Count - 1].GetComponent<NewRockController>().LeftGroup(Vector2.left);                    
+        }
+        
     }
 
     void ControllerBalance()
@@ -193,14 +190,6 @@ public class NewPlayerController : MonoBehaviour
         }
     }
 
-    void Inputs()
-    {
-        getKeyDownE = Input.GetKeyDown(KeyCode.E) ? getKeyDownE = true: getKeyDownE = false; 
-        getKeyDownEsc = Input.GetKeyDown(KeyCode.Escape) ? getKeyDownEsc = true: getKeyDownEsc = false; 
-        getKeyDownSpace = Input.GetKeyDown(KeyCode.Space) ? getKeyDownSpace = true: getKeyDownSpace = false; 
-        getKeyDownR = Input.GetKeyDown(KeyCode.R) ? getKeyDownR = true: getKeyDownR = false; 
-
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

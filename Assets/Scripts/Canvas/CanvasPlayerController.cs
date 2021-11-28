@@ -26,6 +26,9 @@ public class CanvasPlayerController : MonoBehaviour
     [SerializeField]    private int rewardNumber;
     [SerializeField]    private int rewardAmount;
 
+    [Header("Atributtes Controllers")]
+    [HideInInspector]   private bool                jump;
+
     [HideInInspector] public bool rewardReceived;
     private bool notification, menuOpen, openPanelPause, useBonus;
     private GameObject panelNotification;
@@ -69,6 +72,7 @@ public class CanvasPlayerController : MonoBehaviour
         DisplayTime(timer); 
         BonusText();
     }
+
 
     public void ButtonPause(){
         LevelState(GameManager.State.PAUSE);
@@ -115,11 +119,12 @@ public class CanvasPlayerController : MonoBehaviour
     }
 
     public void ButtonJump(){
-        Debug.Log("Jump!");
+        playerController.Jump();
+
     }
 
     public void ButtomDrop(){
-        Debug.Log("Drop!");
+        playerController.DropRock();
     }
 
     void ResistenceController()
