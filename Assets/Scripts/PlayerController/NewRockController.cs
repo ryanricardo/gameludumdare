@@ -75,6 +75,8 @@ public class NewRockController : MonoBehaviour
     public void EnterGroup()
     {
         
+        transform.localScale = new Vector2(playerController.transform.localScale.x, transform.localScale.y);
+
         gameObject.transform.SetParent(playerController.transform);
         playerController.balance = playerController.balance < 50 ? 
         playerController.balance += 50 : playerController.balance += 0;
@@ -101,7 +103,7 @@ public class NewRockController : MonoBehaviour
 
     IEnumerator ChronometerForFollowingPlayer()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         rb2.simulated = true;
         typeRock = TypeRock.Follow;
     }
