@@ -105,8 +105,10 @@ MonoBehaviour:
   PesoNecessario: 1
   PesoAtual: 0
   ativo: 0
-  tempo: 0
   tempoBase: 0
+  tempo: 0
+  object1: {fileID: 0}
+  object2: {fileID: 2387384030639047708}
 --- !u!61 &4641976898830704145
 BoxCollider2D:
   m_ObjectHideFlags: 0

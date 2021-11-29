@@ -12,6 +12,8 @@ public class PlataformaDeSubir_Descer : MonoBehaviour
     private float step;
     [SerializeField]private float tempoBase;
     [SerializeField]private float tempo;
+    [SerializeField]private GameObject object1;
+    [SerializeField]private GameObject object2;
     
 
     void Start()
@@ -44,6 +46,13 @@ public class PlataformaDeSubir_Descer : MonoBehaviour
              transform.position = Vector2.MoveTowards(transform.position, position, step);
         }
 
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag=="Player")
+        {
+            object1.transform.parent = object2.transform;
+        }
     }
 
 }

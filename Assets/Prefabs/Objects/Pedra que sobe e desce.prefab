@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5906316448484550733}
   - component: {fileID: 7938766355878182052}
   - component: {fileID: 7414699102174234090}
+  - component: {fileID: 7942278927156081486}
   m_Layer: 8
   m_Name: Pedra que sobe e desce
   m_TagString: Untagged
@@ -102,8 +103,10 @@ MonoBehaviour:
   position: {x: 0, y: 0}
   posicaoatual: {x: 0, y: 0}
   mdp: {fileID: 0}
-  tempo: 2
   tempoBase: 0
+  tempo: 2
+  object1: {fileID: 0}
+  object2: {fileID: 1109580636798133929}
 --- !u!61 &7938766355878182052
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -151,3 +154,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!61 &7942278927156081486
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109580636798133929}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.3704726}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.97, y: 0.58}
+    newSize: {x: 2.97, y: 0.58}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.97, y: 1.3209444}
+  m_EdgeRadius: 0

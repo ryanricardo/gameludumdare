@@ -14,6 +14,8 @@ public class PedraDePeso : MonoBehaviour
     [SerializeField] public bool ativo=false;
     [SerializeField]private float tempoBase;
     [SerializeField]private float tempo;
+    [SerializeField]private GameObject object1;
+    [SerializeField]private GameObject object2;
 
     void Start()
     {
@@ -59,6 +61,7 @@ public class PedraDePeso : MonoBehaviour
         if(col.gameObject.tag=="RockController 1" || col.gameObject.tag=="RockController 2" || col.gameObject.tag== "Player"|| col.gameObject.tag=="pedra")
         {
             PesoAtual++;
+            object1.transform.parent = object2.transform;
         }
     }
 
