@@ -107,13 +107,12 @@ MonoBehaviour:
   - {fileID: 6890430913912322281}
   rocks:
   - {fileID: 646820509772010704}
+  rocksOut: []
   source: {fileID: 7261289159064025394}
   clipJump: {fileID: 8300000, guid: e2f593102b2b92942bcdc83adde554f9, type: 3}
   rb2: {fileID: 0}
   speedMoviment: 5
   forceJump: 20
-  gravityAfterTouchVine: 0.4
-  gravityBeforeTouchVine: 1
   axisHorizontal: 0
   isRight: 0
   dropRock: 0
@@ -121,10 +120,6 @@ MonoBehaviour:
   speedAddBalance: 10
   maxBalance: 0
   balance: 100
-  getKeyDownE: 0
-  getKeyDownEsc: 0
-  getKeyDownSpace: 0
-  getKeyDownR: 0
 --- !u!50 &646820509772010540
 Rigidbody2D:
   serializedVersion: 4

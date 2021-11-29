@@ -7,6 +7,7 @@ public class NewPlayerController : MonoBehaviour
      [Header("Components")]
     [SerializeField]    private Transform[]                         transformChecksGround;
     [SerializeField]    public  List<GameObject>                    rocks = new List<GameObject>();
+    [SerializeField]    public  List<GameObject>                    rocksOut = new List<GameObject>();
     [SerializeField]    private AudioSource                         source;
     [SerializeField]    private AudioClip                           clipJump;
     [HideInInspector]   private Joystick                            joystick;
@@ -193,10 +194,14 @@ public class NewPlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Vine") && rb2.velocity.y < -0.1f)
+        if(other.gameObject.CompareTag("Vine"))
         {
-            rb2.velocity = Vector2.zero;
-            rb2.gravityScale = 0.01f;
+            
+            for(int i = 0; i < rocks.Count ; i++)
+            {
+                rocks[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                rocks[i].GetComponent<Rigidbody2D>().gravityScale = 0.1f;
+            }
 
         }
 
@@ -206,7 +211,15 @@ public class NewPlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Vine"))
         {
-            rb2.gravityScale = 1f;
+            for(int i = 0; i < rocks.Count ; i++)
+            {
+                rocks[i].GetComponent<Rigidbody2D>().gravityScale = 1f;
+            }
+
+            for(int i = 0; i < rocksOut.Count; i++)
+            {
+                rocksOut[i].GetComponent<Rigidbody2D>().gravityScale = 1f;
+            }
         }
     }
 }

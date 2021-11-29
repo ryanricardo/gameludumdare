@@ -88,14 +88,17 @@ enum TypeRock
         sourceEffects.PlayOneShot(soundTeletransport);
         rb2.simulated = false;
         playerController.rocks.Add(gameObject);
+        playerController.rocksOut.Remove(gameObject);
         StartCoroutine(ChronometerForFollowingPlayer());
     }
 
     public void LeftGroup(Vector2 vector)
     {
+        rb2.gravityScale = 1;
         gameObject.transform.SetParent(null);
         rb2.simulated = true;
         playerController.rocks.Remove(gameObject);
+        playerController.rocksOut.Add(gameObject);
         rb2.AddForce(vector * 4, ForceMode2D.Impulse);
         typeRock = TypeRock.Idle;
     }
