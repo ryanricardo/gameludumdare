@@ -16,16 +16,17 @@ public class CameraController : MonoBehaviour
     [SerializeField] Transform TargetObj;
     [SerializeField] Vector3 offset;
     [SerializeField] Vector3 pos;
+    [SerializeField] Vector3 target;
     [SerializeField] float spd;
     [SerializeField] float freespace;
 
     void Awake()
     {
+      TargetObj = FindObjectOfType<NewPlayerController>().transform;
         pos = TargetObj.position;
         transform.position = TargetObj.position + offset;
     }
 
-    [SerializeField] Vector3 target;
     void Update()
     {
         if(TargetObj==null)

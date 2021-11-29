@@ -11,7 +11,7 @@ public class CanvasPlayerController : MonoBehaviour
     [Header("Components")]
     [SerializeField]    private Slider              sliderBalance;
     [SerializeField]    private TextMeshProUGUI     textLevel, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish, textNotification, textReward;
-    [SerializeField]    private GameObject          imageReward, panelPlay, panelLevel, buttonNext, buttonBack, touchControllers;
+    [SerializeField]    private GameObject          imageReward, panelLoading, panelPlay, panelPauseFinish, buttonNext, buttonBack, touchControllers;
     [SerializeField]    private GameObject[]        diamondsSprites, bonus, buttonsBonus;  
     [SerializeField]    private TextMeshProUGUI[]   textBonusPause, textBonusPlay;
     [HideInInspector]   private GameManager         gm;
@@ -39,30 +39,32 @@ public class CanvasPlayerController : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
         data = FindObjectOfType<Data>();
         buttonNext.GetComponent<Button>().interactable = true;
-        openPanelPause = false;
-        useBonus = true;
+        LevelState(GameManager.State.LOADING);
         if(GameObject.Find("PanelNotification")==null)
             return;
         panelNotification = GameObject.Find("PanelNotification");
-        panelNotification.SetActive(false);
+        StartCoroutine(StartLevel());
     }
 
-    void Start()
-    {
-        LevelState(GameManager.State.PLAY);
+    IEnumerator StartLevel(){
+        TextLevel();
         timer = 0;
         gm.diamondsLevel = 0; 
-        TextLevel();
+        openPanelPause = false;
+        useBonus = true;
+        panelNotification.SetActive(false);
         string PPlvl = "DiamondsLvl" + gm.currentScene;
+        timeDiamond = SceneManager.GetActiveScene().buildIndex * 5 + 25;
+        for (int i = 0; i < diamondsSprites.Length; i++){
+            diamondsSprites[i].SetActive(false);
+        }
         if(PlayerPrefs.GetInt(PPlvl)==3){
             rewardReceived = true;
         }else{
             rewardReceived = false;
         }
-        timeDiamond = SceneManager.GetActiveScene().buildIndex * 5 + 25;
-        for (int i = 0; i < diamondsSprites.Length; i++){
-            diamondsSprites[i].SetActive(false);
-        }
+        yield return new WaitForSecondsRealtime(3);
+        LevelState(GameManager.State.PLAY);
     }
 
     void Update()
@@ -87,6 +89,7 @@ public class CanvasPlayerController : MonoBehaviour
     }
 
     public void ButtonMenuLevels(){
+        Time.timeScale = 1;
         gm.LoadScene(0, 1);
     }
 
@@ -215,16 +218,20 @@ public class CanvasPlayerController : MonoBehaviour
     }
 
     public void LevelState(GameManager.State newState){
-        switch (newState){
+        switch (newState){            
+            case GameManager.State.LOADING:
+
+                break;
             case GameManager.State.PLAY:
                 panelPlay.SetActive(true);
-                panelLevel.SetActive(false);
+                panelLoading.SetActive(false);
+                panelPauseFinish.SetActive(false);
                 buttonsBonus[0].GetComponent<Button>().interactable = true;
                 buttonsBonus[1].GetComponent<Button>().interactable = true;
                 Time.timeScale = 1;
                 break;
             case GameManager.State.PAUSE:
-                panelLevel.SetActive(true);
+                panelPauseFinish.SetActive(true);
                 touchControllers.SetActive(false);
                 // panelPlay.SetActive(false);
                 Time.timeScale = 0;
@@ -244,7 +251,7 @@ public class CanvasPlayerController : MonoBehaviour
                 break;
             case GameManager.State.LEVELCOMPLETED:
                 DiamondsSystem();
-                panelLevel.SetActive(true);
+                panelPauseFinish.SetActive(true);
                 touchControllers.SetActive(false);
                 // panelPlay.SetActive(false);
                 buttonNext.SetActive(true);
@@ -257,7 +264,7 @@ public class CanvasPlayerController : MonoBehaviour
                 Time.timeScale = 0;
                 break;
             case GameManager.State.GAMEOVER:            
-                panelLevel.SetActive(true);
+                panelPauseFinish.SetActive(true);
                 touchControllers.SetActive(false);
                 // panelPlay.SetActive(false);
                 buttonNext.SetActive(true);

@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
 {
     public int LvlsWon;
     public GameObject[] levelsPanels;
-    [SerializeField] GameObject panelMenu, panelLevls;
+    [SerializeField] GameObject panelMenu, panelLevls, panelLoading;
     [SerializeField] GameObject[] buttonsLvls;
     [SerializeField] TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
     [SerializeField] TextMeshProUGUI[] textDiamondsLvls;
@@ -17,28 +17,21 @@ public class LevelManager : MonoBehaviour
     int lvlsNivel = 16;
 
     private void Awake(){
-        // PlayerPrefs.DeleteAll();
-
-        Screen.orientation = ScreenOrientation.Portrait;
-        
+        Screen.orientation = ScreenOrientation.Portrait;        
+        panelLoading.SetActive(true);
         data = FindObjectOfType<Data>();
         panelLevls.SetActive(true);
-
-        textPowerBonus1.text = "x" + PlayerPrefs.GetInt("Bonus1").ToString();
-        textPowerBonus2.text = "x" + PlayerPrefs.GetInt("Bonus2").ToString();
-
         // Salva no vetor buttonLvls todos os prefabs dos botoes   
         buttonsLvls = GameObject.FindGameObjectsWithTag("buttonLvl");   
         // A partir da quantidade total de botoes no menu iguala o valor de lvl do botao de acordo com sua posição no menu
         for (int i = 1; i <= buttonsLvls.Length ; i++){
             buttonsLvls[i-1].GetComponent<ButtonLvl>().lvl = i; 
-        }            
+        }  
+        StartCoroutine(StartMenu());         
     }
 
-    private void Start(){
-
-        panelLevls.SetActive(false);
-        
+    IEnumerator StartMenu(){
+        panelLevls.SetActive(false);        
         // Verifica se existe algum valor para PPLvlsWon e salva em LvlsWon se não LvlsWon deve ser igual a 1
         if(!PlayerPrefs.HasKey("LvlsWon")){
             LvlsWon = 1;
@@ -53,8 +46,15 @@ public class LevelManager : MonoBehaviour
             }
         }
         buttonsLvls[0].GetComponent<Button>().interactable = true;
+        
         Diamonds();
         TextButtons();
+
+        textPowerBonus1.text = "x" + PlayerPrefs.GetInt("Bonus1").ToString();
+        textPowerBonus2.text = "x" + PlayerPrefs.GetInt("Bonus2").ToString();
+        yield return new WaitForSecondsRealtime(3);
+        panelLoading.SetActive(false);
+        panelMenu.SetActive(true);
     }
 
     private void Update(){        

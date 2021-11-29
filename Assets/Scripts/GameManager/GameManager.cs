@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public int currentScene, lvlsNivel, diamondsNivel, diamondsLevel;
 
     State levelState;
-    public enum State {PLAY, PAUSE, FINISH, LEVELCOMPLETED, GAMEOVER};
+    public enum State {LOADING, PLAY, PAUSE, FINISH, LEVELCOMPLETED, GAMEOVER};
 
     void Awake()
     {
