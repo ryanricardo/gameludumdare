@@ -41,7 +41,7 @@ public class PickupSkin : MonoBehaviour
                         }
                     }
                     canvasPlayerController.NotificationNewReward(
-                    gameObject.GetComponent<SpriteRenderer>().sprite, "You Received a New Gift");
+                    gameObject.GetComponent<SpriteRenderer>().sprite, "Skin for Rock 1");
                     
                     data.skinRock1.Add(data.skinsRewardRock1[indexSkinReward]);
                 break;
@@ -55,7 +55,7 @@ public class PickupSkin : MonoBehaviour
                         }
                     }
                     canvasPlayerController.NotificationNewReward(
-                    gameObject.GetComponent<SpriteRenderer>().sprite, "You Received a New Gift");
+                    gameObject.GetComponent<SpriteRenderer>().sprite, "Skin for Rock 2");
                     data.skinRock2.Add(data.skinsRewardRock2[indexSkinReward]);
                 break;
 
@@ -68,7 +68,7 @@ public class PickupSkin : MonoBehaviour
                         }
                     }
                     canvasPlayerController.NotificationNewReward(
-                    gameObject.GetComponent<SpriteRenderer>().sprite, "You Received a New Gift");
+                    gameObject.GetComponent<SpriteRenderer>().sprite, "Skin for Rock 3");
                     data.skinRock3.Add(data.skinsRewardRock3[indexSkinReward]);
                 break;
             }

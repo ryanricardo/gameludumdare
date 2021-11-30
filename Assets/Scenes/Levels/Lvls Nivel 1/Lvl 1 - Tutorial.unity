@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 646820509772010707, guid: d6a98c79eea1b534ca1f2c8f62fca00d,
+        type: 3}
+      propertyPath: speedSubmitBalance
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a98c79eea1b534ca1f2c8f62fca00d, type: 3}
 --- !u!4 &104219348 stripped
@@ -1682,12 +1687,12 @@ PrefabInstance:
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: rewardAmount
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: rewardNumber
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
@@ -1827,7 +1832,7 @@ PrefabInstance:
     - target: {fileID: 8492164921683420839, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8993358976558864338, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}

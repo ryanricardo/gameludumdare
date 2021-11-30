@@ -10,8 +10,8 @@ public class CanvasPlayerController : MonoBehaviour
 
     [Header("Components")]
     [SerializeField]    private Slider              sliderBalance;
-    [SerializeField]    private TextMeshProUGUI     textLevel, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish, textNotification, textReward;
-    [SerializeField]    private GameObject          imageReward, panelLoading, panelPlay, panelPauseFinish, buttonNext, buttonBack, touchControllers;
+    [SerializeField]    private TextMeshProUGUI     textLevel, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish, textSkin, textBonusAmount;
+    [SerializeField]    private GameObject          panelLoading, panelPlay, panelPauseFinish, buttonNext, buttonBack, touchControllers;
     [SerializeField]    private GameObject[]        diamondsSprites, bonus, buttonsBonus;  
     [SerializeField]    private TextMeshProUGUI[]   textBonusPause, textBonusPlay;
     [HideInInspector]   private GameManager         gm;
@@ -19,19 +19,19 @@ public class CanvasPlayerController : MonoBehaviour
     [HideInInspector]   private Data data;
     
     [Header("Atributtes Timer")]
-    [SerializeField]    private float timer;
-    [SerializeField]    private float timeDiamond;
+    [SerializeField] private float timer;
+    private float timeDiamond;
 
     [Header("Atributtes Rewards")]
-    [SerializeField]    private int rewardNumber;
-    [SerializeField]    private int rewardAmount;
+    [SerializeField]    private int bonusNumber;
+    [SerializeField]    private int bonusAmount;
 
     [Header("Atributtes Controllers")]
     [HideInInspector]   private bool                jump;
 
-    [HideInInspector] public bool rewardReceived;
-    private bool notification, menuOpen, openPanelPause, useBonus;
-    private GameObject panelNotification;
+    [HideInInspector] public bool bonusReceived;
+    private bool useBonus;
+    private GameObject panelBonus, panelSkin;
     
     private void Awake()
     {        
@@ -40,30 +40,33 @@ public class CanvasPlayerController : MonoBehaviour
         data = FindObjectOfType<Data>();
         buttonNext.GetComponent<Button>().interactable = true;
         LevelState(GameManager.State.LOADING);
-        if(GameObject.Find("PanelNotification")==null)
+        if(GameObject.Find("PanelBonus")==null)
             return;
-        panelNotification = GameObject.Find("PanelNotification");
+        panelBonus = GameObject.Find("PanelBonus");
+        panelBonus.SetActive(false);
+        if(GameObject.Find("PanelSkin")==null)
+            return;
+        panelSkin = GameObject.Find("PanelSkin");
+        panelSkin.SetActive(false);
         StartCoroutine(StartLevel());
     }
 
     IEnumerator StartLevel(){
         TextLevel();
-        timer = 0;
         gm.diamondsLevel = 0; 
-        openPanelPause = false;
         useBonus = true;
-        panelNotification.SetActive(false);
         string PPlvl = "DiamondsLvl" + gm.currentScene;
         timeDiamond = SceneManager.GetActiveScene().buildIndex * 5 + 25;
         for (int i = 0; i < diamondsSprites.Length; i++){
             diamondsSprites[i].SetActive(false);
         }
         if(PlayerPrefs.GetInt(PPlvl)==3){
-            rewardReceived = true;
+            bonusReceived = true;
         }else{
-            rewardReceived = false;
+            bonusReceived = false;
         }
         yield return new WaitForSecondsRealtime(3);
+        timer = 0;
         LevelState(GameManager.State.PLAY);
     }
 
@@ -130,28 +133,9 @@ public class CanvasPlayerController : MonoBehaviour
         playerController.DropRock();
     }
 
-    void ResistenceController()
-    {
+    void ResistenceController(){
         sliderBalance.interactable = true;
         sliderBalance.value = playerController.balance;
-    }
-
-    public void NotificationNewReward(Sprite sprite, string message)
-    {
-        Time.timeScale = 0.2f;
-        textNotification.gameObject.SetActive(true);
-        imageReward.SetActive(true);
-        imageReward.GetComponent<Image>().sprite = sprite;
-        textNotification.text = message;
-        StartCoroutine(StopNotification());
-    }
-    IEnumerator StopNotification()
-    {
-        yield return new WaitForSecondsRealtime(3);
-        Time.timeScale = 1;
-        imageReward.SetActive(false);
-        textNotification.gameObject.SetActive(false);
-        notification = false;
     }
 
     void TextLevel(){
@@ -220,7 +204,7 @@ public class CanvasPlayerController : MonoBehaviour
     public void LevelState(GameManager.State newState){
         switch (newState){            
             case GameManager.State.LOADING:
-
+                panelLoading.SetActive(true);
                 break;
             case GameManager.State.PLAY:
                 panelPlay.SetActive(true);
@@ -243,7 +227,7 @@ public class CanvasPlayerController : MonoBehaviour
                 buttonsBonus[1].GetComponent<Button>().interactable = false;
                 break;
             case GameManager.State.FINISH:
-                if(gm.diamondsLevel == 3 & !rewardReceived){
+                if(gm.diamondsLevel == 3 & !bonusReceived){
                     StartCoroutine("CourReward");
                 }else{
                     LevelState(GameManager.State.LEVELCOMPLETED);
@@ -281,15 +265,14 @@ public class CanvasPlayerController : MonoBehaviour
 
     IEnumerator CourReward(){
         yield return new WaitForSecondsRealtime(1);
-        rewardReceived = true;
-        panelNotification.SetActive(true);
-        textReward.text = "x" + rewardAmount.ToString();
-        PlayerPrefs.SetInt("Bonus" + rewardNumber, rewardAmount);
+        bonusReceived = true;
+        panelBonus.SetActive(true);
+        textBonusAmount.text = "x" + bonusAmount.ToString();
+        PlayerPrefs.SetInt("Bonus" + bonusNumber, bonusAmount);
         yield return new WaitForSecondsRealtime(4);
-        panelNotification.SetActive(false);
+        panelBonus.SetActive(false);
         LevelState(GameManager.State.LEVELCOMPLETED);
     }
-
     void BonusText(){
         for (int i = 0; i < textBonusPause.Length; i++){
             textBonusPause[i].text = "x" + PlayerPrefs.GetInt("Bonus" + (i+1)).ToString();            
@@ -297,6 +280,20 @@ public class CanvasPlayerController : MonoBehaviour
         for (int i = 0; i < textBonusPlay.Length; i++){  
             textBonusPlay[i].text = "x" + PlayerPrefs.GetInt("Bonus" + (i+1)).ToString();            
         }
+    }
+
+    public void NotificationNewReward(Sprite sprite, string message){
+        Time.timeScale = 0;
+        touchControllers.SetActive(false);
+        panelSkin.SetActive(true);
+        textSkin.text = message;
+        StartCoroutine(StopNotification());
+    }
+    IEnumerator StopNotification(){
+        yield return new WaitForSecondsRealtime(3);
+        panelSkin.SetActive(false);
+        touchControllers.SetActive(true);
+        Time.timeScale = 1;
     }
 
 }
