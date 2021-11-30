@@ -28,7 +28,7 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    public  float                               speedSubmitBalance;
     [SerializeField]    public  float                               speedAddBalance;
     [SerializeField]    public  int                                 maxBalance;
-    [HideInInspector]   public  float                               balance;
+    [SerializeField]    public  float                               balance;
 
     void Start()
     {
@@ -110,10 +110,10 @@ public class NewPlayerController : MonoBehaviour
     void ControllerBalance()
     {
 
-        if(axisHorizontal != 0 && balance > 0)
+        if(rb2.velocity.x != 0 && balance > 0)
         {
             balance -= speedSubmitBalance * Time.deltaTime;
-        }else if(balance < maxBalance && axisHorizontal == 0)
+        }else if(balance < maxBalance && rb2.velocity.x == 0)
         {
             balance += speedAddBalance * Time.deltaTime;
         }
