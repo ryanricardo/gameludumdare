@@ -46,11 +46,17 @@ MonoBehaviour:
   skinRock1:
   - {fileID: 0}
   - {fileID: 21300000, guid: fabef1505446cac41b579a1fb08d1317, type: 3}
+  - {fileID: 21300000, guid: fabef1505446cac41b579a1fb08d1317, type: 3}
+  - {fileID: 21300000, guid: fabef1505446cac41b579a1fb08d1317, type: 3}
   skinRock2:
   - {fileID: 0}
   - {fileID: 21300000, guid: eb7af7d41e6537d43add5902c40782ae, type: 3}
+  - {fileID: 21300000, guid: eb7af7d41e6537d43add5902c40782ae, type: 3}
+  - {fileID: 21300000, guid: eb7af7d41e6537d43add5902c40782ae, type: 3}
   skinRock3:
   - {fileID: 0}
+  - {fileID: 21300000, guid: d67a8c1a6500b444a812b5b899472d09, type: 3}
+  - {fileID: 21300000, guid: d67a8c1a6500b444a812b5b899472d09, type: 3}
   - {fileID: 21300000, guid: d67a8c1a6500b444a812b5b899472d09, type: 3}
   skinsRewardRock1:
   - {fileID: 21300000, guid: 256f367931239914ebaadaeb432288b1, type: 3}
