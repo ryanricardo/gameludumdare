@@ -37,34 +37,34 @@ public class PowerUps : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if(other.gameObject.CompareTag("Player")
-        || other.gameObject.CompareTag("RockController 1")
-        || other.gameObject.CompareTag("RockController 2"))
-        {
-            switch(typePowerUps)
-            {
-                case TypePowerUps.SubmitBalancePlayer:
-                    playerController.speedSubmitBalance /= valueSubmitBalancePickup;
+    // void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if(other.gameObject.CompareTag("Player")
+    //     || other.gameObject.CompareTag("RockController 1")
+    //     || other.gameObject.CompareTag("RockController 2"))
+    //     {
+    //         switch(typePowerUps)
+    //         {
+    //             case TypePowerUps.SubmitBalancePlayer:
+    //                 playerController.speedSubmitBalance /= valueSubmitBalancePickup;
 
-                    canvasPlayerController.NotificationNewReward(
-                    gameObject.GetComponent<SpriteRenderer>().sprite, "You got " 
-                    + playerController.speedSubmitBalance + " balance deceleration");
-                break;
+    //                 canvasPlayerController.NotificationNewReward(
+    //                 gameObject.GetComponent<SpriteRenderer>().sprite, "You got " 
+    //                 + playerController.speedSubmitBalance + " balance deceleration");
+    //             break;
 
-                case TypePowerUps.MoreJump:
-                    playerController.forceJump += valueMoreJumpPickup;   
+    //             case TypePowerUps.MoreJump:
+    //                 playerController.forceJump += valueMoreJumpPickup;   
 
-                    canvasPlayerController.NotificationNewReward(
-                    gameObject.GetComponent<SpriteRenderer>().sprite, "You got " 
-                    + valueMoreJumpPickup + " Force Jump");                 
-                break;
-            }
+    //                 canvasPlayerController.NotificationNewReward(
+    //                 gameObject.GetComponent<SpriteRenderer>().sprite, "You got " 
+    //                 + valueMoreJumpPickup + " Force Jump");                 
+    //             break;
+    //         }
 
-            Destroy(gameObject, 0);
-        }
-    }
+    //         Destroy(gameObject, 0);
+    //     }
+    // }
 
     
 }

@@ -1473,8 +1473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insertTextEnglish: YOU RECEIVE A NEW SKIN
-  insertTextPortugueseBrazil: VOCE RECEBEU UMA NOVA SKIN
+  insertTextEnglish: BONUS
+  insertTextPortugueseBrazil: "B\xD4NUS"
 --- !u!1 &1873160574162005530
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,7 +2690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2346325314420132634
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3040,7 +3040,7 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.19039917, y: 0}
   m_SizeDelta: {x: -18, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3467,7 +3467,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEVELS
+  m_text: MENU
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bcef2639434ee74bac7877851bfe36e, type: 2}
   m_sharedMaterial: {fileID: 7941104814395178101, guid: 2bcef2639434ee74bac7877851bfe36e,
@@ -4102,7 +4102,7 @@ GameObject:
   - component: {fileID: 5966803812591158423}
   - component: {fileID: 9198428385790559147}
   m_Layer: 5
-  m_Name: PanelBonus
+  m_Name: Bonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7575,6 +7575,7 @@ MonoBehaviour:
   panelPauseFinish: {fileID: 8472279849008036868}
   buttonNext: {fileID: 5562840411432410946}
   buttonBack: {fileID: 5172158510627335876}
+  buttonPause: {fileID: 6197264161764443040}
   touchControllers: {fileID: 4774277445303592118}
   diamondsSprites:
   - {fileID: 4715199920089007216}
@@ -8788,6 +8789,7 @@ GameObject:
   - component: {fileID: 6409685277790654286}
   - component: {fileID: 3443678305249200675}
   - component: {fileID: 2241211973543000056}
+  - component: {fileID: 1592455274}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -8911,6 +8913,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1592455274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7805712008372557115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: TIMER
+  insertTextPortugueseBrazil: CRONOMETRO
 --- !u!1 &7902814881698921245
 GameObject:
   m_ObjectHideFlags: 0
@@ -10512,15 +10528,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
---- !u!1 &8292820646937735552 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252,
-    type: 3}
-  m_PrefabInstance: {fileID: 6607008381588161417}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8292820645575619195 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 6607008381588161417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8292820646937735552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252,
     type: 3}
   m_PrefabInstance: {fileID: 6607008381588161417}
   m_PrefabAsset: {fileID: 0}

@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     int lvlsNivel = 16;
 
     private void Awake(){
-        Screen.orientation = ScreenOrientation.Portrait;        
+        Screen.orientation = ScreenOrientation.Portrait;    
         panelLoading.SetActive(true);
         panelLevls.SetActive(true);
         selectLanguage.value = PlayerPrefs.GetInt("valeuLanguage");

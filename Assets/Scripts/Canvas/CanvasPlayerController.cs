@@ -11,7 +11,7 @@ public class CanvasPlayerController : MonoBehaviour
     [Header("Components")]
     [SerializeField]    private Slider              sliderBalance;
     [SerializeField]    private TextMeshProUGUI     textLevel, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish, textSkin, textBonusAmount;
-    [SerializeField]    private GameObject          panelLoading, panelPlay, panelPauseFinish, buttonNext, buttonBack, touchControllers;
+    [SerializeField]    private GameObject          panelLoading, panelPlay, panelPauseFinish, buttonNext, buttonBack, buttonPause, touchControllers;
     [SerializeField]    private GameObject[]        diamondsSprites, bonus, buttonsBonus;  
     [SerializeField]    private TextMeshProUGUI[]   textBonusPause, textBonusPlay;
     [HideInInspector]   private GameManager         gm;
@@ -32,22 +32,14 @@ public class CanvasPlayerController : MonoBehaviour
     [HideInInspector] public bool bonusReceived;
     private bool useBonus;
     private GameObject panelBonus, panelSkin;
-    
+
     private void Awake()
-    {        
+    {
         playerController = FindObjectOfType<NewPlayerController>();
         gm = FindObjectOfType<GameManager>();
         data = FindObjectOfType<Data>();
         buttonNext.GetComponent<Button>().interactable = true;
         LevelState(GameManager.State.LOADING);
-        if(GameObject.Find("PanelBonus")==null)
-            return;
-        panelBonus = GameObject.Find("PanelBonus");
-        panelBonus.SetActive(false);
-        if(GameObject.Find("PanelSkin")==null)
-            return;
-        panelSkin = GameObject.Find("PanelSkin");
-        panelSkin.SetActive(false);
         StartCoroutine(StartLevel());
     }
 
@@ -64,6 +56,13 @@ public class CanvasPlayerController : MonoBehaviour
             bonusReceived = true;
         }else{
             bonusReceived = false;
+        }
+        if(GameObject.Find("PanelBonus")!=null){
+            panelBonus = GameObject.Find("PanelBonus");
+            panelBonus.SetActive(false);
+        }else if(GameObject.Find("PanelSkin")!=null){            
+            panelSkin = GameObject.Find("PanelSkin");
+            panelSkin.SetActive(false);
         }
         yield return new WaitForSecondsRealtime(3);
         timer = 0;
@@ -210,6 +209,7 @@ public class CanvasPlayerController : MonoBehaviour
                 panelPlay.SetActive(true);
                 panelLoading.SetActive(false);
                 panelPauseFinish.SetActive(false);
+                touchControllers.SetActive(true);
                 buttonsBonus[0].GetComponent<Button>().interactable = true;
                 buttonsBonus[1].GetComponent<Button>().interactable = true;
                 Time.timeScale = 1;
@@ -237,8 +237,8 @@ public class CanvasPlayerController : MonoBehaviour
                 DiamondsSystem();
                 panelPauseFinish.SetActive(true);
                 touchControllers.SetActive(false);
-                // panelPlay.SetActive(false);
                 buttonNext.SetActive(true);
+                buttonPause.GetComponent<Button>().interactable = false;
                 buttonBack.SetActive(false);
                 DisplayTimers();
                 textLevelState.text = "LEVEL COMPLETED";
@@ -250,7 +250,7 @@ public class CanvasPlayerController : MonoBehaviour
             case GameManager.State.GAMEOVER:            
                 panelPauseFinish.SetActive(true);
                 touchControllers.SetActive(false);
-                // panelPlay.SetActive(false);
+                buttonPause.GetComponent<Button>().interactable = false;
                 buttonNext.SetActive(true);
                 buttonBack.SetActive(false);
                 DisplayTimers();
@@ -282,11 +282,11 @@ public class CanvasPlayerController : MonoBehaviour
         }
     }
 
-    public void NotificationNewReward(Sprite sprite, string message){
+    public void NotificationNewReward(string message){
         Time.timeScale = 0;
-        touchControllers.SetActive(false);
         panelSkin.SetActive(true);
         textSkin.text = message;
+        touchControllers.SetActive(false);
         StartCoroutine(StopNotification());
     }
     IEnumerator StopNotification(){

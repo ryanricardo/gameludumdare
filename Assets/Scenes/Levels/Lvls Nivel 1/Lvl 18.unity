@@ -579,7 +579,7 @@ PrefabInstance:
     - target: {fileID: 3345278445832092918, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: m_text
-      value: MORE JUMP
+      value: SLOW BALANCE
       objectReference: {fileID: 0}
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
@@ -594,12 +594,12 @@ PrefabInstance:
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: bonusAmount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: bonusNumber
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
@@ -616,6 +616,12 @@ PrefabInstance:
       propertyPath: rewardNumber
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6535308562187797737, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a0f69fa99d445b102a1321fe45ed4a26,
+        type: 3}
     - target: {fileID: 6544186094124780807, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: m_Name
