@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     public int LvlsWon;
     public GameObject[] levelsPanels;
     [SerializeField] GameObject panelMenu, panelLevls, panelLoading;
+    [SerializeField] TMP_Dropdown       selectLanguage;
     [SerializeField] GameObject[] buttonsLvls;
     [SerializeField] TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
     [SerializeField] TextMeshProUGUI[] textDiamondsLvls;
@@ -20,6 +21,7 @@ public class LevelManager : MonoBehaviour
         Screen.orientation = ScreenOrientation.Portrait;        
         panelLoading.SetActive(true);
         panelLevls.SetActive(true);
+        selectLanguage.value = PlayerPrefs.GetInt("valeuLanguage");
         // Salva no vetor buttonLvls todos os prefabs dos botoes   
         buttonsLvls = GameObject.FindGameObjectsWithTag("buttonLvl");   
         // A partir da quantidade total de botoes no menu iguala o valor de lvl do botao de acordo com sua posição no menu
@@ -58,6 +60,7 @@ public class LevelManager : MonoBehaviour
 
     private void Update(){        
     }
+    
 
     public void Play(){
         panelMenu.SetActive(false);
@@ -89,6 +92,22 @@ public class LevelManager : MonoBehaviour
         }
         PlayerPrefs.Save();
         SceneManager.LoadScene(0);
+    }
+
+    public void SelectLanguage()
+    {
+        switch(selectLanguage.value)
+        {
+            case 0:
+                PlayerPrefs.SetString("Language","English");
+                PlayerPrefs.SetInt("valeuLanguage", 0);
+            break;
+
+            case 1:
+                PlayerPrefs.SetString("Language","Portuguese (Brazil)");
+                PlayerPrefs.SetInt("valeuLanguage", 1);
+            break;
+        }
     }
     
     public void MusicOn(){
