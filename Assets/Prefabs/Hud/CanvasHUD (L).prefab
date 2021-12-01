@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 553459664738721472}
   - component: {fileID: 5528426901986883272}
   - component: {fileID: 1025275202808068420}
+  - component: {fileID: 7937339292348244207}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -134,6 +135,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7937339292348244207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177495635150876232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: JUMP
+  insertTextPortugueseBrazil: PULAR
 --- !u!1 &400778198892847704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,6 +1336,7 @@ GameObject:
   - component: {fileID: 9047057423999525864}
   - component: {fileID: 3991946995769493463}
   - component: {fileID: 7227662217573887292}
+  - component: {fileID: 3063054439607028583}
   m_Layer: 5
   m_Name: 'Text (TMP) '
   m_TagString: Untagged
@@ -1445,6 +1461,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3063054439607028583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869912482089358419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: YOU RECEIVE A NEW SKIN
+  insertTextPortugueseBrazil: VOCE RECEBEU UMA NOVA SKIN
 --- !u!1 &1873160574162005530
 GameObject:
   m_ObjectHideFlags: 0
@@ -8875,7 +8905,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -25.089916, w: 0}
+  m_margin: {x: -9.05851, y: 0, z: -35.329967, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8892,6 +8922,7 @@ GameObject:
   - component: {fileID: 6250880246341178367}
   - component: {fileID: 2777683860546751070}
   - component: {fileID: 3755909457459311959}
+  - component: {fileID: 1873345166135431660}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9015,6 +9046,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1873345166135431660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7902814881698921245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: DROP
+  insertTextPortugueseBrazil: DERRUBAR
 --- !u!1 &8063995608599239643
 GameObject:
   m_ObjectHideFlags: 0

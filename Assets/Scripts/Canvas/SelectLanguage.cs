@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class SelectLanguage : MonoBehaviour
@@ -24,7 +25,10 @@ public class SelectLanguage : MonoBehaviour
     
     public void ChangeLanguage()
     {
-        PlayerPrefs.SetInt("valueLanguage", levelManager.selectLanguage.value);
+         
+       
+            PlayerPrefs.SetInt("valueLanguage", PlayerPrefs.GetInt("valeuLanguage"));
+        
 
         switch(PlayerPrefs.GetInt("valueLanguage"))
         {

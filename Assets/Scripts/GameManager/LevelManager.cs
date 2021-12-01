@@ -84,6 +84,7 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt("SkinRock1", 1);
         PlayerPrefs.SetInt("SkinRock2", 1);
         PlayerPrefs.SetInt("SkinRock3", 1);
+        PlayerPrefs.SetInt("valueLanguage", 0);
         while(data.skinRock1.Count != 2)
         {
             data.skinRock1.RemoveAt(2);
