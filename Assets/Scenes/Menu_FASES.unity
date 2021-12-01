@@ -123,6 +123,46 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &23208813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3252277484448552652, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6144163330261861864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &23208817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23208813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: Reset Configurations
+  insertTextPortugueseBrazil: Resetar Configuracoes
+--- !u!1 &35245704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1795120606388000460, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6144163330261861864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &35245708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35245704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: PLAY
+  insertTextPortugueseBrazil: INICIAR
 --- !u!1 &110164261
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +282,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &212872543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2848194433712351621, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6144163330261861864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &212872547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212872543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: QUIT
+  insertTextPortugueseBrazil: SAIR
 --- !u!1 &296869334
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,9 +565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insertText:
-  - INVENTORY
-  - INVENTARIO
+  insertTextEnglish: INVENTORY
+  insertTextPortugueseBrazil: INVENTARIO
 --- !u!1 &440818441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 969412292751152195, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
@@ -526,9 +585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insertText:
-  - OPTIONS
-  - OPCOES
+  insertTextEnglish: OPTIONS
+  insertTextPortugueseBrazil: OPCOES
 --- !u!1 &482600807
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +598,7 @@ GameObject:
   - component: {fileID: 482600808}
   - component: {fileID: 482600810}
   - component: {fileID: 482600809}
+  - component: {fileID: 482600811}
   m_Layer: 5
   m_Name: '[Text (TMP)] TitleLanguage'
   m_TagString: Untagged
@@ -664,6 +723,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482600807}
   m_CullTransparentMesh: 0
+--- !u!114 &482600811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482600807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: Language
+  insertTextPortugueseBrazil: Idioma
 --- !u!114 &536741505 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
@@ -865,6 +938,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118470240}
   m_CullTransparentMesh: 1
+--- !u!1 &1123419588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2783324303054323573, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6144163330261861864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1123419592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123419588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: Volume Effects
+  insertTextPortugueseBrazil: Volume dos Efeitos
+--- !u!1 &1165524799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 578457952137749875, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6144163330261861864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1165524803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165524799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: Volume General
+  insertTextPortugueseBrazil: Volume Geral
 --- !u!1 &1253561108
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,9 +1077,141 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 482600811}
+        m_TargetAssemblyTypeName: SelectLanguage, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1165524803}
+        m_TargetAssemblyTypeName: SelectLanguage, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1325975685}
+        m_TargetAssemblyTypeName: SelectLanguage, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1123419592}
+        m_TargetAssemblyTypeName: SelectLanguage, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 440818445}
+        m_TargetAssemblyTypeName: SelectLanguage, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 35245708}
+        m_TargetAssemblyTypeName: SelectLanguage, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 212872547}
+        m_TargetAssemblyTypeName: SelectLanguage, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 437201375}
+        m_TargetAssemblyTypeName: SelectLanguage, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1343153138}
+        m_TargetAssemblyTypeName: SelectLanguage, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1297401411}
+        m_TargetAssemblyTypeName: SelectLanguage, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 536741505}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: SelectLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 23208817}
+        m_TargetAssemblyTypeName: SelectLanguage, Assembly-CSharp
+        m_MethodName: ChangeLanguage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1015,6 +1260,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253561108}
   m_CullTransparentMesh: 1
+--- !u!1 &1297401407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1455201540424603529, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6144163330261861864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1297401411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297401407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: Total Diamonds
+  insertTextPortugueseBrazil: Total de Diamantes
 --- !u!1 &1303110502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1406,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303110502}
   m_CullTransparentMesh: 1
+--- !u!1 &1325975681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3948187380138651421, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6144163330261861864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1325975685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325975681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: Volume Music
+  insertTextPortugueseBrazil: Volume da Musica
 --- !u!1 &1326911356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1582,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &1343153134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1401991511298969069, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6144163330261861864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1343153138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343153134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: Customize your skin
+  insertTextPortugueseBrazil: Custumize sua skin
+--- !u!1 &1354161222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6144163329716560848, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6144163330261861864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1354161226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354161222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: Total Power-ups
+  insertTextPortugueseBrazil: Total de Poderes
 --- !u!850595691 &1455794500
 LightingSettings:
   m_ObjectHideFlags: 0

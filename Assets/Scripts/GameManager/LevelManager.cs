@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     public int LvlsWon;
     public GameObject[] levelsPanels;
     [SerializeField] GameObject panelMenu, panelLevls, panelLoading;
-    [SerializeField] TMP_Dropdown       selectLanguage;
+    [SerializeField] public TMP_Dropdown       selectLanguage;
     [SerializeField] GameObject[] buttonsLvls;
     [SerializeField] TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
     [SerializeField] TextMeshProUGUI[] textDiamondsLvls;

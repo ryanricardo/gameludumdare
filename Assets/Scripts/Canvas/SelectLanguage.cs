@@ -6,29 +6,37 @@ using TMPro;
 
 public class SelectLanguage : MonoBehaviour
 {
-
+    [HideInInspector]   private LevelManager        levelManager;
     [HideInInspector]   private TextMeshProUGUI     textObject;
-    [SerializeField]    private string[]            insertText;
+    [SerializeField]    private string              insertTextEnglish;
+    [SerializeField]    private string              insertTextPortugueseBrazil;
+
     
 
     void Start()
     {
-
+        levelManager = FindObjectOfType<LevelManager>();
         textObject = GetComponent<TextMeshProUGUI>();
+        ChangeLanguage();
 
 
-        switch(PlayerPrefs.GetString("Language"))
+    }
+    
+    public void ChangeLanguage()
+    {
+        PlayerPrefs.SetInt("valueLanguage", levelManager.selectLanguage.value);
+
+        switch(PlayerPrefs.GetInt("valueLanguage"))
         {
-            case "English":
-            textObject.text = insertText[0];
+            case 0:
+            textObject.text = insertTextEnglish;
             break;
 
-            case "Portuguese (Brazil)":
-            textObject.text = insertText[1];
+            case 1:
+            textObject.text = insertTextPortugueseBrazil;
             break;
         }
     }
-
     void Update()
     {
         
