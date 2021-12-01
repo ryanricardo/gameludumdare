@@ -107,7 +107,7 @@ public class LevelManager : MonoBehaviour
             case 1:
                 PlayerPrefs.SetString("Language","Portuguese (Brazil)");
                 PlayerPrefs.SetInt("valeuLanguage", 1);
-            break;
+                break;
         }
     }
     

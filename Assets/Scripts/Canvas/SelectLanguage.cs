@@ -20,15 +20,12 @@ public class SelectLanguage : MonoBehaviour
         textObject = GetComponent<TextMeshProUGUI>();
         ChangeLanguage();
 
-
     }
     
     public void ChangeLanguage()
-    {
-         
+    {         
        
-            PlayerPrefs.SetInt("valueLanguage", PlayerPrefs.GetInt("valeuLanguage"));
-        
+        PlayerPrefs.SetInt("valueLanguage", PlayerPrefs.GetInt("valeuLanguage"));        
 
         switch(PlayerPrefs.GetInt("valueLanguage"))
         {
