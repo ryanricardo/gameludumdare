@@ -21,7 +21,6 @@ public class LevelManager : MonoBehaviour
         Screen.orientation = ScreenOrientation.Portrait;    
         panelLoading.SetActive(true);
         panelLevls.SetActive(true);
-        selectLanguage.value = PlayerPrefs.GetInt("valeuLanguage");
         // Salva no vetor buttonLvls todos os prefabs dos botoes   
         buttonsLvls = GameObject.FindGameObjectsWithTag("buttonLvl");   
         // A partir da quantidade total de botoes no menu iguala o valor de lvl do botao de acordo com sua posição no menu
@@ -46,13 +45,12 @@ public class LevelManager : MonoBehaviour
                 buttonsLvls[i].GetComponent<Button>().interactable = false;
             }
         }
-        buttonsLvls[0].GetComponent<Button>().interactable = true;
-        
+        buttonsLvls[0].GetComponent<Button>().interactable = true;        
         Diamonds();
         TextButtons();
-
         textPowerBonus1.text = "x" + PlayerPrefs.GetInt("Bonus1").ToString();
         textPowerBonus2.text = "x" + PlayerPrefs.GetInt("Bonus2").ToString();
+        selectLanguage.value = PlayerPrefs.GetInt("valeuLanguage");
         yield return new WaitForSecondsRealtime(3);
         panelLoading.SetActive(false);
         panelMenu.SetActive(true);

@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0.9019608}
+  m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0.654902}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1360,8 +1360,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -40, y: -5.5}
-  m_SizeDelta: {x: 150, y: 40}
+  m_AnchoredPosition: {x: -60, y: -5.5}
+  m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3991946995769493463
 CanvasRenderer:
@@ -1426,7 +1426,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 50
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1733,7 +1733,7 @@ GameObject:
   - component: {fileID: 2767767299512913890}
   - component: {fileID: 6825697555557954714}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextLevelNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2115,7 +2115,7 @@ GameObject:
   - component: {fileID: 9152094258378608737}
   - component: {fileID: 1893824042369506598}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextTimerNumbers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2883,6 +2883,7 @@ GameObject:
   - component: {fileID: 526645311493307310}
   - component: {fileID: 8645484940228746400}
   - component: {fileID: 3047323833294141837}
+  - component: {fileID: 8751012049158746449}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3007,6 +3008,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8751012049158746449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3314771525662934614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: NEXT
+  insertTextPortugueseBrazil: "PR\xD3XIMO"
 --- !u!1 &3418706377303836494
 GameObject:
   m_ObjectHideFlags: 0
@@ -5385,6 +5400,7 @@ GameObject:
   - component: {fileID: 6134073707687274793}
   - component: {fileID: 1310270248629417306}
   - component: {fileID: 647552058290420541}
+  - component: {fileID: 374124287947963890}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5509,6 +5525,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &374124287947963890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222419075224811847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: RESTART
+  insertTextPortugueseBrazil: REINICIAR
 --- !u!1 &5260524567327987790
 GameObject:
   m_ObjectHideFlags: 0
@@ -5839,6 +5869,7 @@ GameObject:
   - component: {fileID: 4755126416746757815}
   - component: {fileID: 4234633817369203827}
   - component: {fileID: 8910137828347937632}
+  - component: {fileID: 1056428722526942392}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5963,6 +5994,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1056428722526942392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5725800274722895761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: BACK
+  insertTextPortugueseBrazil: VOLTAR
 --- !u!1 &5864507359671826510
 GameObject:
   m_ObjectHideFlags: 0
@@ -6145,8 +6190,9 @@ GameObject:
   - component: {fileID: 8624684049873737865}
   - component: {fileID: 1526419368355841069}
   - component: {fileID: 8803743852577068671}
+  - component: {fileID: 2562432641759727512}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: TextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6268,6 +6314,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2562432641759727512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5916716184252573290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: LEVEL
+  insertTextPortugueseBrazil: FASE
 --- !u!1 &6021202762949113143
 GameObject:
   m_ObjectHideFlags: 0
@@ -7632,7 +7692,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -95}
-  m_SizeDelta: {x: 250, y: 70}
+  m_SizeDelta: {x: 300, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4306869697516320502
 CanvasRenderer:
@@ -8791,7 +8851,7 @@ GameObject:
   - component: {fileID: 2241211973543000056}
   - component: {fileID: 1592455274}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: TextTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8844,7 +8904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TIMER
+  m_text: TIME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8925,8 +8985,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insertTextEnglish: TIMER
-  insertTextPortugueseBrazil: CRONOMETRO
+  insertTextEnglish: TIME
+  insertTextPortugueseBrazil: TEMPO
 --- !u!1 &7902814881698921245
 GameObject:
   m_ObjectHideFlags: 0
@@ -9020,8 +9080,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9075,7 +9135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insertTextEnglish: DROP
-  insertTextPortugueseBrazil: DERRUBAR
+  insertTextPortugueseBrazil: SOLTAR
 --- !u!1 &8063995608599239643
 GameObject:
   m_ObjectHideFlags: 0
@@ -9310,7 +9370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &247388065766104295
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10064,7 +10124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+  m_Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0.6509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10332,7 +10392,7 @@ PrefabInstance:
     - target: {fileID: 8845378848704373603, guid: 39f37f95707036a449238f427eab7ead,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39f37f95707036a449238f427eab7ead, type: 3}
@@ -10364,7 +10424,7 @@ PrefabInstance:
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.7607843
+      value: 0.6509804
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
@@ -10513,6 +10573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
+      propertyPath: m_Color.a
+      value: 0.6509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
       propertyPath: m_Color.b
       value: 0.6886792
       objectReference: {fileID: 0}
@@ -10528,15 +10593,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
---- !u!224 &8292820645575619195 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
-    type: 3}
-  m_PrefabInstance: {fileID: 6607008381588161417}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8292820646937735552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 6607008381588161417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &8292820645575619195 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
     type: 3}
   m_PrefabInstance: {fileID: 6607008381588161417}
   m_PrefabAsset: {fileID: 0}

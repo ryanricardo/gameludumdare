@@ -40,8 +40,14 @@ public class PickupSkin : MonoBehaviour
                             return; 
                         }
                     }
-                    canvasPlayerController.NotificationNewReward("Skin for Rock 1");
-                    
+                switch(PlayerPrefs.GetInt("valueLanguage")){
+                    case 0:                        
+                        canvasPlayerController.NotificationNewReward("Skin for Rock 1");
+                        break;
+                    case 1:
+                        canvasPlayerController.NotificationNewReward("Skin para o Rock 1");
+                        break;
+                }                    
                     data.skinRock1.Add(data.skinsRewardRock1[indexSkinReward]);
                 break;
 
@@ -53,7 +59,14 @@ public class PickupSkin : MonoBehaviour
                             return; 
                         }
                     }
-                    canvasPlayerController.NotificationNewReward("Skin for Rock 2");
+                switch(PlayerPrefs.GetInt("valueLanguage")){
+                    case 0:                        
+                        canvasPlayerController.NotificationNewReward("Skin for Rock 3");
+                        break;
+                    case 1:
+                        canvasPlayerController.NotificationNewReward("Skin para o Rock 3");
+                        break;
+                }
                     data.skinRock2.Add(data.skinsRewardRock2[indexSkinReward]);
                 break;
 
@@ -65,7 +78,14 @@ public class PickupSkin : MonoBehaviour
                             return; 
                         }
                     }
-                    canvasPlayerController.NotificationNewReward("Skin for Rock 3");
+                switch(PlayerPrefs.GetInt("valueLanguage")){
+                    case 0:                        
+                        canvasPlayerController.NotificationNewReward("Skin for Rock 3");
+                        break;
+                    case 1:
+                        canvasPlayerController.NotificationNewReward("Skin para o Rock 3");
+                        break;
+                }
                     data.skinRock3.Add(data.skinsRewardRock3[indexSkinReward]);
                 break;
             }

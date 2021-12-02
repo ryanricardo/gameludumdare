@@ -217,11 +217,17 @@ public class CanvasPlayerController : MonoBehaviour
             case GameManager.State.PAUSE:
                 panelPauseFinish.SetActive(true);
                 touchControllers.SetActive(false);
-                // panelPlay.SetActive(false);
                 Time.timeScale = 0;
                 buttonNext.SetActive(false);
                 buttonBack.SetActive(true);
-                textLevelState.text = "PAUSE";
+                switch(PlayerPrefs.GetInt("valueLanguage")){
+                    case 0:
+                        textLevelState.text = "PAUSE";
+                        break;
+                    case 1:
+                        textLevelState.text = "PAUSA";
+                        break;
+                }
                 DisplayTimers();
                 buttonsBonus[0].GetComponent<Button>().interactable = false;
                 buttonsBonus[1].GetComponent<Button>().interactable = false;
@@ -241,7 +247,14 @@ public class CanvasPlayerController : MonoBehaviour
                 buttonPause.GetComponent<Button>().interactable = false;
                 buttonBack.SetActive(false);
                 DisplayTimers();
-                textLevelState.text = "LEVEL COMPLETED";
+                switch(PlayerPrefs.GetInt("valueLanguage")){
+                    case 0:
+                        textLevelState.text = "LEVEL COMPLETED";
+                        break;
+                    case 1:
+                        textLevelState.text = "FASE COMPLETA";
+                        break;
+                }
                 buttonNext.GetComponent<Button>().interactable = true;
                 buttonsBonus[0].GetComponent<Button>().interactable = false;
                 buttonsBonus[1].GetComponent<Button>().interactable = false;
@@ -254,7 +267,14 @@ public class CanvasPlayerController : MonoBehaviour
                 buttonNext.SetActive(true);
                 buttonBack.SetActive(false);
                 DisplayTimers();
-                textLevelState.text = "GAME   OVER";
+                switch(PlayerPrefs.GetInt("valueLanguage")){
+                    case 0:
+                        textLevelState.text = "GAME   OVER";
+                        break;
+                    case 1:
+                        textLevelState.text = "FIM DE JOGO";
+                        break;
+                }
                 buttonNext.GetComponent<Button>().interactable = false;
                 buttonsBonus[0].GetComponent<Button>().interactable = false;
                 buttonsBonus[1].GetComponent<Button>().interactable = false;

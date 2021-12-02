@@ -18,7 +18,6 @@ public class SelectLanguage : MonoBehaviour
     {
         levelManager = FindObjectOfType<LevelManager>();
         textObject = GetComponent<TextMeshProUGUI>();
-        ChangeLanguage();
 
     }
     
