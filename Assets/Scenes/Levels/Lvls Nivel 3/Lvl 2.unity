@@ -12408,12 +12408,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 578251708}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &604473001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7835917802322196880, guid: 088399a65df43e744ad57cf3b7801f83,
-    type: 3}
-  m_PrefabInstance: {fileID: 1831285197}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &663278513 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8472279849008036868, guid: 088399a65df43e744ad57cf3b7801f83,
@@ -12820,13 +12814,13 @@ PrefabInstance:
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
       propertyPath: currentScene
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
       propertyPath: imageRestart
       value: 
-      objectReference: {fileID: 1530117071}
+      objectReference: {fileID: 0}
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
       propertyPath: souceEffects
@@ -12836,7 +12830,7 @@ PrefabInstance:
         type: 3}
       propertyPath: panelGameOver
       value: 
-      objectReference: {fileID: 604473001}
+      objectReference: {fileID: 0}
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
       propertyPath: panelLevelCompleted
@@ -13174,12 +13168,6 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1428066552}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1530117071 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7932106871937751282, guid: 088399a65df43e744ad57cf3b7801f83,
-    type: 3}
-  m_PrefabInstance: {fileID: 1831285197}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1670672902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13314,6 +13302,16 @@ PrefabInstance:
     - target: {fileID: 800378646526324885, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034378623978405804, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034378623978405804, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,

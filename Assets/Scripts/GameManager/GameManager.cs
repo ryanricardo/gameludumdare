@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Components")]
-    // [SerializeField] private GameObject             imageRestart;   
-    [SerializeField] private AudioSource            souceMusic;
-    [SerializeField] private AudioSource            souceEffects;
+    [SerializeField] private AudioSource            sourceMusic;
+    [SerializeField] private AudioSource            sourceEffects;
     [SerializeField] private AudioClip[]            musicsLofi;              
     [HideInInspector]private NewPlayerController    playerController;
     [HideInInspector]private InventoryManager       inventoryManager;
@@ -25,26 +24,26 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Screen.orientation = ScreenOrientation.Landscape;
-        souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame") * PlayerPrefs.GetFloat("VolumeGeneral");
-        souceEffects.volume = PlayerPrefs.GetFloat("VolumeEffectsGame") * PlayerPrefs.GetFloat("VolumeGeneral");
         data = FindObjectOfType<Data>();
         canvasPlayer = FindObjectOfType<CanvasPlayerController>();
         inventoryManager = FindObjectOfType<InventoryManager>();
         playerController = FindObjectOfType<NewPlayerController>();
-        currentScene = SceneManager.GetActiveScene().buildIndex;
-        lvlsNivel = 16;
-
-        souceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
-        souceMusic.Play();
+        sourceMusic = GetComponent<AudioSource>();
+        sourceEffects = playerController.GetComponent<AudioSource>();
 
     }
 
     void Start()
     {
-        // imageRestart.gameObject.SetActive(false);
-        Time.timeScale = 1;
-        souceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
-
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        Time.timeScale = 1;                
+        lvlsNivel = 20;
+        sourceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame") * PlayerPrefs.GetFloat("VolumeGeneral");
+        sourceEffects.volume = PlayerPrefs.GetFloat("VolumeEffectsGame") * PlayerPrefs.GetFloat("VolumeGeneral");
+        sourceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
+        sourceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
+        sourceMusic.Play();
+        
         data.rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
         data.rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
         playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
@@ -62,10 +61,10 @@ public class GameManager : MonoBehaviour
             canvasPlayer.LevelState(State.GAMEOVER);
         }
 
-        if(!souceMusic.isPlaying)
+        if(!sourceMusic.isPlaying)
         {
-            souceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
-            souceMusic.Play();
+            sourceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
+            sourceMusic.Play();
         }
     }
 

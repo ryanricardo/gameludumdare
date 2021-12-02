@@ -210,6 +210,7 @@ public class CanvasPlayerController : MonoBehaviour
                 panelLoading.SetActive(false);
                 panelPauseFinish.SetActive(false);
                 touchControllers.SetActive(true);
+                buttonPause.GetComponent<Button>().interactable = true;
                 buttonsBonus[0].GetComponent<Button>().interactable = true;
                 buttonsBonus[1].GetComponent<Button>().interactable = true;
                 Time.timeScale = 1;
@@ -229,6 +230,7 @@ public class CanvasPlayerController : MonoBehaviour
                         break;
                 }
                 DisplayTimers();
+                buttonPause.GetComponent<Button>().interactable = false;
                 buttonsBonus[0].GetComponent<Button>().interactable = false;
                 buttonsBonus[1].GetComponent<Button>().interactable = false;
                 break;
