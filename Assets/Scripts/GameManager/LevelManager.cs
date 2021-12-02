@@ -28,7 +28,8 @@ public class LevelManager : MonoBehaviour
         for (int i = 1; i <= buttonsLvls.Length ; i++){
             buttonsLvls[i-1].GetComponent<ButtonLvl>().lvl = i; 
         }  
-        StartCoroutine(StartMenu());         
+        StartCoroutine(StartMenu());     
+        StartCoroutine(FinishLoading());    
     }
 
     IEnumerator StartMenu(){
@@ -52,9 +53,15 @@ public class LevelManager : MonoBehaviour
         textPowerBonus1.text = "x" + PlayerPrefs.GetInt("Bonus1").ToString();
         textPowerBonus2.text = "x" + PlayerPrefs.GetInt("Bonus2").ToString();
         selectLanguage.value = PlayerPrefs.GetInt("valeuLanguage");
+        yield return new WaitForSecondsRealtime(1);
+    }
+
+    IEnumerator FinishLoading()
+    {
         yield return new WaitForSecondsRealtime(3);
         panelLoading.SetActive(false);
         panelMenu.SetActive(true);
+
     }
 
     private void Update(){        
