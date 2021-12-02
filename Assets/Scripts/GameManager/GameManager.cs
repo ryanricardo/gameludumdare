@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Atributtes Manager")]
     public int nivel;
-    public int currentScene, lvlsNivel, diamondsNivel, diamondsLevel;
+    public int currentScene, lvlsNivel, activeScene, diamondsNivel, diamondsLevel;
 
     State levelState;
     public enum State {LOADING, PLAY, PAUSE, FINISH, LEVELCOMPLETED, GAMEOVER};
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Screen.orientation = ScreenOrientation.Landscape;
+        activeScene = SceneManager.GetActiveScene().buildIndex;
         data = FindObjectOfType<Data>();
         canvasPlayer = FindObjectOfType<CanvasPlayerController>();
         inventoryManager = FindObjectOfType<InventoryManager>();
@@ -35,7 +36,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        currentScene = SceneManager.GetActiveScene().buildIndex;
         Time.timeScale = 1;                
         lvlsNivel = 20;
         sourceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame") * PlayerPrefs.GetFloat("VolumeGeneral");

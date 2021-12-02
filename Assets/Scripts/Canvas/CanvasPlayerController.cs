@@ -83,7 +83,7 @@ public class CanvasPlayerController : MonoBehaviour
     }
 
     public void ButtonNext(){  
-        gm.LoadScene(gm.currentScene + 1, 1);
+        gm.LoadScene(gm.activeScene + 1, 1);
     }
 
     public void ButtonBack(){
@@ -96,7 +96,7 @@ public class CanvasPlayerController : MonoBehaviour
     }
 
     public void ButtonRestart(){
-        gm.LoadScene(gm.currentScene, 1);
+        gm.LoadScene(gm.activeScene, 1);
     }
 
     public void ButtonBonus1(){
@@ -138,26 +138,27 @@ public class CanvasPlayerController : MonoBehaviour
     }
 
     void TextLevel(){
-        switch (gm.nivel){
-            case 1:
-                textLevel.text = "" + gm.currentScene;
-                break;
-            case 2:
-                textLevel.text = "" + (gm.currentScene - gm.lvlsNivel);
-                break;
-            case 3:
-                textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 2);
-                break;
-            case 4:
-                textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 3);
-                break;
-            case 5:
-                textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 4);
-                break;
-            case 6:
-                textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 5);
-                break;
-        }
+        textLevel.text = "" + gm.currentScene;
+        // switch (gm.nivel){
+        //     case 1:
+        //         textLevel.text = "" + gm.currentScene;
+        //         break;
+        //     case 2:
+        //         textLevel.text = "" + (gm.currentScene - gm.lvlsNivel);
+        //         break;
+        //     case 3:
+        //         textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 2);
+        //         break;
+        //     case 4:
+        //         textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 3);
+        //         break;
+        //     case 5:
+        //         textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 4);
+        //         break;
+        //     case 6:
+        //         textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 5);
+        //         break;
+        // }
     }
 
     void DisplayTime(float timer){

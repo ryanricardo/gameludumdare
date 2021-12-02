@@ -116,7 +116,7 @@ MonoBehaviour:
   axisHorizontal: 0
   isRight: 0
   dropRock: 0
-  speedSubmitBalance: 7
+  speedSubmitBalance: 12
   speedAddBalance: 10
   maxBalance: 0
   balance: 100
