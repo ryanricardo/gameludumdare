@@ -14,12 +14,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField] GameObject[] buttonsLvls;
     [SerializeField] TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
     [SerializeField] TextMeshProUGUI[] textDiamondsLvls;
-    Data data;
+    [SerializeField] private  Data data;
     int lvlsNivel = 20;
 
     private void Awake(){
         Screen.orientation = ScreenOrientation.Portrait;   
-        data = FindObjectOfType<Data>(); 
         panelLoading.SetActive(true);
         panelLevls.SetActive(true);
         // Salva no vetor buttonLvls todos os prefabs dos botoes   
@@ -87,6 +86,9 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt("MuteGeneral", -1);
         PlayerPrefs.SetInt("MuteMusic", -1);
         PlayerPrefs.SetInt("MuteEffects", -1);
+        PlayerPrefs.SetFloat("VolumeGeneral", 0.5f);
+        PlayerPrefs.SetFloat("VolumeMusicGame", 0.5f);
+        PlayerPrefs.SetFloat("VolumeEffectsGame", 0.5f);
         PlayerPrefs.SetInt("SkinRock1", 1);
         PlayerPrefs.SetInt("SkinRock2", 1);
         PlayerPrefs.SetInt("SkinRock3", 1);
