@@ -162,16 +162,21 @@ public class NewPlayerController : MonoBehaviour
         // Este metodo é ativado pelo script "NewRockController"
 
 
+        checkGround[0] = Physics2D.Linecast(transform.position, transformChecksGround[0].transform.position, 
+        1 << LayerMask.NameToLayer("Chao"));
+        checkGround[1] = Physics2D.Linecast(transform.position, transformChecksGround[1].transform.position, 
+        1 << LayerMask.NameToLayer("Chao"));
+        checkGround[2] = Physics2D.Linecast(transform.position, transformChecksGround[2].transform.position, 
+        1 << LayerMask.NameToLayer("Chao"));
 
         if(!checkGround[0] &&
         !checkGround[1] &&
-        !checkGround[2] &&
-        axisHorizontal == 0)
+        !checkGround[2])
         {
             rb2.AddForce(Vector2.down * 1000);
-            for(int i = 1; i < data.rocks.Length; i++)
+            for(int i = 1; i < rocks.Count; i++)
             {
-                rocks[i].GetComponent<Rigidbody2D>().AddForce(Vector2.down * 800);
+                rocks[i].GetComponent<Rigidbody2D>().AddForce(Vector2.down * 1000);
             }
         }else 
         {
@@ -222,4 +227,6 @@ public class NewPlayerController : MonoBehaviour
             }
         }
     }
+
+
 }
