@@ -13926,6 +13926,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Bot\xE3o amarelo"
       objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014907, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_TagString
+      value: Button
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bf12255b46b7154faaea2d7384c8246, type: 3}
 --- !u!4 &1102262348 stripped

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8654545330076139295}
   m_Layer: 8
   m_Name: "Bot\xE3o verde"
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

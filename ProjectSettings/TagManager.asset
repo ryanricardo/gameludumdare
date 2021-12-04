@@ -19,6 +19,7 @@ TagManager:
   - buttonLvl
   - Vine
   - Lava
+  - Button
   layers:
   - Default
   - TransparentFX

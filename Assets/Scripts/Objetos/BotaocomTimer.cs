@@ -18,6 +18,14 @@ public class BotaocomTimer : MonoBehaviour
         }
     }
 
+    public void EnterRockButton(Transform t, GameObject g)
+    {
+        t.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.3f);
+        g.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        Debug.Log("d");
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
        if(col.gameObject.tag=="Player" && funciona|| col.gameObject.tag=="RockController 1" && funciona 

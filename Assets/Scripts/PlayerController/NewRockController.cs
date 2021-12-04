@@ -64,6 +64,12 @@ enum TypeRock
         {
            playerController.LeftGroupRocks();
         }
+
+        if(other.gameObject.CompareTag("Button") &&
+        typeRock == TypeRock.Idle)
+        {
+            other.gameObject.GetComponent<BotaocomTimer>().EnterRockButton(gameObject.transform, gameObject);
+        }
     }
 
     public void EnterGroup()
