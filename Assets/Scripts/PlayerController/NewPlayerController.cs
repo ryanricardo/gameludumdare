@@ -97,10 +97,10 @@ public class NewPlayerController : MonoBehaviour
     public void DropRock()
     {
         
-        if(isRight)
+        if(isRight && rocks.Count >= 3)
         {
             rocks[rocks.Count - 1].GetComponent<NewRockController>().LeftGroup(Vector2.right);
-        }else 
+        }else if(!isRight && rocks.Count >= 3)
         {
             rocks[rocks.Count - 1].GetComponent<NewRockController>().LeftGroup(Vector2.left);                    
         }
