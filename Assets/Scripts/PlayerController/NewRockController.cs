@@ -62,13 +62,7 @@ enum TypeRock
         if(other.gameObject.CompareTag("Plataform Push") &&
         typeRock == TypeRock.Follow)
         {
-           if(playerController.isRight)
-           {
-               LeftGroup(Vector2.left);
-           }else 
-           {
-               LeftGroup(Vector2.right);
-           }
+           playerController.LeftGroupRocks();
         }
     }
 

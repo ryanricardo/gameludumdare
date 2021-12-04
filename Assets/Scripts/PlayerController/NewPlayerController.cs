@@ -121,19 +121,7 @@ public class NewPlayerController : MonoBehaviour
 
         if(balance <= 50)
         {
-            for (int i = rocks.Count - 1; i > 1; i--)
-            {
-                if(rocks.Count != 1)
-                {   
-                    if(isRight)
-                    {
-                        rocks[i].GetComponent<NewRockController>().LeftGroup(Vector2.left);
-                    }else 
-                    {
-                        rocks[i].GetComponent<NewRockController>().LeftGroup(Vector2.right);                    
-                    }
-                }
-            }
+            LeftGroupRocks();
         }
 
         switch(rocks.Count - 1)
@@ -154,6 +142,23 @@ public class NewPlayerController : MonoBehaviour
         }
 
         
+    }
+
+    public void LeftGroupRocks()
+    {
+        for (int i = rocks.Count - 1; i > 1; i--)
+            {
+                if(rocks.Count != 1)
+                {   
+                    if(isRight)
+                    {
+                        rocks[i].GetComponent<NewRockController>().LeftGroup(Vector2.left);
+                    }else 
+                    {
+                        rocks[i].GetComponent<NewRockController>().LeftGroup(Vector2.right);                    
+                    }
+                }
+            }
     }
     
     public void PushCollisionRocks()
