@@ -16231,6 +16231,12 @@ PrefabInstance:
       propertyPath: rewardNumber
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6535308562187797737, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a0f69fa99d445b102a1321fe45ed4a26,
+        type: 3}
     - target: {fileID: 6544186094124780807, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: m_Name
@@ -16359,7 +16365,7 @@ PrefabInstance:
     - target: {fileID: 8492164921683420839, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8787386890310034499, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}

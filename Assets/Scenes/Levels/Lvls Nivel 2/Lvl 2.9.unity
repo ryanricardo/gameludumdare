@@ -736,6 +736,16 @@ PrefabInstance:
       propertyPath: timer
       value: 61
       objectReference: {fileID: 0}
+    - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: bonusAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: bonusNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6544186094124780807, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: m_Name
@@ -845,6 +855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492164921683420839, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8993358976558864338, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
