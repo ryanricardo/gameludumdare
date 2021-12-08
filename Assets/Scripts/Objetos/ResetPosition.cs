@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ResetPosition : MonoBehaviour
 {
     [Header("Components")]
@@ -9,8 +10,6 @@ public class ResetPosition : MonoBehaviour
     // GameManager gameManager;
     Vector3 playerPos, rock1Pos, rock2Pos;
     GameObject player, rock1, rock2;
-    [SerializeField] int mortes;
-    int mortesParaOAnuncio=3;
 
     void Start()
     {
@@ -32,19 +31,12 @@ public class ResetPosition : MonoBehaviour
             player.transform.position = playerPos;
             rock1.transform.position = rock1Pos;
             rock2.transform.position = rock2Pos;
-            mortes++;
         }
         if(other.gameObject.CompareTag("RockController 1")){
             rock1.transform.position = rock1Pos;
         }
 
-        //if(mortes==mortesParaOAnuncio)
-        //{
-            //mortesParaOAnuncio = mortesParaOAnuncio + 3;
-            //Debug.Log("ADD");
-            //Advertisement.Show();
-        //}
-        //Código dos anuncios;
     }
+
 
 }
