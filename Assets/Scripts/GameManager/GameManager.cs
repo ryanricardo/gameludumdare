@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource            sourceEffects;
     [SerializeField] private AudioClip[]            musicsLofi;              
     [HideInInspector]private NewPlayerController    playerController;
+    [HideInInspector]private AdManager              adManager;
     [HideInInspector]private InventoryManager       inventoryManager;
     [HideInInspector]private Data                   data;
     [HideInInspector]private CanvasPlayerController canvasPlayer;
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         canvasPlayer = FindObjectOfType<CanvasPlayerController>();
         inventoryManager = FindObjectOfType<InventoryManager>();
         playerController = FindObjectOfType<NewPlayerController>();
+        adManager = FindObjectOfType<AdManager>();
         sourceMusic = GetComponent<AudioSource>();
         sourceEffects = playerController.GetComponent<AudioSource>();
 
@@ -59,6 +61,7 @@ public class GameManager : MonoBehaviour
         if(playerController.balance <= 0)
         {
             canvasPlayer.LevelState(State.GAMEOVER);
+            adManager.ShowInterstitialAd();
         }
 
         if(!sourceMusic.isPlaying)

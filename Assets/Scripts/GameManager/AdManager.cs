@@ -20,12 +20,13 @@ public class AdManager : MonoBehaviour
 
    public void ShowInterstitialAd()
    {
-       if(Advertisement.isReady())
+       if(Advertisement.IsReady())
        {
-           Advertisement.Show(gameid);
+        Advertisement.Show();
+        Debug.Log("Mostrando anuncio");
        }
        else
-       {
+      {
            Debug.Log("Não está pronto o anuncio");
        }
    }
