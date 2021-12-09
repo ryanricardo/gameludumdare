@@ -3535,6 +3535,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 310603971244215556, guid: 1410c936b4338744893fbbee32bec9ca,
         type: 3}
+    - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: LvlsWon
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8224135091030377593, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: m_AnchorMax.y

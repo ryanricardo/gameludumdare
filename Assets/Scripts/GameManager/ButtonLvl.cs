@@ -9,18 +9,19 @@ public class ButtonLvl : MonoBehaviour
     public int lvl, diamondsButton;
     public TextMeshProUGUI textButton;
     [SerializeField]GameObject[] diamodsSprites;
-
     LevelManager levelManager;
-    GameManager gameManager;
-    
-    public void LoadLevel(){
-        SceneManager.LoadScene(lvl);            
+
+    private void Awake(){
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
-    private void Awake()
-    {        
-        levelManager = FindObjectOfType<LevelManager>();
-        gameManager = FindObjectOfType<GameManager>();
+    public void LoadLevel(){
+        Invoke("Loading", 1);
+    }
+    void Loading(){        
+        levelManager.panelLoading.SetActive(true);
+        levelManager.panelLevls.SetActive(false);
+        SceneManager.LoadScene(lvl);            
     }
 
     private void Start()
