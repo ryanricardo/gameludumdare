@@ -105,6 +105,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.12.unity
     guid: c71ae386f747c804da9f2f3acaedd2a5
   - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.13.unity
+    guid: c7b2c20864195fd45a74218149ded1c8
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.14.unity
+    guid: 30fc056cc2ba5b54f9e9b9bc6599cf98
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.15.unity
+    guid: a06c323f64c93d84a8bc85658fa15e5d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.16.unity
+    guid: 184430bb75a146e478f0b84e51516c80
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.17.unity
+    guid: acc6acea95c1d0741b308d2c5158383a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.18.unity
+    guid: 1b66d992ae425d644b213fba3ac94e42
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.19.unity
+    guid: fb98236f08c820e459d4e9150347fecc
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 2/Lvl 2.20.unity
+    guid: 7ce2ea5bbd9413447b9cbc26b9c17f4a
+  - enabled: 1
     path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 3.1 - Tutorial.unity
     guid: acfe99f8ebb9e5a47b0ad4be3079981d
   - enabled: 1
@@ -140,4 +164,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 3.12.unity
     guid: aa3118ca3ef2a1d4db79aa05413f0114
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 3.13.unity
+    guid: 8e86487b712ca8140918e05998678cd3
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 3.14.unity
+    guid: 9a5a31ae45adc1047871f60c56da0604
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 3.15.unity
+    guid: c69a83619d04a854aa9689b44b13402e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 3.16.unity
+    guid: d011bd64f7da6d541bd1919471d06e49
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 3.17.unity
+    guid: fd23c53e01ec82e4d8768c1b40811eb8
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 3.18.unity
+    guid: f7904bfa117722847900cd27cb862e10
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 3.19.unity
+    guid: f77919ea6bbc65b47be8d57462ce02e0
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lvls Nivel 3/Lvl 3.20.unity
+    guid: 49a7be1049e02e34e8b6dab6b9497b9b
   m_configObjects: {}
