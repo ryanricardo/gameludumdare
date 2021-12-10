@@ -5,13 +5,17 @@ using UnityEngine.Advertisements;
 
 public class AdManager : MonoBehaviour
 {
-   #if UNITY_IOS
-   private string gameid="4493928";
-   #elif UNITY_ANDROID
-   private string gameid="4493929";
-   #endif
 
-   bool testmode=true;
+
+#if UNITY_IOS
+   private string gameid="4493928";
+#elif UNITY_ANDROID
+   private string gameid="4493929";
+#endif
+
+    // string gameid = "";
+
+    bool testmode=true;
    
    void Start()
    {
