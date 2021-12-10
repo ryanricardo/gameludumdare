@@ -102,5 +102,5 @@ MonoBehaviour:
   offset: {x: 0.25, y: 0.5, z: -10}
   pos: {x: 0, y: 0, z: 0}
   target: {x: 0, y: 0, z: 0}
-  spd: 4.25
+  spd: 8
   freespace: 0.5

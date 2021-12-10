@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4928555109117466878}
   - component: {fileID: 5900044537414757850}
   - component: {fileID: 2470225504675864817}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Cip\xF3"
   m_TagString: Vine
   m_Icon: {fileID: 0}
