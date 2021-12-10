@@ -18,6 +18,10 @@ public class LevelManager : MonoBehaviour
     int lvlsNivel = 20;
 
     private void Awake(){
+        PlayerPrefs.SetInt("mortes",0);
+        PlayerPrefs.SetInt("mortesParaAnuncio",3);
+        PlayerPrefs.SetFloat("vitorias",0);
+        PlayerPrefs.SetInt("vitoriasParaAnuncio",2);
         Screen.orientation = ScreenOrientation.Portrait;   
         panelLoading.SetActive(true);
         panelLevls.SetActive(true);

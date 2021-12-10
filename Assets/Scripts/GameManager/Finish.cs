@@ -6,11 +6,21 @@ public class Finish : MonoBehaviour
 {
     GameManager gm;
     CanvasPlayerController canvasPlayer;
+    AdManager adManager;
+    public float vitoria;
+    public int vitoriasParaAnuncio;
 
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
         canvasPlayer = FindObjectOfType<CanvasPlayerController>();
+        adManager = FindObjectOfType<AdManager>();
+    }
+    void Update()
+    {
+       vitoria = PlayerPrefs.GetFloat("vitorias");
+
+       vitoriasParaAnuncio = PlayerPrefs.GetInt("vitoriasParaAnuncio");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,10 +36,17 @@ public class Finish : MonoBehaviour
             Destroy(rocksPlayer1);
             Destroy(player);
             Destroy(other.gameObject);
+            PlayerPrefs.SetFloat("vitorias", PlayerPrefs.GetFloat("vitorias")+0.5f);
             
             PlayerPrefs.SetInt("LvlsWon", gm.currentScene + 1);  // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou
             gm.DiamondsValue();
             canvasPlayer.LevelState(GameManager.State.FINISH);
+
+            if(PlayerPrefs.GetFloat("vitorias")==PlayerPrefs.GetInt("vitoriasParaAnuncio"))
+            {
+                adManager.ShowInterstitialAd();
+                PlayerPrefs.SetInt("vitoriasParaAnuncio", PlayerPrefs.GetInt("vitoriasParaAnuncio")+2);
+            }
 
             // if(rocksPlayer0!= null & rocksPlayer1!=null){             
             //}

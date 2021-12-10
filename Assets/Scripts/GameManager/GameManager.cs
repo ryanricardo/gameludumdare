@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Atributtes Manager")]
     public int nivel;
-    public int currentScene, lvlsNivel, activeScene, diamondsNivel, diamondsLevel;
+    public int currentScene, lvlsNivel, activeScene, diamondsNivel, diamondsLevel, mortes;
+    public int mortesParaAnuncio;
 
     State levelState;
     public enum State {LOADING, PLAY, PAUSE, FINISH, LEVELCOMPLETED, GAMEOVER};
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
         sourceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
         sourceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
         sourceMusic.Play();
-        
+
         data.rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
         data.rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
         playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
@@ -53,15 +54,26 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {        
+           mortes=PlayerPrefs.GetInt("mortes");
+           mortesParaAnuncio=PlayerPrefs.GetInt("mortesParaAnuncio");
+
         // if(playerController.getKeyDownR)
         // {
         //     LoadScene(currentScene, 1.5f);
         //     imageRestart.gameObject.SetActive(true);
         // }
+
+        if(PlayerPrefs.GetInt("mortesParaAnuncio")==PlayerPrefs.GetInt("mortes"))
+        {
+            PlayerPrefs.SetInt("mortesParaAnuncio", PlayerPrefs.GetInt("mortesParaAnuncio")+3);
+           adManager.ShowInterstitialAd();
+        }
+
         if(playerController.balance <= 0)
         {
             canvasPlayer.LevelState(State.GAMEOVER);
-            adManager.ShowInterstitialAd();
+            PlayerPrefs.SetInt("mortes", PlayerPrefs.GetInt("mortes")+1);
+            playerController.balance = 1;
         }
 
         if(!sourceMusic.isPlaying)
