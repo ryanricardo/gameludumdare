@@ -37,8 +37,12 @@ public class Finish : MonoBehaviour
             Destroy(player);
             Destroy(other.gameObject);
             PlayerPrefs.SetFloat("vitorias", PlayerPrefs.GetFloat("vitorias")+0.5f);
-            
-            PlayerPrefs.SetInt("LvlsWon", gm.currentScene + 1);  // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou
+
+            if(PlayerPrefs.GetInt("PlayAgain" + gm.currentScene.ToString()) != 1)
+            {
+                Debug.Log("Novo level");
+                PlayerPrefs.SetInt("LvlsWon", gm.currentScene + 1);  // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou
+            }
             gm.DiamondsValue();
             canvasPlayer.LevelState(GameManager.State.FINISH);
 
@@ -47,7 +51,8 @@ public class Finish : MonoBehaviour
                 adManager.ShowInterstitialAd();
                 PlayerPrefs.SetInt("vitoriasParaAnuncio", PlayerPrefs.GetInt("vitoriasParaAnuncio")+2);
             }
-
+        
+            PlayerPrefs.SetInt("PlayAgain" + gm.currentScene.ToString(), 1);
             // if(rocksPlayer0!= null & rocksPlayer1!=null){             
             //}
         }

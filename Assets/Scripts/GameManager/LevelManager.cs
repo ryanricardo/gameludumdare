@@ -31,9 +31,13 @@ public class LevelManager : MonoBehaviour
         for (int i = 1; i <= buttonsLvls.Length ; i++){
             buttonsLvls[i-1].GetComponent<ButtonLvl>().lvl = i; 
         }  
-        Diamonds();
         StartCoroutine(StartMenu());     
         StartCoroutine(FinishLoading());    
+    }
+
+    void Start()
+    {
+        Diamonds();
     }
 
     IEnumerator StartMenu(){
@@ -98,6 +102,10 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt("SkinRock2", 1);
         PlayerPrefs.SetInt("SkinRock3", 1);
         PlayerPrefs.SetInt("valueLanguage", 0);
+        for(int i = 0; i < 100; i++)
+        {
+            PlayerPrefs.GetInt("PlayAgain" + i, 0);
+        }
         while(data.skinRock1.Count != 2)
         {
             data.skinRock1.RemoveAt(2);
