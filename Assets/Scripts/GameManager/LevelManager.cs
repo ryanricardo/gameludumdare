@@ -31,6 +31,7 @@ public class LevelManager : MonoBehaviour
         for (int i = 1; i <= buttonsLvls.Length ; i++){
             buttonsLvls[i-1].GetComponent<ButtonLvl>().lvl = i; 
         }  
+        Diamonds();
         StartCoroutine(StartMenu());     
         StartCoroutine(FinishLoading());    
     }
@@ -51,7 +52,7 @@ public class LevelManager : MonoBehaviour
             }
         }
         buttonsLvls[0].GetComponent<Button>().interactable = true;        
-        Diamonds();
+        
         TextButtons();
         textPowerBonus1.text = "x" + PlayerPrefs.GetInt("Bonus1").ToString();
         textPowerBonus2.text = "x" + PlayerPrefs.GetInt("Bonus2").ToString();
