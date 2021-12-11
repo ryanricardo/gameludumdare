@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class NewPlayerController : MonoBehaviour
 {
-     [Header("Components")]
+    [Header("Components")]
     [SerializeField]    private Transform[]                         transformChecksGround;
     [SerializeField]    public  List<GameObject>                    rocks = new List<GameObject>();
     [SerializeField]    public  List<GameObject>                    rocksOut = new List<GameObject>();
     [SerializeField]    private AudioSource                         source;
     [SerializeField]    private AudioClip                           clipJump;
+    [HideInInspector]   private Lava                                lava;
     [HideInInspector]   private Joystick                            joystick;
     [HideInInspector]   private NewRockController                   rockController;
     [HideInInspector]   public  Rigidbody2D                         rb2;
@@ -24,6 +25,11 @@ public class NewPlayerController : MonoBehaviour
     [HideInInspector]   public  bool                                dropRock;
     [HideInInspector]   private bool                                slowMov;
     
+    [Header("Atributtes Body")]
+    [SerializeField]    public  float                               temp;
+    [HideInInspector]   private bool                                hurtMagma;
+    
+
     [Header("Atributtes Balance")]
     [SerializeField]    public  float                               speedSubmitBalance;
     [SerializeField]    public  float                               speedAddBalance;
@@ -32,6 +38,8 @@ public class NewPlayerController : MonoBehaviour
 
     void Start()
     {
+        temp = 100;
+        lava = FindObjectOfType<Lava>();
         rockController = FindObjectOfType<NewRockController>();
         joystick = FindObjectOfType<Joystick>();
         rb2 = GetComponent<Rigidbody2D>();    
@@ -47,6 +55,7 @@ public class NewPlayerController : MonoBehaviour
 
         Movimentation();
         ControllerBalance();
+        ControllerTemp();
 
 
     }
@@ -160,6 +169,22 @@ public class NewPlayerController : MonoBehaviour
                 }
             }
     }
+
+    void ControllerTemp()
+    {
+
+        if(hurtMagma && temp > 0)
+        {
+            temp -= lava.damage * Time.deltaTime;
+            if(temp <= 0 )
+            {
+                LeftGroupRocks();
+            }
+        }else if(!hurtMagma && temp < 100)
+        {
+            temp += lava.damage * Time.deltaTime;
+        }
+    }
     
     public void PushCollisionRocks()
     {
@@ -215,6 +240,11 @@ public class NewPlayerController : MonoBehaviour
 
         }
 
+        if(other.gameObject.CompareTag("Lava"))
+        {
+            hurtMagma = true;
+        }
+
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -230,6 +260,11 @@ public class NewPlayerController : MonoBehaviour
             {
                 rocksOut[i].GetComponent<Rigidbody2D>().gravityScale = 1f;
             }
+        }
+
+        if(other.gameObject.CompareTag("Lava"))
+        {
+            hurtMagma = false;
         }
     }
 

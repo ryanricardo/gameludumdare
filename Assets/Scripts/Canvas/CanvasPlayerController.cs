@@ -45,7 +45,6 @@ public class CanvasPlayerController : MonoBehaviour
 
     IEnumerator StartLevel(){
         TextLevel();
-        gm.diamondsLevel = 0; 
         useBonus = true;
         string PPlvl = "DiamondsLvl" + gm.currentScene;
         timeDiamond = SceneManager.GetActiveScene().buildIndex * 5 + 25;

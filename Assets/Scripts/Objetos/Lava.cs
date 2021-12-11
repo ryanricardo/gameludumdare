@@ -5,6 +5,7 @@ using UnityEngine;
 public class Lava : MonoBehaviour
 {
     [SerializeField] SpriteRenderer SR;
+    [SerializeField] public float damage;
      void OnTriggerEnter2D(Collider2D col)
      {
          if(col.gameObject.tag=="Player")
