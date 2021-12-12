@@ -38,7 +38,7 @@ public class NewPlayerController : MonoBehaviour
 
     void Start()
     {
-        temp = 100;
+        temp = 0;
         lava = FindObjectOfType<Lava>();
         rockController = FindObjectOfType<NewRockController>();
         joystick = FindObjectOfType<Joystick>();
@@ -173,16 +173,16 @@ public class NewPlayerController : MonoBehaviour
     void ControllerTemp()
     {
 
-        if(hurtMagma && temp > 0)
+        if(hurtMagma && temp < 100)
         {
-            temp -= lava.damage * Time.deltaTime;
-            if(temp <= 0 )
+            temp += lava.damage * Time.deltaTime;
+            if(temp >= 100)
             {
                 LeftGroupRocks();
             }
-        }else if(!hurtMagma && temp < 100)
+        }else if(!hurtMagma && temp > 0)
         {
-            temp += lava.damage * Time.deltaTime;
+            temp -= lava.damage * Time.deltaTime;
         }
     }
     
