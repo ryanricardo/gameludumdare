@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
 {
     public int LvlsWon;
     public GameObject[] levelsPanels;
-    public GameObject panelMenu, panelLevls, panelLoading;
+    public GameObject panelMenu, panelLevls, panelLoading, toggleTutorial;
     [SerializeField] public TMP_Dropdown       selectLanguage;
     [SerializeField] GameObject[] buttonsLvls;
     [SerializeField] TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
@@ -23,6 +23,11 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetFloat("vitorias",0);
         PlayerPrefs.SetInt("vitoriasParaAnuncio",2);
         Screen.orientation = ScreenOrientation.Portrait;   
+        if(PlayerPrefs.GetString("Tutorial") == "tutorialOFF"){
+            toggleTutorial.GetComponent<Toggle>().isOn = false;
+        }else{
+            toggleTutorial.GetComponent<Toggle>().isOn = true;
+        } 
         panelLoading.SetActive(true);
         panelLevls.SetActive(true);
         // Salva no vetor buttonLvls todos os prefabs dos botoes   
@@ -137,6 +142,14 @@ public class LevelManager : MonoBehaviour
     }
     public void MusicOff(){
         PlayerPrefs.SetString("PPMusic", "OFF");
+    }
+
+    public void ToggleTutorial(){        
+        if(toggleTutorial.GetComponent<Toggle>().isOn){
+            PlayerPrefs.SetString("Tutorial", "tutorialON");
+        }else{
+            PlayerPrefs.SetString("Tutorial", "tutorialOFF");
+        }
     }
 
     void Diamonds(){

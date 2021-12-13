@@ -14,6 +14,7 @@ public class CanvasPlayerController : MonoBehaviour
     [SerializeField]    private GameObject          panelLoading, panelPlay, panelPauseFinish, buttonNext, buttonBack, buttonPause, touchControllers;
     [SerializeField]    private GameObject[]        diamondsSprites, bonus, buttonsBonus;  
     [SerializeField]    private TextMeshProUGUI[]   textBonusPause, textBonusPlay;
+    [SerializeField]    private Tutorial            tutorial;
     [HideInInspector]   private GameManager         gm;
     [HideInInspector]   private NewPlayerController playerController;
     [HideInInspector]   private Data data;
@@ -33,13 +34,12 @@ public class CanvasPlayerController : MonoBehaviour
     private bool useBonus;
     private GameObject panelBonus, panelSkin;
 
-    private void Awake()
-    {
+    private void Awake(){
+        LevelState(GameManager.State.LOADING);
         playerController = FindObjectOfType<NewPlayerController>();
         gm = FindObjectOfType<GameManager>();
         data = FindObjectOfType<Data>();
         buttonNext.GetComponent<Button>().interactable = true;
-        LevelState(GameManager.State.LOADING);
         StartCoroutine(StartLevel());
     }
 
@@ -64,8 +64,14 @@ public class CanvasPlayerController : MonoBehaviour
             panelSkin.SetActive(false);
         }
         yield return new WaitForSecondsRealtime(3);
-        timer = 0;
-        LevelState(GameManager.State.PLAY);
+            timer = 0;
+        if(PlayerPrefs.GetString("Tutorial") == "tutorialON"){
+            panelLoading.SetActive(false);
+            tutorial.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }else{
+            LevelState(GameManager.State.PLAY);
+        }
     }
 
     void Update()
@@ -124,9 +130,7 @@ public class CanvasPlayerController : MonoBehaviour
 
     public void ButtonJump(){
         playerController.Jump();
-
     }
-
     public void ButtomDrop(){
         playerController.DropRock();
     }
@@ -138,28 +142,7 @@ public class CanvasPlayerController : MonoBehaviour
 
     void TextLevel(){
         textLevel.text = "" + gm.currentScene;
-        // switch (gm.nivel){
-        //     case 1:
-        //         textLevel.text = "" + gm.currentScene;
-        //         break;
-        //     case 2:
-        //         textLevel.text = "" + (gm.currentScene - gm.lvlsNivel);
-        //         break;
-        //     case 3:
-        //         textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 2);
-        //         break;
-        //     case 4:
-        //         textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 3);
-        //         break;
-        //     case 5:
-        //         textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 4);
-        //         break;
-        //     case 6:
-        //         textLevel.text = "" + (gm.currentScene - gm.lvlsNivel * 5);
-        //         break;
-        // }
     }
-
     void DisplayTime(float timer){
         float minutes = Mathf.FloorToInt(timer / 60);  
         float seconds = Mathf.FloorToInt(timer % 60);
@@ -176,9 +159,7 @@ public class CanvasPlayerController : MonoBehaviour
         textTimerFinish.text = textTimer.text;
         textTimer0.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         textTimer1.text = string.Format("{0:00}:{1:00}", minutes1, seconds1);
-
     }
-
     void DiamondsSystem(){
            if(timer>=2*timeDiamond){
                 gm.diamondsLevel = 1;

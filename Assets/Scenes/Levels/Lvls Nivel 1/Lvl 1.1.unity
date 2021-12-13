@@ -1552,18 +1552,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576026754}
   m_CullTransparentMesh: 1
---- !u!114 &666473531 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
-    type: 3}
-  m_PrefabInstance: {fileID: 998752038}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78a3e61de05ca0b4bbc0a95faf1c4773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &666473535 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6544186094124780826, guid: 088399a65df43e744ad57cf3b7801f83,
@@ -2267,6 +2255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
+      propertyPath: tutorial
+      value: 
+      objectReference: {fileID: 1191404931}
+    - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
       propertyPath: bonusAmount
       value: 1
       objectReference: {fileID: 0}
@@ -2385,6 +2378,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7018134576014267023, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7279359035722015592, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2412,85 +2410,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088399a65df43e744ad57cf3b7801f83, type: 3}
---- !u!1001 &1017850542
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -1226134515416323805, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: damage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 776163127786858450, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 776163127786858450, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 776163127786858450, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 776163127786858450, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 776163127786858450, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 776163127786858450, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 776163127786858450, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 776163127786858450, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 776163127786858450, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 776163127786858450, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 776163127786858450, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3794131808854267967, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5244054232684595610, guid: e363f92179bbdaf4db7d0a9831555a01,
-        type: 3}
-      propertyPath: m_Name
-      value: Lava
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e363f92179bbdaf4db7d0a9831555a01, type: 3}
 --- !u!1 &1080806443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,6 +2641,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097263290}
   m_CullTransparentMesh: 1
+--- !u!114 &1113107231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 998752038}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a3e61de05ca0b4bbc0a95faf1c4773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1141306080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2824,6 +2755,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44567e10f448fa42a31c1238a39b394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorial: tutorialON
+  panelTutorial:
+  - {fileID: 1191404928}
+  - {fileID: 2142715122}
+  - {fileID: 707682338}
+  canvas: {fileID: 1113107231}
 --- !u!1 &1247821729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,8 +2811,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insertTextEnglish: Move left
-  insertTextPortugueseBrazil: Move para esquerda
+  insertTextEnglish: '   The upper yellow bar represents the balance of the stones
+    which decreases when moving. If it reaches the middle you lose the first stone,
+    if it reaches the end you die.'
+  insertTextPortugueseBrazil: '   A barra amarela superior representa o equilibrio
+    das pedras que diminui ao se movimentar. Se ela chegar ao meio voce perde a primeira
+    pedra, se chegar no fim voce morre. '
 --- !u!114 &1247821732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2896,9 +2837,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '   A barra amarela superior representa o equilibrio das pedras que diminui
-    ao se movimentar. Se ela chegar ao meio voce perde a primeira pedra, se chegar
-    no fim voce morre. '
+  m_text: '   The upper yellow bar represents the balance of the stones which decreases
+    when moving. If it reaches the middle you lose the first stone, if it reaches
+    the end you die.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bcef2639434ee74bac7877851bfe36e, type: 2}
   m_sharedMaterial: {fileID: 7941104814395178101, guid: 2bcef2639434ee74bac7877851bfe36e,
@@ -2933,7 +2874,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3470,9 +3411,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 666473531}
-        m_TargetAssemblyTypeName: CanvasPlayerController, Assembly-CSharp
-        m_MethodName: ButtonNext
+      - m_Target: {fileID: 1191404931}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: ButtomArrow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
