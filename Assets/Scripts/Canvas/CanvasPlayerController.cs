@@ -65,7 +65,7 @@ public class CanvasPlayerController : MonoBehaviour
         }
         yield return new WaitForSecondsRealtime(3);
             timer = 0;
-        if(PlayerPrefs.GetString("Tutorial") == "tutorialON"){
+        if(PlayerPrefs.GetString("Tutorial") == "tutorialON" && tutorial != null){
             panelLoading.SetActive(false);
             tutorial.gameObject.SetActive(true);
             Time.timeScale = 0;
@@ -185,6 +185,9 @@ public class CanvasPlayerController : MonoBehaviour
         switch (newState){            
             case GameManager.State.LOADING:
                 panelLoading.SetActive(true);
+                buttonPause.GetComponent<Button>().interactable = false;
+                buttonsBonus[0].GetComponent<Button>().interactable = false;
+                buttonsBonus[1].GetComponent<Button>().interactable = false;
                 break;
             case GameManager.State.PLAY:
                 panelPlay.SetActive(true);

@@ -23,7 +23,7 @@ VideoClipImporter:
       bitrateMode: 2
       spatialQuality: 2
     1:
-      enableTranscoding: 0
+      enableTranscoding: 1
       codec: 0
       resizeFormat: 0
       aspectRatio: 0
@@ -32,7 +32,7 @@ VideoClipImporter:
       bitrateMode: 2
       spatialQuality: 2
     7:
-      enableTranscoding: 0
+      enableTranscoding: 1
       codec: 0
       resizeFormat: 0
       aspectRatio: 0
