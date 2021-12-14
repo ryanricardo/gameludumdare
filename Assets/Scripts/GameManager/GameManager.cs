@@ -100,7 +100,11 @@ public class GameManager : MonoBehaviour
     
     public void DiamondsValue(){
         string PPlvl = "DiamondsLvl" + currentScene;
+        Debug.Log("Valor de DiamondsLvl" + currentScene + ": " + PlayerPrefs.GetInt(PPlvl));
+        Debug.Log("E valor de diamondsLevel é: " + diamondsLevel);
+
         if(PlayerPrefs.GetInt(PPlvl)<diamondsLevel){
+            Debug.Log("Salvo diamantes na cena: " + currentScene);
             PlayerPrefs.SetInt(PPlvl, diamondsLevel);   // Salva o valor de diamantes na fase      
             PlayerPrefs.SetInt("Diamonds" + nivel, PlayerPrefs.GetInt(PPlvl) + PlayerPrefs.GetInt("Diamonds" + nivel));
         }

@@ -7,6 +7,7 @@ public class AdManager : MonoBehaviour
 {
 
 
+
 #if UNITY_IOS
    private string gameid="4493928";
 #elif UNITY_ANDROID

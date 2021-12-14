@@ -160,7 +160,7 @@ public class CanvasPlayerController : MonoBehaviour
         textTimer0.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         textTimer1.text = string.Format("{0:00}:{1:00}", minutes1, seconds1);
     }
-    void DiamondsSystem(){
+    public void DiamondsSystem(){
            if(timer>=2*timeDiamond){
                 gm.diamondsLevel = 1;
                 diamondsSprites[0].SetActive(true);

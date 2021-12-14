@@ -28,6 +28,8 @@ public class Finish : MonoBehaviour
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("RockController 1")
         || other.gameObject.CompareTag("RockController 2"))
         {
+            canvasPlayer.LevelState(GameManager.State.FINISH);
+            gm.DiamondsValue();
             PlayerPrefs.SetInt("ScenesPassed", gm.currentScene);
             GameObject rocksPlayer0 = GameObject.FindGameObjectWithTag("RockController 1");
             GameObject rocksPlayer1 = GameObject.FindGameObjectWithTag("RockController 2");
@@ -43,8 +45,7 @@ public class Finish : MonoBehaviour
                 Debug.Log("Novo level");
                 PlayerPrefs.SetInt("LvlsWon", gm.currentScene + 1);  // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou
             }
-            gm.DiamondsValue();
-            canvasPlayer.LevelState(GameManager.State.FINISH);
+            
 
             if(PlayerPrefs.GetFloat("vitorias")==PlayerPrefs.GetInt("vitoriasParaAnuncio"))
             {
