@@ -140,6 +140,9 @@ MonoBehaviour:
     type: 3}
   soundTeletransport: {fileID: 8300000, guid: 3887c07593c804345b6d5136cc682a16, type: 3}
   startIntoTheGroup: 1
+  minDistanceForLeftGroup: 2
+  speedParallaxIntoGroup: 30
+  forceForLeftGroup: 4
 --- !u!82 &-2955351726027835716
 AudioSource:
   m_ObjectHideFlags: 0

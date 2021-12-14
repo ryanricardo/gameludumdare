@@ -10,13 +10,19 @@ enum TypeRock
         Follow,
     }
 
-    NewPlayerController playerController;
-    Rigidbody2D      rb2;
-    [SerializeField]TypeRock         typeRock;
-    [SerializeField]AudioSource      sourceEffects;
-    [SerializeField]AudioClip        soundTeletransport;
-    [SerializeField]private bool     startIntoTheGroup;
-    [HideInInspector]private Vector2 offSet;
+    [Header("Components")]
+    [HideInInspector]   private     Vector2                 offSet;
+    [HideInInspector]   private     Rigidbody2D             rb2;
+    [HideInInspector]   private     NewPlayerController     playerController;
+    [SerializeField]    private     TypeRock                typeRock;
+    [SerializeField]    private     AudioSource             sourceEffects;
+    [SerializeField]    private     AudioClip               soundTeletransport;
+
+    [Header("Atributtes General")]
+    [SerializeField]    private     bool                    startIntoTheGroup;
+    [SerializeField]    private     float                   minDistanceForLeftGroup;
+    [SerializeField]    private     float                   speedParallaxIntoGroup;
+    [SerializeField]    private     float                   forceForLeftGroup;
 
 
 
@@ -42,7 +48,14 @@ enum TypeRock
             transform.position.y);
 
             transform.position = Vector3.Lerp(transform.position, 
-            posPlayer, Time.deltaTime * 50);
+            posPlayer, Time.deltaTime * speedParallaxIntoGroup);
+            float distancePlayer = Vector2.Distance(transform.position, playerController.transform.position);
+            
+            if(distancePlayer >= minDistanceForLeftGroup)
+            {
+                Debug.Log("Drop");
+                typeRock = TypeRock.Idle;
+            }
         }
     }
 
@@ -99,7 +112,7 @@ enum TypeRock
         rb2.simulated = true;
         playerController.rocks.Remove(gameObject);
         playerController.rocksOut.Add(gameObject);
-        rb2.AddForce(vector * 4, ForceMode2D.Impulse);
+        rb2.AddForce(vector * forceForLeftGroup, ForceMode2D.Impulse);
         typeRock = TypeRock.Idle;
     }
 
