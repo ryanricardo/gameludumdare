@@ -6,10 +6,12 @@ public class NewPlayerController : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField]    private Transform[]                         transformChecksGround;
+    [SerializeField]    private Transform                           transformCheckFall;
     [SerializeField]    public  List<GameObject>                    rocks = new List<GameObject>();
     [SerializeField]    public  List<GameObject>                    rocksOut = new List<GameObject>();
     [SerializeField]    private AudioSource                         source;
     [SerializeField]    private AudioClip                           clipJump;
+    [SerializeField]    private AudioClip                           clipFall;
     [HideInInspector]   private Lava                                lava;
     [HideInInspector]   private Joystick                            joystick;
     [HideInInspector]   private NewRockController                   rockController;
@@ -21,9 +23,11 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    public  float                               forceJump;
     [HideInInspector]   public  float                               axisHorizontal;
     [HideInInspector]   private bool[]                              checkGround;
+    [HideInInspector]   private bool                                checkFall;
     [HideInInspector]   public  bool                                isRight;
     [HideInInspector]   public  bool                                dropRock;
     [HideInInspector]   private bool                                slowMov;
+    [HideInInspector]   private bool                                jump;
     
     [Header("Atributtes Body")]
     [SerializeField]    public  float                               temp;
@@ -38,6 +42,7 @@ public class NewPlayerController : MonoBehaviour
 
     void Start()
     {
+        jump = false;
         temp = 0;
         lava = FindObjectOfType<Lava>();
         rockController = FindObjectOfType<NewRockController>();
@@ -74,6 +79,17 @@ public class NewPlayerController : MonoBehaviour
             Flip();
             isRight = true;
         }
+
+
+        if(jump)
+        {
+            checkFall = Physics2D.Linecast(transform.position, transformCheckFall.transform.position, 1 << LayerMask.NameToLayer("Chao"));
+            if(checkFall)
+            {
+                source.PlayOneShot(clipFall);
+                jump = false;
+            }
+        }
     }
 
     void Flip()
@@ -98,6 +114,7 @@ public class NewPlayerController : MonoBehaviour
         checkGround[1] ||
         checkGround[2])
         {
+            StartCoroutine(TrueJump());
             rb2.AddForce(transform.up * forceJump, ForceMode2D.Impulse);
             source.PlayOneShot(clipJump);
         }
@@ -268,5 +285,10 @@ public class NewPlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator TrueJump()
+    {
+        yield return new WaitForSeconds(1);
+        jump = true;
+    }
 
 }

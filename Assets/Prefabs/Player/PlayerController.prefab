@@ -35,6 +35,7 @@ Transform:
   - {fileID: 4925566066977444856}
   - {fileID: 2169278968006378522}
   - {fileID: 6890430913912322281}
+  - {fileID: 4011535584549196605}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -105,17 +106,20 @@ MonoBehaviour:
   - {fileID: 4925566066977444856}
   - {fileID: 2169278968006378522}
   - {fileID: 6890430913912322281}
+  transformCheckFall: {fileID: 4011535584549196605}
   rocks:
   - {fileID: 646820509772010704}
   rocksOut: []
   source: {fileID: 7261289159064025394}
   clipJump: {fileID: 8300000, guid: e2f593102b2b92942bcdc83adde554f9, type: 3}
+  clipFall: {fileID: 8300000, guid: d78c478f2ec882044bb4cc3387d79906, type: 3}
   rb2: {fileID: 0}
   speedMoviment: 5
   forceJump: 20
   axisHorizontal: 0
   isRight: 0
   dropRock: 0
+  temp: 0
   speedSubmitBalance: 12
   speedAddBalance: 10
   maxBalance: 0
@@ -342,4 +346,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 646820509772010541}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8206850611539001725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4011535584549196605}
+  m_Layer: 0
+  m_Name: Check Fall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4011535584549196605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206850611539001725}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.124, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 646820509772010541}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
