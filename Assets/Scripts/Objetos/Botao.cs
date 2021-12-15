@@ -6,10 +6,13 @@ public class Botao : MonoBehaviour
 {
     public bool ativo=false;
     public Animator anim;
+    public AudioSource sourceButton;
+    public AudioClip clipOpenButton;
+    private bool playClipOneTime;
 
     void Start()
     {
-       
+       playClipOneTime = true;
     }
 
 
@@ -18,6 +21,7 @@ public class Botao : MonoBehaviour
     {
        if(col.gameObject.tag=="Player")
        {
+           if(playClipOneTime){sourceButton.PlayOneShot(clipOpenButton); playClipOneTime = false;}
            ativo=true;
            anim.SetTrigger("Pre");
        } 
