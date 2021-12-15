@@ -16,6 +16,7 @@ public class OptionsManager : MonoBehaviour
     [SerializeField]    private GameObject          ButtonMuteGeneral;
     [SerializeField]    private Sprite              spriteMutated;
     [SerializeField]    private Sprite              spriteUnmuted;
+    [HideInInspector]   private LevelManager        levelManager;
 
 
     void Awake()
@@ -25,7 +26,8 @@ public class OptionsManager : MonoBehaviour
     void Start()
     {
 
-        
+        levelManager = FindObjectOfType<LevelManager>();
+
         if(PlayerPrefs.GetInt("MuteMusic") == 1)
         {
             PlayerPrefs.SetFloat("PastVolumeMusic", PlayerPrefs.GetFloat("VolumeMusicGame"));
@@ -80,6 +82,7 @@ public class OptionsManager : MonoBehaviour
 
     public void MuteGeneral()
     {
+        levelManager.PlayClipClickButton();
         PlayerPrefs.SetInt("MuteGeneral", PlayerPrefs.GetInt("MuteGeneral") * -1);
 
         if(PlayerPrefs.GetInt("MuteGeneral") == 1)
@@ -99,7 +102,7 @@ public class OptionsManager : MonoBehaviour
 
     public void MuteMusic()
     {
-
+        levelManager.PlayClipClickButton();
         PlayerPrefs.SetInt("MuteMusic", PlayerPrefs.GetInt("MuteMusic") * -1);
 
         if(PlayerPrefs.GetInt("MuteMusic") == 1)
@@ -119,7 +122,7 @@ public class OptionsManager : MonoBehaviour
 
     public void MuteEffects()
     {
-        
+        levelManager.PlayClipClickButton();
         PlayerPrefs.SetInt("MuteEffects", PlayerPrefs.GetInt("MuteEffects") * -1);
 
         if(PlayerPrefs.GetInt("MuteEffects") == 1)

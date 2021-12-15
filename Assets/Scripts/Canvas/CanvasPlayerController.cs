@@ -15,9 +15,12 @@ public class CanvasPlayerController : MonoBehaviour
     [SerializeField]    private GameObject[]        diamondsSprites, bonus, buttonsBonus;  
     [SerializeField]    private TextMeshProUGUI[]   textBonusPause, textBonusPlay;
     [SerializeField]    private Tutorial            tutorial;
+    [SerializeField]    private AudioClip           clipClickButtonMenu;
+    [SerializeField]    private AudioSource         sourceEffectsMenu;
     [HideInInspector]   private GameManager         gm;
     [HideInInspector]   private NewPlayerController playerController;
     [HideInInspector]   private Data data;
+
     
     [Header("Atributtes Timer")]
     [SerializeField] private float timer;
@@ -84,27 +87,33 @@ public class CanvasPlayerController : MonoBehaviour
 
 
     public void ButtonPause(){
+        sourceEffectsMenu.PlayOneShot(clipClickButtonMenu);
         LevelState(GameManager.State.PAUSE);
     }
 
     public void ButtonNext(){  
+        sourceEffectsMenu.PlayOneShot(clipClickButtonMenu);
         gm.LoadScene(gm.activeScene + 1, 1);
     }
 
     public void ButtonBack(){
+        sourceEffectsMenu.PlayOneShot(clipClickButtonMenu);
         LevelState(GameManager.State.PLAY);
     }
 
     public void ButtonMenuLevels(){
+        sourceEffectsMenu.PlayOneShot(clipClickButtonMenu);
         Time.timeScale = 1;
         gm.LoadScene(0, 1);
     }
 
     public void ButtonRestart(){
+        sourceEffectsMenu.PlayOneShot(clipClickButtonMenu);
         gm.LoadScene(gm.activeScene, 1);
     }
 
     public void ButtonBonus1(){
+        sourceEffectsMenu.PlayOneShot(clipClickButtonMenu);
         int x = PlayerPrefs.GetInt("Bonus1");
         if(useBonus & x>0){
             useBonus = false;
@@ -116,7 +125,8 @@ public class CanvasPlayerController : MonoBehaviour
         }
     }
 
-    public void ButtonBonus2(){        
+    public void ButtonBonus2(){      
+        sourceEffectsMenu.PlayOneShot(clipClickButtonMenu);  
         int x = PlayerPrefs.GetInt("Bonus2");
         if(useBonus & x>0){
             useBonus = false;

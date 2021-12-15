@@ -2397,6 +2397,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasHUD (L)
       objectReference: {fileID: 0}
+    - target: {fileID: 6544186094124780807, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6544186094124780826, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: m_Pivot.x

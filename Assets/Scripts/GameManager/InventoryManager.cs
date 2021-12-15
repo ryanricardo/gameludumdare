@@ -11,13 +11,14 @@ public class InventoryManager : MonoBehaviour
     [SerializeField]    private GameObject[]    gameObjectsRocks;
     [SerializeField]    private Button[]        arrowsRocks;  
     [SerializeField]    private Data            data;
-    
+    [HideInInspector]   private LevelManager    levelManager;
 
     [Header("Tools")]
     [HideInInspector]   private int[]            indexSkin;
 
     void Start()
     {
+        levelManager = FindObjectOfType<LevelManager>();
 
         indexSkin = new int[3];
         indexSkin[0] = PlayerPrefs.GetInt("SkinRock1");
@@ -54,11 +55,13 @@ public class InventoryManager : MonoBehaviour
 
     void Arrows(int index)
     {
+        levelManager.PlayClipClickButton();
         switch(index)
         {
             case 0:
                 if(indexSkin[0] > 1)
                 { 
+                    
                     indexSkin[0] -= 1;
                     gameObjectsRocks[0].GetComponent<Image>().sprite = data.skinRock1[indexSkin[0]];
                     PlayerPrefs.SetInt("SkinRock1", indexSkin[0]);

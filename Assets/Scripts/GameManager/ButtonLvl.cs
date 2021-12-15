@@ -16,6 +16,7 @@ public class ButtonLvl : MonoBehaviour
     }
 
     public void LoadLevel(){
+        levelManager.PlayClipClickButton();
         Invoke("Loading", 1);
     }
     void Loading(){        

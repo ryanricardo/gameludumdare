@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] GameObject[] buttonsLvls;
     [SerializeField] TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
     [SerializeField] TextMeshProUGUI[] textDiamondsLvls;
+    [SerializeField] private AudioSource sourceEffects;
+    [SerializeField] private AudioClip   clipClickButton;
     [SerializeField] private  Data data;
     int lvlsNivel = 20;
 
@@ -77,25 +79,37 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    private void Update(){        
+    private void Update()
+    {        
+        
     }
     
+
+    public void PlayClipClickButton()
+    {
+        sourceEffects.PlayOneShot(clipClickButton);
+    }
 
     public void Play(){
         panelMenu.SetActive(false);
         panelLevls.SetActive(true);
+        PlayClipClickButton();
+        
     }
 
     public void ButtonExit(){
         Application.Quit();
+        PlayClipClickButton();
     }
     
     public void ButtonBackMenu(){        
         panelLevls.SetActive(false);
         panelMenu.SetActive(true);
+        PlayClipClickButton();
     }
 
     public void ButtonReset(){
+        PlayClipClickButton();
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("MuteGeneral", -1);
         PlayerPrefs.SetInt("MuteMusic", -1);
@@ -126,11 +140,13 @@ public class LevelManager : MonoBehaviour
         switch(selectLanguage.value)
         {
             case 0:
+                PlayClipClickButton();
                 PlayerPrefs.SetString("Language","English");
                 PlayerPrefs.SetInt("valeuLanguage", 0);
             break;
 
             case 1:
+                PlayClipClickButton();
                 PlayerPrefs.SetString("Language","Portuguese (Brazil)");
                 PlayerPrefs.SetInt("valeuLanguage", 1);
                 break;
@@ -144,7 +160,8 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetString("PPMusic", "OFF");
     }
 
-    public void ToggleTutorial(){        
+    public void ToggleTutorial(){ 
+        PlayClipClickButton();       
         if(toggleTutorial.GetComponent<Toggle>().isOn){
             PlayerPrefs.SetString("Tutorial", "tutorialON");
         }else{
