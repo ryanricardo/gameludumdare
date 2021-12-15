@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class ButtonLvl : MonoBehaviour
@@ -10,18 +11,21 @@ public class ButtonLvl : MonoBehaviour
     public TextMeshProUGUI textButton;
     [SerializeField]GameObject[] diamodsSprites;
     LevelManager levelManager;
+    Color colorButton;
 
     private void Awake(){
         levelManager = FindObjectOfType<LevelManager>();
+        colorButton = GetComponent<Button>().colors.normalColor;
     }
 
     public void LoadLevel(){
         levelManager.PlayClipClickButton();
-        Invoke("Loading", 1);
+        Loading();
     }
-    void Loading(){        
-        levelManager.panelLoading.SetActive(true);
-        levelManager.panelLevls.SetActive(false);
+    void Loading(){
+        // levelManager.panelLoading.SetActive(true);
+        // levelManager.panelLevls.SetActive(false);
+        colorButton = Color.yellow;
         SceneManager.LoadScene(lvl);            
     }
 
