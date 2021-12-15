@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     public int LvlsWon;
     public GameObject[] levelsPanels;
     public GameObject panelMenu, panelLevls, panelLoading, toggleTutorial;
+    [SerializeField] private AudioSource            sourceMusic;
+    [SerializeField] private AudioClip[]            musicsLofi;         
     [SerializeField] public TMP_Dropdown       selectLanguage;
     [SerializeField] GameObject[] buttonsLvls;
     [SerializeField] TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
@@ -44,6 +46,8 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        sourceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
+        sourceMusic.Play();
         Diamonds();
     }
 
@@ -81,7 +85,7 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {        
-        
+        sourceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
     }
     
 
