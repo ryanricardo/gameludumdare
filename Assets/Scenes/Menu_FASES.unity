@@ -4118,16 +4118,21 @@ PrefabInstance:
     - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: musicsLofi.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: musicsLofi.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 9c6c85cf4663c4944ba2043a61b0e002, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: musicsLofi.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c6c85cf4663c4944ba2043a61b0e002, type: 3}
+    - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: musicsLofi.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: ec32c22620fd7dc4c8fad4674b068cbc, type: 3}
     - target: {fileID: 8174120508217179479, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,

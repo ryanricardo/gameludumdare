@@ -3052,6 +3052,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 192118834}
     m_Modifications:
+    - target: {fileID: -5349942520339909395, guid: 102b260c07d943a42b78ca1d076922e4,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5001290262265217414, guid: 102b260c07d943a42b78ca1d076922e4,
         type: 3}
       propertyPath: botao
