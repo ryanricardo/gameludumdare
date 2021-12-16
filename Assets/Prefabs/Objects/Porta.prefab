@@ -115,7 +115,7 @@ MonoBehaviour:
   anim: {fileID: -8327054664529331527}
   botao: {fileID: 0}
   sourcePorta: {fileID: -8532765712225142894}
-  clipOpen: {fileID: 8300000, guid: 29eaed9e6e2ba304eae0dd367c803821, type: 3}
+  clipOpen: {fileID: 8300000, guid: 97783a7a26b29894184acf3188b4aab4, type: 3}
 --- !u!95 &-8327054664529331527
 Animator:
   serializedVersion: 3

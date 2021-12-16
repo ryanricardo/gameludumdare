@@ -120,7 +120,7 @@ MonoBehaviour:
   anim: {fileID: 6451863385275687548}
   bct: {fileID: 0}
   sourcePorta: {fileID: -4020398639627243905}
-  clipOpen: {fileID: 8300000, guid: 29eaed9e6e2ba304eae0dd367c803821, type: 3}
+  clipOpen: {fileID: 8300000, guid: 97783a7a26b29894184acf3188b4aab4, type: 3}
 --- !u!61 &3181847581782809337
 BoxCollider2D:
   m_ObjectHideFlags: 0
