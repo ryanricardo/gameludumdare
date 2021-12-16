@@ -8,11 +8,16 @@ public class ResetPosition : MonoBehaviour
     [Header("Components")]
     // NewPlayerController player;
     // GameManager gameManager;
+
+    public AudioSource sourceReset;
+    public AudioClip     soundReset;
     Vector3 playerPos, rock1Pos, rock2Pos;
     GameObject player, rock1, rock2;
+    private GameManager gm;
 
     void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         // gameManager = FindObjectOfType<GameManager>();
         // player = FindObjectOfType<NewPlayerController>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -28,14 +33,34 @@ public class ResetPosition : MonoBehaviour
         
         if(other.gameObject.CompareTag("Player")){
             // gameManager.gameOver = true;
-            player.transform.position = playerPos;
-            rock1.transform.position = rock1Pos;
-            rock2.transform.position = rock2Pos;
+            StartCoroutine(SpawnPlayers());
+            gm.sourceMusic.Pause();
+            sourceReset.PlayOneShot(soundReset);
+
         }
         if(other.gameObject.CompareTag("RockController 1")){
-            rock1.transform.position = rock1Pos;
+            gm.sourceMusic.Pause();
+            sourceReset.PlayOneShot(soundReset);
+            StartCoroutine(SpawnRocks());
+            
         }
 
+    }
+
+    IEnumerator SpawnPlayers()
+    {
+        yield return new WaitForSeconds(3);
+        gm.sourceMusic.UnPause();
+        player.transform.position = playerPos;
+        rock1.transform.position = rock1Pos;
+        rock2.transform.position = rock2Pos;
+    }
+
+    IEnumerator SpawnRocks()
+    {
+        yield return new WaitForSeconds(3);
+        gm.sourceMusic.UnPause();
+        rock1.transform.position = rock1Pos;
     }
 
 
