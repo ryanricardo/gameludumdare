@@ -7641,6 +7641,7 @@ MonoBehaviour:
   - {fileID: 7067545161483295512}
   tutorial: {fileID: 0}
   clipClickButtonMenu: {fileID: 8300000, guid: 2fa8d4767c3b9034fb7ebd37d8f29c5f, type: 3}
+  clipTakeSkin: {fileID: 8300000, guid: 8fc9fbdde9b3676489be9e170a329d74, type: 3}
   sourceEffectsMenu: {fileID: -2363114744387600579}
   timer: 0
   bonusNumber: 0

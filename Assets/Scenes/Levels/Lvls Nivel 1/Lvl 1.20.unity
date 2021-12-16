@@ -545,6 +545,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6232476613972829675, guid: f2491856a4047804886aac354c91fccc,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9114953956039915787, guid: f2491856a4047804886aac354c91fccc,
         type: 3}
       propertyPath: m_Name
@@ -558,12 +563,12 @@ PrefabInstance:
     - target: {fileID: 9114953956039915791, guid: f2491856a4047804886aac354c91fccc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: -7.98
       objectReference: {fileID: 0}
     - target: {fileID: 9114953956039915791, guid: f2491856a4047804886aac354c91fccc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.7
+      value: -5.3
       objectReference: {fileID: 0}
     - target: {fileID: 9114953956039915791, guid: f2491856a4047804886aac354c91fccc,
         type: 3}
@@ -996,6 +1001,11 @@ PrefabInstance:
       propertyPath: bonusNumber
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
+        type: 3}
+      propertyPath: clipTakeSkin
+      value: 
+      objectReference: {fileID: 8300000, guid: 8fc9fbdde9b3676489be9e170a329d74, type: 3}
     - target: {fileID: 4140271774501444689, guid: 088399a65df43e744ad57cf3b7801f83,
         type: 3}
       propertyPath: currentScene

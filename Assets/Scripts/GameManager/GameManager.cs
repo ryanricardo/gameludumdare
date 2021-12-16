@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private AudioSource            sourceMusic;
+    [SerializeField] public  AudioSource            sourceMusic;
     [SerializeField] private AudioSource            sourceEffects;
     [SerializeField] private AudioClip[]            musicsLofi;              
     [HideInInspector]private NewPlayerController    playerController;

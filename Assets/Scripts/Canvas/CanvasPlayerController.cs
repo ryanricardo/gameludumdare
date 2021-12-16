@@ -16,6 +16,7 @@ public class CanvasPlayerController : MonoBehaviour
     [SerializeField]    private TextMeshProUGUI[]   textBonusPause, textBonusPlay;
     [SerializeField]    private Tutorial            tutorial;
     [SerializeField]    private AudioClip           clipClickButtonMenu;
+    [SerializeField]    private AudioClip           clipTakeSkin;
     [SerializeField]    private AudioSource         sourceEffectsMenu;
     [HideInInspector]   private GameManager         gm;
     [HideInInspector]   private NewPlayerController playerController;
@@ -44,6 +45,7 @@ public class CanvasPlayerController : MonoBehaviour
         data = FindObjectOfType<Data>();
         buttonNext.GetComponent<Button>().interactable = true;
         StartCoroutine(StartLevel());
+        sourceEffectsMenu.volume = PlayerPrefs.GetFloat("VolumeEffectsGame");
     }
 
     IEnumerator StartLevel(){
@@ -299,6 +301,8 @@ public class CanvasPlayerController : MonoBehaviour
     }
 
     public void NotificationNewReward(string message){
+        gm.sourceMusic.Pause();
+        sourceEffectsMenu.PlayOneShot(clipTakeSkin);
         Time.timeScale = 0;
         panelSkin.SetActive(true);
         textSkin.text = message;
@@ -307,6 +311,7 @@ public class CanvasPlayerController : MonoBehaviour
     }
     IEnumerator StopNotification(){
         yield return new WaitForSecondsRealtime(3);
+        gm.sourceMusic.UnPause();
         panelSkin.SetActive(false);
         touchControllers.SetActive(true);
         Time.timeScale = 1;
