@@ -113,6 +113,7 @@ MonoBehaviour:
   source: {fileID: 7261289159064025394}
   clipJump: {fileID: 8300000, guid: e2f593102b2b92942bcdc83adde554f9, type: 3}
   clipFall: {fileID: 8300000, guid: d78c478f2ec882044bb4cc3387d79906, type: 3}
+  clipRun: {fileID: 8300000, guid: 9c80a55ca4a594d41b8045477428d7d3, type: 3}
   rb2: {fileID: 0}
   speedMoviment: 5
   forceJump: 20
@@ -172,7 +173,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: beb4dedb6fb1d794395b444c09897b9e, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -12,6 +12,7 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    private AudioSource                         source;
     [SerializeField]    private AudioClip                           clipJump;
     [SerializeField]    private AudioClip                           clipFall;
+    [SerializeField]    private AudioClip                           clipRun;
     [HideInInspector]   private Lava                                lava;
     [HideInInspector]   private Joystick                            joystick;
     [HideInInspector]   private NewRockController                   rockController;
@@ -42,6 +43,7 @@ public class NewPlayerController : MonoBehaviour
 
     void Start()
     {
+        source.volume = PlayerPrefs.GetFloat("VolumeEffectsGame");
         jump = false;
         temp = 0;
         lava = FindObjectOfType<Lava>();
@@ -80,6 +82,18 @@ public class NewPlayerController : MonoBehaviour
             isRight = true;
         }
 
+
+        if(rb2.velocity.x != 0 )
+        {
+            checkGround[1] = Physics2D.Linecast(transform.position, transformChecksGround[1].transform.position, 
+            1 << LayerMask.NameToLayer("Chao"));
+
+            if(checkGround[1]&&
+            !source.isPlaying)
+            {
+                source.PlayOneShot(clipRun);
+            }
+        }
 
         if(jump)
         {
