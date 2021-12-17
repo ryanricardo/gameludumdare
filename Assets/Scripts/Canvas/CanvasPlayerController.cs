@@ -231,6 +231,8 @@ public class CanvasPlayerController : MonoBehaviour
                 buttonsBonus[1].GetComponent<Button>().interactable = false;
                 break;
             case GameManager.State.FINISH:
+                gm.sourceMusic.volume = 0;
+                gm.sourceEffects.volume = 0;
                 sourceEffectsMenu.PlayOneShot(clipFinishLvl);
                 if(!bonusReceived && panelBonus!=null){
                     StartCoroutine("CourReward");
@@ -239,6 +241,8 @@ public class CanvasPlayerController : MonoBehaviour
                 }
                 break;
             case GameManager.State.LEVELCOMPLETED:
+                gm.sourceMusic.volume = 0;
+                gm.sourceEffects.volume = 0;
                 DiamondsSystem();
                 gm.DiamondsValue();
                 panelPauseFinish.SetActive(true);
@@ -261,6 +265,8 @@ public class CanvasPlayerController : MonoBehaviour
                 Time.timeScale = 0;
                 break;
             case GameManager.State.GAMEOVER:
+                gm.sourceMusic.volume = 0;
+                gm.sourceEffects.volume = 0;
                 sourceEffectsMenu.PlayOneShot(clipGameOverLvl);            
                 panelPauseFinish.SetActive(true);
                 touchControllers.SetActive(false);

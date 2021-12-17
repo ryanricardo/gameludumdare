@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] public  AudioSource            sourceMusic;
-    [SerializeField] private AudioSource            sourceEffects;
+    [SerializeField] public  AudioSource            sourceEffects;
     [SerializeField] private AudioClip[]            musicsLofi;              
     [HideInInspector]private NewPlayerController    playerController;
     [HideInInspector]private AdManager              adManager;
