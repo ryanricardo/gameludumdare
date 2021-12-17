@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sourceReset: {fileID: -2493883457406523884}
   soundReset: {fileID: 8300000, guid: a30ffaf531d5f854a9196f40aab9bafc, type: 3}
+  resetTime: 1.5
 --- !u!61 &1125764878292582812
 BoxCollider2D:
   m_ObjectHideFlags: 0

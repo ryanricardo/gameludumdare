@@ -14,9 +14,9 @@ public class AdManager : MonoBehaviour
    private string gameid="4493929";
 #endif
 
-    // string gameid = "";
+    // bool testmode=true;
+    bool testmode=false;
 
-    bool testmode=true;
    
    void Start()
    {

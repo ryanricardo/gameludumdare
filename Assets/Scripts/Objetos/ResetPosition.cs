@@ -11,6 +11,7 @@ public class ResetPosition : MonoBehaviour
 
     public AudioSource sourceReset;
     public AudioClip     soundReset;
+    public float resetTime = 1;
     Vector3 playerPos, rock1Pos, rock2Pos;
     GameObject player, rock1, rock2;
     private GameManager gm;
@@ -49,7 +50,7 @@ public class ResetPosition : MonoBehaviour
 
     IEnumerator SpawnPlayers()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(resetTime);
         gm.sourceMusic.UnPause();
         player.transform.position = playerPos;
         rock1.transform.position = rock1Pos;
@@ -58,7 +59,7 @@ public class ResetPosition : MonoBehaviour
 
     IEnumerator SpawnRocks()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(resetTime);
         gm.sourceMusic.UnPause();
         rock1.transform.position = rock1Pos;
     }
