@@ -17,6 +17,8 @@ public class CanvasPlayerController : MonoBehaviour
     [SerializeField]    private Tutorial            tutorial;
     [SerializeField]    private AudioClip           clipClickButtonMenu;
     [SerializeField]    private AudioClip           clipTakeSkin;
+    [SerializeField]    private AudioClip           clipFinishLvl;
+    [SerializeField]    private AudioClip           clipGameOverLvl;
     [SerializeField]    private AudioSource         sourceEffectsMenu;
     [HideInInspector]   private GameManager         gm;
     [HideInInspector]   private NewPlayerController playerController;
@@ -231,6 +233,7 @@ public class CanvasPlayerController : MonoBehaviour
                 buttonsBonus[1].GetComponent<Button>().interactable = false;
                 break;
             case GameManager.State.FINISH:
+                sourceEffectsMenu.PlayOneShot(clipFinishLvl);
                 if(gm.diamondsLevel == 3 & !bonusReceived){
                     StartCoroutine("CourReward");
                 }else{
@@ -258,7 +261,8 @@ public class CanvasPlayerController : MonoBehaviour
                 buttonsBonus[1].GetComponent<Button>().interactable = false;
                 Time.timeScale = 0;
                 break;
-            case GameManager.State.GAMEOVER:            
+            case GameManager.State.GAMEOVER:
+                sourceEffectsMenu.PlayOneShot(clipGameOverLvl);            
                 panelPauseFinish.SetActive(true);
                 touchControllers.SetActive(false);
                 buttonPause.GetComponent<Button>().interactable = false;

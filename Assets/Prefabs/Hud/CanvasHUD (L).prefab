@@ -7642,6 +7642,8 @@ MonoBehaviour:
   tutorial: {fileID: 0}
   clipClickButtonMenu: {fileID: 8300000, guid: 2fa8d4767c3b9034fb7ebd37d8f29c5f, type: 3}
   clipTakeSkin: {fileID: 8300000, guid: 8fc9fbdde9b3676489be9e170a329d74, type: 3}
+  clipFinishLvl: {fileID: 8300000, guid: f3a5033205d12a34d97dfd76250f051b, type: 3}
+  clipGameOverLvl: {fileID: 8300000, guid: 0f027e8f595346842bef4797555d7369, type: 3}
   sourceEffectsMenu: {fileID: -2363114744387600579}
   timer: 0
   bonusNumber: 0
