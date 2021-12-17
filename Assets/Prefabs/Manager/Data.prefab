@@ -54,10 +54,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d67a8c1a6500b444a812b5b899472d09, type: 3}
   skinsRewardRock1:
   - {fileID: 21300000, guid: 256f367931239914ebaadaeb432288b1, type: 3}
-  - {fileID: 21300000, guid: edeb17336253c5844b545f3f551ca3fd, type: 3}
-  - {fileID: 21300000, guid: 6e3dc11ac81cc994085e7e9b34c52882, type: 3}
+  - {fileID: 21300000, guid: 252dd6ff4d9ab9c46a48b5c4b2fb45cc, type: 3}
+  - {fileID: 21300000, guid: f1c85b8f0086b44429db1b8ee87ea3ae, type: 3}
   skinsRewardRock2:
   - {fileID: 21300000, guid: edeb17336253c5844b545f3f551ca3fd, type: 3}
+  - {fileID: 21300000, guid: 69e0ab9d2fad234469602329ec0a22c7, type: 3}
+  - {fileID: 21300000, guid: 0cc6141a8bc04404fbc06fa558716885, type: 3}
+  - {fileID: 21300000, guid: f0605ed2a96476b48b47f398bcefbd54, type: 3}
   skinsRewardRock3:
   - {fileID: 21300000, guid: 6e3dc11ac81cc994085e7e9b34c52882, type: 3}
+  - {fileID: 21300000, guid: f31b29011457ff245808f71519b01f6b, type: 3}
+  - {fileID: 21300000, guid: 1b14815dbb6ddab4e922bad6f76455ba, type: 3}
+  - {fileID: 21300000, guid: 0031427bede5f734b856fe0812358aea, type: 3}
   rocks: []
