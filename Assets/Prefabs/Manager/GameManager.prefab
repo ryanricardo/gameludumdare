@@ -45,18 +45,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4597b418bcda4447a0595c88754a8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  souceMusic: {fileID: 602094489981943333}
-  souceEffects: {fileID: 0}
+  sourceMusic: {fileID: 0}
+  sourceEffects: {fileID: 0}
   musicsLofi:
   - {fileID: 0}
   - {fileID: 8300000, guid: 9c6c85cf4663c4944ba2043a61b0e002, type: 3}
   - {fileID: 8300000, guid: ec32c22620fd7dc4c8fad4674b068cbc, type: 3}
+  - {fileID: 8300000, guid: d6e695ac43a911b49970a175714a1e41, type: 3}
+  - {fileID: 8300000, guid: e05ed9f2b984f9a4e8fdf4eb0cb05775, type: 3}
+  - {fileID: 8300000, guid: 6786829a14b17f84fa4308d341e9f0f0, type: 3}
+  - {fileID: 8300000, guid: 29ee932ad0704cd4c85037708233e97a, type: 3}
+  - {fileID: 8300000, guid: c3dc884d6669c7349bae7e7467c2b230, type: 3}
+  - {fileID: 8300000, guid: 7fd4eb4f6756d924cabfbf19ac6a28d5, type: 3}
+  - {fileID: 8300000, guid: fd024940790097e4ab03cda8c297109b, type: 3}
+  - {fileID: 8300000, guid: 55013da174102174f9bfdaf350e5511b, type: 3}
   nivel: 0
   currentScene: 0
   lvlsNivel: 0
+  activeScene: 0
   diamondsNivel: 0
   diamondsLevel: 0
-  levelState: 0
+  mortes: 0
+  mortesParaAnuncio: 0
 --- !u!82 &602094489981943333
 AudioSource:
   m_ObjectHideFlags: 0
@@ -181,4 +191,3 @@ MonoBehaviour:
   skinsRewardRock3:
   - {fileID: 21300000, guid: 6e3dc11ac81cc994085e7e9b34c52882, type: 3}
   rocks: []
-  restartPrefs: 0
