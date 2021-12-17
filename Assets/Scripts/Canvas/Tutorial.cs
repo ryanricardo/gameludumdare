@@ -21,6 +21,7 @@ public class Tutorial : MonoBehaviour
     } 
 
     public void ButtomArrow(){
+        canvas.sourceEffectsMenu.PlayOneShot(canvas.clipClickButtonMenu);
         switch (panelNumber){            
             case 1:
                 panelTutorial[1].SetActive(false);

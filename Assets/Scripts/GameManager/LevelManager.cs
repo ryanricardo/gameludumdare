@@ -125,6 +125,7 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt("SkinRock2", 1);
         PlayerPrefs.SetInt("SkinRock3", 1);
         PlayerPrefs.SetInt("valueLanguage", 0);
+        PlayerPrefs.SetString("Tutorial", "tutorialON");
         for(int i = 0; i < 100; i++)
         {
             PlayerPrefs.GetInt("PlayAgain" + i, 0);

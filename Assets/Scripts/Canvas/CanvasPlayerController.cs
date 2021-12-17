@@ -15,11 +15,8 @@ public class CanvasPlayerController : MonoBehaviour
     [SerializeField]    private GameObject[]        diamondsSprites, bonus, buttonsBonus;  
     [SerializeField]    private TextMeshProUGUI[]   textBonusPause, textBonusPlay;
     [SerializeField]    private Tutorial            tutorial;
-    [SerializeField]    private AudioClip           clipClickButtonMenu;
-    [SerializeField]    private AudioClip           clipTakeSkin;
-    [SerializeField]    private AudioClip           clipFinishLvl;
-    [SerializeField]    private AudioClip           clipGameOverLvl;
-    [SerializeField]    private AudioSource         sourceEffectsMenu;
+    [SerializeField]    public  AudioClip           clipClickButtonMenu, clipTakeSkin, clipFinishLvl, clipGameOverLvl;
+    [SerializeField]    public  AudioSource         sourceEffectsMenu;
     [HideInInspector]   private GameManager         gm;
     [HideInInspector]   private NewPlayerController playerController;
     [HideInInspector]   private Data data;
@@ -74,6 +71,7 @@ public class CanvasPlayerController : MonoBehaviour
             timer = 0;
         if(PlayerPrefs.GetString("Tutorial") == "tutorialON" && tutorial != null){
             panelLoading.SetActive(false);
+            touchControllers.SetActive(false);
             tutorial.gameObject.SetActive(true);
             Time.timeScale = 0;
         }else{
@@ -234,7 +232,7 @@ public class CanvasPlayerController : MonoBehaviour
                 break;
             case GameManager.State.FINISH:
                 sourceEffectsMenu.PlayOneShot(clipFinishLvl);
-                if(gm.diamondsLevel == 3 & !bonusReceived){
+                if(!bonusReceived && panelBonus!=null){
                     StartCoroutine("CourReward");
                 }else{
                     LevelState(GameManager.State.LEVELCOMPLETED);
@@ -242,6 +240,7 @@ public class CanvasPlayerController : MonoBehaviour
                 break;
             case GameManager.State.LEVELCOMPLETED:
                 DiamondsSystem();
+                gm.DiamondsValue();
                 panelPauseFinish.SetActive(true);
                 touchControllers.SetActive(false);
                 buttonNext.SetActive(true);
@@ -291,7 +290,7 @@ public class CanvasPlayerController : MonoBehaviour
         panelBonus.SetActive(true);
         textBonusAmount.text = "x" + bonusAmount.ToString();
         PlayerPrefs.SetInt("Bonus" + bonusNumber, bonusAmount);
-        yield return new WaitForSecondsRealtime(4);
+        yield return new WaitForSecondsRealtime(3);
         panelBonus.SetActive(false);
         LevelState(GameManager.State.LEVELCOMPLETED);
     }
