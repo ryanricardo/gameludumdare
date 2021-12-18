@@ -3717,7 +3717,7 @@ PrefabInstance:
     - target: {fileID: 7621364596023973409, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.82065964
+      value: 0.73758864
       objectReference: {fileID: 0}
     - target: {fileID: 7621364596023973409, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
@@ -3962,7 +3962,7 @@ PrefabInstance:
     - target: {fileID: 8044472912810870201, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1011.48
+      value: 1480
       objectReference: {fileID: 0}
     - target: {fileID: 8044472912810870201, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
@@ -4118,7 +4118,7 @@ PrefabInstance:
     - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: musicsLofi.Array.size
-      value: 3
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
@@ -4135,6 +4135,46 @@ PrefabInstance:
       propertyPath: musicsLofi.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: ec32c22620fd7dc4c8fad4674b068cbc, type: 3}
+    - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: musicsLofi.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: d6e695ac43a911b49970a175714a1e41, type: 3}
+    - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: musicsLofi.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: e05ed9f2b984f9a4e8fdf4eb0cb05775, type: 3}
+    - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: musicsLofi.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6786829a14b17f84fa4308d341e9f0f0, type: 3}
+    - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: musicsLofi.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 29ee932ad0704cd4c85037708233e97a, type: 3}
+    - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: musicsLofi.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: c3dc884d6669c7349bae7e7467c2b230, type: 3}
+    - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: musicsLofi.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7fd4eb4f6756d924cabfbf19ac6a28d5, type: 3}
+    - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: musicsLofi.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: fd024940790097e4ab03cda8c297109b, type: 3}
+    - target: {fileID: 8044472913977687597, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: musicsLofi.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: 55013da174102174f9bfdaf350e5511b, type: 3}
     - target: {fileID: 8174120508217179479, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
