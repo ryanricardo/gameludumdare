@@ -9,9 +9,9 @@ public class AdManager : MonoBehaviour
 
 
 #if UNITY_IOS
-   private string gameid="4493928";
+   private string gameid="4515922";
 #elif UNITY_ANDROID
-   private string gameid="4493929";
+   private string gameid="4515923";
 #endif
 
     // bool testmode=true;
