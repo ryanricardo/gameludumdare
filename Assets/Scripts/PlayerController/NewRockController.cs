@@ -51,10 +51,12 @@ enum TypeRock
             posPlayer, Time.deltaTime * speedParallaxIntoGroup);
             float distancePlayer = Vector2.Distance(transform.position, playerController.transform.position);
             
-            if(distancePlayer >= minDistanceForLeftGroup)
+            if(distancePlayer >= minDistanceForLeftGroup && playerController.isRight)
             {
-                Debug.Log("Drop");
-                typeRock = TypeRock.Idle;
+                LeftGroup(Vector2.left);
+            }else if(distancePlayer >= minDistanceForLeftGroup && !playerController.isRight)
+            {
+                LeftGroup(Vector2.right);
             }
         }
     }
