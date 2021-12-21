@@ -25,8 +25,7 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("RockController 1")
-        || other.gameObject.CompareTag("RockController 2"))
+        if (other.gameObject.CompareTag("Player"))
         {
             canvasPlayer.LevelState(GameManager.State.FINISH);
             gm.DiamondsValue();
