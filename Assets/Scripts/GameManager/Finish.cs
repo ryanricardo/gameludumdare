@@ -37,7 +37,7 @@ public class Finish : MonoBehaviour
             Destroy(rocksPlayer1);
             Destroy(player);
             Destroy(other.gameObject);
-            PlayerPrefs.SetFloat("vitorias", PlayerPrefs.GetFloat("vitorias")+0.5f);
+            PlayerPrefs.SetFloat("vitorias", PlayerPrefs.GetFloat("vitorias")+1f);
 
             if(PlayerPrefs.GetInt("PlayAgain" + gm.currentScene.ToString()) != 1)
             {
@@ -53,6 +53,7 @@ public class Finish : MonoBehaviour
             }
         
             PlayerPrefs.SetInt("PlayAgain" + gm.currentScene.ToString(), 1);
+            
             // if(rocksPlayer0!= null & rocksPlayer1!=null){             
             //}
         }
