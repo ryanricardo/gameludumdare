@@ -571,6 +571,7 @@ Transform:
   - {fileID: 234716159}
   - {fileID: 943113177}
   - {fileID: 1396883624}
+  - {fileID: 1323369158}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18168,7 +18169,7 @@ PrefabInstance:
     - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.37
       objectReference: {fileID: 0}
     - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
         type: 3}
@@ -18455,6 +18456,91 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a705afb3265598244aa818b5ace18e03, type: 3}
+--- !u!1001 &1323369157
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 492190098}
+    m_Modifications:
+    - target: {fileID: 4678354573665335306, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: chave
+      value: 
+      objectReference: {fileID: 234716158}
+    - target: {fileID: 4678354573665335306, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: tempo
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780072906494014907, guid: 5bf12255b46b7154faaea2d7384c8246,
+        type: 3}
+      propertyPath: m_Name
+      value: "Bot\xE3o amarelo (1)"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5bf12255b46b7154faaea2d7384c8246, type: 3}
+--- !u!4 &1323369158 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
+    type: 3}
+  m_PrefabInstance: {fileID: 1323369157}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1379793775 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 7261289159064025394, guid: d6a98c79eea1b534ca1f2c8f62fca00d,

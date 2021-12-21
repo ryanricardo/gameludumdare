@@ -27,12 +27,17 @@ public class AdManager : MonoBehaviour
    {
        if(Advertisement.IsReady())
        {
-        Advertisement.Show();
-        Debug.Log("Mostrando anuncio");
+            Advertisement.Show();
+            Debug.Log("Mostrando anuncio"); 
+            Debug.Log(PlayerPrefs.GetInt("mortes"));
+            Debug.Log(PlayerPrefs.GetInt("mortesParaAnuncio"));
+            Debug.Log(PlayerPrefs.GetInt("vitorias"));
+            Debug.Log(PlayerPrefs.GetInt("vitoriasParaAnuncio"));
        }
        else
       {
            Debug.Log("Não está pronto o anuncio");
+
        }
    }
 

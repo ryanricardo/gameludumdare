@@ -296,7 +296,7 @@ public class CanvasPlayerController : MonoBehaviour
         panelBonus.SetActive(true);
         textBonusAmount.text = "x" + bonusAmount.ToString();
         PlayerPrefs.SetInt("Bonus" + bonusNumber, bonusAmount);
-        yield return new WaitForSecondsRealtime(3);
+        yield return new WaitForSecondsRealtime(1.5f);
         panelBonus.SetActive(false);
         LevelState(GameManager.State.LEVELCOMPLETED);
     }
