@@ -10,17 +10,17 @@ public class Porta : MonoBehaviour
     public AudioClip clipOpen;
     private bool playClipOneTime;
 
-    void Update()
-    {
+    void Update(){
         if(botao.ativo)
         {
-            anim.SetTrigger("Abrir");
-            if(playClipOneTime){sourcePorta.PlayOneShot(clipOpen); playClipOneTime = false;}
+            anim.SetTrigger("Abrir");        
+            if(playClipOneTime){
+                sourcePorta.PlayOneShot(clipOpen); playClipOneTime = false;
+            }
         }
-        else
-        {
-            anim.SetTrigger("Fechar");
-            playClipOneTime = true;
+        else{
+    //         anim.SetTrigger("Fechar");
+    //         playClipOneTime = true;
         }
     }
 }

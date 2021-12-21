@@ -241,8 +241,8 @@ public class CanvasPlayerController : MonoBehaviour
                 }
                 break;
             case GameManager.State.LEVELCOMPLETED:
-                gm.sourceMusic.volume = 0;
-                gm.sourceEffects.volume = 0;
+                // gm.sourceMusic.volume = 0;
+                // gm.sourceEffects.volume = 0;
                 DiamondsSystem();
                 gm.DiamondsValue();
                 panelPauseFinish.SetActive(true);

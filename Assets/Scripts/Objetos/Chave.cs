@@ -8,7 +8,7 @@ public class Chave : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag=="Player" || col.gameObject.tag=="PedraController 0" || col.gameObject.tag=="PedraController 1")
+        if(col.gameObject.tag=="Player" || col.gameObject.tag=="RockController 1" || col.gameObject.tag=="RockController 2")
         {
             chave=true;
             Destroy(gameObject);
