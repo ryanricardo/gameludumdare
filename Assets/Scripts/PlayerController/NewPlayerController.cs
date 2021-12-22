@@ -91,8 +91,14 @@ public class NewPlayerController : MonoBehaviour
             if(checkGround[1]&&
             !source.isPlaying)
             {
-                source.PlayOneShot(clipRun);
+                source.clip = clipRun;
+                source.Play();
             }
+        }else if(rb2.velocity.x == 0 && 
+        source.clip == clipRun)
+        {
+            source.clip = null;
+            source.Stop();
         }
 
         if(jump)
