@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;                
         lvlsNivel = 20;
-        sourceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame") * PlayerPrefs.GetFloat("VolumeGeneral");
-        sourceEffects.volume = PlayerPrefs.GetFloat("VolumeEffectsGame") * PlayerPrefs.GetFloat("VolumeGeneral");
+        sourceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
+        sourceEffects.volume = PlayerPrefs.GetFloat("VolumeEffectsGame");
         sourceMusic.volume = PlayerPrefs.GetFloat("VolumeMusicGame");
         sourceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
         sourceMusic.Play();
