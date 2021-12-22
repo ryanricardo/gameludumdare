@@ -6623,7 +6623,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3942103503230038916}
-  - component: {fileID: 275651241520802178}
   m_Layer: 5
   m_Name: Market
   m_TagString: Untagged
@@ -6652,30 +6651,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &275651241520802178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5776522229910355147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d65da611a09a64f83ab2f64bc4ace0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameObjectsRocks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  arrowsRocks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  data: {fileID: 310603971244215556, guid: 1410c936b4338744893fbbee32bec9ca, type: 3}
 --- !u!1 &5858360066632962301
 GameObject:
   m_ObjectHideFlags: 0

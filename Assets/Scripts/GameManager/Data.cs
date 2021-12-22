@@ -6,6 +6,7 @@ using TMPro;
 public class Data : MonoBehaviour
 {
     [Header("Components")]
+    [SerializeField]    public  List<Sprite>    allSkinsForBuy = new List<Sprite>();
     [SerializeField]    public  List<Sprite>    skinRock1 = new List<Sprite>();
     [SerializeField]    public  List<Sprite>    skinRock2 = new List<Sprite>();
     [SerializeField]    public  List<Sprite>    skinRock3 = new List<Sprite>();
