@@ -19,12 +19,14 @@ public class GameManager : MonoBehaviour
     public int nivel;
     public int currentScene, lvlsNivel, activeScene, diamondsNivel, diamondsLevel, mortes;
     public int mortesParaAnuncio;
+    private bool useOneTime;
 
     State levelState;
     public enum State {LOADING, PLAY, PAUSE, FINISH, LEVELCOMPLETED, GAMEOVER};
 
     void Awake()
     {
+        useOneTime = true;
         Screen.orientation = ScreenOrientation.Landscape;
         activeScene = SceneManager.GetActiveScene().buildIndex;
         data = FindObjectOfType<Data>();
@@ -72,7 +74,12 @@ public class GameManager : MonoBehaviour
         if(playerController.balance <= 0)
         {
             canvasPlayer.LevelState(State.GAMEOVER);
-            PlayerPrefs.SetInt("mortes", PlayerPrefs.GetInt("mortes")+1);
+            if(useOneTime)
+            {
+                PlayerPrefs.SetInt("mortes", PlayerPrefs.GetInt("mortes")+1);
+                useOneTime = false;
+            }
+            Debug.Log(PlayerPrefs.GetInt("mortes"));
             playerController.balance = 1;
         }
 
