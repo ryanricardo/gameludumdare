@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
 {
     public int LvlsWon;
     public GameObject[] levelsPanels;
-    public GameObject panelMenu, panelLevls, panelLoading, toggleTutorial;
+    public GameObject panelMenu, panelLevls, panelLoading, toggleTutorial, scrollbarMenu;
     [SerializeField] private AudioSource            sourceMusic;
     [SerializeField] private AudioClip[]            musicsLofi;         
     [SerializeField] public TMP_Dropdown       selectLanguage;
@@ -22,14 +22,14 @@ public class LevelManager : MonoBehaviour
     int lvlsNivel = 20;
 
     private void Awake(){
-        if(Time.realtimeSinceStartup==0)
-        {
-        PlayerPrefs.SetInt("mortes",0);
-        PlayerPrefs.SetInt("mortesParaAnuncio",3);
-        PlayerPrefs.SetFloat("vitorias",0);
-        PlayerPrefs.SetInt("vitoriasParaAnuncio",2);
+        if(Time.realtimeSinceStartup==0){
+            PlayerPrefs.SetInt("mortes",0);
+            PlayerPrefs.SetInt("mortesParaAnuncio",3);
+            PlayerPrefs.SetFloat("vitorias",0);
+            PlayerPrefs.SetInt("vitoriasParaAnuncio",2);
         }
         Screen.orientation = ScreenOrientation.Portrait;   
+        scrollbarMenu.GetComponent<Scrollbar>().value = .501f;
         if(PlayerPrefs.GetString("Tutorial") == "tutorialOFF"){
             toggleTutorial.GetComponent<Toggle>().isOn = false;
         }else{

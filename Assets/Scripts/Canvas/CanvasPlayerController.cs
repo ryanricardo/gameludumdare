@@ -11,7 +11,7 @@ public class CanvasPlayerController : MonoBehaviour
     [Header("Components")]
     [SerializeField]    private Slider              sliderBalance;
     [SerializeField]    private TextMeshProUGUI     textLevel, textLevelState, textTimer, textTimer0, textTimer1, textTimerFinish, textSkin, textBonusAmount;
-    [SerializeField]    private GameObject          panelLoading, panelPlay, panelPauseFinish, buttonNext, buttonBack, buttonPause, touchControllers;
+    [SerializeField]    private GameObject panelLoading, panelPlay, panelPauseFinish, buttonNext, buttonBack, buttonPause, touchControllers;
     [SerializeField]    private GameObject[]        diamondsSprites, bonus, buttonsBonus;  
     [SerializeField]    private TextMeshProUGUI[]   textBonusPause, textBonusPlay;
     [SerializeField]    private Tutorial            tutorial;
