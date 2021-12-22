@@ -23,11 +23,13 @@ enum TypeRock
     [SerializeField]    private     float                   minDistanceForLeftGroup;
     [SerializeField]    private     float                   speedParallaxIntoGroup;
     [SerializeField]    private     float                   forceForLeftGroup;
+    [HideInInspector]   private     bool                    PlaySoundInStart;
 
 
 
     void Start()
     {
+        PlaySoundInStart = false;
         rb2 = GetComponent<Rigidbody2D>();
         playerController = FindObjectOfType<NewPlayerController>();
 
@@ -100,7 +102,12 @@ enum TypeRock
         playerController.rocks[playerController.rocks.Count - 1].transform.position.x,
         playerController.rocks[playerController.rocks.Count - 1].transform.position.y + 0.46f);
         
-        sourceEffects.PlayOneShot(soundTeletransport);
+        if(PlaySoundInStart)
+        {
+            sourceEffects.PlayOneShot(soundTeletransport);
+        }
+
+        PlaySoundInStart = true;
         rb2.simulated = false;
         playerController.rocks.Add(gameObject);
         playerController.rocksOut.Remove(gameObject);

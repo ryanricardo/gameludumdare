@@ -135,10 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38ee7d5f9b06f9478c497b55e889835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeRock: 0
+  typeRock: 1
   sourceEffects: {fileID: 6509254985525933508, guid: 370e1cca86d13424e8aaaabe5faffcc3,
     type: 3}
-  soundTeletransport: {fileID: 8300000, guid: 3887c07593c804345b6d5136cc682a16, type: 3}
+  soundTeletransport: {fileID: 8300000, guid: 7fc5af17abf867144ac85c1f94818116, type: 3}
   startIntoTheGroup: 1
   minDistanceForLeftGroup: 2
   speedParallaxIntoGroup: 30
@@ -154,7 +154,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

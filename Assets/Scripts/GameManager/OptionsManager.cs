@@ -75,7 +75,6 @@ public class OptionsManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        PlayerPrefs.SetFloat("VolumeGeneral", sliderAjustGeneralVolume.value);
         PlayerPrefs.SetFloat("VolumeMusicGame", sliderAjustMusicGame.value);
         PlayerPrefs.SetFloat("VolumeEffectsGame", sliderAjustEffectsGame.value);   
     }
