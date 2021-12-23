@@ -47,7 +47,6 @@ MonoBehaviour:
   skinRock1:
   - {fileID: 0}
   - {fileID: 21300000, guid: fabef1505446cac41b579a1fb08d1317, type: 3}
-  - {fileID: 21300000, guid: f1c85b8f0086b44429db1b8ee87ea3ae, type: 3}
   skinRock2:
   - {fileID: 0}
   - {fileID: 21300000, guid: eb7af7d41e6537d43add5902c40782ae, type: 3}

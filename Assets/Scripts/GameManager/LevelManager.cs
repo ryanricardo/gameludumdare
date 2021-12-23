@@ -118,6 +118,10 @@ public class LevelManager : MonoBehaviour
     public void ButtonReset(){
         PlayClipClickButton();
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("Diamonds", 0);
+        PlayerPrefs.SetInt("DiamondsLvl", 0);
+        PlayerPrefs.SetInt("Diamonds1", 0);
+        PlayerPrefs.SetInt("Diamonds2", 0);
         PlayerPrefs.SetInt("MuteGeneral", -1);
         PlayerPrefs.SetInt("MuteMusic", -1);
         PlayerPrefs.SetInt("MuteEffects", -1);
@@ -133,7 +137,7 @@ public class LevelManager : MonoBehaviour
         {
             PlayerPrefs.GetInt("PlayAgain" + i, 0);
         }
-        while(data.skinRock1.Count != 2)
+        ;while(data.skinRock1.Count != 2)
         {
             data.skinRock1.RemoveAt(2);
             data.skinRock2.RemoveAt(2);
