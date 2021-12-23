@@ -9,27 +9,28 @@ public class LevelManager : MonoBehaviour
 {
     public int LvlsWon;
     public GameObject[] levelsPanels;
-    public GameObject panelMenu, panelLevls, panelLoading, toggleTutorial, scrollbarMenu;
+    public GameObject panelMenu, panelLevls, panelLoading, toggleTutorial, scrollbarMenu, toggleLockLvls;
+    [SerializeField] private float scrolValue = .501f;
     [SerializeField] private AudioSource            sourceMusic;
     [SerializeField] private AudioClip[]            musicsLofi;         
     [SerializeField] public TMP_Dropdown       selectLanguage;
-    [SerializeField] GameObject[] buttonsLvls;
-    [SerializeField] TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
-    [SerializeField] TextMeshProUGUI[] textDiamondsLvls;
+    [SerializeField] private GameObject[] buttonsLvls;
+    [SerializeField] private TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
+    [SerializeField] private TextMeshProUGUI[] textDiamondsLvls;
     [SerializeField] private AudioSource sourceEffects;
     [SerializeField] private AudioClip   clipClickButton;
     [SerializeField] private  Data data;
     int lvlsNivel = 20;
 
     private void Awake(){
-        if(Time.realtimeSinceStartup==0){
+        if(Time.realtimeSinceStartup<1){
             PlayerPrefs.SetInt("mortes",0);
             PlayerPrefs.SetInt("mortesParaAnuncio",3);
             PlayerPrefs.SetFloat("vitorias",0);
             PlayerPrefs.SetInt("vitoriasParaAnuncio",2);
         }
         Screen.orientation = ScreenOrientation.Portrait;   
-        scrollbarMenu.GetComponent<Scrollbar>().value = .501f;
+        scrollbarMenu.GetComponent<Scrollbar>().value = scrolValue;
         if(PlayerPrefs.GetString("Tutorial") == "tutorialOFF"){
             toggleTutorial.GetComponent<Toggle>().isOn = false;
         }else{
@@ -62,7 +63,7 @@ public class LevelManager : MonoBehaviour
         }else{
             LvlsWon = PlayerPrefs.GetInt("LvlsWon");      // Pega o valor de PPLvlsWon para saber a fase em que o jogador chegou 
         }
-
+        
         // Sabendo o valor de PPLvlsWon libera o click nos botoes das fases abaixo e igual ao seu valor
         for (int i = 0; i < buttonsLvls.Length; i++) {
             if(PlayerPrefs.GetInt("LvlsWon") <= i){
@@ -178,6 +179,23 @@ public class LevelManager : MonoBehaviour
             PlayerPrefs.SetString("Tutorial", "tutorialON");
         }else{
             PlayerPrefs.SetString("Tutorial", "tutorialOFF");
+        }
+    }
+    
+    public void ToggleLockLevels(){        
+        PlayClipClickButton();       
+        // Se o toggle estiver desativado desbloqueia todas as fases se não bloqueia de acordo com a variavel LvlsWon
+        if(toggleLockLvls.GetComponent<Toggle>().isOn==false){
+            for (int i = 0; i < buttonsLvls.Length; i++){
+                buttonsLvls[i].GetComponent<Button>().interactable = true;
+            }
+        }else{
+            for (int i = 0; i < buttonsLvls.Length; i++){
+                if(PlayerPrefs.GetInt("LvlsWon") <= i){
+                    buttonsLvls[i].GetComponent<Button>().interactable = false;
+                }
+                buttonsLvls[0].GetComponent<Button>().interactable = true;
+            }
         }
     }
 

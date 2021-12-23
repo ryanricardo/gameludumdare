@@ -10,10 +10,10 @@ public class OptionsManager : MonoBehaviour
     [Header("Components")]
     [SerializeField]    private Slider              sliderAjustMusicGame;
     [SerializeField]    private Slider              sliderAjustEffectsGame;
-    [SerializeField]    private Slider              sliderAjustGeneralVolume;
+    // [SerializeField]    private Slider              sliderAjustGeneralVolume;
     [SerializeField]    private GameObject          ButtonMuteMusic;
     [SerializeField]    private GameObject          ButtonMuteEffects;
-    [SerializeField]    private GameObject          ButtonMuteGeneral;
+    // [SerializeField]    private GameObject          ButtonMuteGeneral;
     [SerializeField]    private Sprite              spriteMutated;
     [SerializeField]    private Sprite              spriteUnmuted;
     [HideInInspector]   private LevelManager        levelManager;
@@ -53,22 +53,22 @@ public class OptionsManager : MonoBehaviour
 
         }
 
-        if(PlayerPrefs.GetInt("MuteGeneral") == 1)
-        {
-            PlayerPrefs.SetFloat("PastVolumeGeneral", PlayerPrefs.GetFloat("Volume"));
-            ButtonMuteGeneral.GetComponent<Image>().sprite = spriteMutated;
-            sliderAjustGeneralVolume.value = 0;
-            sliderAjustGeneralVolume.interactable = false;
-        }else 
-        {
-            ButtonMuteGeneral.GetComponent<Image>().sprite = spriteUnmuted;
-            sliderAjustGeneralVolume.interactable = true;
+        // if(PlayerPrefs.GetInt("MuteGeneral") == 1)
+        // {
+        //     PlayerPrefs.SetFloat("PastVolumeGeneral", PlayerPrefs.GetFloat("Volume"));
+        //     ButtonMuteGeneral.GetComponent<Image>().sprite = spriteMutated;
+        //     sliderAjustGeneralVolume.value = 0;
+        //     sliderAjustGeneralVolume.interactable = false;
+        // }else 
+        // {
+        //     ButtonMuteGeneral.GetComponent<Image>().sprite = spriteUnmuted;
+        //     sliderAjustGeneralVolume.interactable = true;
 
-        }
+        // }
 
         sliderAjustMusicGame.value = PlayerPrefs.GetFloat("VolumeMusicGame");
         sliderAjustEffectsGame.value = PlayerPrefs.GetFloat("VolumeEffectsGame");
-        sliderAjustGeneralVolume.value = PlayerPrefs.GetFloat("VolumeGeneral");
+        // sliderAjustGeneralVolume.value = PlayerPrefs.GetFloat("VolumeGeneral");
 
     }
 
@@ -79,25 +79,25 @@ public class OptionsManager : MonoBehaviour
         PlayerPrefs.SetFloat("VolumeEffectsGame", sliderAjustEffectsGame.value);   
     }
 
-    public void MuteGeneral()
-    {
-        levelManager.PlayClipClickButton();
-        PlayerPrefs.SetInt("MuteGeneral", PlayerPrefs.GetInt("MuteGeneral") * -1);
+    // public void MuteGeneral()
+    // {
+    //     levelManager.PlayClipClickButton();
+    //     PlayerPrefs.SetInt("MuteGeneral", PlayerPrefs.GetInt("MuteGeneral") * -1);
 
-        if(PlayerPrefs.GetInt("MuteGeneral") == 1)
-        {
-            PlayerPrefs.SetFloat("PastVolumeGeneral", PlayerPrefs.GetFloat("Volume"));
-            ButtonMuteGeneral.GetComponent<Image>().sprite = spriteMutated;
-            sliderAjustGeneralVolume.value = 0;
-            sliderAjustGeneralVolume.interactable = false;
-        }else 
-        {
-            ButtonMuteGeneral.GetComponent<Image>().sprite = spriteUnmuted;
-            sliderAjustGeneralVolume.interactable = true;
-            sliderAjustGeneralVolume.value = PlayerPrefs.GetFloat("PastVolumeGeneral");
+    //     if(PlayerPrefs.GetInt("MuteGeneral") == 1)
+    //     {
+    //         PlayerPrefs.SetFloat("PastVolumeGeneral", PlayerPrefs.GetFloat("Volume"));
+    //         ButtonMuteGeneral.GetComponent<Image>().sprite = spriteMutated;
+    //         sliderAjustGeneralVolume.value = 0;
+    //         sliderAjustGeneralVolume.interactable = false;
+    //     }else 
+    //     {
+    //         ButtonMuteGeneral.GetComponent<Image>().sprite = spriteUnmuted;
+    //         sliderAjustGeneralVolume.interactable = true;
+    //         sliderAjustGeneralVolume.value = PlayerPrefs.GetFloat("PastVolumeGeneral");
 
-        }
-    }
+    //     }
+    // }
 
     public void MuteMusic()
     {
