@@ -47,7 +47,7 @@ public class MarketManager : MonoBehaviour
 
     void Update()
     {
-        for(int i = 1; i < dataLocal.allSkinsForBuy.Count; i++)
+        for(int i = 1; i < 4; i++)
         {
             if(dataPrefab.skinRock1[i] == currentBuySkin.GetComponent<Image>().sprite ||
             dataPrefab.skinRock2[i] == currentBuySkin.GetComponent<Image>().sprite ||
@@ -89,11 +89,13 @@ public class MarketManager : MonoBehaviour
         
         if(PlayerPrefs.GetInt("Diamonds1") + PlayerPrefs.GetInt("Diamonds2") >= pricesSkins[index] && buy)
         {
-            
+            int totalDiamonds = PlayerPrefs.GetInt("Diamonds1") + PlayerPrefs.GetInt("Diamonds2");
+            Debug.Log("Diamonds: " + totalDiamonds);
             dataPrefab.skinRock1.Add(currentBuySkin.GetComponent<Image>().sprite);
             dataPrefab.skinRock2.Add(currentBuySkin.GetComponent<Image>().sprite);
             dataPrefab.skinRock3.Add(currentBuySkin.GetComponent<Image>().sprite);
-            PlayerPrefs.SetInt("Diamonds", PlayerPrefs.GetInt("Diamonds") - pricesSkins[index]);
+            totalDiamonds -= pricesSkins[index];          
+            Debug.Log("Diamonds: " + totalDiamonds);
             buttonBuy.interactable = false;
             buy = false;
             
