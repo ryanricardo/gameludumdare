@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     public int LvlsWon;
     public GameObject[] levelsPanels;
     public GameObject panelMenu, panelLevls, panelLoading, toggleTutorial, scrollbarMenu, toggleLockLvls;
-    [SerializeField] private float scrolValue = .501f;
+    [SerializeField] private float scrolValue = .667f;
     [SerializeField] private AudioSource            sourceMusic;
     [SerializeField] private AudioClip[]            musicsLofi;         
     [SerializeField] public TMP_Dropdown       selectLanguage;
