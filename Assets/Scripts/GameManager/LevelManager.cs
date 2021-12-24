@@ -11,23 +11,23 @@ public class LevelManager : MonoBehaviour
     public GameObject[] levelsPanels;
     public GameObject panelMenu, panelLevls, panelLoading, toggleTutorial, scrollbarMenu, toggleLockLvls;
     [SerializeField] private float scrolValue = .667f;
-    [SerializeField] private AudioSource            sourceMusic;
-    [SerializeField] private AudioClip[]            musicsLofi;         
-    [SerializeField] public TMP_Dropdown       selectLanguage;
+    [SerializeField] private AudioSource sourceMusic;
+    [SerializeField] private AudioClip[] musicsLofi;         
+    [SerializeField] public TMP_Dropdown selectLanguage;
     [SerializeField] private GameObject[] buttonsLvls;
     [SerializeField] private TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
     [SerializeField] private TextMeshProUGUI[] textDiamondsLvls;
     [SerializeField] private AudioSource sourceEffects;
-    [SerializeField] private AudioClip   clipClickButton;
+    [SerializeField] private AudioClip clipClickButton;
     [SerializeField] private  Data data;
     int lvlsNivel = 20;
 
     private void Awake(){
         if(Time.realtimeSinceStartup<1){
             PlayerPrefs.SetInt("mortes",0);
-            PlayerPrefs.SetInt("mortesParaAnuncio",3);
+            // PlayerPrefs.SetInt("mortesParaAnuncio",3);
             PlayerPrefs.SetFloat("vitorias",0);
-            PlayerPrefs.SetInt("vitoriasParaAnuncio",2);
+            // PlayerPrefs.SetInt("vitoriasParaAnuncio",2);
         }
         Screen.orientation = ScreenOrientation.Portrait;   
         scrollbarMenu.GetComponent<Scrollbar>().value = scrolValue;
@@ -215,18 +215,27 @@ public class LevelManager : MonoBehaviour
         for (int i = 1; i <= buttonsLvls.Length ; i++){  
             if(i<=lvlsNivel){
                 buttonsLvls[i-1].GetComponent<ButtonLvl>().textButton.text = i.ToString(); 
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().nivel = 1;
             }
             if(i>lvlsNivel && i<=lvlsNivel*2){
                 buttonsLvls[i-1].GetComponent<ButtonLvl>().textButton.text = (i-lvlsNivel).ToString(); 
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().nivel = 2;
             }
             if(i>lvlsNivel*2 && i<=lvlsNivel*3){
                 buttonsLvls[i-1].GetComponent<ButtonLvl>().textButton.text = (i-lvlsNivel*2).ToString(); 
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().nivel = 3;
             }
             if(i>lvlsNivel*3 && i<=lvlsNivel*4){
                 buttonsLvls[i-1].GetComponent<ButtonLvl>().textButton.text = (i-lvlsNivel*3).ToString(); 
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().nivel = 4;
             }
             if(i>lvlsNivel*4 && i<=lvlsNivel*5){
                 buttonsLvls[i-1].GetComponent<ButtonLvl>().textButton.text = (i-lvlsNivel*4).ToString(); 
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().nivel = 5;
+            }
+            if(i>lvlsNivel*4 && i<=lvlsNivel*6){
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().textButton.text = (i-lvlsNivel*5).ToString(); 
+                buttonsLvls[i-1].GetComponent<ButtonLvl>().nivel = 6;
             }
         }
     }

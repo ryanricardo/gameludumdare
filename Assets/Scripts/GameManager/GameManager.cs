@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Atributtes Manager")]
     public int nivel;
-    public int currentScene, lvlsNivel, activeScene, diamondsNivel, diamondsLevel, mortes;
-    public int mortesParaAnuncio;
+    public int currentScene, lvlsNivel, activeScene, diamondsNivel, diamondsLevel, mortes, vitorias;
+    // public int mortesParaAnuncio;
     private bool useOneTime;
 
     State levelState;
@@ -52,12 +52,14 @@ public class GameManager : MonoBehaviour
         data.rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
         data.rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
         playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
+
+        mortes = PlayerPrefs.GetInt("mortes");
     }
 
     void Update()
     {        
-           mortes=PlayerPrefs.GetInt("mortes");
-           mortesParaAnuncio=PlayerPrefs.GetInt("mortesParaAnuncio");
+        //    mortes=PlayerPrefs.GetInt("mortes");
+        //    mortesParaAnuncio=PlayerPrefs.GetInt("mortesParaAnuncio");
 
         // if(playerController.getKeyDownR)
         // {
@@ -65,23 +67,36 @@ public class GameManager : MonoBehaviour
         //     imageRestart.gameObject.SetActive(true);
         // }
 
-        if(PlayerPrefs.GetInt("mortesParaAnuncio")==PlayerPrefs.GetInt("mortes"))
-        {
-            PlayerPrefs.SetInt("mortesParaAnuncio", PlayerPrefs.GetInt("mortesParaAnuncio")+3);
-           adManager.ShowInterstitialAd();
+        // if(PlayerPrefs.GetInt("mortesParaAnuncio")==PlayerPrefs.GetInt("mortes"){   
+        //     PlayerPrefs.SetInt("mortesParaAnuncio", PlayerPrefs.GetInt("mortesParaAnuncio")+3);
+        //     adManager.ShowInterstitialAd();
+        // }
+
+        if(playerController.balance <= 0) {         
+
+            playerController.balance = 1;
+            playerController.source.Stop();
+
+            canvasPlayer.LevelState(State.GAMEOVER);
+
+            // if(useOneTime)
+            // {
+            //     PlayerPrefs.SetInt("mortes", PlayerPrefs.GetInt("mortes")+1);
+            //     useOneTime = false;
+            // }           
+            Debug.Log("mortes: " + (PlayerPrefs.GetInt("mortes")+1));
+
+            if(PlayerPrefs.GetInt("mortes")>1){
+                PlayerPrefs.SetInt("mortes", 0);
+                adManager.ShowInterstitialAd();
+            }else{
+                PlayerPrefs.SetInt("mortes", PlayerPrefs.GetInt("mortes")+1);
+            }   
         }
 
-        if(playerController.balance <= 0)
-        {
-            canvasPlayer.LevelState(State.GAMEOVER);
-            if(useOneTime)
-            {
-                PlayerPrefs.SetInt("mortes", PlayerPrefs.GetInt("mortes")+1);
-                useOneTime = false;
-            }
-            Debug.Log(PlayerPrefs.GetInt("mortes"));
-            playerController.balance = 1;
-        }
+        // if(levelState == State.GAMEOVER){
+              
+            
 
         if(!sourceMusic.isPlaying)
         {
@@ -106,12 +121,12 @@ public class GameManager : MonoBehaviour
     }
     
     public void DiamondsValue(){
-        string PPlvl = "DiamondsLvl" + currentScene;
-        Debug.Log("Valor de DiamondsLvl" + currentScene + ": " + PlayerPrefs.GetInt(PPlvl));
+        string PPlvl = "DiamondsLvl" + activeScene;
+        Debug.Log("Valor de DiamondsLvl" + activeScene + ": " + PlayerPrefs.GetInt(PPlvl));
         Debug.Log("E valor de diamondsLevel é: " + diamondsLevel);
 
         if(PlayerPrefs.GetInt(PPlvl)<diamondsLevel){
-            Debug.Log("Salvo diamantes na cena: " + currentScene);
+            Debug.Log("Salvo diamantes na cena: " + activeScene);
             PlayerPrefs.SetInt(PPlvl, diamondsLevel);   // Salva o valor de diamantes na fase      
             PlayerPrefs.SetInt("Diamonds" + nivel, PlayerPrefs.GetInt(PPlvl) + PlayerPrefs.GetInt("Diamonds" + nivel));
         }

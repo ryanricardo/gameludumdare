@@ -1648,6 +1648,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -1711,7 +1716,7 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -1814,6 +1819,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -1873,38 +1883,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonLvl5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_text
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7941104814395178101, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09eb5dffa3f520345a6e94e75374b5ce, type: 3}
@@ -1980,6 +1958,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -2039,43 +2022,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonLvl1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSizeMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7941104814395178101, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09eb5dffa3f520345a6e94e75374b5ce, type: 3}
@@ -2151,6 +2097,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -2214,7 +2165,7 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -2317,6 +2268,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -2380,7 +2336,7 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -2483,6 +2439,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -2546,7 +2507,7 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -2649,6 +2610,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -2712,7 +2678,9 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 16
+      value: '0
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -2815,6 +2783,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -2878,7 +2851,9 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 18
+      value: '0
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -2981,6 +2956,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -3044,7 +3024,7 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -3147,6 +3127,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -3206,38 +3191,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonLvl8
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_text
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7941104814395178101, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09eb5dffa3f520345a6e94e75374b5ce, type: 3}
@@ -3313,6 +3266,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -3376,7 +3334,9 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 15
+      value: '0
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -3479,6 +3439,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -3542,7 +3507,9 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 17
+      value: '0
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -3645,6 +3612,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -3704,38 +3676,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonLvl4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_text
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7941104814395178101, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09eb5dffa3f520345a6e94e75374b5ce, type: 3}
@@ -3811,6 +3751,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -3874,7 +3819,7 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -3977,6 +3922,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -4040,7 +3990,9 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 13
+      value: '0
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -4143,6 +4095,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -4202,38 +4159,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonLvl2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_text
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7941104814395178101, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09eb5dffa3f520345a6e94e75374b5ce, type: 3}
@@ -4309,6 +4234,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -4372,7 +4302,9 @@ PrefabInstance:
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_text
-      value: 14
+      value: '0
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
@@ -4475,6 +4407,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -4534,38 +4471,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonLvl6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_text
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7941104814395178101, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09eb5dffa3f520345a6e94e75374b5ce, type: 3}
@@ -4641,6 +4546,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -4700,38 +4610,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonLvl3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_text
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7941104814395178101, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09eb5dffa3f520345a6e94e75374b5ce, type: 3}
@@ -4807,6 +4685,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300122749134219865, guid: 09eb5dffa3f520345a6e94e75374b5ce,
+        type: 3}
+      propertyPath: lvl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9002036754830167249, guid: 09eb5dffa3f520345a6e94e75374b5ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -4866,38 +4749,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonLvl7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_text
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7941104814395178101, guid: 2bcef2639434ee74bac7877851bfe36e,
-        type: 2}
-    - target: {fileID: 9002036754943234539, guid: 09eb5dffa3f520345a6e94e75374b5ce,
-        type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09eb5dffa3f520345a6e94e75374b5ce, type: 3}

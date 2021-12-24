@@ -50,7 +50,7 @@ public class CanvasPlayerController : MonoBehaviour
     IEnumerator StartLevel(){
         TextLevel();
         useBonus = true;
-        string PPlvl = "DiamondsLvl" + gm.currentScene;
+        string PPlvl = "DiamondsLvl" + gm.activeScene;
         timeDiamond = SceneManager.GetActiveScene().buildIndex * 5 + 25;
         for (int i = 0; i < diamondsSprites.Length; i++){
             diamondsSprites[i].SetActive(false);
@@ -126,7 +126,6 @@ public class CanvasPlayerController : MonoBehaviour
             Instantiate(bonus[0], pos, Quaternion.identity);
         }
     }
-
     public void ButtonBonus2(){      
         sourceEffectsMenu.PlayOneShot(clipClickButtonMenu);  
         int x = PlayerPrefs.GetInt("Bonus2");
@@ -265,9 +264,12 @@ public class CanvasPlayerController : MonoBehaviour
                 Time.timeScale = 0;
                 break;
             case GameManager.State.GAMEOVER:
-                gm.sourceMusic.volume = 0;
-                gm.sourceEffects.volume = 0;
-                sourceEffectsMenu.PlayOneShot(clipGameOverLvl);            
+                // gm.sourceMusic.volume = 0;
+                // gm.sourceEffects.volume = 0;
+                if(!sourceEffectsMenu.isPlaying){
+                    sourceEffectsMenu.PlayOneShot(clipGameOverLvl);
+                    gm.sourceMusic.Stop();    
+                }
                 panelPauseFinish.SetActive(true);
                 touchControllers.SetActive(false);
                 buttonPause.GetComponent<Button>().interactable = false;

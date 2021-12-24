@@ -14924,11 +14924,6 @@ PrefabInstance:
       propertyPath: chave
       value: 
       objectReference: {fileID: 1165653295}
-    - target: {fileID: 4678354573665335306, guid: 5bf12255b46b7154faaea2d7384c8246,
-        type: 3}
-      propertyPath: tempo
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7780072906494014906, guid: 5bf12255b46b7154faaea2d7384c8246,
         type: 3}
       propertyPath: m_RootOrder
@@ -15358,6 +15353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasDeluxeEdition
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383896490950573616, guid: 4b4feb11ea97e9d90b687e802b569bac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0012207031
       objectReference: {fileID: 0}
     - target: {fileID: 5383896490950573631, guid: 4b4feb11ea97e9d90b687e802b569bac,
         type: 3}

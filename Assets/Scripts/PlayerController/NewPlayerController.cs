@@ -9,7 +9,7 @@ public class NewPlayerController : MonoBehaviour
     [SerializeField]    private Transform                           transformCheckFall;
     [SerializeField]    public  List<GameObject>                    rocks = new List<GameObject>();
     [SerializeField]    public  List<GameObject>                    rocksOut = new List<GameObject>();
-    [SerializeField]    private AudioSource                         source;
+    [SerializeField]    public  AudioSource                         source;
     [SerializeField]    private AudioClip                           clipJump;
     [SerializeField]    private AudioClip                           clipFall;
     [SerializeField]    private AudioClip                           clipRun;

@@ -29,10 +29,10 @@ public class AdManager : MonoBehaviour
        {
             Advertisement.Show();
             Debug.Log("Mostrando anuncio"); 
-            Debug.Log(PlayerPrefs.GetInt("mortes"));
-            Debug.Log(PlayerPrefs.GetInt("mortesParaAnuncio"));
-            Debug.Log(PlayerPrefs.GetInt("vitorias"));
-            Debug.Log(PlayerPrefs.GetInt("vitoriasParaAnuncio"));
+            Debug.Log("Mortes: " + PlayerPrefs.GetInt("mortes"));
+            // Debug.Log(PlayerPrefs.GetInt("mortesParaAnuncio"));
+            Debug.Log("Vitorias: " + PlayerPrefs.GetInt("vitorias"));
+            // Debug.Log(PlayerPrefs.GetInt("vitoriasParaAnuncio"));
        }
        else
       {

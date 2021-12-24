@@ -7,9 +7,9 @@ using TMPro;
 
 public class ButtonLvl : MonoBehaviour
 {
-    public int lvl, diamondsButton;
+    public int nivel, lvl, diamondsButton;
     public TextMeshProUGUI textButton;
-    [SerializeField]GameObject[] diamodsSprites;
+    [SerializeField] GameObject[] diamodsSprites;
     LevelManager levelManager;
     Color colorButton;
 
@@ -17,27 +17,25 @@ public class ButtonLvl : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         colorButton = GetComponent<Button>().colors.normalColor;
     }
-
-    public void LoadLevel(){
-        levelManager.PlayClipClickButton();
-        Loading();
-    }
-    void Loading(){
-        // levelManager.panelLoading.SetActive(true);
-        // levelManager.panelLevls.SetActive(false);
-        colorButton = Color.yellow;
-        SceneManager.LoadScene(lvl);            
-    }
-
     private void Start()
     {
         DiamondsCount();    
     }     
 
+    public void LoadLevel(){
+        levelManager.PlayClipClickButton();        
+        colorButton = Color.yellow;
+        SceneManager.LoadScene(lvl);          
+        // Loading();
+    }
+    void Loading(){
+        // levelManager.panelLoading.SetActive(true);
+        // levelManager.panelLevls.SetActive(false);  
+    }
 
     void DiamondsCount(){
         string PPlvl = "DiamondsLvl" + lvl;        
-        diamondsButton = PlayerPrefs.GetInt(PPlvl);
+        diamondsButton = PlayerPrefs.GetInt("DiamondsLvl" + lvl);
         
         switch (diamondsButton){
             case 0:

@@ -259,7 +259,7 @@ MonoBehaviour:
   chave: {fileID: 0}
   text: {fileID: 7802916599593414022}
   funciona: 0
-  tempo: 5
+  tempo: 10
   sourceButton: {fileID: -840526660054847885}
   clipOpenButton: {fileID: 8300000, guid: 91f5fe1b2e59c334e961a0a7c861739e, type: 3}
 --- !u!82 &-840526660054847885

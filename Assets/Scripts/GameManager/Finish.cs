@@ -7,20 +7,19 @@ public class Finish : MonoBehaviour
     GameManager gm;
     CanvasPlayerController canvasPlayer;
     AdManager adManager;
-    public float vitoria;
-    public int vitoriasParaAnuncio;
+    // public int vitoriasParaAnuncio;
 
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
         canvasPlayer = FindObjectOfType<CanvasPlayerController>();
         adManager = FindObjectOfType<AdManager>();
+        gm.vitorias = PlayerPrefs.GetInt("vitorias");
     }
     void Update()
     {
-       vitoria = PlayerPrefs.GetFloat("vitorias");
-
-       vitoriasParaAnuncio = PlayerPrefs.GetInt("vitoriasParaAnuncio");
+    //    vitoria = PlayerPrefs.GetFloat("vitorias");
+    //    vitoriasParaAnuncio = PlayerPrefs.GetInt("vitoriasParaAnuncio");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -29,7 +28,7 @@ public class Finish : MonoBehaviour
         {
             canvasPlayer.LevelState(GameManager.State.FINISH);
             gm.DiamondsValue();
-            PlayerPrefs.SetInt("ScenesPassed", gm.currentScene);
+            PlayerPrefs.SetInt("ScenesPassed", gm.activeScene);
             GameObject rocksPlayer0 = GameObject.FindGameObjectWithTag("RockController 1");
             GameObject rocksPlayer1 = GameObject.FindGameObjectWithTag("RockController 2");
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -37,22 +36,33 @@ public class Finish : MonoBehaviour
             Destroy(rocksPlayer1);
             Destroy(player);
             Destroy(other.gameObject);
-            PlayerPrefs.SetFloat("vitorias", PlayerPrefs.GetFloat("vitorias")+1f);
+            
+            // PlayerPrefs.SetFloat("vitorias", PlayerPrefs.GetFloat("vitorias")+1f);
 
-            if(PlayerPrefs.GetInt("PlayAgain" + gm.currentScene.ToString()) != 1)
+            if(PlayerPrefs.GetInt("PlayAgain" + gm.activeScene.ToString()) != 1)
             {
                 Debug.Log("Novo level");
-                PlayerPrefs.SetInt("LvlsWon", gm.currentScene + 1);  // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou
+                PlayerPrefs.SetInt("LvlsWon", gm.activeScene + 1);  // Salva o valor currentScene em PPLvlsWon para saber a fase em que o jogador chegou
             }
             
-
-            if(PlayerPrefs.GetFloat("vitorias")==PlayerPrefs.GetInt("vitoriasParaAnuncio"))
+            if(PlayerPrefs.GetInt("vitorias")>0)
             {
+                PlayerPrefs.SetInt("vitorias", 0);
                 adManager.ShowInterstitialAd();
-                PlayerPrefs.SetInt("vitoriasParaAnuncio", PlayerPrefs.GetInt("vitoriasParaAnuncio")+2);
+            }else{
+                PlayerPrefs.SetInt("vitorias", PlayerPrefs.GetInt("vitorias")+1);
+                Debug.Log("vitorias: " + (PlayerPrefs.GetInt("vitorias")));
             }
-        
-            PlayerPrefs.SetInt("PlayAgain" + gm.currentScene.ToString(), 1);
+
+            // if(PlayerPrefs.GetFloat("vitorias")==PlayerPrefs.GetInt("vitoriasParaAnuncio"))
+            // {
+            //     adManager.ShowInterstitialAd();
+            //     PlayerPrefs.SetInt("vitoriasParaAnuncio", PlayerPrefs.GetInt("vitoriasParaAnuncio")+2);
+            // }
+
+            
+
+            PlayerPrefs.SetInt("PlayAgain" + gm.activeScene.ToString(), 1);
             
             // if(rocksPlayer0!= null & rocksPlayer1!=null){             
             //}
