@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Purchasing;
 
 public class MarketManager : MonoBehaviour
 {
@@ -51,7 +52,8 @@ public class MarketManager : MonoBehaviour
         {
             if(dataPrefab.skinRock1[i] == currentBuySkin.GetComponent<Image>().sprite ||
             dataPrefab.skinRock2[i] == currentBuySkin.GetComponent<Image>().sprite ||
-            dataPrefab.skinRock3[i] == currentBuySkin.GetComponent<Image>().sprite )
+            dataPrefab.skinRock3[i] == currentBuySkin.GetComponent<Image>().sprite ||
+            PlayerPrefs.GetInt("Diamonds1") < pricesSkins[index])
             {
                 buttonBuy.interactable = false;
             }else 
@@ -87,15 +89,15 @@ public class MarketManager : MonoBehaviour
     public void BuySkin()
     {
         
-        if(PlayerPrefs.GetInt("Diamonds1") + PlayerPrefs.GetInt("Diamonds2") >= pricesSkins[index] && buy)
+        if(PlayerPrefs.GetInt("Diamonds1") >= pricesSkins[index] && buy)
         {
-            int totalDiamonds = PlayerPrefs.GetInt("Diamonds1") + PlayerPrefs.GetInt("Diamonds2");
-            Debug.Log("Diamonds: " + totalDiamonds);
+            
+            Debug.Log("Diamonds: " + PlayerPrefs.GetInt("Diamonds1"));
             dataPrefab.skinRock1.Add(currentBuySkin.GetComponent<Image>().sprite);
             dataPrefab.skinRock2.Add(currentBuySkin.GetComponent<Image>().sprite);
             dataPrefab.skinRock3.Add(currentBuySkin.GetComponent<Image>().sprite);
-            totalDiamonds -= pricesSkins[index];          
-            Debug.Log("Diamonds: " + totalDiamonds);
+            PlayerPrefs.SetInt("Diamonds1", PlayerPrefs.GetInt("Diamonds1") - pricesSkins[index]);   
+            Debug.Log("Diamonds: " + PlayerPrefs.GetInt("Diamonds1"));
             buttonBuy.interactable = false;
             buy = false;
             
@@ -105,5 +107,19 @@ public class MarketManager : MonoBehaviour
 
     }
 
+    public void BuyDiamonds(int diamondsToAdd)
+    {
+        Debug.Log(PlayerPrefs.GetInt("Diamonds1"));
+        PlayerPrefs.SetInt("Diamonds1", PlayerPrefs.GetInt("Diamonds1") + diamondsToAdd);
+        Debug.Log(PlayerPrefs.GetInt("Diamonds1"));
+    }
+
+    public void OnPurchaseComplete(Product product)
+    {
+        if(product.definition.id.Equals("diamondspack1"))
+        {
+            BuyDiamonds(50);
+        }
+    }
 
 }
