@@ -124,6 +124,8 @@ public class CanvasPlayerController : MonoBehaviour
             pos.x += 1;
             pos.y += 1;
             Instantiate(bonus[0], pos, Quaternion.identity);
+            buttonsBonus[0].GetComponent<Button>().interactable = false;
+            buttonsBonus[1].GetComponent<Button>().interactable = false;            
         }
     }
     public void ButtonBonus2(){      
@@ -135,7 +137,9 @@ public class CanvasPlayerController : MonoBehaviour
             Vector2 pos = playerController.transform.position;
             pos.y += 1;
             pos.x += 1;
-            Instantiate(bonus[1], pos, Quaternion.identity);   
+            Instantiate(bonus[1], pos, Quaternion.identity);  
+            buttonsBonus[0].GetComponent<Button>().interactable = false;
+            buttonsBonus[1].GetComponent<Button>().interactable = false;    
         }
     }
 
@@ -297,7 +301,7 @@ public class CanvasPlayerController : MonoBehaviour
         bonusReceived = true;
         panelBonus.SetActive(true);
         textBonusAmount.text = "x" + bonusAmount.ToString();
-        PlayerPrefs.SetInt("Bonus" + bonusNumber, bonusAmount);
+        PlayerPrefs.SetInt("Bonus" + bonusNumber, PlayerPrefs.GetInt("Bonus" + bonusNumber) + bonusAmount);
         yield return new WaitForSecondsRealtime(1.5f);
         panelBonus.SetActive(false);
         LevelState(GameManager.State.LEVELCOMPLETED);

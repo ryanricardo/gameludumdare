@@ -23,12 +23,6 @@ public class LevelManager : MonoBehaviour
     int lvlsNivel = 20;
 
     private void Awake(){
-        if(Time.realtimeSinceStartup<1){
-            PlayerPrefs.SetInt("mortes",0);
-            // PlayerPrefs.SetInt("mortesParaAnuncio",3);
-            PlayerPrefs.SetFloat("vitorias",0);
-            // PlayerPrefs.SetInt("vitoriasParaAnuncio",2);
-        }
         Screen.orientation = ScreenOrientation.Portrait;   
         scrollbarMenu.GetComponent<Scrollbar>().value = scrolValue;
         if(PlayerPrefs.GetString("Tutorial") == "tutorialOFF"){
@@ -49,7 +43,13 @@ public class LevelManager : MonoBehaviour
     }
 
     void Start()
-    {
+    {        
+        if(Time.realtimeSinceStartup==1){
+            PlayerPrefs.SetInt("mortes",0);
+            // PlayerPrefs.SetInt("mortesParaAnuncio",3);
+            PlayerPrefs.SetFloat("vitorias",0);
+            // PlayerPrefs.SetInt("vitoriasParaAnuncio",2);
+        }
         sourceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
         sourceMusic.Play();
         Diamonds();

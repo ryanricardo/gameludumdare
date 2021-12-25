@@ -84,14 +84,17 @@ public class GameManager : MonoBehaviour
             //     PlayerPrefs.SetInt("mortes", PlayerPrefs.GetInt("mortes")+1);
             //     useOneTime = false;
             // }           
-            Debug.Log("mortes: " + (PlayerPrefs.GetInt("mortes")+1));
 
-            if(PlayerPrefs.GetInt("mortes")>1){
+            if(PlayerPrefs.GetInt("mortes")==2 || PlayerPrefs.GetInt("mortes")>2 || PlayerPrefs.GetInt("mortes")<0){
+                if(PlayerPrefs.GetInt("mortes")==2){
+                    adManager.ShowInterstitialAd();
+                }
                 PlayerPrefs.SetInt("mortes", 0);
-                adManager.ShowInterstitialAd();
             }else{
                 PlayerPrefs.SetInt("mortes", PlayerPrefs.GetInt("mortes")+1);
             }   
+
+            Debug.Log("mortes: " + (PlayerPrefs.GetInt("mortes")));
         }
 
         // if(levelState == State.GAMEOVER){
