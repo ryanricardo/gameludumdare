@@ -22,7 +22,7 @@ public class MarketManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetInt("Diamonds1"));
+        Debug.Log(PlayerPrefs.GetInt("RubyTotal"));
 
         buy = true;
         index = 1;
@@ -37,7 +37,9 @@ public class MarketManager : MonoBehaviour
         for(int i = 1; i < dataPrefab.skinRock1.Count; i++)
         {
             if(dataPrefab.skinRock1[i] == currentBuySkin.GetComponent<Image>().sprite ||
-            PlayerPrefs.GetInt("Diamonds1") < pricesSkins[index])
+            dataPrefab.skinRock2[i] == currentBuySkin.GetComponent<Image>().sprite ||
+            dataPrefab.skinRock3[i] == currentBuySkin.GetComponent<Image>().sprite ||
+            PlayerPrefs.GetInt("RubyTotal") < pricesSkins[index])
             {
                 buttonBuy.interactable = false;
             }else 
@@ -46,27 +48,6 @@ public class MarketManager : MonoBehaviour
             }
         }
 
-        for(int i = 1; i < dataPrefab.skinRock2.Count; i++)
-        {
-            if(dataPrefab.skinRock2[i] == currentBuySkin.GetComponent<Image>().sprite)
-            {
-                buttonBuy.interactable = false;
-            }else 
-            {
-                buttonBuy.interactable = true;
-            }
-        }
-
-        for(int i = 1; i < dataPrefab.skinRock3.Count; i++)
-        {
-            if(dataPrefab.skinRock3[i] == currentBuySkin.GetComponent<Image>().sprite)
-            {
-                buttonBuy.interactable = false;
-            }else 
-            {
-                buttonBuy.interactable = true;
-            }
-        }
 
     }
 
@@ -96,19 +77,17 @@ public class MarketManager : MonoBehaviour
     public void BuySkin()
     {
         
-        if(PlayerPrefs.GetInt("Diamonds1") >= pricesSkins[index] && buy)
-        {
+    
+        Debug.Log("RubyTotal: " + PlayerPrefs.GetInt("RubyTotal"));
+        dataPrefab.skinRock1.Add(currentBuySkin.GetComponent<Image>().sprite);
+        dataPrefab.skinRock2.Add(currentBuySkin.GetComponent<Image>().sprite);
+        dataPrefab.skinRock3.Add(currentBuySkin.GetComponent<Image>().sprite);
+        PlayerPrefs.SetInt("RubyTotal", PlayerPrefs.GetInt("RubyTotal") - pricesSkins[index]);   
+        Debug.Log("RubyTotal: " + PlayerPrefs.GetInt("RubyTotal"));
+        buttonBuy.interactable = false;
+        buy = false;
             
-            Debug.Log("Diamonds: " + PlayerPrefs.GetInt("Diamonds1"));
-            dataPrefab.skinRock1.Add(currentBuySkin.GetComponent<Image>().sprite);
-            dataPrefab.skinRock2.Add(currentBuySkin.GetComponent<Image>().sprite);
-            dataPrefab.skinRock3.Add(currentBuySkin.GetComponent<Image>().sprite);
-            PlayerPrefs.SetInt("Diamonds1", PlayerPrefs.GetInt("Diamonds1") - pricesSkins[index]);   
-            Debug.Log("Diamonds: " + PlayerPrefs.GetInt("Diamonds1"));
-            buttonBuy.interactable = false;
-            buy = false;
-            
-        }
+        
        
 
 
@@ -116,9 +95,9 @@ public class MarketManager : MonoBehaviour
 
     public void BuyDiamonds(int diamondsToAdd)
     {
-        Debug.Log(PlayerPrefs.GetInt("Diamonds1"));
-        PlayerPrefs.SetInt("Diamonds1", PlayerPrefs.GetInt("Diamonds1") + diamondsToAdd);
-        Debug.Log(PlayerPrefs.GetInt("Diamonds1"));
+        Debug.Log(PlayerPrefs.GetInt("RubyTotal"));
+        PlayerPrefs.SetInt("RubyTotal", PlayerPrefs.GetInt("RubyTotal") + diamondsToAdd);
+        Debug.Log(PlayerPrefs.GetInt("RubyTotal"));
     }
 
     public void OnPurchaseComplete(Product product)
