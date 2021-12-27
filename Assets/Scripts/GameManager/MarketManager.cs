@@ -30,29 +30,13 @@ public class MarketManager : MonoBehaviour
         dataLocal = FindObjectOfType<Data>();
         currentBuySkin.GetComponent<Image>().sprite = dataLocal.allSkinsForBuy[index];
 
-        for(int i = 1; i < dataLocal.allSkinsForBuy.Count; i++)
-        {
-            if(dataPrefab.skinRock1[i] == currentBuySkin.GetComponent<Image>().sprite ||
-            dataPrefab.skinRock2[i] == currentBuySkin.GetComponent<Image>().sprite ||
-            dataPrefab.skinRock3[i] == currentBuySkin.GetComponent<Image>().sprite )
-            {
-                buttonBuy.interactable = false;
-            }else 
-            {
-                buttonBuy.interactable = true;
-            }
-        }
-
-        
     }
 
     void Update()
     {
-        for(int i = 1; i < 4; i++)
+        for(int i = 1; i < dataPrefab.skinRock1.Count; i++)
         {
             if(dataPrefab.skinRock1[i] == currentBuySkin.GetComponent<Image>().sprite ||
-            dataPrefab.skinRock2[i] == currentBuySkin.GetComponent<Image>().sprite ||
-            dataPrefab.skinRock3[i] == currentBuySkin.GetComponent<Image>().sprite ||
             PlayerPrefs.GetInt("Diamonds1") < pricesSkins[index])
             {
                 buttonBuy.interactable = false;
@@ -61,6 +45,29 @@ public class MarketManager : MonoBehaviour
                 buttonBuy.interactable = true;
             }
         }
+
+        for(int i = 1; i < dataPrefab.skinRock2.Count; i++)
+        {
+            if(dataPrefab.skinRock2[i] == currentBuySkin.GetComponent<Image>().sprite)
+            {
+                buttonBuy.interactable = false;
+            }else 
+            {
+                buttonBuy.interactable = true;
+            }
+        }
+
+        for(int i = 1; i < dataPrefab.skinRock3.Count; i++)
+        {
+            if(dataPrefab.skinRock3[i] == currentBuySkin.GetComponent<Image>().sprite)
+            {
+                buttonBuy.interactable = false;
+            }else 
+            {
+                buttonBuy.interactable = true;
+            }
+        }
+
     }
 
     public void ArrowLeft()
