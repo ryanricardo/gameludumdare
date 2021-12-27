@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7466880514028589608}
   m_Layer: 0
-  m_Name: "Balan\xE7a"
+  m_Name: Balanca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,8 +205,10 @@ GameObject:
   - component: {fileID: 7466880514751134319}
   - component: {fileID: 7466880514751134315}
   - component: {fileID: 7466880514751134316}
-  - component: {fileID: 7466880514751134317}
   - component: {fileID: 7466880514751134318}
+  - component: {fileID: 1657210227707943470}
+  - component: {fileID: 7466880514751134317}
+  - component: {fileID: 6714564137982793411}
   m_Layer: 8
   m_Name: tabua
   m_TagString: Untagged
@@ -300,6 +302,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!233 &7466880514751134318
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466880514751134288}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 7466880513519856014}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0.1}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 1
+  m_AngleLimits:
+    m_LowerAngle: -240
+    m_UpperAngle: 60
+--- !u!114 &1657210227707943470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466880514751134288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078d02f658b35f448b90538b21bdc98c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &7466880514751134317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -326,27 +364,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.78, y: 0.05}
   m_EdgeRadius: 0
---- !u!233 &7466880514751134318
-HingeJoint2D:
+--- !u!61 &6714564137982793411
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7466880514751134288}
   m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 7466880513519856014}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0.1}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: -312.03
-    m_UpperAngle: -224.4
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 74ce61982a22dfd49bf83d2746bb14e8, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000044703484, y: -0.03253348}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.82, y: 0.09}
+    newSize: {x: 0.25, y: 0.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7906858, y: 0.3233158}
+  m_EdgeRadius: 0
