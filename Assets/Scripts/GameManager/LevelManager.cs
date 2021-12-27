@@ -124,14 +124,10 @@ public class LevelManager : MonoBehaviour
     public void ButtonReset(){
         PlayClipClickButton();
         PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("Diamonds", 0);
-        PlayerPrefs.SetInt("DiamondsLvl", 0);
-        PlayerPrefs.SetInt("Diamonds1", 0);
-        PlayerPrefs.SetInt("Diamonds2", 0);
-        PlayerPrefs.SetInt("MuteGeneral", -1);
+        // PlayerPrefs.SetInt("MuteGeneral", -1);
         PlayerPrefs.SetInt("MuteMusic", -1);
         PlayerPrefs.SetInt("MuteEffects", -1);
-        PlayerPrefs.SetFloat("VolumeGeneral", 0.5f);
+        // PlayerPrefs.SetFloat("VolumeGeneral", 0.5f);
         PlayerPrefs.SetFloat("VolumeMusicGame", 0.5f);
         PlayerPrefs.SetFloat("VolumeEffectsGame", 0.5f);
         PlayerPrefs.SetInt("SkinRock1", 1);
@@ -213,7 +209,9 @@ public class LevelManager : MonoBehaviour
 
         // Somatorio dos valores de diamantes por nivel
         int n3 = PlayerPrefs.GetInt("Diamonds1") + PlayerPrefs.GetInt("Diamonds2") + PlayerPrefs.GetInt("Diamonds3") + PlayerPrefs.GetInt("Diamonds4") + PlayerPrefs.GetInt("Diamonds5") + PlayerPrefs.GetInt("Diamonds6");
-        textDiamondsTotal.text = "x" + n3;
+        // textDiamondsTotal.text = "x" + n3;
+        PlayerPrefs.SetInt("DiamondsTotal", n3);
+        textDiamondsTotal.text = "x" + PlayerPrefs.GetInt("DiamondsTotal");
     }
 
     void TextButtons(){
