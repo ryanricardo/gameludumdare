@@ -1640,7 +1640,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3501501292705389554}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.988304
+  m_Size: 0.60818714
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3885,7 +3885,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0.7058824, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8767,7 +8767,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7621364596023973409}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.7058824
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10976,7 +10976,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -650, y: 2340}
+  m_SizeDelta: {x: 1300, y: 2340}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8044472912810870202
 MonoBehaviour:
@@ -11188,12 +11188,12 @@ MonoBehaviour:
   toggleTutorial: {fileID: 6163046092531123562}
   scrollbarMenu: {fileID: 433056216060648031}
   toggleLockLvls: {fileID: 6729744174877932567}
+  selectLanguage: {fileID: 8932637009217255332}
   scrolValue: 0.667
   sourceMusic: {fileID: 567552152339470889}
   musicsLofi:
   - {fileID: 0}
   - {fileID: 8300000, guid: 55013da174102174f9bfdaf350e5511b, type: 3}
-  selectLanguage: {fileID: 8932637009217255332}
   buttonsLvls: []
   textDiamondsTotal: {fileID: 8462875273129964588}
   textPowerBonus1: {fileID: 6144163329686436707}
@@ -12979,7 +12979,7 @@ PrefabInstance:
     - target: {fileID: 6606477175128810583, guid: 33cee056009f5d0429d625b6766c93f4,
         type: 3}
       propertyPath: m_Value
-      value: 1.0000001
+      value: 1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 6607076981372069415, guid: 33cee056009f5d0429d625b6766c93f4,
         type: 3}
@@ -14147,7 +14147,7 @@ PrefabInstance:
     - target: {fileID: 6606477175128810583, guid: 33cee056009f5d0429d625b6766c93f4,
         type: 3}
       propertyPath: m_Value
-      value: 1.0000001
+      value: 1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 6607076981372069415, guid: 33cee056009f5d0429d625b6766c93f4,
         type: 3}
@@ -18855,7 +18855,7 @@ PrefabInstance:
     - target: {fileID: 6606477175128810583, guid: 33cee056009f5d0429d625b6766c93f4,
         type: 3}
       propertyPath: m_Value
-      value: 1.0000001
+      value: 1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 6727068780720868409, guid: 33cee056009f5d0429d625b6766c93f4,
         type: 3}

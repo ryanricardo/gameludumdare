@@ -10,12 +10,12 @@ public class LevelManager : MonoBehaviour
     public int LvlsWon;
     public GameObject[] levelsPanels;
     public GameObject panelMenu, panelLevls, panelLoading, toggleTutorial, scrollbarMenu, toggleLockLvls;
+    public TMP_Dropdown selectLanguage;
     [SerializeField] private float scrolValue = .667f;
     [SerializeField] private AudioSource sourceMusic;
     [SerializeField] private AudioClip[] musicsLofi;         
-    [SerializeField] public TMP_Dropdown selectLanguage;
     [SerializeField] private GameObject[] buttonsLvls;
-    [SerializeField] private TextMeshProUGUI textDiamondsTotal,textPowerBonus1, textPowerBonus2;
+    [SerializeField] private TextMeshProUGUI textDiamondsTotal, textPowerBonus1, textPowerBonus2;
     [SerializeField] private TextMeshProUGUI[] textDiamondsLvls;
     [SerializeField] private AudioSource sourceEffects;
     [SerializeField] private AudioClip clipClickButton;
@@ -56,7 +56,12 @@ public class LevelManager : MonoBehaviour
     }
 
     IEnumerator StartMenu(){
-        panelLevls.SetActive(false);        
+        // GameObject[] textsLoading = GameObject.FindGameObjectsWithTag("textPanelLevel");
+        // foreach (var item in textsLoading){
+        //     item.SetActive(false);
+        // }
+        panelLevls.SetActive(false);
+
         // Verifica se existe algum valor para PPLvlsWon e salva em LvlsWon se não LvlsWon deve ser igual a 1
         if(!PlayerPrefs.HasKey("LvlsWon")){
             LvlsWon = 1;

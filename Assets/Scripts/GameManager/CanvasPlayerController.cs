@@ -15,11 +15,11 @@ public class CanvasPlayerController : MonoBehaviour
     [SerializeField]    private GameObject[]        diamondsSprites, bonus, buttonsBonus;  
     [SerializeField]    private TextMeshProUGUI[]   textBonusPause, textBonusPlay;
     [SerializeField]    private Tutorial            tutorial;
-    [SerializeField]    public  AudioClip           clipClickButtonMenu, clipTakeSkin, clipFinishLvl, clipGameOverLvl;
-    [SerializeField]    public  AudioSource         sourceEffectsMenu;
-    [HideInInspector]   private GameManager         gm;
-    [HideInInspector]   private NewPlayerController playerController;
-    [HideInInspector]   private Data data;
+    public  AudioClip           clipClickButtonMenu, clipTakeSkin, clipFinishLvl, clipGameOverLvl;
+    public  AudioSource         sourceEffectsMenu;
+    private GameManager         gm;
+    private NewPlayerController playerController;
+    private Data data;
 
     
     [Header("Atributtes Timer")]
@@ -31,7 +31,7 @@ public class CanvasPlayerController : MonoBehaviour
     [SerializeField]    private int bonusAmount;
 
     [Header("Atributtes Controllers")]
-    [HideInInspector]   private bool                jump;
+    private bool jump;
 
     [HideInInspector] public bool bonusReceived;
     private bool useBonus;
@@ -51,7 +51,7 @@ public class CanvasPlayerController : MonoBehaviour
         TextLevel();
         useBonus = true;
         string PPlvl = "DiamondsLvl" + gm.activeScene;
-        timeDiamond = SceneManager.GetActiveScene().buildIndex * 5 + 25;
+        timeDiamond = gm.currentScene * 5 + 10;
         for (int i = 0; i < diamondsSprites.Length; i++){
             diamondsSprites[i].SetActive(false);
         }

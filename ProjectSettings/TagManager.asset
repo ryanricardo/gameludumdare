@@ -20,6 +20,7 @@ TagManager:
   - Vine
   - Lava
   - Button
+  - textPanelLevel
   layers:
   - Default
   - TransparentFX

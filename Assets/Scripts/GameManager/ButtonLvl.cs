@@ -12,10 +12,12 @@ public class ButtonLvl : MonoBehaviour
     [SerializeField] GameObject[] diamodsSprites;
     LevelManager levelManager;
     Color colorButton;
+    PanelLevel panelLevel;
 
     private void Awake(){
         levelManager = FindObjectOfType<LevelManager>();
         colorButton = GetComponent<Button>().colors.normalColor;
+        panelLevel = GetComponentInParent<PanelLevel>();
     }
     private void Start()
     {
@@ -25,6 +27,7 @@ public class ButtonLvl : MonoBehaviour
     public void LoadLevel(){
         levelManager.PlayClipClickButton();        
         colorButton = Color.yellow;
+        panelLevel.textPanelLoading.SetActive(true);
         SceneManager.LoadScene(lvl);          
         // Loading();
     }
