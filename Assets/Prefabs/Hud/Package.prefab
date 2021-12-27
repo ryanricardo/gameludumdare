@@ -372,8 +372,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insertTextEnglish: loading...
-  insertTextPortugueseBrazil: carregando...
+  insertTextEnglish: 100 Rubies
+  insertTextPortugueseBrazil: 100 Rubis
 --- !u!1 &2278293956103728993
 GameObject:
   m_ObjectHideFlags: 0
