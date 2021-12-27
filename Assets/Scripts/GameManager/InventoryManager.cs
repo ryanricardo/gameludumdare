@@ -21,6 +21,14 @@ public class InventoryManager : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
 
         indexSkin = new int[3];
+
+        if(PlayerPrefs.GetInt("SkinRock1") == 0)
+        {
+            PlayerPrefs.SetInt("SkinRock1", 1);
+            PlayerPrefs.SetInt("SkinRock2", 1);
+            PlayerPrefs.SetInt("SkinRock3", 1);
+        }
+
         indexSkin[0] = PlayerPrefs.GetInt("SkinRock1");
         indexSkin[1] = PlayerPrefs.GetInt("SkinRock2");
         indexSkin[2] = PlayerPrefs.GetInt("SkinRock3");
