@@ -1185,6 +1185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7379029231546311715}
   - component: {fileID: 1924662397797451919}
+  - component: {fileID: 1966239428784270102}
   - component: {fileID: 4604464019906844610}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -1220,6 +1221,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815181549043372954}
   m_CullTransparentMesh: 1
+--- !u!114 &1966239428784270102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815181549043372954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: YOU RECEIVE A NEW SKIN
+  insertTextPortugueseBrazil: "VOC\xCA RECEBEU UMA NOVA SKIN"
 --- !u!114 &4604464019906844610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1276,7 +1291,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6040,6 +6055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4521236496765090733}
   - component: {fileID: 7652844167904401085}
+  - component: {fileID: 5599924602397538861}
   - component: {fileID: 3345278445832092918}
   m_Layer: 5
   m_Name: TextBonusType (TMP)
@@ -6075,6 +6091,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5864677992393386483}
   m_CullTransparentMesh: 1
+--- !u!114 &5599924602397538861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864677992393386483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: MORE JUMP
+  insertTextPortugueseBrazil: PULO ALTO
 --- !u!114 &3345278445832092918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6803,6 +6833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5436312829609941450}
   - component: {fileID: 6337290211566901848}
+  - component: {fileID: 1623939676387697358}
   - component: {fileID: 4466278484920345634}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -6828,7 +6859,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 75}
-  m_SizeDelta: {x: 250, y: 100}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6337290211566901848
 CanvasRenderer:
@@ -6838,6 +6869,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6158484275461926004}
   m_CullTransparentMesh: 1
+--- !u!114 &1623939676387697358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6158484275461926004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff1bd6e96aee240937f8b3ce2a34d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertTextEnglish: YOU RECEIVE A NEW BONUS
+  insertTextPortugueseBrazil: "VOC\xCA RECEBEU UM NOVO B\xD4NUS"
 --- !u!114 &4466278484920345634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6894,7 +6939,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -10469,15 +10514,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39f37f95707036a449238f427eab7ead, type: 3}
---- !u!224 &7820807374248747873 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8587629856566186637, guid: 39f37f95707036a449238f427eab7ead,
-    type: 3}
-  m_PrefabInstance: {fileID: 1991845595814343148}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7018134576014267023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8845378848704373603, guid: 39f37f95707036a449238f427eab7ead,
+    type: 3}
+  m_PrefabInstance: {fileID: 1991845595814343148}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &7820807374248747873 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8587629856566186637, guid: 39f37f95707036a449238f427eab7ead,
     type: 3}
   m_PrefabInstance: {fileID: 1991845595814343148}
   m_PrefabAsset: {fileID: 0}
@@ -10666,15 +10711,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
---- !u!1 &8292820646937735552 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252,
-    type: 3}
-  m_PrefabInstance: {fileID: 6607008381588161417}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8292820645575619195 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 6607008381588161417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8292820646937735552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252,
     type: 3}
   m_PrefabInstance: {fileID: 6607008381588161417}
   m_PrefabAsset: {fileID: 0}

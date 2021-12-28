@@ -63,7 +63,8 @@ public class CanvasPlayerController : MonoBehaviour
         if(GameObject.Find("PanelBonus")!=null){
             panelBonus = GameObject.Find("PanelBonus");
             panelBonus.SetActive(false);
-        }else if(GameObject.Find("PanelSkin")!=null){            
+        }
+        if(GameObject.Find("PanelSkin")!=null){            
             panelSkin = GameObject.Find("PanelSkin");
             panelSkin.SetActive(false);
         }
@@ -301,7 +302,11 @@ public class CanvasPlayerController : MonoBehaviour
         bonusReceived = true;
         panelBonus.SetActive(true);
         textBonusAmount.text = "x" + bonusAmount.ToString();
-        PlayerPrefs.SetInt("Bonus" + bonusNumber, PlayerPrefs.GetInt("Bonus" + bonusNumber) + bonusAmount);
+        if (bonusNumber > 0){
+            PlayerPrefs.SetInt("Bonus" + bonusNumber, PlayerPrefs.GetInt("Bonus" + bonusNumber) + bonusAmount);
+        }else{
+            PlayerPrefs.SetInt("RubyTotal", (PlayerPrefs.GetInt("RubyTotal") + bonusAmount));
+        }
         yield return new WaitForSecondsRealtime(1.5f);
         panelBonus.SetActive(false);
         LevelState(GameManager.State.LEVELCOMPLETED);
