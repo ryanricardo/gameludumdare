@@ -20,6 +20,7 @@ public class MarketManager : MonoBehaviour
     [Header("Atributtes")]
     [SerializeField]    private int[]           pricesSkins;
     [SerializeField]    private int[]           index;    
+    
 
     void Start()
     {
@@ -141,7 +142,8 @@ public class MarketManager : MonoBehaviour
 
         if(product.definition.id.Equals("adsfree"))
         {
-            // Retirar o ads aqui.
+         PlayerPrefs.GetInt("anuncioFree");
+         PlayerPrefs.SetInt("anuncioFree",1);   
         }
 
         

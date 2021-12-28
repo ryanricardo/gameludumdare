@@ -6,7 +6,7 @@ using UnityEngine.Advertisements;
 public class AdManager : MonoBehaviour
 {
 
-
+public int anuncioFree;
 
 #if UNITY_IOS
    private string gameid="4515922";
@@ -20,12 +20,13 @@ public class AdManager : MonoBehaviour
    
    void Start()
    {
+       anuncioFree=PlayerPrefs.GetInt("anuncioFree");
        Advertisement.Initialize(gameid, testmode);
    }
 
    public void ShowInterstitialAd()
    {
-       if(Advertisement.IsReady())
+       if(Advertisement.IsReady() && PlayerPrefs.GetInt("anuncioFree")!=0)
        {
             Advertisement.Show();
             Debug.Log("Mostrando anuncio"); 
