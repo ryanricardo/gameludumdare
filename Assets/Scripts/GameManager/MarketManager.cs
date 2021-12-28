@@ -15,6 +15,7 @@ public class MarketManager : MonoBehaviour
     [SerializeField]    private TextMeshProUGUI[]   textsPrices;
     [SerializeField]    private TextMeshProUGUI     textTotalRuby;
     [HideInInspector]   private Data                dataLocal;
+    [HideInInspector]   private LevelManager        lv;
     
     [Header("Atributtes")]
     [SerializeField]    private int[]           pricesSkins;
@@ -22,6 +23,7 @@ public class MarketManager : MonoBehaviour
 
     void Start()
     {
+        lv = FindObjectOfType<LevelManager>();
         dataLocal = FindObjectOfType<Data>();
         index[0] = 1;
         index[1] = 1;
@@ -69,15 +71,41 @@ public class MarketManager : MonoBehaviour
 
     public void BuySkin(int index)
     {
-        
+        lv.PlayClipClickButton();
+
         if(PlayerPrefs.GetInt("RubyTotal") >= pricesSkins[index])
         {
+            switch(PlayerPrefs.GetInt("valueLanguage"))
+            {
+                case 0:
+                    buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "Buy skin";
+                break;
+
+                case 1:
+                    buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "Comprar";
+                break;
+            }
+
             buttons[index].interactable = false;
             dataPrefab.skinRock1.Add(skins[index].GetComponent<Image>().sprite);
             dataPrefab.skinRock2.Add(skins[index].GetComponent<Image>().sprite);
             dataPrefab.skinRock3.Add(skins[index].GetComponent<Image>().sprite);
             PlayerPrefs.SetInt("RubyTotal", PlayerPrefs.GetInt("RubyTotal") - pricesSkins[index]);
             textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
+
+
+        }else 
+        {
+            switch(PlayerPrefs.GetInt("valueLanguage"))
+            {
+                case 0:
+                    buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "No rubys";
+                break;
+
+                case 1:
+                    buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "Sem rubys";
+                break;
+            }
         }
         
 
@@ -85,6 +113,7 @@ public class MarketManager : MonoBehaviour
 
     public void BuyRuby(int rubyToAdd)
     {
+        lv.PlayClipClickButton();
         Debug.Log(PlayerPrefs.GetInt("RubyTotal"));
         PlayerPrefs.SetInt("RubyTotal", PlayerPrefs.GetInt("RubyTotal") + rubyToAdd);
         Debug.Log(PlayerPrefs.GetInt("RubyTotal"));
