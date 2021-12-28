@@ -100,7 +100,7 @@ public class MarketManager : MonoBehaviour
             switch(PlayerPrefs.GetInt("valueLanguage"))
             {
                 case 0:
-                    buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "No rubys";
+                    buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "No rubies";
                 break;
 
                 case 1:
