@@ -77,24 +77,45 @@ public class MarketManager : MonoBehaviour
             dataPrefab.skinRock2.Add(skins[index].GetComponent<Image>().sprite);
             dataPrefab.skinRock3.Add(skins[index].GetComponent<Image>().sprite);
             PlayerPrefs.SetInt("RubyTotal", PlayerPrefs.GetInt("RubyTotal") - pricesSkins[index]);
+            textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
         }
         
 
     }
 
-    public void BuyDiamonds(int diamondsToAdd)
+    public void BuyRuby(int rubyToAdd)
     {
         Debug.Log(PlayerPrefs.GetInt("RubyTotal"));
-        PlayerPrefs.SetInt("RubyTotal", PlayerPrefs.GetInt("RubyTotal") + diamondsToAdd);
+        PlayerPrefs.SetInt("RubyTotal", PlayerPrefs.GetInt("RubyTotal") + rubyToAdd);
         Debug.Log(PlayerPrefs.GetInt("RubyTotal"));
     }
 
     public void OnPurchaseComplete(Product product)
     {
-        if(product.definition.id.Equals("diamondspack1"))
+        if(product.definition.id.Equals("rubypack1"))
         {
-            BuyDiamonds(50);
+            BuyRuby(100);
+            textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
         }
+
+        if(product.definition.id.Equals("rubypack2"))
+        {
+            BuyRuby(500);
+            textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
+        }
+
+        if(product.definition.id.Equals("rubypack3"))
+        {
+            BuyRuby(1000);
+            textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
+        }
+
+        if(product.definition.id.Equals("adsfree"))
+        {
+            // Retirar o ads aqui.
+        }
+
+        
     }
 
 }
