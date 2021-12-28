@@ -9,87 +9,76 @@ public class MarketManager : MonoBehaviour
 {
 
     [Header("Components")]
-    [SerializeField]    private TextMeshProUGUI textPriceSkins;
-    [SerializeField]    private GameObject      currentBuySkin;
-    [SerializeField]    private Button          buttonBuy;
-    [SerializeField]    private Data            dataPrefab;
-    [HideInInspector]   private Data            dataLocal;
+    [SerializeField]    private Data                dataPrefab;
+    [SerializeField]    private GameObject[]        skins;
+    [SerializeField]    private Button[]            buttons;
+    [SerializeField]    private TextMeshProUGUI[]   textsPrices;
+    [SerializeField]    private TextMeshProUGUI     textTotalRuby;
+    [HideInInspector]   private Data                dataLocal;
     
     [Header("Atributtes")]
     [SerializeField]    private int[]           pricesSkins;
-    [SerializeField]    private int             index;    
-    [HideInInspector]   private bool            buy;
+    [SerializeField]    private int[]           index;    
 
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetInt("RubyTotal"));
-
-        buy = true;
-        index = 1;
-        textPriceSkins.text = pricesSkins[index].ToString();
         dataLocal = FindObjectOfType<Data>();
-        currentBuySkin.GetComponent<Image>().sprite = dataLocal.allSkinsForBuy[index];
+        index[0] = 1;
+        index[1] = 1;
+
+        textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
+        
+        for(int i = 1; i < textsPrices.Length; i++)
+        {
+            textsPrices[i].text = pricesSkins[i].ToString();
+        }
+
+        do
+        {
+            if(skins[index[0]].GetComponent<Image>().sprite == dataPrefab.skinRock1[index[1]])
+            {
+                buttons[index[0]].interactable = false;
+                index[0]++;
+                index[1] = 1;
+                
+            }else 
+            {
+                index[1]++;
+                if(index[0] != skins.Length &&
+                index[1] >= dataPrefab.skinRock1.Count)
+                {
+                    index[0]++;
+                    index[1] = 1;
+                }
+            }
+            
+        }while(index[0] != skins.Length);
+
 
     }
 
     void Update()
     {
-        for(int i = 1; i < dataPrefab.skinRock1.Count; i++)
-        {
-            if(dataPrefab.skinRock1[i] == currentBuySkin.GetComponent<Image>().sprite ||
-            dataPrefab.skinRock2[i] == currentBuySkin.GetComponent<Image>().sprite ||
-            dataPrefab.skinRock3[i] == currentBuySkin.GetComponent<Image>().sprite ||
-            PlayerPrefs.GetInt("RubyTotal") < pricesSkins[index])
-            {
-                buttonBuy.interactable = false;
-            }else 
-            {
-                buttonBuy.interactable = true;
-            }
-        }
 
-
-    }
-
-    public void ArrowLeft()
-    {
-        buy = true;
-        if(index > 1)
-        {
-            currentBuySkin.GetComponent<Image>().sprite = dataLocal.allSkinsForBuy[index = index - 1];
-            textPriceSkins.text = pricesSkins[index].ToString();
-        }
-
-
-    }
-
-    public void ArrowRight()
-    {
-        buy = true;
-        if(index < dataLocal.allSkinsForBuy.Count)
-        {
-            currentBuySkin.GetComponent<Image>().sprite = dataLocal.allSkinsForBuy[index = index + 1];
-            textPriceSkins.text = pricesSkins[index].ToString();
-        }
-
-    }
-
-    public void BuySkin()
-    {
-        
-    
-        Debug.Log("RubyTotal: " + PlayerPrefs.GetInt("RubyTotal"));
-        dataPrefab.skinRock1.Add(currentBuySkin.GetComponent<Image>().sprite);
-        dataPrefab.skinRock2.Add(currentBuySkin.GetComponent<Image>().sprite);
-        dataPrefab.skinRock3.Add(currentBuySkin.GetComponent<Image>().sprite);
-        PlayerPrefs.SetInt("RubyTotal", PlayerPrefs.GetInt("RubyTotal") - pricesSkins[index]);   
-        Debug.Log("RubyTotal: " + PlayerPrefs.GetInt("RubyTotal"));
-        buttonBuy.interactable = false;
-        buy = false;
             
-        
-       
 
+        
+
+    }
+
+
+    public void BuySkin(int index)
+    {
+        
+        if(PlayerPrefs.GetInt("RubyTotal") >= pricesSkins[index])
+        {
+            buttons[index].interactable = false;
+            dataPrefab.skinRock1.Add(skins[index].GetComponent<Image>().sprite);
+            dataPrefab.skinRock2.Add(skins[index].GetComponent<Image>().sprite);
+            dataPrefab.skinRock3.Add(skins[index].GetComponent<Image>().sprite);
+            PlayerPrefs.SetInt("RubyTotal", PlayerPrefs.GetInt("RubyTotal") - pricesSkins[index]);
+        }
+        
 
     }
 
