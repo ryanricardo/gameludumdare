@@ -5182,6 +5182,11 @@ PrefabInstance:
       propertyPath: productId
       value: rubypack2
       objectReference: {fileID: 0}
+    - target: {fileID: 6660271295945930465, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6716143670113192149, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -6082,6 +6087,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104889436334422604, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.675
       objectReference: {fileID: 0}
     - target: {fileID: 8130894078644259635, guid: 33e48dd3c98fa844a9fe61b689ff3fd3,
         type: 3}

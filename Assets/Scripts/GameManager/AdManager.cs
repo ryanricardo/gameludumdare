@@ -26,7 +26,7 @@ public int anuncioFree;
 
    public void ShowInterstitialAd()
    {
-       if(Advertisement.IsReady() && PlayerPrefs.GetInt("anuncioFree")!=0)
+       if(Advertisement.IsReady() && PlayerPrefs.GetInt("anuncioFree")==0)
        {
             Advertisement.Show();
             Debug.Log("Mostrando anuncio"); 
