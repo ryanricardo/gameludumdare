@@ -272,7 +272,7 @@ public class NewPlayerController : MonoBehaviour
             for(int i = 0; i < rocks.Count ; i++)
             {
                 rocks[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                rocks[i].GetComponent<Rigidbody2D>().gravityScale = 0.1f;
+                rocks[i].GetComponent<Rigidbody2D>().gravityScale = 0.5f;
             }
 
         }
