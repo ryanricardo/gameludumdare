@@ -229,6 +229,12 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 104219347}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &104219350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 646820509772010704, guid: d6a98c79eea1b534ca1f2c8f62fca00d,
+    type: 3}
+  m_PrefabInstance: {fileID: 104219347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &162249644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -895,6 +901,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 8076631200828343100, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
       propertyPath: nivel
       value: 1
       objectReference: {fileID: 0}
@@ -930,9 +942,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
+      propertyPath: rocks.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
       propertyPath: panelLevelCompleted
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: rocks.Array.data[1]
+      value: 
+      objectReference: {fileID: 459948691}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: rocks.Array.data[2]
+      value: 
+      objectReference: {fileID: 988535992}
+    - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
+        type: 3}
+      propertyPath: rocks.Array.data[3]
+      value: 
+      objectReference: {fileID: 104219350}
     - target: {fileID: 602094489981943330, guid: a705afb3265598244aa818b5ace18e03,
         type: 3}
       propertyPath: musicsLofi.Array.size

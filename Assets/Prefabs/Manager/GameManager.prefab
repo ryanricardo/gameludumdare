@@ -59,6 +59,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7fd4eb4f6756d924cabfbf19ac6a28d5, type: 3}
   - {fileID: 8300000, guid: fd024940790097e4ab03cda8c297109b, type: 3}
   - {fileID: 8300000, guid: 55013da174102174f9bfdaf350e5511b, type: 3}
+  data: {fileID: 8076631200828343100}
+  rocks: []
   nivel: 0
   currentScene: 0
   lvlsNivel: 0
@@ -179,12 +181,15 @@ MonoBehaviour:
   skinRock1:
   - {fileID: 0}
   - {fileID: 21300000, guid: fabef1505446cac41b579a1fb08d1317, type: 3}
+  - {fileID: 21300000, guid: 1b14815dbb6ddab4e922bad6f76455ba, type: 3}
   skinRock2:
   - {fileID: 0}
   - {fileID: 21300000, guid: eb7af7d41e6537d43add5902c40782ae, type: 3}
+  - {fileID: 21300000, guid: 1b14815dbb6ddab4e922bad6f76455ba, type: 3}
   skinRock3:
   - {fileID: 0}
   - {fileID: 21300000, guid: d67a8c1a6500b444a812b5b899472d09, type: 3}
+  - {fileID: 21300000, guid: 1b14815dbb6ddab4e922bad6f76455ba, type: 3}
   skinsRewardRock1:
   - {fileID: 21300000, guid: 256f367931239914ebaadaeb432288b1, type: 3}
   skinsRewardRock2:

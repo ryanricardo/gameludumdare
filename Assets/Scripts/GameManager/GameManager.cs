@@ -12,8 +12,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]private NewPlayerController    playerController;
     [HideInInspector]private AdManager              adManager;
     [HideInInspector]private InventoryManager       inventoryManager;
-    [HideInInspector]private Data                   data;
+    [SerializeField]private Data                   data;
     [HideInInspector]private CanvasPlayerController canvasPlayer;
+    [SerializeField] private GameObject[]           rocks;
 
     [Header("Atributtes Manager")]
     public int nivel;
@@ -29,7 +30,6 @@ public class GameManager : MonoBehaviour
         useOneTime = true;
         Screen.orientation = ScreenOrientation.Landscape;
         activeScene = SceneManager.GetActiveScene().buildIndex;
-        data = FindObjectOfType<Data>();
         canvasPlayer = FindObjectOfType<CanvasPlayerController>();
         inventoryManager = FindObjectOfType<InventoryManager>();
         playerController = FindObjectOfType<NewPlayerController>();
@@ -49,9 +49,15 @@ public class GameManager : MonoBehaviour
         sourceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
         sourceMusic.Play();
 
-        data.rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
-        data.rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
-        playerController.GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
+        rocks = new GameObject[4];
+
+        rocks[1] = GameObject.FindGameObjectWithTag("RockController 1");
+        rocks[2] = GameObject.FindGameObjectWithTag("RockController 2");
+        rocks[3] = GameObject.FindGameObjectWithTag("Player");
+
+        rocks[1].GetComponent<SpriteRenderer>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
+        rocks[2].GetComponent<SpriteRenderer>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
+        rocks[3].GetComponent<SpriteRenderer>().sprite = data.skinRock3[PlayerPrefs.GetInt("SkinRock3")];
 
         mortes = PlayerPrefs.GetInt("mortes");
     }
