@@ -111,11 +111,11 @@ public class GameManager : MonoBehaviour
               
             
 
-        if(!sourceMusic.isPlaying)
+        /*if(!sourceMusic.isPlaying)
         {
             sourceMusic.clip = musicsLofi[Random.Range(1, musicsLofi.Length)];
             sourceMusic.Play();
-        }
+        }*/
     }
 
     IEnumerator SceneDelay(int SceneNumber, float delay){

@@ -32,15 +32,16 @@ public class ResetPosition : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if(!sourceReset.isPlaying)
-        {
-            gm.sourceMusic.Pause();
-            sourceReset.PlayOneShot(soundReset);
-        }
+
         
         if(other.gameObject.CompareTag("Player")){
             // gameManager.gameOver = true;
             StartCoroutine(SpawnPlayers());
+            if(!sourceReset.isPlaying)
+            {
+                gm.sourceMusic.Pause();
+                sourceReset.PlayOneShot(soundReset);
+            }
 
         }
         if(other.gameObject.CompareTag("RockController 1")){
@@ -55,16 +56,16 @@ public class ResetPosition : MonoBehaviour
     IEnumerator SpawnPlayers()
     {
         yield return new WaitForSeconds(resetTime);
-        gm.sourceMusic.UnPause();
         player.transform.position = playerPos;
         rock1.transform.position = rock1Pos;
         rock2.transform.position = rock2Pos;
+        yield return new WaitForSeconds(3.5f);
+        gm.sourceMusic.UnPause();
     }
 
     IEnumerator SpawnRocks()
     {
         yield return new WaitForSeconds(resetTime);
-        gm.sourceMusic.UnPause();
         rock1.transform.position = rock1Pos;
     }
 
