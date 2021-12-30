@@ -10,7 +10,6 @@ public class LevelManager : MonoBehaviour
     public int LvlsWon;
     public GameObject[] levelsPanels;
     public GameObject panelMenu, panelLevls, panelLoading, toggleTutorial, scrollbarMenu, toggleLockLvls;
-    public TMP_Dropdown selectLanguage;
     [SerializeField] private float scrolValue = .667f;
     [SerializeField] private AudioSource sourceMusic;
     [SerializeField] private AudioClip[] musicsLofi;         
@@ -80,7 +79,6 @@ public class LevelManager : MonoBehaviour
         TextButtons();
         textPowerBonus1.text = "x" + PlayerPrefs.GetInt("Bonus1").ToString();
         textPowerBonus2.text = "x" + PlayerPrefs.GetInt("Bonus2").ToString();
-        selectLanguage.value = PlayerPrefs.GetInt("valeuLanguage");
         yield return new WaitForSecondsRealtime(1);
     }
 
@@ -149,23 +147,6 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void SelectLanguage()
-    {
-        switch(selectLanguage.value)
-        {
-            case 0:
-                PlayClipClickButton();
-                PlayerPrefs.SetString("Language","English");
-                PlayerPrefs.SetInt("valeuLanguage", 0);
-            break;
-
-            case 1:
-                PlayClipClickButton();
-                PlayerPrefs.SetString("Language","Portuguese (Brazil)");
-                PlayerPrefs.SetInt("valeuLanguage", 1);
-                break;
-        }
-    }
     
     public void MusicOn(){
         PlayerPrefs.SetString("PPMusic", "ON");

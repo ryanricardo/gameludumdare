@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class OptionsManager : MonoBehaviour
@@ -17,6 +18,7 @@ public class OptionsManager : MonoBehaviour
     [SerializeField]    private Sprite              spriteMutated;
     [SerializeField]    private Sprite              spriteUnmuted;
     [HideInInspector]   private LevelManager        levelManager;
+    public TMP_Dropdown selectLanguage;
 
 
     void Awake()
@@ -25,8 +27,14 @@ public class OptionsManager : MonoBehaviour
     }
     void Start()
     {
-
         levelManager = FindObjectOfType<LevelManager>();
+        selectLanguage.value = PlayerPrefs.GetInt("valeuLanguage");
+
+
+        if(!PlayerPrefs.HasKey("MuteEffects") && !PlayerPrefs.HasKey("MuteMusic")){            
+            PlayerPrefs.SetInt("MuteMusic", 1);
+            PlayerPrefs.SetInt("MuteEffects", 1);
+        }
 
         if(PlayerPrefs.GetInt("MuteMusic") == 1)
         {
@@ -99,6 +107,24 @@ public class OptionsManager : MonoBehaviour
     //     }
     // }
 
+    public void SelectLanguage()
+    {
+        switch(selectLanguage.value)
+        {
+            case 0:
+                levelManager.PlayClipClickButton();
+                PlayerPrefs.SetString("Language","English");
+                PlayerPrefs.SetInt("valeuLanguage", 0);
+                break;
+            case 1:                    
+                levelManager.PlayClipClickButton();
+                PlayerPrefs.SetString("Language","Portuguese (Brazil)");
+                PlayerPrefs.SetInt("valeuLanguage", 1);
+                break;            
+        }
+        // SceneManager.LoadScene(0);        
+    }
+
     public void MuteMusic()
     {
         levelManager.PlayClipClickButton();
@@ -138,5 +164,6 @@ public class OptionsManager : MonoBehaviour
 
         }
     }
+
 }
 

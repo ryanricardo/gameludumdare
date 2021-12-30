@@ -13,10 +13,15 @@ public class InventoryManager : MonoBehaviour
 
     void Start()
     {
+        if(!PlayerPrefs.HasKey("SkinRock1")){
+            PlayerPrefs.SetInt("SkinRock1", 1);
+            PlayerPrefs.SetInt("SkinRock2", 1);
+            PlayerPrefs.SetInt("SkinRock3", 1);
+        }
 
-        Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
-        Debug.Log(PlayerPrefs.GetInt("SkinRock2"));
-        Debug.Log(PlayerPrefs.GetInt("SkinRock3"));
+        // Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
+        // Debug.Log(PlayerPrefs.GetInt("SkinRock2"));
+        // Debug.Log(PlayerPrefs.GetInt("SkinRock3"));
 
         rocksSkins[1].GetComponent<Image>().sprite = data.skinRock1[PlayerPrefs.GetInt("SkinRock1")];
         rocksSkins[2].GetComponent<Image>().sprite = data.skinRock2[PlayerPrefs.GetInt("SkinRock2")];
@@ -33,9 +38,9 @@ public class InventoryManager : MonoBehaviour
 
     public void Arrows(int index)
     {
-        Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
-        Debug.Log(PlayerPrefs.GetInt("SkinRock2"));
-        Debug.Log(PlayerPrefs.GetInt("SkinRock3"));
+        // Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
+        // Debug.Log(PlayerPrefs.GetInt("SkinRock2"));
+        // Debug.Log(PlayerPrefs.GetInt("SkinRock3"));
 
         switch(index)
         {

@@ -19,18 +19,19 @@ public class MarketManager : MonoBehaviour
     
     [Header("Atributtes")]
     [SerializeField]    private int[]           pricesSkins;
-    [SerializeField]    private int[]           index;    
-    
+    [SerializeField]    private int[]           index;
 
+    
     void Start()
     {
+        textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
+        
         lv = FindObjectOfType<LevelManager>();
         dataLocal = FindObjectOfType<Data>();
+                
         index[0] = 1;
         index[1] = 1;
 
-        textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
-        
         for(int i = 1; i < textsPrices.Length; i++)
         {
             textsPrices[i].text = pricesSkins[i].ToString();
@@ -57,16 +58,12 @@ public class MarketManager : MonoBehaviour
             
         }while(index[0] != skins.Length);
 
-
+        ButtonsActive();
     }
 
     void Update()
     {
-
-            
-
         
-
     }
 
 
@@ -74,41 +71,41 @@ public class MarketManager : MonoBehaviour
     {
         lv.PlayClipClickButton();
 
-        if(PlayerPrefs.GetInt("RubyTotal") >= pricesSkins[index])
+        if (PlayerPrefs.GetInt("RubyTotal") >= pricesSkins[index])
         {
-            switch(PlayerPrefs.GetInt("valueLanguage"))
-            {
-                case 0:
-                    buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "Buy skin";
-                break;
+            // switch (PlayerPrefs.GetInt("valueLanguage"))
+            // {
+            //     case 0:
+            //         buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "Purchased";
+            //         break;
 
-                case 1:
-                    buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "Comprar";
-                break;
-            }
+            //     case 1:
+            //         buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "Comprou";
+            //         break;
+            // }
 
             buttons[index].interactable = false;
             dataPrefab.skinRock1.Add(skins[index].GetComponent<Image>().sprite);
             dataPrefab.skinRock2.Add(skins[index].GetComponent<Image>().sprite);
             dataPrefab.skinRock3.Add(skins[index].GetComponent<Image>().sprite);
+            PlayerPrefs.SetInt("Skin" + index, 1);
             PlayerPrefs.SetInt("RubyTotal", PlayerPrefs.GetInt("RubyTotal") - pricesSkins[index]);
             textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
-
-
-        }else 
-        {
-            switch(PlayerPrefs.GetInt("valueLanguage"))
-            {
-                case 0:
-                    buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "No rubies";
-                break;
-
-                case 1:
-                    buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "Sem rubys";
-                break;
-            }
         }
-        
+        // }else
+        // {
+        //     switch (PlayerPrefs.GetInt("valueLanguage"))
+        //     {
+        //         case 0:
+        //             buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "No rubies";
+        //             break;
+
+        //         case 1:
+        //             buttons[index].GetComponentInChildren<TextMeshProUGUI>().text = "Sem rubis";
+        //             break;
+        //     }
+        // }
+
 
     }
 
@@ -126,18 +123,21 @@ public class MarketManager : MonoBehaviour
         {
             BuyRuby(100);
             textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
+            ButtonsActive();
         }
 
         if(product.definition.id.Equals("rubypack2"))
         {
-            BuyRuby(500);
+            BuyRuby(250);
             textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
+            ButtonsActive();
         }
 
         if(product.definition.id.Equals("rubypack3"))
         {
-            BuyRuby(1000);
+            BuyRuby(500);
             textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
+            ButtonsActive();
         }
 
         if(product.definition.id.Equals("adsfree"))
@@ -145,8 +145,19 @@ public class MarketManager : MonoBehaviour
          PlayerPrefs.GetInt("anuncioFree");
          PlayerPrefs.SetInt("anuncioFree",1);   
         }
-
-        
+    
     }
+
+    
+    void ButtonsActive(){
+        for (int i = 1; i < skins.Length; i++){
+            if (PlayerPrefs.GetInt("RubyTotal") < pricesSkins[i] || PlayerPrefs.GetInt("Skin" + i) == 1) {
+                buttons[i].interactable = false;
+            }else{
+                buttons[i].interactable = true;
+            }
+        }
+    }
+    
 
 }
