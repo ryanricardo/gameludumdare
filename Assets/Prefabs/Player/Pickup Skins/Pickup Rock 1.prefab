@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc557a8321a2ec3458861c4d278f6885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 310603971244215556, guid: 1410c936b4338744893fbbee32bec9ca, type: 3}
+  data: {fileID: 8076631200828343100, guid: a705afb3265598244aa818b5ace18e03, type: 3}
   indexRock: 1
   indexSkinReward: 0
 --- !u!1 &9114953956183684381
