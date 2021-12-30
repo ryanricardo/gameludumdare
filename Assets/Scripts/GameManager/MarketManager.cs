@@ -91,6 +91,7 @@ public class MarketManager : MonoBehaviour
             PlayerPrefs.SetInt("Skin" + index, 1);
             PlayerPrefs.SetInt("RubyTotal", PlayerPrefs.GetInt("RubyTotal") - pricesSkins[index]);
             textTotalRuby.text = PlayerPrefs.GetInt("RubyTotal").ToString();
+            ButtonsActive();
         }
         // }else
         // {
