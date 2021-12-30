@@ -17,6 +17,7 @@ public class InventoryManager : MonoBehaviour
             PlayerPrefs.SetInt("SkinRock1", 1);
             PlayerPrefs.SetInt("SkinRock2", 1);
             PlayerPrefs.SetInt("SkinRock3", 1);
+            PlayerPrefs.SetFloat("VolumeMusicGame", 0.5f);
         }
 
         // Debug.Log(PlayerPrefs.GetInt("SkinRock1"));
