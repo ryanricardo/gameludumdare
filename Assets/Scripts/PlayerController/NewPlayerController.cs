@@ -83,7 +83,7 @@ public class NewPlayerController : MonoBehaviour
         }
 
 
-        if(rb2.velocity.x != 0 )
+        if(rb2.velocity.x != 0 && balance > 1)
         {
             checkGround[1] = Physics2D.Linecast(transform.position, transformChecksGround[1].transform.position, 
             1 << LayerMask.NameToLayer("Chao"));

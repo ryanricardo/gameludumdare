@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         if(playerController.balance <= 0) {         
 
             playerController.balance = 1;
-            playerController.source.Stop();
+            playerController.source.Pause();
 
             canvasPlayer.LevelState(State.GAMEOVER);
 
