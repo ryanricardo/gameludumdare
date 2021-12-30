@@ -10,6 +10,7 @@ public class Data : MonoBehaviour
     [SerializeField]    public  List<Sprite>    skinRock1 = new List<Sprite>();
     [SerializeField]    public  List<Sprite>    skinRock2 = new List<Sprite>();
     [SerializeField]    public  List<Sprite>    skinRock3 = new List<Sprite>();
+    [SerializeField]    public  Sprite[]        skinsRewardRock;
     [SerializeField]    public  Sprite[]        skinsRewardRock1;
     [SerializeField]    public  Sprite[]        skinsRewardRock2;
     [SerializeField]    public  Sprite[]        skinsRewardRock3;

@@ -63,11 +63,11 @@ public class CanvasPlayerController : MonoBehaviour
         if(GameObject.Find("PanelBonus")!=null){
             panelBonus = GameObject.Find("PanelBonus");
             panelBonus.SetActive(false);
+        }else if (GameObject.Find("PanelSkin") != null){
+                panelSkin = GameObject.Find("PanelSkin");
+                panelSkin.SetActive(false);
         }
-        if(GameObject.Find("PanelSkin")!=null){            
-            panelSkin = GameObject.Find("PanelSkin");
-            panelSkin.SetActive(false);
-        }
+        
         yield return new WaitForSecondsRealtime(3);
             timer = 0;
         if(PlayerPrefs.GetString("Tutorial") == "tutorialON" && tutorial != null){
@@ -325,7 +325,7 @@ public class CanvasPlayerController : MonoBehaviour
         sourceEffectsMenu.PlayOneShot(clipTakeSkin);
         Time.timeScale = 0;
         panelSkin.SetActive(true);
-        textSkin.text = message;
+        // textSkin.text = message;
         touchControllers.SetActive(false);
         StartCoroutine(StopNotification());
     }
