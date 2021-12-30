@@ -31,22 +31,26 @@ public class ResetPosition : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
+        if(!sourceReset.isPlaying)
+        {
+            gm.sourceMusic.Pause();
+            sourceReset.PlayOneShot(soundReset);
+        }
         
         if(other.gameObject.CompareTag("Player")){
             // gameManager.gameOver = true;
             StartCoroutine(SpawnPlayers());
-            gm.sourceMusic.Pause();
-            sourceReset.PlayOneShot(soundReset);
 
         }
         if(other.gameObject.CompareTag("RockController 1")){
-            gm.sourceMusic.Pause();
-            sourceReset.PlayOneShot(soundReset);
             StartCoroutine(SpawnRocks());
             
         }
 
     }
+
+    
 
     IEnumerator SpawnPlayers()
     {
