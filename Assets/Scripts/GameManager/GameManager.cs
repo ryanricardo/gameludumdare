@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         useOneTime = true;
-        Screen.orientation = ScreenOrientation.Landscape;
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
         activeScene = SceneManager.GetActiveScene().buildIndex;
         canvasPlayer = FindObjectOfType<CanvasPlayerController>();
         inventoryManager = FindObjectOfType<InventoryManager>();
